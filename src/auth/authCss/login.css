@@ -226,8 +226,7 @@
     }
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: absolute;
-        bottom: 6.3em;
-        padding: 25px 0;
+        bottom: 6.1em;
         border: 1px solid #000;
     }
     .Login div .inner-app .sub-app .Logo-media-holder{
@@ -252,7 +251,7 @@
         color: #000000;
     }
     .Login div .inner-app .sub-app .form-holder form .user-input-holder {
-        gap: 12px;
+        gap: 24px;
     }
     .Login div .inner-app .sub-app .form-holder form .user-input-holder .email label {
         font-size: 14px;
