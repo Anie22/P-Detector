@@ -218,7 +218,6 @@
 }
 @media only screen and (max-width: 700px) {
     .Login div .inner-app .sub-app{
-        border: 1px solid #000;
         flex-direction: column;
         padding: 3em 1em;
     }
@@ -227,8 +226,7 @@
     }
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: absolute;
-        bottom: 5.7em;
-        border: 1px solid #000;
+        bottom: 5.5em;
     }
     .Login div .inner-app .sub-app .Logo-media-holder{
         width: 100%;
