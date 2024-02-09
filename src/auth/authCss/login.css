@@ -220,6 +220,7 @@
     .Login div .inner-app .sub-app{
         border: 1px solid #000;
         flex-direction: column;
+        padding: 3em 1em;
     }
     .Login div .inner-app .sub-app .Logo-media-holder .logo .inner-logo {
         width: 26%;
