@@ -227,6 +227,14 @@
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: absolute;
         bottom: 5.5em;
+        width: 85px;
+    }
+    .Login div .inner-app .sub-app .Logo-media-holder .media-han .icon{
+        font-size: 14px;
+    }
+    .Login div .inner-app .sub-app .Logo-media-holder .media-han{
+        position: absolute;
+        bottom: 5.5em;
     }
     .Login div .inner-app .sub-app .Logo-media-holder{
         width: 100%;
