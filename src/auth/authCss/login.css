@@ -226,7 +226,8 @@
     }
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: absolute;
-        top: -7em;
+        bottom: 7em;
+        margin: 25px 0;
         border: 1px solid #000;
     }
     .Login div .inner-app .sub-app .Logo-media-holder{
