@@ -226,8 +226,9 @@
     }
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: absolute;
-        bottom: -1em;
-        /* margin: 18px 0; */
+        bottom: -14px;
+        margin: 18px 0;
+        border: 1px solid #000;
     }
     .Login div .inner-app .sub-app .Logo-media-holder{
         width: 100%;
@@ -282,10 +283,9 @@
     }
 }
 @media only screen and (max-width: 320px) {
-    .Login div .inner-app .sub-app .Logo-media-holder .media-han{
-        position: absolute;
+    /* .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         bottom: -1em;
-    }
+    } */
     .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass .togglebtn{
         left: 14em;
     }
