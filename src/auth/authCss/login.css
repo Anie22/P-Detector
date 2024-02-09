@@ -189,9 +189,13 @@
     }
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: static;
+        width: 120px;
     }
     .Login div .inner-app .sub-app .Logo-media-holder{
         width: 300px;
+    }
+    .Login div .inner-app .sub-app .Logo-media-holder .logo .inner-logo {
+        width: 73%;
     }
     .Login div .inner-app .sub-app .form-holder{
         width: 400px;
@@ -217,10 +221,13 @@
         border: 1px solid #000;
         flex-direction: column;
     }
+    .Login div .inner-app .sub-app .Logo-media-holder .logo .inner-logo {
+        width: 26%;
+    }
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: absolute;
         bottom: -4.5em;
-        margin: 18px 0;
+        /* margin: 18px 0; */
     }
     .Login div .inner-app .sub-app .Logo-media-holder{
         width: 100%;
@@ -228,23 +235,42 @@
     .Login div .inner-app .sub-app .form-holder{
         width: 100%;
     }
+    .Login div .inner-app .sub-app .form-holder form {
+        padding: 14px 12px;
+    }
     .Login div .inner-app .sub-app .form-holder .heading{
-        margin: 20px 0;
+        margin: 15px 0;
     }
     .Login div .inner-app .sub-app .form-holder .heading .head{
         display: block;
     }
     .Login div .inner-app .sub-app .form-holder .heading .head h2{
-        font-size: 45px;
+        font-size: 17px;
         font-family: 'Inter', sans-serif;
         font-weight: 600;
         color: #000000;
     }
+    .Login div .inner-app .sub-app .form-holder form .user-input-holder {
+        gap: 12px;
+    }
     .Login div .inner-app .sub-app .form-holder form .user-input-holder .email label {
-        font-size: 24px;
+        font-size: 14px;
     }
     .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass label {
-        font-size: 24px;
+        font-size: 14px;
+    }
+    .Login div .inner-app .sub-app .form-holder form .text-hol .frg-txt {
+        margin-top: 0px;
+    }
+    .Login div .inner-app .sub-app .form-holder form .text-hol .frg-txt a {
+        font-size: 15px;
+    }
+    .Login div .inner-app .sub-app .form-holder form .text-hol {
+        gap: 6px;
+    }
+    .Login div .inner-app .sub-app .form-holder form .button button {
+        font-size: 17px;
+        padding: 9px 0;
     }
 }
 @media only screen and (max-width: 375px) {
@@ -258,7 +284,7 @@
 @media only screen and (max-width: 320px) {
     .Login div .inner-app .sub-app .Logo-media-holder .media-han{
         position: absolute;
-        bottom: -5em;
+        bottom: -6em;
     }
     .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass .togglebtn{
         left: 14em;
@@ -269,8 +295,5 @@
     .Login div .inner-app .sub-app .form-holder form .text-hol .sign-text {
         font-size: 13px;
         letter-spacing: 1px;
-    }
-    .Login div .inner-app .sub-app .form-holder form .button button {
-        font-size: 24px;
     }
 }
