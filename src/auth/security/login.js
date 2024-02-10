@@ -58,7 +58,7 @@ export const Login = () => {
                                     </div>
                                     <div className='sign-text'>
                                         <p>Don't have an account yet?</p>
-                                        <a href='loh/'>Register</a>
+                                        <Link to='loh/'>Register</Link>
                                     </div>
                                 </div>
                                 <div className='button'>
