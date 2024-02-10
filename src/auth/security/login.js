@@ -54,11 +54,11 @@ export const Login = () => {
                                 </div>
                                 <div className='text-hol'>
                                     <div className='frg-txt'>
-                                        <Link to='reset/'>Forgotten password</Link>
+                                        <Link to='/reset-password'>Forgotten password</Link>
                                     </div>
                                     <div className='sign-text'>
                                         <p>Don't have an account yet?</p>
-                                        <Link to='loh/'>Register</Link>
+                                        <Link to='/loh'>Register</Link>
                                     </div>
                                 </div>
                                 <div className='button'>
