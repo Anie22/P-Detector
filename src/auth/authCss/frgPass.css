@@ -1,7 +1,7 @@
 .frg-pass-hol .sub-frg-pass-hol{
     background: #F7F6F2;
-    height: 100vh;
-    padding: 4em 0;
+    /* height: 100vh; */
+    padding: 4.5em 0;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol{
     display: flex;
