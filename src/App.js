@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Routes, Route} from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import { Login } from './auth/security/login';
 import { ResetPass } from './auth/update/forgetPass'
 
