@@ -65,7 +65,7 @@
 }
 @media only screen and (max-width: 700px) {
     .frg-pass-hol .sub-frg-pass-hol{
-        height: 100%;
+        height: 95vh;
     }
     .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol{
         padding: 2em;
@@ -88,12 +88,12 @@
 }
 @media only screen and (max-width: 375px) {
     .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text{
-        width: 329px;
+        width: 320px;
     }
 }
 @media only screen and (max-width: 320px) {
     .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text{
-        width: 270px;
+        width: 260px;
     }
     .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text p{
         font-size: 12px;
