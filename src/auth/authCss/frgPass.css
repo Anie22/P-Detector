@@ -47,7 +47,11 @@
     font-size: 18px;
     letter-spacing: 1px;
 }
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol button{
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol form .form-control::placeholder{
+    color: #7F7D7D !important;
+    font-size: 15px;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol form .frg-pass-hol-form-hol-btn button{
     padding: 0.5em;
     border-radius: 8px;
     background: #000000;
@@ -73,7 +77,7 @@
     .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol a{
         font-size: 16px;
     }
-    .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol button{
+    .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol form .frg-pass-hol-form-hol-btn button{
         font-size: 15px;
     }
 }
