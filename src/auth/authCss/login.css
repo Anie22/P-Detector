@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 *{
     padding: 0px;
     margin: 0px;
@@ -27,11 +26,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 150px;
+    width: 100px;
 }
 .Login div .inner-app .sub-app .Logo-media-holder .media-han .icon{
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     color: #241F20;
 }
 .Login div .inner-app .sub-app .Logo-media-holder .logo .inner-logo{
@@ -61,7 +60,6 @@
     width: 100%;
 }
 .Login div .inner-app .sub-app .form-holder form .user-input-holder .email label{
-    font-family: 'Inter', sans-serif;
     font-size: 30px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -87,7 +85,6 @@
     height: 86px;
 }
 .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass label{
-    font-family: 'Inter', sans-serif;
     font-size: 30px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -140,7 +137,6 @@
     margin-top: 12px;
 }
 .Login div .inner-app .sub-app .form-holder form .text-hol .frg-txt a{
-    font-family: 'Inter', sans-serif;
     font-size: 19px;
     text-decoration: none;
     color: #593BFD;
@@ -160,13 +156,11 @@
     margin: 0px;
 }
 .Login div .inner-app .sub-app .form-holder form .text-hol .sign-text a{
-    font-family: 'Inter', sans-serif;
     text-decoration: none;
     color: #4E4A4A;
     font-weight: 800;
 }
 .Login div .inner-app .sub-app .form-holder form .button button{
-    font-family: 'Inter', sans-serif;
     width: 100%;
     margin-top: 25px;
     border-radius: 10px;
@@ -253,7 +247,7 @@
     }
     .Login div .inner-app .sub-app .form-holder .heading .head h2{
         font-size: 17px;
-        font-family: 'Inter', sans-serif;
+
         font-weight: 600;
         color: #000000;
     }

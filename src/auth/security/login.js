@@ -1,6 +1,7 @@
 import '../authCss/login.css';
 import React, { useState } from 'react';
 import logo from '../../Img/pedxo_2.png';
+import { Link } from 'react-router-dom'
 import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
@@ -53,7 +54,7 @@ export const Login = () => {
                                 </div>
                                 <div className='text-hol'>
                                     <div className='frg-txt'>
-                                        <a href='loh/'>Forgotten password</a>
+                                        <Link to='Reset-Password'>Forgotten password</Link>
                                     </div>
                                     <div className='sign-text'>
                                         <p>Don't have an account yet?</p>
@@ -65,6 +66,7 @@ export const Login = () => {
                                 </div>
                             </form>
                         </div>
+                        <div></div>
                     </div>
                 </div>
             </div>
