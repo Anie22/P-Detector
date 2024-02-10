@@ -13,7 +13,7 @@ export const ResetPass = () => {
                         </div>
                         <div className='frg-pass-hol-text row gap-3'>
                             <h2>Reset your password</h2>
-                            <p>A code will be sent to your email to enable you to reset your password. Enter your email below to recieve the code.</p>
+                            <p>A code will be sent to your email to enable you reset your password. Enter your email below to receive the code.</p>
                         </div>
                         <div className='frg-pass-hol-form-hol'>
                             <form className='row gap-4' method='' action=''>

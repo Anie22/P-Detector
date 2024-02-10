@@ -9,7 +9,7 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={ <Login /> }></Route>
-          <Route path='Reset-Password' element={ <ResetPass /> }></Route>
+          <Route path='Reset-Password/' element={ <ResetPass /> }></Route>
         </Routes>
       </div>
     </div>
