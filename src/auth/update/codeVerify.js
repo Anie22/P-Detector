@@ -1,9 +1,9 @@
-export const UpdatePass = () => {
+export const VerifyCode = () => {
     return (
         <div>
             <div>
                 <div>
-                    <div></div>
+                    <p>hhhhhhhhhhhhgggfgfgff</p>
                 </div>
             </div>
         </div>
