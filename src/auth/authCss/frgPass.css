@@ -87,6 +87,9 @@
     }
 }
 @media only screen and (max-width: 375px) {
+    .frg-pass-hol .sub-frg-pass-hol{
+        height: 100svh;
+    }
     .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text{
         width: 320px;
     }
