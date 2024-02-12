@@ -116,6 +116,7 @@
 @media only screen and (max-width: 375px) {
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol{
         gap: 7px;
+        padding: 0.7em;
     }
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder h4{
         margin-bottom: 8px;
