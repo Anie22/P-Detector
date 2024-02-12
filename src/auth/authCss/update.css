@@ -115,7 +115,7 @@
 }
 @media only screen and (max-width: 375px) {
     .rst-pas-hol .in-rst-pas-hol{
-        height: 100lvh;
+        height: 100svh;
     }
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol{
         gap: 7px;
