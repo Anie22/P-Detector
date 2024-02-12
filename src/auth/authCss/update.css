@@ -117,16 +117,6 @@
     .rst-pas-hol .in-rst-pas-hol{
         height: 100svh;
     }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol{
-        gap: 7px;
-        padding: 0.7em;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder h4{
-        margin-bottom: 8px;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form{
-        gap: 5px !important;
-    }
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 label{
         font-size: 14px;
     }
@@ -136,12 +126,9 @@
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 .togglebtn{
         left: 20em;
     }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-button{
-        margin-top: 7px;
-    }
 }
 @media only screen and (max-width: 320px) {
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 .togglebtn{
-        left: 15em;
+        left: 16em;
     }
 }
