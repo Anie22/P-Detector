@@ -16,7 +16,7 @@ export const ResetPass = () => {
                             <p>A code will be sent to your email to enable you reset your password. Enter your email below to receive the code.</p>
                         </div>
                         <div className='frg-pass-hol-form-hol'>
-                            <form className='row gap-4' method='' action='reset-password/verify'>
+                            <form className='row gap-4' method='' action='reset-password/update'>
                                 <input className='form-control' type='email' placeholder='Enter your email'></input>
                                 <div className='frg-pass-hol-form-hol-btn d-flex flex-column-reverse gap-3 text-center'>
                                     <Link to='/'>Cancel</Link>
