@@ -114,6 +114,9 @@
     }
 }
 @media only screen and (max-width: 375px) {
+    .rst-pas-hol .in-rst-pas-hol{
+        height: 95vh;
+    }
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol{
         gap: 7px;
     }
