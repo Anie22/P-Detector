@@ -1,6 +1,8 @@
 .rst-pas-hol .in-rst-pas-hol{
+    display: flex;
+    align-items: center;
     background: #F7F6F2;
-    height: 98vh;
+    height: 100vh;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
     display: flex;
