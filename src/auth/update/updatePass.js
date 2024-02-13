@@ -24,7 +24,7 @@ export const UpdatePass = () => {
                                 <img className="img-fluid" src={logo} alt=""></img>
                             </div>
                             <div className="form-holder">
-                                <h4 className="text-center w-100">Change Password</h4>
+                                <h4 className="text-center w-100 mb-3">Change Password</h4>
                                 <div className="sub-form-holder">
                                     <form className="row gap-3" method="" action="">
                                         <div className="form-inp-1">
