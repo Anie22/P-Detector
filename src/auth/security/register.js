@@ -1,5 +1,5 @@
 export const SignUp = () => {
-    return {
-        
-    }
+    return (
+        <p>00</p>
+    )
 }

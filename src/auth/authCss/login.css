@@ -1,12 +1,15 @@
 .Login div .inner-app{
-    background: #F7F6F2;
-    padding: 4em 0;
+    display: flex;
+    align-items: center;
+    background: var(--innerbg);
+    height: 100vh;
 }
 .Login div .inner-app .sub-app{
-    background: #FFF; 
+    background: var(--white); 
     display: flex;
     justify-content: space-between; 
     padding: 2.6em 1em;
+    width: 100%;
 }
 .Login div .inner-app .sub-app .Logo-media-holder{
     display: flex;
@@ -25,10 +28,9 @@
 .Login div .inner-app .sub-app .Logo-media-holder .media-han .icon{
     text-decoration: none;
     font-size: 20px;
-    color: #241F20;
+    color: var(--text);
 }
 .Login div .inner-app .sub-app .Logo-media-holder .logo .inner-logo{
-    /* border: 1px solid #000; */
     width: 100%;
 }
 .Login div .inner-app .sub-app .form-holder{
@@ -57,7 +59,7 @@
     font-size: 30px;
     letter-spacing: 1px;
     font-weight: 600;
-    color: #7F7D7D;
+    color: var(--lightText);
 }
 .Login div .inner-app .sub-app .form-holder form .user-input-holder .email input[type=email]{
     background: none;
@@ -82,7 +84,7 @@
     font-size: 30px;
     letter-spacing: 1px;
     font-weight: 600;
-    color: #7F7D7D;
+    color: var(--lightText);
 }
 .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass input[type=password]{
     background: none;
@@ -116,7 +118,7 @@
 .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass .togglebtn button{
     border: none;
     background: transparent;
-    color: #7F7D7D;
+    color: var(--lightText);
     font-size: 20px;
 }
 .Login div .inner-app .sub-app .form-holder form .text-hol{
@@ -133,7 +135,7 @@
 .Login div .inner-app .sub-app .form-holder form .text-hol .frg-txt a{
     font-size: 19px;
     text-decoration: none;
-    color: #593BFD;
+    color: var(--lightBlue);
 }
 .Login div .inner-app .sub-app .form-holder form .text-hol .sign-text{
     display: flex;
@@ -143,7 +145,7 @@
     width: 100%;
     margin-top: 4px;
     font-size: 18px;
-    color: #4E4A4A;
+    color: var(--lightAsh);
     letter-spacing: 2px;
 }
 .Login div .inner-app .sub-app .form-holder form .text-hol .sign-text p{
@@ -151,7 +153,7 @@
 }
 .Login div .inner-app .sub-app .form-holder form .text-hol .sign-text a{
     text-decoration: none;
-    color: #4E4A4A;
+    color: var(--lightAsh);
     font-weight: 800;
 }
 .Login div .inner-app .sub-app .form-holder form .button button{
@@ -162,8 +164,8 @@
     border: none;
     font-size: 20px;
     padding: 14px 0;
-    background: #000;
-    color: #FFF;
+    background: var(--black);
+    color: var(--white);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -241,9 +243,8 @@
     }
     .Login div .inner-app .sub-app .form-holder .heading .head h2{
         font-size: 17px;
-
         font-weight: 600;
-        color: #000000;
+        color: var(--black);
     }
     .Login div .inner-app .sub-app .form-holder form .user-input-holder {
         gap: 24px;

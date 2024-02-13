@@ -1,14 +1,14 @@
 .frg-pass-hol .sub-frg-pass-hol{
     display: flex;
     align-items: center;
-    background: #F7F6F2;
+    background: var(--innerbg);
     height: 100vh;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
+    background: var(--white);
     height: fit-content;
     padding: 0.2em 1.5em;
     width: 100%;
@@ -35,13 +35,13 @@
     margin: 0;
     font-size: 27px;
     font-weight: 600;
-    color: #241F20;
+    color:  var(--text);
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text p{
     margin: 0;
     font-size: 16px;
     font-weight: 500;
-    color: #7F7D7D;
+    color:  var(--lightText);
     letter-spacing: 1px;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol a{
@@ -50,14 +50,14 @@
     letter-spacing: 1px;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol form .form-control::placeholder{
-    color: #7F7D7D !important;
+    color: var(--lightText) !important;
     font-size: 15px;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol form .frg-pass-hol-form-hol-btn button{
     padding: 0.5em;
     border-radius: 8px;
-    background: #000000;
-    color: #FFFFFF;
+    background: var(--black);
+    color: var(--white);
     border: none;
     cursor: pointer;
     font-size: 19px;

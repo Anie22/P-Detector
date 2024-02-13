@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --lightBlue: hsl(249, 98%, 61%);
+  --black: hsl(0, 0%, 0%);
+  --lightText: hsl(0, 1%, 49%);
+  --text: hsl(348, 7%, 13%);
+  --white: hsl(0, 0%, 100%);
+  --innerbg: hsl(48, 24%, 96%);
+  --lightAsh: hsl(0, 3%, 30%);
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif !important;
@@ -15,4 +25,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+  margin: 0 !important;
 }

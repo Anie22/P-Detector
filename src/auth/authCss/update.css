@@ -1,14 +1,14 @@
 .rst-pas-hol .in-rst-pas-hol{
     display: flex;
     align-items: center;
-    background: #F7F6F2;
+    background: var(--innerbg);
     height: 100vh;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
+    background: var(--white);
     width: 100%;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
@@ -31,7 +31,7 @@
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder h4{
     font-size: 20px;
     font-weight: 600;
-    color: #241F20;
+    color: var(--text);
     margin-bottom: 10px;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1{
@@ -45,10 +45,10 @@
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 600;
-    color: #7F7D7D;
+    color: var(--lightText);
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 input::placeholder{
-    color: #7F7D7D;
+    color: var(--lightText);
     font-size: 14px;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 .togglebtn{
@@ -57,7 +57,7 @@
     left: 30em;
     border: none;
     background: transparent;
-    color: #7F7D7D;
+    color: var(--lightText);
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-2{
     display: flex;
@@ -69,10 +69,10 @@
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 600;
-    color: #7F7D7D;
+    color: var(--lightText);
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-2 input::placeholder{
-    color: #7F7D7D;
+    color: var(--lightText);
     font-size: 14px;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-button{
@@ -81,6 +81,7 @@
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-button button{
     border: none;
     font-size: 18px;
+    background: var(--black);
 }
 
 @media only screen and (max-width: 768px) {

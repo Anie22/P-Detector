@@ -37,7 +37,7 @@ export const UpdatePass = () => {
                                             <input className="form-control" type={displayPassword ? 'text' : 'password'} placeholder={displayPassword ? 'Enter password' : '*********'} value={pass} onChange={(e) => setPass(e.target.value)}></input>
                                         </div>
                                         <div className="form-button">
-                                            <button className="w-100 py-2 rounded-3 bg-dark text-white" type="submit">Change</button>
+                                            <button className="w-100 py-2 rounded-3 text-white" type="submit">Change</button>
                                         </div>
                                     </form>
                                 </div>
