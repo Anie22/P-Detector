@@ -10,6 +10,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 export const SignUp = () => {
     const [icons, setIcons] = useState(null);
     const [mobileIcons, setMobileIcons] = useState(null);
+    const [error, setError] = useState(null)
     const [signText, setSignText] = useState(null);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -27,6 +28,11 @@ export const SignUp = () => {
     const toggleComPass = () => {
         setShowConfirmPass(!showConfirmPass);
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+    }
 
     useEffect(() => {
         const desktopIcons = () => {
@@ -98,26 +104,28 @@ export const SignUp = () => {
                         </div>
                         <div className='form-holder'>
                             {signText}
-                            <form method='' action=''>
+                            <form method='' action='' onSubmit={handleSubmit}>
                                 <div className='user-input-holder'>
                                     <div className='name-holder d-flex items-center w-100 gap-5'>
                                         <div className='fname'>
                                             <label>First name</label>
-                                            <input name='text' type='text' placeholder='first name' value={firstName}></input>
+                                            <input name='text' type='text' placeholder='first name' value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
+                                            {error}
                                         </div>
                                         <div className='lname'>
                                             <label>Last name</label>
-                                            <input name='text' type='text' placeholder='last name' value={lastName}></input>
+                                            <input name='text' type='text' placeholder='last name' value={lastName} onChange={(e) => setLastName(e.target.value)}></input>
                                         </div>
                                     </div>
                                     <div className='unme-eml-hol d-flex items-center w-100 gap-5'>
                                         <div className='uname'>
                                             <label>User name</label>
-                                            <input name='text' type='text' placeholder='user name' value={userName}></input>
+                                            <input name='text' type='text' placeholder='user name' value={userName} onChange={(e) => setUserName(e.target.value)}></input>
                                         </div>
                                         <div className='email'>
                                             <label>Email</label>
-                                            <input name='email' type='email' placeholder='email' value={email}></input>
+                                            <input name='email' type='email' placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                                            {error}
                                         </div>
                                     </div>
                                     <div className='pass-hol d-flex items-center w-100 gap-5'>
