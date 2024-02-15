@@ -10,7 +10,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 export const SignUp = () => {
     const [icons, setIcons] = useState(null);
     const [mobileIcons, setMobileIcons] = useState(null);
-    const [error, setError] = useState(null)
+    // const [error, setError] = useState(null)
     const [signText, setSignText] = useState(null);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -110,7 +110,7 @@ export const SignUp = () => {
                                         <div className='fname'>
                                             <label>First name</label>
                                             <input name='text' type='text' placeholder='first name' value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
-                                            {error}
+                                            {/* {error} */}
                                         </div>
                                         <div className='lname'>
                                             <label>Last name</label>
@@ -125,7 +125,7 @@ export const SignUp = () => {
                                         <div className='email'>
                                             <label>Email</label>
                                             <input name='email' type='email' placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                                            {error}
+                                            {/* {error} */}
                                         </div>
                                     </div>
                                     <div className='pass-hol d-flex items-center w-100 gap-5'>
