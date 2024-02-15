@@ -6,11 +6,10 @@ import '../authCss/update.css'
 
 export const UpdatePass = () => {
     const [password, setPassword] = useState('')
-    const [pass, setPass] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
     const [displayPassword, setDisplayPassword] = useState(false);
 
     const showPass = () => {
-
         setDisplayPassword(!displayPassword)
     }
 
@@ -34,7 +33,7 @@ export const UpdatePass = () => {
                                         </div>
                                         <div className="form-inp-2">
                                             <label>Confirm Password</label>
-                                            <input className="form-control" type={displayPassword ? 'text' : 'password'} placeholder={displayPassword ? 'Enter password' : '*********'} value={pass} onChange={(e) => setPass(e.target.value)}></input>
+                                            <input className="form-control" type={displayPassword ? 'text' : 'password'} placeholder={displayPassword ? 'Enter password' : '*********'} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
                                         </div>
                                         <div className="form-button">
                                             <button className="w-100 py-2 rounded-3 text-white" type="submit">Change</button>

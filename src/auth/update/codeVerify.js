@@ -1,7 +1,20 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import '../authCss/codever.css'
 
 export const VerifyCode = () => {
+    const [time, setTime] = useState(60);
+    
+    useEffect(() => {
+        const countdown = setInterval(() => {
+            if (time > 0) {
+                setTime(prevTime => prevTime - 1)
+            }
+        }, 5000);
+
+        return () => clearInterval(countdown);
+    }, [time])
+
     return (
         <div className="vry-cd-hol">
             <div className="in-vry-cd-hol">
@@ -11,9 +24,9 @@ export const VerifyCode = () => {
                             <h4>We have send a verification code to your email address, kindly enter the code below to verify.</h4>
                         </div>
                         <div className="sub-vry-cd-cmp-hol-frm-hol">
-                            <form method="" action="reset-password/update">
+                            <form method="" action="/reset-password/update">
                                 <div className="vry-frm-txt">
-                                    <p>code expires in 60s</p>
+                                    <p>code expires in {time}s</p>
                                     <input className="form-control" type="text" placeholder="Enter code"></input>
                                 </div>
                                 <div className="form-btn-hol">
