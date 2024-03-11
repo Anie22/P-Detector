@@ -64,8 +64,6 @@ export const SignUp = () => {
             // } catch (error) {
             //   console.error('Error while signing up:', error);
             // }
-        } else if (firstName == '') {
-            console.log('enter firstName')
         }
     };
 
