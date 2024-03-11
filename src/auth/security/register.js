@@ -36,34 +36,34 @@ export const SignUp = () => {
         if (firstName && lastName && userName && password && confirmPassword) {
             alert('Success!');
         
-            const userData = {
-              firstName,
-              lastName,
-              userName,
-              email,
-              password,
-              confirmPassword,
-            };
+            // const userData = {
+            //   firstName,
+            //   lastName,
+            //   userName,
+            //   email,
+            //   password,
+            //   confirmPassword,
+            // };
         
-            try {
-              axios.post('http://pedxo-backend.onrender.com/auth/user/create', userData)
-                .then(response => {
-                  if (response.data.success) {
-                    localStorage.setItem('user', JSON.stringify(userData));
-                    alert('Successfully signed up!');
-                    window.location.href = '/'
-                  } else {
-                    console.error('Signup failed:', response.data.error);
-                    alert('Signup failed. Please check the details and try again.');
-                  }
-                })
-                .catch(error => {
-                  console.error('Error while signing up:', error);
-                  alert('Signup failed. Please check your network connection and try again.');
-                });
-            } catch (error) {
-              console.error('Error while signing up:', error);
-            }
+            // try {
+            //   axios.post('http://pedxo-backend.onrender.com/auth/user/create', userData)
+            //     .then(response => {
+            //       if (response.data.success) {
+            //         localStorage.setItem('user', JSON.stringify(userData));
+            //         alert('Successfully signed up!');
+            //         window.location.href = '/'
+            //       } else {
+            //         console.error('Signup failed:', response.data.error);
+            //         alert('Signup failed. Please check the details and try again.');
+            //       }
+            //     })
+            //     .catch(error => {
+            //       console.error('Error while signing up:', error);
+            //       alert('Signup failed. Please check your network connection and try again.');
+            //     });
+            // } catch (error) {
+            //   console.error('Error while signing up:', error);
+            // }
         } else if (firstName == '') {
             console.log('enter firstName')
         }
