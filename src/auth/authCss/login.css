@@ -294,16 +294,22 @@
     .Login div .inner-app .sub-app .form-holder form .text-hol .sign-text {
         font-size: 14px;
     }
+    .Login div .inner-app .sub-app .form-holder form .user-input-holder .email input[type=email]::placeholder{
+        font-size: 11px;
+    }
+    .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass input[type=password]::placeholder{
+        font-size: 11px;
+    }
 }
 @media only screen and (max-width: 320px) {
     .Login div .inner-app .sub-app .form-holder form .user-input-holder .pass .togglebtn{
         left: 15em;
     }
     .Login div .inner-app .sub-app .form-holder form .text-hol .frg-txt a {
-        font-size: 15px;
+        font-size: 13px;
     }
     .Login div .inner-app .sub-app .form-holder form .text-hol .sign-text {
-        font-size: 13px;
+        font-size: 12px;
         letter-spacing: 1px;
     }
 }

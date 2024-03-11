@@ -89,7 +89,7 @@ export const Login = () => {
                         </div>
                         <div className='form-holder'>
                             {login}
-                            <form method='' action=''>
+                            <form>
                                 <div className='user-input-holder'>
                                     <div className='email'>
                                         <label>Email</label>

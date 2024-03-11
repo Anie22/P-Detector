@@ -69,6 +69,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     color: var(--lightText);
+    text-transform: capitalize;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .fname input[type=text]{
     background: none;
@@ -80,7 +81,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .fname input[type=text]::placeholder{
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .lname{
     display: flex;
@@ -93,6 +94,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     color: var(--lightText);
+    text-transform: capitalize;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .lname input[type=text]{
     background: none;
@@ -104,7 +106,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .lname input[type=text]::placeholder{
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .uname{
     display: flex;
@@ -117,6 +119,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     color: var(--lightText);
+    text-transform: capitalize;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .uname input[type=text]{
     background: none;
@@ -128,7 +131,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .uname input[type=text]::placeholder{
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .email{
     display: flex;
@@ -141,6 +144,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     color: var(--lightText);
+    text-transform: capitalize;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .email input[type=email]{
     background: none;
@@ -152,7 +156,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .email input[type=email]::placeholder{
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass{
     display: flex;
@@ -166,6 +170,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     color: var(--lightText);
+    text-transform: capitalize;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass input[type=password]{
     background: none;
@@ -177,7 +182,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass input[type=password]::placeholder{
     text-transform: capitalize;
-    font-size: 15px;
+    font-size: 12px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass input[type=text]{
     background: none;
@@ -189,7 +194,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass input[type=text]::placeholder{
     text-transform: capitalize;
-    font-size: 15px;
+    font-size: 12px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass .togglebtn{
     position: relative;
@@ -380,6 +385,24 @@
     }
     .signup .signup-inner-app .inner-app .sub-app .media-han .icon{
         font-size: 14px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .fname input[type=text]::placeholder{
+        font-size: 11px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .lname input[type=text]::placeholder{
+        font-size: 11px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .uname input[type=text]::placeholder{
+        font-size: 11px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .email input[type=email]::placeholder{
+        font-size: 11px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass input[type=password]::placeholder{
+        font-size: 11px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass input[type=text]::placeholder{
+        font-size: 11px;
     }
 }
 @media only screen and (max-width: 320px) {

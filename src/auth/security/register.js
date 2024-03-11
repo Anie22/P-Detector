@@ -1,5 +1,6 @@
 import '../authCss/register.css';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import logo from '../../Img/pedxo_2.png';
 import { Link } from 'react-router-dom'
 import { FaFacebookF } from 'react-icons/fa';
@@ -32,7 +33,41 @@ export const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-    }
+        if (firstName && lastName && userName && password && confirmPassword) {
+            alert('Success!');
+        
+            const userData = {
+              firstName,
+              lastName,
+              userName,
+              email,
+              password,
+              confirmPassword,
+            };
+        
+            try {
+              axios.post('http://pedxo-backend.onrender.com/auth/user/create', userData)
+                .then(response => {
+                  if (response.data.success) {
+                    localStorage.setItem('user', JSON.stringify(userData));
+                    alert('Successfully signed up!');
+                    window.location.href = '/'
+                  } else {
+                    console.error('Signup failed:', response.data.error);
+                    alert('Signup failed. Please check the details and try again.');
+                  }
+                })
+                .catch(error => {
+                  console.error('Error while signing up:', error);
+                  alert('Signup failed. Please check your network connection and try again.');
+                });
+            } catch (error) {
+              console.error('Error while signing up:', error);
+            }
+        } else if (firstName == '') {
+            console.log('enter firstName')
+        }
+    };
 
     useEffect(() => {
         const desktopIcons = () => {
@@ -104,7 +139,7 @@ export const SignUp = () => {
                         </div>
                         <div className='form-holder'>
                             {signText}
-                            <form method='' action='' onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit}>
                                 <div className='user-input-holder'>
                                     <div className='name-holder d-flex items-center w-100 gap-5'>
                                         <div className='fname'>
