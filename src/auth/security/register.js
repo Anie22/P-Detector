@@ -1,6 +1,6 @@
 import '../authCss/register.css';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import logo from '../../Img/pedxo_2.png';
 import { Link } from 'react-router-dom'
 import { FaFacebookF } from 'react-icons/fa';
@@ -64,7 +64,7 @@ export const SignUp = () => {
             // } catch (error) {
             //   console.error('Error while signing up:', error);
             // }
-        } else if (firstName == '') {
+        } else if (firstName = '') {
             console.log('enter firstName')
         }
     };
