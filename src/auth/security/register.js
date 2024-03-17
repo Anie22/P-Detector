@@ -42,7 +42,7 @@ export const SignUp = () => {
         setValPas({
             lowerCase: /[a-z]/.test(value),
             upperCase: /[A-Z]/.test(value),
-            specialCharacters: /[!@#\$%\^&\*]/.test(value),
+            specialCharacters: /[!@#$%^&*]/.test(value),
             numbers: /[0-9]/.test(value),
             length: value.length >= 8
         });
