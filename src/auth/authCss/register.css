@@ -312,7 +312,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .text-hol .sign-text a{
     text-decoration: none;
-    color: var(--lightAsh);
+    color: rgb(135, 16, 135);
     font-weight: 800;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .button button{

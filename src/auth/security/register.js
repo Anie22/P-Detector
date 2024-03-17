@@ -62,13 +62,10 @@ export const SignUp = () => {
         if (name === 'password') {
             if(!validatePassword(value)) {
                 setValBox(true)
-                console.log(setValBox)
-                // alert('boss')
             } else if(validatePassword(value)) {
                 setValBox(false)
             } else {
                 setValBox(false)
-                console.log(setValBox)
             }
             
         }
