@@ -107,7 +107,6 @@ export const SignUp = () => {
             
             try {
                const response = await axios.post('https://pedxo-backend.onrender.com/auth', userData);
-               console.log('Response:', response.data);
 
                 if (response) {
                    alert('Successfully signed up!');
@@ -128,8 +127,6 @@ export const SignUp = () => {
                        newError.userName = <p>User already exist</p>
                     }
                 }
-                // console.error('Error while signing up:', error);
-                // alert('Signup failed. Please check the details and try again.');
             }
         }
 
