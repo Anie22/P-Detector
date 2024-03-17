@@ -8,10 +8,10 @@
 :root {
   --lightBlue: hsl(249, 98%, 61%);
   --black: hsl(0, 0%, 0%);
-  --lightText:hsl(0, 1%, 50%)
+  --lightText: hsl(0, 1%, 50%);
   --text: hsl(348, 7%, 13%);
   --white: hsl(0, 0%, 100%);
-  --innerbg: hsl(48, 24%, 96%)
+  --innerbg: hsl(48, 24%, 96%);
   --lightAsh: hsl(0, 3%, 30%);
 }
 

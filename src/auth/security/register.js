@@ -1,9 +1,9 @@
 import '../authCss/register.css';
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import logo from '../../Img/pedxo_2.png';
 import { Link } from 'react-router-dom'
-import { FaFacebookF } from 'react-icons/fa';
+import { FaCheck, FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -11,7 +11,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 export const SignUp = () => {
     const [icons, setIcons] = useState(null);
     const [mobileIcons, setMobileIcons] = useState(null);
-    // const [error, setError] = useState(null)
+    const [error, setError] = useState({});
     const [signText, setSignText] = useState(null);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -21,6 +21,14 @@ export const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPass, setShowConfirmPass] = useState(false);
+    const [valPas, setValPas] = useState({
+        lowerCase: false,
+        upperCase: false,
+        specialCharacters: false,
+        numbers: false,
+        length: false
+    });
+    const [valBox, setValBox] = useState(false)
 
     const togglePass = () => {
         setShowPassword(!showPassword);
@@ -30,40 +38,107 @@ export const SignUp = () => {
         setShowConfirmPass(!showConfirmPass);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const validatePassword = (value) => {
+        setValPas({
+            lowerCase: /[a-z]/.test(value),
+            upperCase: /[A-Z]/.test(value),
+            specialCharacters: /[!@#\$%\^&\*]/.test(value),
+            numbers: /[0-9]/.test(value),
+            length: value.length >= 8
+        });
+    };
 
-        if (firstName && lastName && userName && password && confirmPassword) {
-            alert('Success!');
-        
-            // const userData = {
-            //   firstName,
-            //   lastName,
-            //   userName,
-            //   email,
-            //   password,
-            //   confirmPassword,
-            // };
-        
-            // try {
-            //   axios.post('http://pedxo-backend.onrender.com/auth/user/create', userData)
-            //     .then(response => {
-            //       if (response.data.success) {
-            //         localStorage.setItem('user', JSON.stringify(userData));
-            //         alert('Successfully signed up!');
-            //         window.location.href = '/'
-            //       } else {
-            //         console.error('Signup failed:', response.data.error);
-            //         alert('Signup failed. Please check the details and try again.');
-            //       }
-            //     })
-            //     .catch(error => {
-            //       console.error('Error while signing up:', error);
-            //       alert('Signup failed. Please check your network connection and try again.');
-            //     });
-            // } catch (error) {
-            //   console.error('Error while signing up:', error);
-            // }
+    const handleValue = (e) => {
+        const {name, value} = e.target;
+
+        setError({ ...error, [name]: undefined});
+        setFirstName(name === 'firstName' ? value: firstName);
+        setLastName(name === 'lastName' ? value: lastName);
+        setUserName(name === 'userName' ? value: userName);
+        setEmail(name === 'email' ? value: email);
+        setPassword(name === 'password' ? value: password);
+        setConfirmPassword(name === 'confirmPassword' ? value: confirmPassword);
+
+        if (name === 'password') {
+            if(!validatePassword(value)) {
+                setValBox(true)
+                console.log(setValBox)
+                // alert('boss')
+            } else if(validatePassword(value)) {
+                setValBox(false)
+            } else {
+                setValBox(false)
+                console.log(setValBox)
+            }
+            
+        }
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const newError = {};
+
+        if(!firstName) {
+            newError.firstName = <p>First name required </p>
+            
+        } else if(!lastName) {
+            newError.lastName = <p>Last name required </p>
+
+        } else if(!userName) {
+            newError.userName = <p>User name required </p>
+
+        } else if(!email) {
+            newError.email = <p>email required </p>
+
+        } else if(!password) {
+            newError.password = <p>password required </p>
+
+        } else if(!confirmPassword) {
+            newError.confirmPassword = <p>password required </p>
+
+        } else if(password && confirmPassword !== password) {
+            newError.confirmPassword = <p>password does not match</p>
+
+        } else if (firstName && lastName && userName && email && password && confirmPassword === password) {
+            const userData = {
+                firstName,
+                lastName,
+                userName,
+                email,
+                password
+            };
+            
+            try {
+               const response = await axios.post('https://pedxo-backend.onrender.com/auth', userData);
+               console.log('Response:', response.data);
+
+                if (response) {
+                   alert('Successfully signed up!');
+                   localStorage.setItem('user', JSON.stringify(userData))
+                   window.location.href = '/';
+                } else {
+                    alert('Network issue while signing up')
+                }
+            } catch (error) {
+                if(error.response) {
+                    const {status} = error.response
+                    if (error.response.data.message === 'email and username already exist' && status === 422) {
+                        newError.userName = <p>This user name have already been taken </p>
+                        newError.email = <p>Email already taken </p>
+                    } else if (error.response.data.message === 'email already exist' && status === 422) {
+                       newError.email = <p>Email already exist</p>
+                    } else if (error.response.data.message === 'username already exist' && status === 422) {
+                       newError.userName = <p>User already exist</p>
+                    }
+                }
+                // console.error('Error while signing up:', error);
+                // alert('Signup failed. Please check the details and try again.');
+            }
+        }
+
+        if (Object.keys(newError).length > 0) {
+            setError(newError);
+            return;
         }
     };
 
@@ -137,44 +212,72 @@ export const SignUp = () => {
                         </div>
                         <div className='form-holder'>
                             {signText}
-                            <form onSubmit={handleSubmit}>
+                            <form method='post' autoComplete='off' onSubmit={handleSubmit}>
                                 <div className='user-input-holder'>
                                     <div className='name-holder d-flex items-center w-100 gap-5'>
                                         <div className='fname'>
                                             <label>First name</label>
-                                            <input name='text' type='text' placeholder='first name' value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
-                                            {/* {error} */}
+                                            <input name='firstName' type='text' placeholder='first name' value={firstName} onChange={(e) => handleValue(e)}></input>
+                                            {error.firstName}
                                         </div>
                                         <div className='lname'>
                                             <label>Last name</label>
-                                            <input name='text' type='text' placeholder='last name' value={lastName} onChange={(e) => setLastName(e.target.value)}></input>
+                                            <input name='lastName' type='text' placeholder='last name' value={lastName} onChange={(e) => handleValue(e)}></input>
+                                            {error.lastName}
                                         </div>
                                     </div>
                                     <div className='unme-eml-hol d-flex items-center w-100 gap-5'>
                                         <div className='uname'>
                                             <label>User name</label>
-                                            <input name='text' type='text' placeholder='user name' value={userName} onChange={(e) => setUserName(e.target.value)}></input>
+                                            <input name='userName' type='text' placeholder='user name' value={userName} onChange={(e) => handleValue(e)}></input>
+                                            {error.userName}
                                         </div>
                                         <div className='email'>
                                             <label>Email</label>
-                                            <input name='email' type='email' placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                                            {/* {error} */}
+                                            <input name='email' type='email' placeholder='email' value={email} onChange={(e) => handleValue(e)}></input>
+                                            {error.email}
                                         </div>
                                     </div>
                                     <div className='pass-hol d-flex items-center w-100 gap-5'>
-                                        <div className='pass'>
+                                        <div className='pass password-holder'>
                                             <label>Password</label>
-                                            <input name='pass' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={showPassword ? 'Enter your password' : '********'}></input>
+                                            <input name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleValue(e)} placeholder={showPassword ? 'Enter your password' : '********'}></input>
                                             <div className='togglebtn'>
-                                                <button type='button' onClick={togglePass}>{showPassword ? <FaEye /> : <FaEyeSlash /> }</button>
+                                                <button type='button' onClick={togglePass}>{showPassword ? <FaEye className='fa' /> : <FaEyeSlash className='fa' /> }</button>
+                                            </div>
+                                            {error.password}
+                                            <div className={`password-validator-box w-100 ${valBox ? 'show-box' : 'hide-box'}`}>
+                                                <div className='d-flex flex-column inner-validator-box'>
+                                                    <div className={`validator1 ${valPas.upperCase ? 'right' : 'wrong'}`}>
+                                                        <FaCheck className={`fa ${valPas.upperCase ? 'show' : 'hide'}`} />
+                                                        <p>Must contain at least one uppercase A-Z</p>
+                                                    </div>
+                                                    <div className={`validator1 ${valPas.lowerCase ? 'right' : 'wrong'}`}>
+                                                        <FaCheck className={`fa ${valPas.lowerCase ? 'show' : 'hide'}`} />
+                                                        <p>Must contain at least one lowercase a-z</p>
+                                                    </div>
+                                                    <div className={`validator1 ${valPas.specialCharacters ? 'right' : 'wrong'}`}>
+                                                        <FaCheck className={`fa ${valPas.specialCharacters ? 'show' : 'hide'}`} />
+                                                        <p>Must contain at least one sepcial characters @-$</p>
+                                                    </div>
+                                                    <div className={`validator1 ${valPas.numbers ? 'right' : 'wrong'}`}>
+                                                        <FaCheck className={`fa ${valPas.numbers ? 'show' : 'hide'}`} />
+                                                        <p>Must contain at least one numbers 0-9</p>
+                                                    </div>
+                                                    <div className={`validator1 ${valPas.length ? 'right' : 'wrong'}`}>
+                                                        <FaCheck className={`fa ${valPas.length ? 'show' : 'hide'}`} />
+                                                        <p>Must be at least a minimum of 8 characters long</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className='pass'>
                                             <label>Confirm Password</label>
-                                            <input name='pass' type={showConfirmPass ? 'text' : 'password'} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder={showConfirmPass ? 'Enter your password' : '********'}></input>
+                                            <input name='confirmPassword' type={showConfirmPass ? 'text' : 'password'} value={confirmPassword} onChange={(e) => handleValue(e)} placeholder={showConfirmPass ? 'Enter your password' : '********'}></input>
                                             <div className='togglebtn'>
                                                 <button type='button' onClick={toggleComPass}>{showConfirmPass ? <FaEye /> : <FaEyeSlash /> }</button>
                                             </div>
+                                            {error.confirmPassword}
                                         </div>
                                     </div>
                                 </div>

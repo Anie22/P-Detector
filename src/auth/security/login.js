@@ -97,7 +97,7 @@ export const Login = () => {
                                     </div>
                                     <div className='pass'>
                                         <label>Password</label>
-                                        <input name='pass' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={showPassword ? 'Enter your password' : '********'}></input>
+                                        <input name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={showPassword ? 'Enter your password' : '********'}></input>
                                         <div className='togglebtn'>
                                             <button type='button' onClick={togglePass}>{showPassword ? <FaEye /> : <FaEyeSlash /> }</button>
                                         </div>

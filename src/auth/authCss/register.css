@@ -55,7 +55,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 25px;
+    gap: 15px;
     width: 100%;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .fname{
@@ -83,6 +83,13 @@
     text-transform: capitalize;
     font-size: 12px;
 }
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .fname p{
+    text-transform: capitalize;
+    font-size: 12px;
+    color: red;
+    margin: 2px 0 !important;
+    font-weight: 500;
+}
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .lname{
     display: flex;
     flex-direction: column;
@@ -107,6 +114,13 @@
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .lname input[type=text]::placeholder{
     text-transform: capitalize;
     font-size: 12px;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .name-holder .lname p{
+    text-transform: capitalize;
+    font-size: 12px;
+    color: red;
+    margin: 2px 0 !important;
+    font-weight: 500;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .uname{
     display: flex;
@@ -133,6 +147,13 @@
     text-transform: capitalize;
     font-size: 12px;
 }
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .uname p{
+    text-transform: capitalize;
+    font-size: 12px;
+    color: red;
+    margin: 2px 0 !important;
+    font-weight: 500;
+}
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .email{
     display: flex;
     flex-direction: column;
@@ -158,12 +179,19 @@
     text-transform: capitalize;
     font-size: 12px;
 }
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .unme-eml-hol .email p{
+    text-transform: capitalize;
+    font-size: 12px;
+    color: red;
+    margin: 2px 0 !important;
+    font-weight: 500;
+}
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    height: 86px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass label{
     font-size: 20px;
@@ -196,9 +224,17 @@
     text-transform: capitalize;
     font-size: 12px;
 }
-.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass .togglebtn{
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass p{
     position: relative;
-    top: -2em;
+    text-transform: capitalize;
+    font-size: 12px;
+    color: red;
+    margin: 2px 0 !important;
+    font-weight: 500;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass .togglebtn{
+    position: absolute;
+    top: 2.5em;
     left: 18em;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass .togglebtn button{
@@ -207,16 +243,53 @@
     color: var(--lightText);
     font-size: 20px;
 }
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .pass .togglebtn button .fa{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box{
+    position: relative;
+    height: fit-content;
+    top: 4px;
+    border-radius: 7px;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .hide-box{
+    display: none;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .show-box{
+    display: flex;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box .inner-validator-box .validator1{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box .inner-validator-box .validator1 p{
+    font-size: 10px;
+    text-transform: none;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box .inner-validator-box .validator1 .fa{
+    font-size: 10px;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box .inner-validator-box .wrong{
+    color: red;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box .inner-validator-box .right p{
+    color: var(--lightAsh) !important;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box .inner-validator-box .validator1 .hide{
+    display: none;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-holder form .user-input-holder .pass-hol .password-holder .password-validator-box .inner-validator-box .validator1 .show{
+    display: block;
+    color: var(--lightAsh) !important;
+}
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .text-hol{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 14px;
     width: 100%;
-    margin-top: 4px;
-}
-.signup .signup-inner-app .inner-app .sub-app .form-holder form .text-hol .frg-txt{
-    margin-top: 12px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-holder form .text-hol .frg-txt a{
     font-size: 19px;
@@ -229,7 +302,7 @@
     justify-content: right;
     gap: 5px;
     width: 100%;
-    margin-top: 4px;
+    margin-top: 15px;
     font-size: 18px;
     color: var(--lightAsh);
     letter-spacing: 2px;
