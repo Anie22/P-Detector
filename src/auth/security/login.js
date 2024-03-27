@@ -7,17 +7,73 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import axios from 'axios';
 
 export const Login = () => {
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [icons, setIcons] = useState(null);
     const [mobileIcons, setMobileIcons] = useState(null);
     const [login, setLogin] = useState(null);
+    const [error, setError] = useState({})
 
     const togglePass = () => {
         setShowPassword(!showPassword);
     };
+
+    const handleInput = (e) => {
+        const {name, value} = e.target
+
+        setError({ ...error, [name]: undefined});
+        setEmail(name === 'email' ? value: email);
+        setPassword(name === 'password' ? value: password);
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const newErr = {};
+
+        if(!email) {
+            newErr.email = <p>Email required</p>
+        } else if(!password) {
+            newErr.password = <p>Password required</p>
+        } else {
+            const userLogins = {
+                email,
+                password
+            };
+
+            try {
+                const res = await axios.post('https://pedxo-backend.onrender.com/auth/login', userLogins);
+                if(res) {
+                    const token = res.data
+                    localStorage.setItem('currentSes', token)
+                    window.location.href = '/dec'
+                }
+                
+            } catch(err) {
+                if(err.response){
+                    const {status} = err.response
+                    if(status === 404){
+                        newErr.email = <p>Invalid email address</p>
+                    } else {
+                        newErr.password = <p>Wrong password</p>
+                    }
+                    
+                }
+                console.log(err)
+            }
+
+            console.log('res, token')
+        }
+
+        if (Object.keys(newErr).length > 0) {
+            setError(newErr);
+            return;
+        }
+
+    }
 
     useEffect(() => {
         const desktopIcons = () => {
@@ -89,18 +145,20 @@ export const Login = () => {
                         </div>
                         <div className='form-holder'>
                             {login}
-                            <form>
+                            <form method='post' autoComplete='off' onSubmit={handleSubmit}>
                                 <div className='user-input-holder'>
                                     <div className='email'>
                                         <label>Email</label>
-                                        <input name='email' type='email' placeholder='email'></input>
+                                        <input name='email' value={email} onChange={(e) => handleInput(e)} type='email' placeholder='email'></input>
+                                        {error.email}
                                     </div>
                                     <div className='pass'>
                                         <label>Password</label>
-                                        <input name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={showPassword ? 'Enter your password' : '********'}></input>
+                                        <input name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleInput(e)} placeholder={showPassword ? 'Enter your password' : '********'}></input>
                                         <div className='togglebtn'>
                                             <button type='button' onClick={togglePass}>{showPassword ? <FaEye /> : <FaEyeSlash /> }</button>
                                         </div>
+                                        {error.password}
                                     </div>
                                 </div>
                                 <div className='text-hol'>

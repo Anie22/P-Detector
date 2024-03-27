@@ -60,9 +60,11 @@ export const SignUp = () => {
         setConfirmPassword(name === 'confirmPassword' ? value: confirmPassword);
 
         if (name === 'password') {
+            validatePassword(value)
+
             if(!validatePassword(value)) {
                 setValBox(true)
-            } else if(validatePassword(value)) {
+            } else if(validatePassword(value) === valPas) {
                 setValBox(false)
             } else {
                 setValBox(false)
@@ -87,7 +89,7 @@ export const SignUp = () => {
         } else if(!email) {
             newError.email = <p>email required </p>
 
-        } else if(!password) {
+        } else if(!password && password !== validatePassword) {
             newError.password = <p>password required </p>
 
         } else if(!confirmPassword) {
@@ -96,7 +98,8 @@ export const SignUp = () => {
         } else if(password && confirmPassword !== password) {
             newError.confirmPassword = <p>password does not match</p>
 
-        } else if (firstName && lastName && userName && email && password && confirmPassword === password) {
+        } else if (firstName && lastName && userName && email && password && confirmPassword === password && password === validatePassword) {
+
             const userData = {
                 firstName,
                 lastName,
@@ -110,7 +113,7 @@ export const SignUp = () => {
 
                 if (response) {
                    alert('Successfully signed up!');
-                   localStorage.setItem('user', JSON.stringify(userData))
+                   console(response)
                    window.location.href = '/';
                 } else {
                     alert('Network issue while signing up')
@@ -127,7 +130,11 @@ export const SignUp = () => {
                        newError.userName = <p>User already exist</p>
                     }
                 }
+
+                console('boss', error)
             }
+
+            console(userData)
         }
 
         if (Object.keys(newError).length > 0) {
@@ -282,7 +289,7 @@ export const SignUp = () => {
                                     </div>
                                 </div>
                                 <div className='button'>
-                                    <button type='submit'>Create account</button>
+                                    <input type='submit' ></input>
                                 </div>
                             </form>
                         </div>
