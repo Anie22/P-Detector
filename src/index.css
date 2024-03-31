@@ -6,13 +6,26 @@
 }
 
 :root {
-  --lightBlue: hsl(249, 98%, 61%);
-  --black: hsl(0, 0%, 0%);
-  --lightText: hsl(0, 1%, 50%);
-  --text: hsl(348, 7%, 13%);
+  --backgroundPrimary:hsl(44, 99%, 63%);
+  --backgroundSecondary:hsl(44, 100%, 96%);
   --white: hsl(0, 0%, 100%);
-  --innerbg: hsl(48, 24%, 96%);
-  --lightAsh: hsl(0, 3%, 30%);
+  --lightBlack: hsl(222, 13%, 19%);
+  --text: hsl(218, 13%, 33%);
+  --innerblack: hsl(219, 13%, 25%);
+  --lightAsh: hsl(219, 13%, 46%);
+  --buttonText: hsl(246, 100%, 96%);
+  --button: hsl(246, 100%, 64%); 
+  --icons: hsl(38, 90%, 19%);
+  --iconsHolder: hsl(44, 100%, 89%);
+  --faq: hsl(220, 11%, 95%);
+  --black: hsl(0, 0%, 0%);
+  --subText: hsl(217, 11%, 64%);
+  --span: hsl(220, 11%, 57%);
+  --faqText: hsl(219, 13%, 42%);
+  --footerText: hsl(218, 15%, 65%);
+  --hr: hsl(218, 17%, 91%);
+  --gradient: hsl(42, 92%, 69%);
+  --gradient2: hsl(41, 76%, 74%);
 }
 
 body {
@@ -20,6 +33,7 @@ body {
   font-family: 'Inter', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh !important;
 }
 
 code {

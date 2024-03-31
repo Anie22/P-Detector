@@ -98,7 +98,7 @@ export const SignUp = () => {
         } else if(password && confirmPassword !== password) {
             newError.confirmPassword = <p>password does not match</p>
 
-        } else if (firstName && lastName && userName && email && password && confirmPassword === password && password === validatePassword) {
+        } else if (firstName && lastName && userName && email && password && confirmPassword === password) {
 
             const userData = {
                 firstName,
@@ -110,10 +110,8 @@ export const SignUp = () => {
             
             try {
                const response = await axios.post('https://pedxo-backend.onrender.com/auth', userData);
-
                 if (response) {
                    alert('Successfully signed up!');
-                   console(response)
                    window.location.href = '/';
                 } else {
                     alert('Network issue while signing up')
@@ -130,11 +128,7 @@ export const SignUp = () => {
                        newError.userName = <p>User already exist</p>
                     }
                 }
-
-                console('boss', error)
             }
-
-            console(userData)
         }
 
         if (Object.keys(newError).length > 0) {
@@ -289,7 +283,7 @@ export const SignUp = () => {
                                     </div>
                                 </div>
                                 <div className='button'>
-                                    <input type='submit' ></input>
+                                    <button type='submit' >Create account</button>
                                 </div>
                             </form>
                         </div>

@@ -5,13 +5,17 @@ import { ResetPass } from './auth/update/forgetPass'
 import { VerifyCode } from './auth/update/codeVerify';
 import { UpdatePass } from './auth/update/updatePass';
 import { SignUp } from './auth/security/register';
+import { Home } from './home/contents/home';
+import { Demo } from './home/forms/demo';
 
 function App() {
   return (
     <div className="App">
       <div>
         <Routes>
-          <Route path='/' element={ <Login /> }></Route>
+          <Route path='/' element={ <Home /> }></Route>
+          <Route path='/book-demo' element={ <Demo /> }></Route>
+          <Route path='/login' element={ <Login /> }></Route>
           <Route path='/register' element={ <SignUp /> }></Route>
           <Route path='/reset-password' element={ <ResetPass /> }></Route>
           <Route path='/reset-password/verify' element={ <VerifyCode /> }></Route>

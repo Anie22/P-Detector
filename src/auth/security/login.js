@@ -64,8 +64,6 @@ export const Login = () => {
                 }
                 console.log(err)
             }
-
-            console.log('res, token')
         }
 
         if (Object.keys(newErr).length > 0) {
