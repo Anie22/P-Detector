@@ -44,9 +44,9 @@ export const Home = () => {
         slidesToShow: 5.5,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 5,
         arrows: false,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        autoplaySpeed: 1000,
     }
 
     useEffect(() => {
