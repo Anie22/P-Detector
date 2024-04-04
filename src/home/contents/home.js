@@ -85,7 +85,7 @@ export const Home = () => {
             clearInterval(desCount);
             clearInterval(conCount);
         }
-    }, [devCount], [designCount], [contractCount])
+    }, [devCount, designCount, contractCount])
 
     const remoteInfos = [
         {title: 'Hire', subTitle: 'employees', des: 'Join the fleet of companies that are benefiting from remote work arrangements by allowing their employees to work from home while saving a lot of cash.', icons: <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" className='fa'>
@@ -267,7 +267,7 @@ export const Home = () => {
                                         </button>
                                     </div>
                                     <div className='read'>
-                                        <a className='read-link' href='https://nairametrics.com/2023/10/16/the-mvp-important-aspects-to-consider-in-your-start-ups-online-business-process' target='_blank'>
+                                        <a className='read-link' href='https://nairametrics.com/2023/10/16/the-mvp-important-aspects-to-consider-in-your-start-ups-online-business-process' target='_blank' rel='noreferrer'>
                                             <p>Read about us on Nairametrics</p>
                                         </a>
                                     </div>
