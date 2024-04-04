@@ -1,67 +1,176 @@
+.frg-pass-hol{
+    display: inline-flex;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
 .frg-pass-hol .sub-frg-pass-hol{
     display: flex;
-    align-items: center;
-    background: var(--innerbg);
-    height: 100vh;
+    height: fit-content;
+    justify-content: center;
+    background: var(--white);
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol{
     display: flex;
+    width: 720px;
+    padding: 100px;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     background: var(--white);
-    height: fit-content;
-    padding: 0.2em 1.5em;
-    width: 100%;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol{
     display: flex;
+    width: 500px;
+    padding: 32px 28px;
+    align-items: flex-start;
+    gap: 8px;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    flex: 1 0 0;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-text{
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1em;
-    height: fit-content;
-    padding: 1em;
-    width: fit-content;
+    gap: 14px;
+    align-self: stretch;
 }
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-logo{
-    width: 30%;
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-text h2{
+    align-self: stretch;
+    color: var(--label);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.64px;
 }
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text{
-    text-align: center;
-    width: 650px;
-    line-height: 2;
-}
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text h2{
-    margin: 0;
-    font-size: 27px;
-    font-weight: 600;
-    color:  var(--text);
-}
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-text p{
-    margin: 0;
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-text p{
+    color: var(--lightAsh);
+    font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
     font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol{
+    width: 100%;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    width: 100%;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    width: 100%;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol label{
+    align-self: stretch;
+    color: var(--label);
+    font-size: 14px;
+    font-style: normal;
     font-weight: 500;
-    color:  var(--lightText);
-    letter-spacing: 1px;
+    line-height: 145%;
+    text-transform: uppercase;
 }
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol a{
-    text-decoration: none;
-    font-size: 18px;
-    letter-spacing: 1px;
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol .in-ico{
+    position: relative;
+    width: 100%;
 }
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol form .form-control::placeholder{
-    color: var(--lightText) !important;
-    font-size: 15px;
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol .in-ico input[type='email']{
+    height: 56px;
+    padding: 16px;
+    align-self: stretch;
+    border-radius: 6px;
+    border: 1px solid var(--login);
+    background: var(--white);
+    width: 100%;
+    font-size: 16px;
+    color: var(--text);
+    outline: none;
 }
-.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-pass-hol-form-hol form .frg-pass-hol-form-hol-btn button{
-    padding: 0.5em;
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol .in-ico input[type='email']::placeholder{
+    color: var(--footerText);
+    font-feature-settings: 'cv04' on, 'cv03' on;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+    text-transform: capitalize;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol .in-ico input[type='email']:focus{
+    border: 1px solid var(--focus);
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol .in-ico .fa-holder{
+    position: absolute;
+    bottom: 17px;
+    right: 11px;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol .in-ico .fa-holder .fa{
+    width: 20px;
+    height: 20px;
+    fill: var(--inputBorder);
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .frg-pass-hol-form-hol-btn{
+    gap: 32px;
+    align-self: stretch;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .frg-pass-hol-form-hol-btn .link-hol{
+    display: flex;
+    padding: 16px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
     border-radius: 8px;
-    background: var(--black);
-    color: var(--white);
+    background: var(--back);
+    text-decoration: none;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .frg-pass-hol-form-hol-btn .link-hol p{
+    color: var(--lightBlack);
+    font-feature-settings: 'cv04' on, 'cv03' on;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 145%;
+    text-transform: capitalize;
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .frg-pass-hol-form-hol-btn .button{
+    display: flex;
+    padding: 16px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 8px;
+    background: var(--backgroundPrimary);
+}
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .frg-pass-hol-form-hol-btn .button button{
+    flex: 1 0 0;
+    color: var(--lightBlack);
+    text-align: center;
+    font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 145%;
     border: none;
-    cursor: pointer;
-    font-size: 19px;
-    letter-spacing: 1px;
+    width: 100%;
+    background: none;
 }
 @media only screen and (max-width: 700px) {
     .frg-pass-hol .sub-frg-pass-hol{

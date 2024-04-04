@@ -1,0 +1,45 @@
+.Logo-content-holder{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    background: var(--backgroundPrimary);
+}
+.Logo-content-holder .logo-content{
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.Logo-content-holder .logo-content .logo .link{
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -1.6px;
+}
+.Logo-content-holder .logo-content .logo .link a{
+    color: var(--lightBlack);
+    text-decoration: none;
+}
+.Logo-content-holder .logo-content .content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.Logo-content-holder .logo-content .content h2{
+    width: 519.419px;
+    color: var(--lightBlack);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -1.6px;
+}
+.Logo-content-holder .logo-content .content h2 span{
+    color: var(--lightAsh);
+}

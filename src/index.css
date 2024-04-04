@@ -26,14 +26,24 @@
   --hr: hsl(218, 17%, 91%);
   --gradient: hsl(42, 92%, 69%);
   --gradient2: hsl(41, 76%, 74%);
+  --inputBorder: hsl(220, 11%, 83%);
+  --label: hsl(218, 43%, 11%);
+  --demoText: hsl(44, 57%, 45%);
+  --danger: hsl(0, 100%, 60%);
+  --focus: hsl(44, 100%, 83%);
+  --login: hsl(218, 16%, 84%);
+  --back: hsl(0, 4%, 95%);
 }
 
-body {
-  margin: 0;
+body{
   font-family: 'Inter', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh !important;
+  height: 100vh;
+}
+
+html{
+  height: 100%;
 }
 
 code {
@@ -41,6 +51,6 @@ code {
     monospace;
 }
 
-p, h1, h2, h3, h4, h5, h6{
+p, h1, h2, h3, h4, h5, h6, p{
   margin: 0 !important;
 }
