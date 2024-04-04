@@ -11,11 +11,13 @@
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder{
     display: flex;
-    width: 754px;
-    padding: 100px;
+    width: 720px;
+    padding: 71px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background: var(--white);
+    height: 633px;
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder{
     display: flex;

@@ -13,11 +13,12 @@
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol{
     display: flex;
     width: 720px;
-    padding: 100px;
+    padding: 71px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background: var(--white);
+    height: 633px;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol{
     display: flex;

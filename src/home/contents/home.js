@@ -127,15 +127,20 @@ export const Home = () => {
     ]
 
     const faqs = [
-        {ques: 'How much does Pedxo charge?', ans: 'The digital world is changing. Brands need to be fast, creative, and flexible. That’s where no-code comes in: a cutting-edge movement which...'},
-        {ques: 'What is the timeframe for project delivery?'},
+        {ques: 'How much does Pedxo charge?', ans: 'To keep your platform running, you would have to make a subscription billed monthly. No equity.'},
+        {ques: 'What is the timeframe for project delivery?', ans: 'Building an MVP takes continuous testing and iteration to succesfully come up with a working product that your users can interact with, in the process there is no guaranteed date for project completion.', con: 'It takes up to 18 months to create an effective technology for an MVP depending on your industry.'},
         {ques: 'How to start working with Pedxo?', ans: 'To hire Pedxo is very simple. Below are the steps to follow;', lists: [
             {listAns: 'Talk with our team about your idea, market and challenges.'},
             {listAns: 'We sign an NDA if required, to maintain high level of privacy.'},
             {listAns: 'After intensive project review and paperwork, we’ll come back with a hand picked engineers whose skills and experience are best align with your needs.'},
         ], con: 'Once approved, the team assigned to your project will start working and sending you updates regularly'},
-        {ques: 'What is an MVP and why is it so important?'},
-        {ques: 'Why choose Pedxo?'}
+        {ques: 'What is an MVP and why is it so important?', ans: "An MVP stands for Minimum Viable Product. It's the simplest version of a product that can be released to market with just the core features necessary to satisfy early adopters. It's important because it allows teams to validate their idea with real users, gather feedback, and iterate based on that feedback before investing heavily in development."},
+        {ques: 'Why choose Pedxo?', lists: [
+            {listAns: 'Speed:- Faster execution and design iteration.'},
+            {listAns: 'Quality:- A highly testing and tech update.'},
+            {listAns: 'Cost:- The same price for a full time hire or agency.'},
+            {listAns: 'Strategies:- We have the strategy in place to make you launch and gain traction with a minimal resources.'}
+        ]}
     ]
 
 
