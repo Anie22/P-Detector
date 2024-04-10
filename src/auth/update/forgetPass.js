@@ -1,8 +1,104 @@
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import '../authCss/frgPass.css';
 import { Link } from 'react-router-dom';
 import { Logo } from '../logo';
+import { Loader } from '../../components/loader';
+import { Success } from '../../components/success';
+import  axios  from 'axios';
 
 export const ResetPass = () => {
+    const [email, setEmail] = useState('');
+    const [loader, setLoader] = useState(false);
+    const [error, setError] = useState({});
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState(false);
+    const [icon, setIcon] = useState(null)
+
+    const handleEml = (e) => {
+        const {name, value} = e.target
+
+        setError({...error, [name]: undefined});
+        setEmail(name === 'email' ? value: email);
+    };
+
+    console.log(icon)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const err = {};
+
+        if(!email) {
+            err.email = <p>Email required</p>
+        }
+        
+        if(email) {
+            const data = {
+                email
+            };
+            try {
+                setLoader(true);
+
+                const url = 'https://pedxo-backend.onrender.com/auth/forgot-password';
+                const res = await axios.post(url, data);
+
+                if(res) {
+                    console.log(res)
+                }
+
+            } catch (error) {
+                if(error) {
+                    setIcon(
+                        <div className="error">
+                            <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    );
+
+                    if(error.message === "Network Error"){
+                        setMessage('Network error, check your network');
+                    }
+                }
+                console.log(error);
+
+            } finally {
+                // setLoader(false);
+            }
+        };
+
+        if (Object.keys(err).length > 0) {
+            setError(err);
+            return;
+        }
+    }
+
+    useEffect(() => {
+        if(loader) {
+            setLoader(true);
+
+            const load = setTimeout(() => {
+                setLoader(false);
+            }, 7000);
+    
+            return () => clearTimeout(load);
+        };
+
+        if(message === 'Network error, check your network' || message === 500 || message === 400 || message === 404) {
+            setMessages(true);        
+            
+            const Message = setTimeout(() => {
+                setMessages(false);
+            }, 4900);
+    
+            return () => clearTimeout(Message);
+        }else {
+            setMessage(false)
+        }
+
+    }, [loader, message, icon])
+
     return (
         <div className="frg-pass-hol">
             <div className="sub-frg-pass-hol">
@@ -15,17 +111,18 @@ export const ResetPass = () => {
                                 <p>Enter the email you used to create your account so we can send you instructions on how to reset your password.</p>
                             </div>
                             <div className='frg-pass-hol-form-hol'>
-                                <form className='main-form' method='post'>
+                                <form className='main-form' method='post' autoComplete='off' onSubmit={handleSubmit}>
                                     <div className='email-hol'>
                                         <label>Email Address</label>
                                         <div className='in-ico'>
-                                            <input type='email' placeholder='Enter your email'></input>
+                                            <input type='email' placeholder='Enter your email' name='email' value={email} onChange={(e) => handleEml(e)}></input>
                                             <div className='fa-holder'>
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8323 17.5C17.6732 17.5 19.1656 16.0076 19.1656 14.1667V6.68557C19.1659 6.67283 19.1659 6.66005 19.1656 6.64725V5.83333C19.1656 3.99238 17.6732 2.5 15.8323 2.5H4.16559C2.32464 2.5 0.832253 3.99238 0.832253 5.83333V6.64726C0.831957 6.66005 0.831958 6.67282 0.832253 6.68556V14.1667C0.832253 16.0076 2.32464 17.5 4.16559 17.5H15.8323ZM2.49892 14.1667C2.49892 15.0871 3.24511 15.8333 4.16559 15.8333H15.8323C16.7527 15.8333 17.4989 15.0871 17.4989 14.1667V7.89753L11.2369 10.4023C10.4422 10.7202 9.55565 10.7202 8.76095 10.4023L2.49892 7.89753V14.1667ZM10.6179 8.85488L17.4989 6.10247V5.83333C17.4989 4.91286 16.7527 4.16667 15.8323 4.16667H4.16559C3.24511 4.16667 2.49892 4.91286 2.49892 5.83333V6.10247L9.37993 8.85488C9.77729 9.01382 10.2206 9.01382 10.6179 8.85488Z"/>
                                                 </svg>
                                             </div>
                                         </div>
+                                        {error.email}
                                     </div>
                                     <div className='frg-pass-hol-form-hol-btn d-flex flex-column-reverse text-center'>
                                         <Link to={'/login'} className='link-hol'>
@@ -40,6 +137,8 @@ export const ResetPass = () => {
                         </div>
                     </div>
                 </div>
+                {loader && <Loader />}
+                {messages && <Success message={message} icon={icon} />}
             </div>
         </div>
     )

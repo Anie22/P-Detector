@@ -365,6 +365,7 @@
     position: absolute;
     bottom: 17px;
     right: 11px;
+    cursor: pointer;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .inputs .password-confirm-holder .pass .in-ico .fa-holder .fa{
    width: 20px;

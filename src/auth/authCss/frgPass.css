@@ -124,6 +124,12 @@
     height: 20px;
     fill: var(--inputBorder);
 }
+.frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .email-hol p{
+    text-transform: capitalize;
+    font-size: 12px;
+    color: var(--danger);
+    font-weight: 500;
+}
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .frg-pass-hol-form-hol-btn{
     gap: 32px;
     align-self: stretch;
@@ -159,6 +165,7 @@
     align-self: stretch;
     border-radius: 8px;
     background: var(--backgroundPrimary);
+    cursor: pointer;
 }
 .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-form-hol .main-form .frg-pass-hol-form-hol-btn .button button{
     flex: 1 0 0;

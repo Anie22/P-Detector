@@ -321,7 +321,7 @@
     box-shadow: 0px 10.596px 15.894px -2.649px rgba(16, 25, 40, 0.08), 0px 2.649px 3.973px -1.324px rgba(16, 25, 40, 0.03);
     margin: 5px 0;
     overflow: hidden;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
     opacity: 0;
     max-height: 0px;
 }
@@ -349,7 +349,7 @@
     gap: 6px;
     align-self: stretch;
     cursor: pointer;
-    transition: all 0.9s linear;
+    transition: all 0.5s linear;
 }
 .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .third-input-field-holder .count-field-holder .count-input-holder .select-box .select-list .list:hover{
     background: var(--backgroundPrimary);
@@ -634,4 +634,5 @@
 
 .active{
     color: var(--backgroundPrimary);
+    cursor: pointer;
 }

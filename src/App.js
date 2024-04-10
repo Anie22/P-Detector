@@ -7,6 +7,7 @@ import { UpdatePass } from './auth/update/updatePass';
 import { SignUp } from './auth/security/register';
 import { Home } from './home/contents/home';
 import { Demo } from './home/forms/demo';
+import { Outsource } from './home/forms/outsource';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={ <Home /> }></Route>
           <Route path='/book-demo' element={ <Demo /> }></Route>
+          <Route path='/outsource' element={ <Outsource /> }></Route>
           <Route path='/login' element={ <Login /> }></Route>
           <Route path='/register' element={ <SignUp /> }></Route>
           <Route path='/reset-password' element={ <ResetPass /> }></Route>

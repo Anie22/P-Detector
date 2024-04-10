@@ -38,19 +38,19 @@ export const Footer = () => {
                             <nav className="nav-links-holder">
                                 <ul className="nav-links-content">
                                     <li className="link">
-                                        <a href="/about">About</a>
+                                        <a href="/#about">About</a>
                                     </li>
                                     <li className="link">
-                                        <a href="/about">Work at a Startup</a>
+                                        <a href="/">Work at a Startup</a>
                                     </li>
                                     <li className="link">
-                                        <a href="/about">Contact us</a>
+                                        <a href="mailto:support@pedxo.com">Email us</a>
                                     </li>
                                     <li className="link">
-                                        <a href="/about">Speak to an Expert</a>
+                                        <a href="/book-demo">Speak to an Expert</a>
                                     </li>
                                     <li className="link">
-                                        <a href="/about">FAQ's</a>
+                                        <a href="/#faq">FAQ's</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -64,16 +64,16 @@ export const Footer = () => {
                             <nav className="nav-links-holder">
                                 <ul className="nav-links-content">
                                     <li className="link">
-                                        <a href="/about">Hire Talents</a>
+                                        <a href="/">Hire Talents</a>
                                     </li>
                                     <li className="link">
-                                        <a href="/about">Find Jobs</a>
+                                        <a href="/">Find Jobs</a>
                                     </li>
                                     <li className="link">
-                                        <a href="/about">Outsource Projects</a>
+                                        <a href="/outsource">Outsource Projects</a>
                                     </li>
                                     <li className="link">
-                                        <a href="/about">Book a Demo</a>
+                                        <a href="/book-demo">Book a Demo</a>
                                     </li>
                                 </ul>
                             </nav>

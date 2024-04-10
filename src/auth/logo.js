@@ -11,7 +11,7 @@ export const Logo = () => {
                     </h3>
                 </div>
                 <div className='content'>
-                    <h2>Your <span>startup's technical</span> department.</h2>
+                    <h2>Your <span>startup's technical</span> department on subscription.</h2>
                 </div>
             </div>
         </div>

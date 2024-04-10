@@ -41,7 +41,7 @@ export const Header = () => {
                         </div>
                         <nav className="nav-holder">
                             <ul className="nav nav-content">
-                                <div className="nav-first-content nav">
+                                <div className="nav-first-content">
                                     <li className="nav-content-link">
                                         <a href="/#about">About</a>
                                     </li>
@@ -55,7 +55,7 @@ export const Header = () => {
                                                 <a href="/">Hire Talent</a>
                                             </li>
                                             <li className="dropdown-link">
-                                                <a href="/">Let's Build</a>
+                                                <a href="/outsource">Let's Build</a>
                                             </li>
                                             <li className="dropdown-link">
                                                 <a href="/">Find Job</a>

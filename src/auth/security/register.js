@@ -1,9 +1,11 @@
 import '../authCss/register.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa';
 import { Logo } from '../logo';
+import { Loader } from '../../components/loader';
+import { Success } from '../../components/success';
 
 export const SignUp = () => {
     const [error, setError] = useState({});
@@ -15,7 +17,7 @@ export const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPass, setShowConfirmPass] = useState(false);
-    const [check, setCheck] = useState(false)
+    const [check, setCheck] = useState(false);
     const [valPas, setValPas] = useState({
         lowerCase: false,
         upperCase: false,
@@ -23,7 +25,11 @@ export const SignUp = () => {
         numbers: false,
         length: false
     });
-    const [valBox, setValBox] = useState(false)
+    const [valBox, setValBox] = useState(false);
+    const [loader, setLoader] = useState(false);
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState(false);
+    const [icon, setIcon] = useState(null);
 
     const togglePass = () => {
         setShowPassword(!showPassword);
@@ -36,19 +42,6 @@ export const SignUp = () => {
     const checked = () => {
         setCheck(!check)
     }
-
-    const showInfo = () => {
-        if(!password){
-            setValBox(true)
-            console.log('bat')
-        }
-    };
-
-    const hideInfo = () => {
-        if(password || !password) {
-            setValBox(false)
-        }
-    };
 
     const validatePassword = (value) => {
         setValPas({
@@ -81,10 +74,10 @@ export const SignUp = () => {
         const newError = {};
 
         if(!firstName) {
-            newError.firstName = <p>First name required </p>
+            newError.firstName = <p>First name required</p>
             
         } else if(!lastName) {
-            newError.lastName = <p>Last name required </p>
+            newError.lastName = <p>Last name required</p>
 
         } else if(!userName) {
             newError.userName = <p>User name required </p>
@@ -95,13 +88,16 @@ export const SignUp = () => {
         } else if(!password && password !== validatePassword) {
             newError.password = <p>password required </p>
 
+        } else if (!valPas.lowerCase || !valPas.upperCase || !valPas.specialCharacters || !valPas.numbers || !valPas.length) {
+            newError.password = <p>Incorrect password format </p>
+            setValBox(false);
         } else if(!confirmPassword) {
             newError.confirmPassword = <p>password required </p>
 
         } else if(password && confirmPassword !== password) {
             newError.confirmPassword = <p>password does not match</p>
 
-        } else if (firstName && lastName && userName && email && password && confirmPassword === password) {
+        } else if (firstName && lastName && userName && email && password && confirmPassword === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length) {
 
             const userData = {
                 firstName,
@@ -112,25 +108,63 @@ export const SignUp = () => {
             };
             
             try {
-               const response = await axios.post('https://pedxo-backend.onrender.com/auth', userData);
+                setLoader(true);
+                const response = await axios.post('https://pedxo-backend.onrender.com/auth', userData);
                 if (response) {
-                   alert('Successfully signed up!');
-                   window.location.href = '/';
+                    setIcon(
+                        <div className="success">
+                            <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
+                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    );
+                    setMessages(true);
+                    setMessage('Sign Up Successfully');
+                    window.location.href = '/login';
                 } else {
-                    alert('Network issue while signing up')
+                    setIcon(
+                        <div className="error">
+                            <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    );
+                    setMessages(true);
+                    setMessage('Taking long to load try again');
                 }
             } catch (error) {
-                if(error.response) {
-                    const {status} = error.response
-                    if (error.response.data.message === 'email and username already exist' && status === 422) {
-                        newError.userName = <p>This user name have already been taken </p>
-                        newError.email = <p>Email already taken </p>
-                    } else if (error.response.data.message === 'email already exist' && status === 422) {
-                       newError.email = <p>Email already exist</p>
-                    } else if (error.response.data.message === 'username already exist' && status === 422) {
-                       newError.userName = <p>User already exist</p>
+                if(error) {
+                    const {status} = error
+                    setIcon(
+                        <div className="error">
+                            <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    );
+
+                    if(error.response){
+                        const {status} = error.response
+                        if (error.response.data.message === 'email and username already exist' && status === 422) {
+                            newError.userName = <p>This user name have already been taken </p>
+                            newError.email = <p>Email already taken </p>
+                        } else if (error.response.data.message === 'email already exist' && status === 422) {
+                            newError.email = <p>Email already exist</p>
+                        } else if (error.response.data.message === 'username already exist' && status === 422) {
+                            newError.userName = <p>User already exist</p>
+                        };
+                    };
+    
+                    if(error.message === "Network Error"){
+                        setMessage('Network error, check your network');
+                    }else if(status === 500) {
+                        setMessage('Internal server error');
                     }
                 }
+
+               
+
+                console.log(error)
             }
         }
 
@@ -139,6 +173,41 @@ export const SignUp = () => {
             return;
         }
     };
+
+    
+    useEffect(() => {
+        if (document.activeElement === document.getElementById('password')) {
+            if (!password || !valPas.lowerCase || !valPas.upperCase || !valPas.specialCharacters || !valPas.numbers || !valPas.length) {
+                setValBox(true);
+            } else {
+                setValBox(false);
+            }
+        };
+        if(loader) {
+            setLoader(true);
+
+            const load = setTimeout(() => {
+                setLoader(false);
+            }, 7000);
+    
+            return () => clearTimeout(load);
+        };
+
+        if(message === 'Network error, check your network') {
+            setMessages(true);        
+            
+            const Message = setTimeout(() => {
+                setMessages(false);
+            }, 4900);
+    
+            return () => clearTimeout(Message);
+        }else if(message) {
+            setMessages(true);
+        } else {
+            setMessages(false)
+        };
+
+    }, [password, valPas, loader, message, icon]);
 
     return (
         <div className="signup">
@@ -190,7 +259,7 @@ export const SignUp = () => {
                                                 <div className='pass password-holder'>
                                                     <label>Password</label>
                                                     <div className='in-ico'>
-                                                        <input name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleValue(e)} placeholder={showPassword ? 'Enter your password' : '********'} onFocus={showInfo} onBlur={hideInfo}></input>
+                                                        <input id='password' name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleValue(e)} placeholder={showPassword ? 'Enter your password' : '********'} onFocus={() => setValBox(true)} onBlur={() => setValBox(false)}></input>
                                                         <span onClick={togglePass} className='fa-holder'>
                                                             {showPassword ?  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
                                                                                 <path d="M2.5 10.8333C5.5 4.16667 14.5 4.16667 17.5 10.8333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -266,6 +335,8 @@ export const SignUp = () => {
                         </div>
                     </div>
                 </div>
+                {loader && <Loader />}
+                {messages && <Success message={message} icon={icon} />}
             </div>
         </div>
     )

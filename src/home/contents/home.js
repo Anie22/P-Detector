@@ -31,11 +31,31 @@ export const Home = () => {
 
     const serviceSlide = {
         dots: true,
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 200,
-        arrows: true
+        arrows: true,
+        prevArrow: (
+            <button type='button'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 22" className='fa'>
+                    <path d="M7.96982 6.42676L3.88648 10.5101L3.39648 11.0001L3.88648 11.4901L7.96982 15.5734L8.92668 14.5934L6.01186 11.6806H19.6665V10.3195H6.01254L8.92668 7.40676L7.96846 6.42676H7.96982Z"/>
+                    <path d="M7.96982 6.42676L3.88648 10.5101L3.39648 11.0001L3.88648 11.4901L7.96982 15.5734L8.92668 14.5934L6.01186 11.6806H19.6665V10.3195H6.01254L8.92668 7.40676L7.96846 6.42676H7.96982Z"/>
+                    <path d="M7.96982 6.42676L3.88648 10.5101L3.39648 11.0001L3.88648 11.4901L7.96982 15.5734L8.92668 14.5934L6.01186 11.6806H19.6665V10.3195H6.01254L8.92668 7.40676L7.96846 6.42676H7.96982Z"/>
+                    <path d="M7.96982 6.42676L3.88648 10.5101L3.39648 11.0001L3.88648 11.4901L7.96982 15.5734L8.92668 14.5934L6.01186 11.6806H19.6665V10.3195H6.01254L8.92668 7.40676L7.96846 6.42676H7.96982Z"/>
+                </svg>
+            </button>
+        ),
+        nextArrow: (
+            <button type='button'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 22" className='fa'>
+                    <path d="M15.0302 6.42676L19.1135 10.5101L19.6035 11.0001L19.1135 11.4901L15.0302 15.5734L14.0733 14.5934L16.9881 11.6806H3.33348V10.3195H16.9875L14.0733 7.40676L15.0315 6.42676H15.0302Z"/>
+                    <path d="M15.0302 6.42676L19.1135 10.5101L19.6035 11.0001L19.1135 11.4901L15.0302 15.5734L14.0733 14.5934L16.9881 11.6806H3.33348V10.3195H16.9875L14.0733 7.40676L15.0315 6.42676H15.0302Z"/>
+                    <path d="M15.0302 6.42676L19.1135 10.5101L19.6035 11.0001L19.1135 11.4901L15.0302 15.5734L14.0733 14.5934L16.9881 11.6806H3.33348V10.3195H16.9875L14.0733 7.40676L15.0315 6.42676H15.0302Z"/>
+                    <path d="M15.0302 6.42676L19.1135 10.5101L19.6035 11.0001L19.1135 11.4901L15.0302 15.5734L14.0733 14.5934L16.9881 11.6806H3.33348V10.3195H16.9875L14.0733 7.40676L15.0315 6.42676H15.0302Z"/>
+                </svg>
+            </button>
+        )
     }
 
     const testimonal = {
@@ -124,15 +144,15 @@ export const Home = () => {
         {info: "“This platform streamlined our hiring process, delivering top talent efficiently. Its intuitive interface and personalized job matches were game-changers. Thanks to this platform, I landed my dream job at a reputable tech company, and I couldn't be happier with the outcome.”", name: 'Chika Okoro', role: 'Marketing Manager'},
         {info: "“Managing recruitment processes for a large organization can be quite daunting, but this platform has been a game-changer for us. The robust suite of tools and features provided has significantly streamlined our hiring operations and improved our overall efficiency.”", name: 'Ibrahim Abubakar', role: ' Human Resources Manager'},
         {info: "“Transitioning to a new role in the finance industry can be quite challenging, especially when navigating through countless job listings and competing with other qualified candidates. However, this platform made the job search process a breeze for me.”", name: 'Temitope Adekunle', role: 'Financial Analyst'},
-    ]
+    ];
 
     const faqs = [
         {ques: 'How much does Pedxo charge?', ans: 'To keep your platform running, you would have to make a subscription billed monthly. No equity.'},
-        {ques: 'What is the timeframe for project delivery?', ans: 'Building an MVP takes continuous testing and iteration to succesfully come up with a working product that your users can interact with, in the process there is no guaranteed date for project completion.', con: 'It takes up to 18 months to create an effective technology for an MVP depending on your industry.'},
+        {ques: 'What is the timeframe for project delivery?', ans: 'Building an MVP takes continuous testing and iteration to succesfully come up with a working product that your users can interact with, in the process there is no guaranteed date for project completion.', con: 'It takes up to 3 months to create an effective technology for an MVP depending on your industry.'},
         {ques: 'How to start working with Pedxo?', ans: 'To hire Pedxo is very simple. Below are the steps to follow;', lists: [
             {listAns: 'Talk with our team about your idea, market and challenges.'},
             {listAns: 'We sign an NDA if required, to maintain high level of privacy.'},
-            {listAns: 'After intensive project review and paperwork, we’ll come back with a hand picked engineers whose skills and experience are best align with your needs.'},
+            {listAns: "After intensive project review and paperwork, we’ll come back with a hand picked engineers whose skills and experience are best align with your needs."},
         ], con: 'Once approved, the team assigned to your project will start working and sending you updates regularly'},
         {ques: 'What is an MVP and why is it so important?', ans: "An MVP stands for Minimum Viable Product. It's the simplest version of a product that can be released to market with just the core features necessary to satisfy early adopters. It's important because it allows teams to validate their idea with real users, gather feedback, and iterate based on that feedback before investing heavily in development."},
         {ques: 'Why choose Pedxo?', lists: [
@@ -141,7 +161,7 @@ export const Home = () => {
             {listAns: 'Cost:- The same price for a full time hire or agency.'},
             {listAns: 'Strategies:- We have the strategy in place to make you launch and gain traction with a minimal resources.'}
         ]}
-    ]
+    ];
 
 
     return (
@@ -200,7 +220,7 @@ export const Home = () => {
                                 </div>
                                 <div className='hero-links-hld'>
                                     <div className='first-link'>
-                                        <Link to={'/hire'} className='link'>
+                                        <Link to={'/outsource'} className='link'>
                                             <p className='text'>Outsource Project</p>
                                             <FaArrowRight className='fa' />
                                         </Link>
@@ -315,9 +335,9 @@ export const Home = () => {
                                                     <p>{remoteInfo.des}</p>
                                                 </div>
                                                 <div className='par-icon'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className='fa'>
-                                                    <path d="M21.1863 9.28003L27.1862 15.28L27.9062 16L27.1862 16.72L21.1863 22.72L19.7803 21.28L24.0633 17H3.99925V15H24.0623L19.7803 10.72L21.1883 9.28003H21.1863Z"/>
-                                                </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className='fa'>
+                                                        <path d="M21.1863 9.28003L27.1862 15.28L27.9062 16L27.1862 16.72L21.1863 22.72L19.7803 21.28L24.0633 17H3.99925V15H24.0623L19.7803 10.72L21.1883 9.28003H21.1863Z"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -455,7 +475,7 @@ export const Home = () => {
                             </div>
                             <div className='buld-sec-text'>
                                 <h4>Let's create great things together.</h4>
-                                <button className='link-button'>
+                                <button className='link-button' onClick={bookDemo}>
                                     <p>Get Started</p>
                                 </button>
                             </div>
