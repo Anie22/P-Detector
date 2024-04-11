@@ -142,7 +142,7 @@
     .vry-cd-hol .in-vry-cd-hol{
         flex-direction: column;
         justify-content: unset;
-        height: 100svh;
+        height: fit-content;
     }
     .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
         padding: 32px 16px;
