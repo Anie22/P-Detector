@@ -543,3 +543,39 @@
     line-height: 145%;
     text-transform: capitalize;
 }
+
+@media only screen and (max-width: 900px) {
+    .signup .signup-inner-app .inner-app{
+        display: block;
+    }
+    .signup .signup-inner-app .inner-app .sub-app{
+        flex-direction: column;
+        justify-content: unset;
+        height: 100svh;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-section{
+        padding: 32px 16px;
+        width: 100%;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder{
+        padding: 0;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title .title-des h4{
+        font-size: 28px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title .title-des .login-text{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl .checkbox{
+        width: 20px;
+        height: 20px;
+    }
+    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl p{
+        font-size: 11px;
+    }
+}

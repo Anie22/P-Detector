@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 22px;
     flex: 1 0 0;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .heading{
@@ -65,14 +65,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
     align-self: stretch;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .sub-form-holder .form .form-input-holder{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 18px;
     align-self: stretch;
 }
 .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .sub-form-holder .form .form-input-holder .form-inp-1{
@@ -365,51 +365,36 @@
     line-height: normal;
 }
 
-@media only screen and (max-width: 768px) {
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
-        width: 60%;
+@media only screen and (max-width: 900px) {
+    .rst-pas-hol{
+        display: block;
     }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder h4{
-        margin-bottom: 13px;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 .togglebtn{
-        left: 25em;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
-        width: 100%;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder h4{
-        font-size: 17px;
-        margin-bottom: 10px;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 label{
-        font-size: 15px;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-2 label{
-        font-size: 15px;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 .togglebtn{
-        left: 23em;
-    }
-}
-@media only screen and (max-width: 375px) {
     .rst-pas-hol .in-rst-pas-hol{
+        flex-direction: column;
+        justify-content: unset;
         height: 100svh;
     }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 label{
-        font-size: 14px;
+    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
+        padding: 32px 16px;
+        width: 100%;
     }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-2 label{
-        font-size: 14px;
-    }
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 .togglebtn{
-        left: 19.5em;
+    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
+        width: 100%;
+        padding: 0;
     }
 }
-@media only screen and (max-width: 320px) {
-    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .form-holder .sub-form-holder form .form-inp-1 .togglebtn{
-        left: 16em;
+@media only screen and (max-width: 425px) {
+    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
+        height: 100%;
+    }
+    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .success-hold .success .fa{
+        height: 80px;
+        width: 80px;
+    }
+    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .success-hold .success-text{
+        width: 100%;
+    }
+    .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .success-hold .success-text p{
+        font-size: 18px;
     }
 }

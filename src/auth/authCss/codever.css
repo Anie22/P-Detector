@@ -142,7 +142,7 @@
     .vry-cd-hol .in-vry-cd-hol{
         flex-direction: column;
         justify-content: unset;
-        height: fit-content;
+        height: 100svh;
     }
     .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
         padding: 32px 16px;
@@ -155,6 +155,6 @@
 }
 @media only screen and (max-width: 425px) {
     .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
-        height: 100%;
+        height: 480px;
     }
 }

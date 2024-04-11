@@ -1,8 +1,8 @@
 import '../homeCss/demo.css'
 import React from 'react';
 import { useState } from 'react';
-import { Footer } from '../../components/footer';
-import { Header } from '../../components/header';
+// import { Footer } from '../../components/footer';
+// import { Header } from '../../components/header';
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -50,7 +50,7 @@ export const Demo = () => {
     return (
         <div className='demo w-100'>
             <div className='sub-demo'>
-                <Header />
+                {/* <Header /> */}
                 <div className='inner-demo p-5 container'>
                     <div className='demo-holder'>
                         <div className='demo-heading'>
@@ -158,7 +158,7 @@ export const Demo = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
+                {/* <Footer/> */}
             </div>
         </div>
     )

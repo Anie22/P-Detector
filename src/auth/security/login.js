@@ -17,6 +17,7 @@ export const Login = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState(false);
     const [icon, setIcon] = useState(null);
+    const [loginText, setLoginText] = useState(null);
 
     const togglePass = () => {
         setShowPassword(!showPassword);
@@ -122,9 +123,29 @@ export const Login = () => {
             setMessages(true);
         } else {
             setMessages(false)
+        };
+
+        const Login = () => {
+            if(window.innerWidth > 900) {
+                setLoginText (
+                    <h4>Log In</h4>
+                )
+            } else if(window.innerWidth < 900) {
+                setLoginText(
+                    <h4>Welcome back</h4>
+                )
+            }
         }
 
-    }, [loader, message, icon])
+        Login();
+
+        window.addEventListener('resize', Login);
+
+        return () => {
+            window.removeEventListener('resize', Login);
+        };
+
+    }, [loader, message, icon, loginText])
 
 
     return (
@@ -138,7 +159,7 @@ export const Login = () => {
                                 <div className='inner-form-holder'>
                                     <div className='heading'>
                                         <div className='first-text'>
-                                            <h4>Log In</h4>
+                                            {loginText}
                                         </div>
                                         <div className='second-text'>
                                             <h6>Enter your credentials to access your account</h6>

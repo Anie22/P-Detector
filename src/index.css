@@ -44,6 +44,12 @@ body{
   height: 100vh;
 }
 
+@media only screen and (max-width: 900px) {
+  body{
+    height: 100svh;
+  }
+}
+
 html{
   height: 100%;
 }
