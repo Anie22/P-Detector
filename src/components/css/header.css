@@ -256,11 +256,11 @@
         top: 0;
         left: 0;
         bottom: 0;
-        height: 100svh;
+        height: 100%;
         width: 100%;
         flex-direction: column;
         gap: 7px;
-        z-index: 700;
+        z-index: 1000;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content .nav-first-content{
         flex-direction: column;
