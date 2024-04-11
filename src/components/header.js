@@ -5,7 +5,13 @@ import './css/header.css';
 
 export const Header = () => {
     const [openServices, setOpenService] = useState(false);
-    const [scroll, setScroll] = useState(false)
+    const [scroll, setScroll] = useState(false);
+    const [nav, setNav] = useState(false);
+    const [menu, setMenu] = useState(null)
+
+    const showNav = () => {
+        setNav(true)
+    }
 
     const toggleServices = () => {
         setOpenService(!openServices)
@@ -18,14 +24,32 @@ export const Header = () => {
             } else {
                 setScroll(false)
             }
-        }
+        };
 
-        handleScroll()
+        const addMenu = () => {
+            if(window.innerWidth > 900) {
+                setMenu(null);
+                return
+            } else {
+                setMenu(
+                    <div className='toggle-bar' onClick={() => showNav()}>
+                        <div className='bar'></div>
+                        <div className='bar bar-2'></div>
+                        <div className='bar bar-3'></div>
+                    </div>
+                )
+            }
+        };
 
-        window.addEventListener('scroll', handleScroll)
+        addMenu();        
+        handleScroll();
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', addMenu);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', addMenu);
         }
     }, [])
 
@@ -35,13 +59,17 @@ export const Header = () => {
                 <header className={scroll ? "main-header header--scroll" : 'main-header'}>
                     <div className="header-content">
                         <div className="logo">
-                            <h4>
-                                <a href="/">Pedxo</a>
+                            <h4 className='logo-name'>
+                                <a className='link' href="/">Pedxo</a>
                             </h4>
                         </div>
                         <nav className="nav-holder">
-                            <ul className="nav nav-content">
+                            {menu}
+                            <ul className={nav ? "nav nav-content" : 'nav nav-content navb'}>
                                 <div className="nav-first-content">
+                                    <li className="nav-content-link">
+                                        <a href="/">Home</a>
+                                    </li>
                                     <li className="nav-content-link">
                                         <a href="/#about">About</a>
                                     </li>

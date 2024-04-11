@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../homeCss/outsource.css';
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
@@ -17,49 +17,52 @@ export const Outsource = () => {
     const employeeNumbers = ['1 - 30', '31 - 100', '101 - 400', '401 - 1000+'];
     const Socials = ['Blog', 'Facebook', 'Google', 'Instagram', 'Referral', 'Twitter', 'Webinar', 'Linkedin', 'Others'];
     const roles = ['UI/UX', 'Devops', 'Mobile Engineer', 'Frontend Engineer', 'Backend Engineer', 'Full-stack Engineering', 'Data Scientist'];
-    const [addFocus, setAddFocus] = useState(false)
+    const [addFocus, setAddFocus] = useState(false);
+    const [footer, setFooter] = useState(null);
 
     const toggleOption = () => {
         setOption(!option)
-    }
+    };
 
     const chooseOption = () => {
         setAny(!any)
-    }
+    };
 
     const openTeams = () => {
         setTeam(true)
-    }
+    };
+
     const checked = (rle) => {
         if (check.includes(rle)) {
             setCheck(check.filter(item => item !== rle));
         } else {
             setCheck([...check, rle]);
         }
-    }
+    };
 
     const selected = (e) => {
         setSelectedOption(e)
         setOption(false)
-    }
+    };
 
     const choosen = (e) => {
         setChooseSocial(e)
         setAny(false)
-    } 
+    };
 
     const preventScroll = (e) => {
         if(e.keyCode === 38 || e.keyCode === 40){
             e.preventDefault()
         }
-    }
+    };
 
     const changeColor = () => {
         setAddFocus(true)
-    }
+    };
+
     const removeColor = () => {
         setAddFocus(false)
-    }
+    };
 
     const done = () => {
         if(check) {
@@ -67,14 +70,33 @@ export const Outsource = () => {
             setRole(addComa)
             setTeam(false)
         } 
-    }
+    };
 
     const cancel = () => {
         const original = "Choose which teams you'll need e.g(UI/UX, devOps)"
         setRole(original)
         setTeam(false)
         setCheck([])
-    }
+    };
+
+    useEffect(() => {
+        const showFooter = () => {
+            if(window.innerWidth > 900) {
+                setFooter(<Footer/> );
+            } else {
+                setFooter(null)
+            }
+        };
+
+        showFooter();
+
+        window.addEventListener('resize', showFooter);
+
+        return () => {
+            window.removeEventListener('resize', showFooter);
+        };
+
+    }, [])
 
 
 
@@ -218,7 +240,7 @@ export const Outsource = () => {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                {footer}
             </div>
         </div>
     )

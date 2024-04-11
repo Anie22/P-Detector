@@ -1,8 +1,8 @@
 import '../homeCss/demo.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
-// import { Footer } from '../../components/footer';
-// import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -12,45 +12,65 @@ export const Demo = () => {
     const [option, setOption] = useState(false);
     const [any, setAny] = useState(false);
     const employeeNumbers = ['1 - 30', '31 - 100', '101 - 400', '401 - 1000+'];
-    const Socials = ['Blog', 'Facebook', 'Google', 'Instagram', 'Referral', 'Twitter', 'Webinar', 'Linkedin', 'Others']
-    const [addFocus, setAddFocus] = useState(false)
+    const Socials = ['Blog', 'Facebook', 'Google', 'Instagram', 'Referral', 'Twitter', 'Webinar', 'Linkedin', 'Others'];
+    const [addFocus, setAddFocus] = useState(false);
+    const [footer, setFooter] = useState(null);
 
     const toggleOption = () => {
         setOption(!option)
-    }
+    };
 
     const chooseOption = () => {
         setAny(!any)
-    }
+    };
 
     const selected = (e) => {
         setSelectedOption(e)
         setOption(false)
-    }
+    };
 
     const choosen = (e) => {
         setChooseSocial(e)
         setAny(false)
-    } 
+    };
 
     const preventScroll = (e) => {
         if(e.keyCode === 38 || e.keyCode === 40){
             e.preventDefault()
         }
-    }
+    };
 
     const changeColor = () => {
         setAddFocus(true)
-    }
+    };
+
     const removeColor = () => {
         setAddFocus(false)
-    }
+    };
 
+    useEffect(() => {
+        const showFooter = () => {
+            if(window.innerWidth > 900) {
+                setFooter(<Footer/> );
+            } else {
+                setFooter(null)
+            }
+        };
+
+        showFooter();
+
+        window.addEventListener('resize', showFooter);
+
+        return () => {
+            window.removeEventListener('resize', showFooter);
+        };
+
+    }, [])
 
     return (
         <div className='demo w-100'>
             <div className='sub-demo'>
-                {/* <Header /> */}
+                <Header />
                 <div className='inner-demo p-5 container'>
                     <div className='demo-holder'>
                         <div className='demo-heading'>
@@ -158,7 +178,7 @@ export const Demo = () => {
                         </div>
                     </div>
                 </div>
-                {/* <Footer/> */}
+                {footer}
             </div>
         </div>
     )

@@ -385,7 +385,7 @@
 }
 @media only screen and (max-width: 425px) {
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
-        height: 100%;
+        height: 482px;
     }
     .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .success-hold .success .fa{
         height: 80px;

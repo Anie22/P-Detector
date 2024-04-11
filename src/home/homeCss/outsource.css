@@ -927,8 +927,66 @@
     text-decoration: none;
 }
 
-
 .active{
     color: var(--backgroundPrimary);
     cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+    .outsource{
+        background: var(--white);
+    }
+    .outsource .sub-outsource-holder .inner-sec {
+        margin: 0;
+        padding: 70px 10px !important;
+        max-width: 100%;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder{
+        margin: 0;
+        width: 100%;
+        gap: 20px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .desc-heading {
+        width: 100%;
+        gap: 15px;
+        margin-top: 35px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .desc-heading .desc-first-heading h4 {
+        font-size: 32px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .desc-heading .desc-second-heading h6 {
+        font-size: 14px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder{
+        width: 100%;
+        padding: 0px;
+        border-radius: 0px;
+        background: transparent;
+        box-shadow: none;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder,
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .third-input-field-holder,
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .third-input-field-holder {
+        gap: 24px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder {
+        gap: 24px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .third-input-field-holder .count-field-holder .count-input-holder {
+        width: 100%;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder .team-field-holder,
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder .name-field-holder {
+        width: 100%;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder .team-field-holder .team-input-holder .team-input,
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder .name-field-holder .social-input-holder .social-input {
+        width: 100%;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .submit-item-holder {
+        gap: 25px;
+    }
 }

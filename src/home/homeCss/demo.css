@@ -637,37 +637,55 @@
 }
 
 @media only screen and (max-width: 900px) {
-    .signup .signup-inner-app .inner-app{
-        display: block;
+    .demo{
+        background: var(--white);
     }
-    .signup .signup-inner-app .inner-app .sub-app{
-        flex-direction: column;
-        justify-content: unset;
-        height: 100svh;
+    .demo .sub-demo .inner-demo{
+        margin: 0;
+        padding: 70px 10px !important;
+        max-width: 100%;
     }
-    .signup .signup-inner-app .inner-app .sub-app .form-section{
-        padding: 32px 16px;
+    .demo .sub-demo .inner-demo .demo-holder{
+        margin: 0;
         width: 100%;
+        gap: 20px;
     }
-    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder{
-        padding: 0;
+    .demo .sub-demo .inner-demo .demo-holder .demo-heading {
         width: 100%;
+        gap: 15px;
+        margin-top: 35px;
     }
-}
-@media only screen and (max-width: 425px) {
-    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title .title-des h4{
-        font-size: 28px;
+    .demo .sub-demo .inner-demo .demo-holder .demo-heading .demo-first-heading h4 {
+        font-size: 32px;
     }
-    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title .title-des .login-text{
+    .demo .sub-demo .inner-demo .demo-holder .demo-heading .demo-second-heading h6 {
         font-size: 14px;
     }
-}
-@media only screen and (max-width: 320px) {
-    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl .checkbox{
-        width: 20px;
-        height: 20px;
+    .demo .sub-demo .inner-demo .demo-holder .form-holder{
+        width: 100%;
+        padding: 0px;
+        border-radius: 0px;
+        background: transparent;
+        box-shadow: none;
     }
-    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl p{
-        font-size: 11px;
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .first-input-field-holder,
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .third-input-field-holder,
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder {
+        flex-direction: column;
+    }
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .first-input-field-holder .name-field-holder,
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .first-input-field-holder .job-field-holder {
+        width: 100%;
+    }
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .third-input-field-holder .number-field-holder,
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .third-input-field-holder .count-field-holder {
+        width: 100%;
+    }
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder .name-field-holder,
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .input-holder .fourth-input-field-holder .date-field-holder {
+        width: 100%;
+    }
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .submit-item-holder {
+        gap: 25px;
     }
 }
