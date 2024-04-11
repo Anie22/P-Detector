@@ -22,7 +22,6 @@ export const ResetPass = () => {
         setEmail(name === 'email' ? value: email);
     };
 
-    console.log(icon)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,7 +43,17 @@ export const ResetPass = () => {
                 const res = await axios.post(url, data);
 
                 if(res) {
-                    console.log(res)
+                    setIcon(
+                        <div className="success">
+                            <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
+                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    );
+
+                    localStorage.setItem('mail', JSON.stringify(email));
+                    setMessage('success, please wait');
+                    window.location.href = '/reset-password/verify'
                 }
 
             } catch (error) {
@@ -59,12 +68,13 @@ export const ResetPass = () => {
 
                     if(error.message === "Network Error"){
                         setMessage('Network error, check your network');
+                    } else if(error.response.data.message === 'user is not found'){
+                        err.email = <p>User does not exist</p>
                     }
                 }
-                console.log(error);
 
             } finally {
-                // setLoader(false);
+                setLoader(false);
             }
         };
 
@@ -77,15 +87,9 @@ export const ResetPass = () => {
     useEffect(() => {
         if(loader) {
             setLoader(true);
-
-            const load = setTimeout(() => {
-                setLoader(false);
-            }, 7000);
-    
-            return () => clearTimeout(load);
         };
 
-        if(message === 'Network error, check your network' || message === 500 || message === 400 || message === 404) {
+        if(message === 'Network error, check your network' || message === 500 || message === 400 || message === 404 || message === 201) {
             setMessages(true);        
             
             const Message = setTimeout(() => {
@@ -93,8 +97,16 @@ export const ResetPass = () => {
             }, 4900);
     
             return () => clearTimeout(Message);
-        }else {
-            setMessage(false)
+        }else if(message === 'success, please wait') {
+            setMessages(true);
+
+            const Message = setTimeout(() => {
+                setMessages(false);
+            }, 3900);
+    
+            return () => clearTimeout(Message);
+        } else {
+            setMessages(false);
         }
 
     }, [loader, message, icon])

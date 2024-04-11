@@ -59,6 +59,10 @@
     font-weight: 400;
     line-height: 145%;
 }
+.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head h6 span{
+    align-self: stretch;
+    color: var(--text);
+}
 .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol form{ 
     display: flex;
     flex-direction: column;

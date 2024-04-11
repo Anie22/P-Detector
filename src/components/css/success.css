@@ -20,7 +20,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     background: var(--white);
     height: 250px;
     border-radius: 15px;
@@ -68,4 +68,25 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+}
+@media only screen and (max-width: 900px) {
+    .success-holder{
+        padding: 0 1.5em;
+    }
+    .success-holder .sub-holder{
+        width: 100%;
+    }
+    .success-holder .sub-holder .success-text-holder{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .success-holder .sub-holder .error .fa,
+    .success-holder .sub-holder .success .fa{
+        height: 70px;
+        width: 70px;
+    }
+    .success-holder .sub-holder .success-text-holder .text{
+        font-size: 17px;
+    }
 }
