@@ -92,7 +92,7 @@ export const Demo = () => {
                                             </div>
                                             <div className='job-field-holder'>
                                                 <label>Job Title</label>
-                                                <input type='text' placeholder='Enter job title'></input>
+                                                <input type='text' placeholder='Enter job title, e.g CEO'></input>
                                             </div>
                                         </div>                                    
                                         <div className='second-input-field-holder'>

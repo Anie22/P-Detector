@@ -65,10 +65,22 @@ export const Outsource = () => {
     };
 
     const done = () => {
+        const height = document.getElementById('roleh');
+        const ico = document.getElementById('fa');
         if(check) {
-            const addComa = check.join(', ')
-            setRole(addComa)
-            setTeam(false)
+            const addComa = check.join(', ');
+            setRole(addComa);
+            setTeam(false);
+
+            if(check.length > 4 || check.length === 4){
+                height.style.height = 'fit-content';
+                height.style.padding = '7px 10px';
+                ico.style.fontSize = '25px';
+            } else {
+                height.style.height = '56px';
+                height.style.padding = '20px 16px';
+                ico.style.fontSize = '16px';
+            } 
         } 
     };
 
@@ -127,7 +139,7 @@ export const Outsource = () => {
                                         <div className='second-input-field-holder'>
                                             <div className='job-field-holder'>
                                                 <label>Job Title</label>
-                                                <input type='text' placeholder='Enter job title'></input>
+                                                <input type='text' placeholder='Enter job title, e.g CEO'></input>
                                             </div>
                                             <div className='number-field-holder'>
                                                 <label>Phone Number</label>
@@ -165,9 +177,9 @@ export const Outsource = () => {
                                             <div className="team-field-holder">
                                                 <label>Which team will you be needing for the project?</label>
                                                 <div className="team-input-holder">
-                                                    <div className="team-input">
+                                                    <div className="team-input"  id="roleh">
                                                         <div className={role === "Choose which teams you'll need e.g(UI/UX, devOps)" ? "input" : 'option'}>{role}</div>
-                                                        <FaChevronDown onClick={() => openTeams()} className={team ? 'active' : "fa"}/>
+                                                        <FaChevronDown onClick={() => openTeams()} className={team ? 'active' : "fa"} id="fa"/>
                                                     </div>
                                                     <div className={team ? 'select-box open' : "select-box"}>
                                                         <ul className= "select-list">

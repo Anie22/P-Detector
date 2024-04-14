@@ -30,53 +30,55 @@ export const Footer = () => {
                             <Link to={'mailto:support@pedxo.com'} className="link">support@pedxo.com</Link>
                         </div>
                     </div>
-                    <div className="second-footer-content">
-                        <div className="heading">
-                            <h4>Company</h4>
+                    <div className="texts-link-holder">
+                        <div className="second-footer-content">
+                            <div className="heading">
+                                <h4>Company</h4>
+                            </div>
+                            <div className="nav-links">
+                                <nav className="nav-links-holder">
+                                    <ul className="nav-links-content">
+                                        <li className="link">
+                                            <a href="/#about">About</a>
+                                        </li>
+                                        <li className="link">
+                                            <a href="/">Work at a Startup</a>
+                                        </li>
+                                        <li className="link">
+                                            <a href="mailto:support@pedxo.com">Email us</a>
+                                        </li>
+                                        <li className="link">
+                                            <a href="/book-demo">Speak to an Expert</a>
+                                        </li>
+                                        <li className="link">
+                                            <a href="/#faq">FAQ's</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
-                        <div className="nav-links">
-                            <nav className="nav-links-holder">
-                                <ul className="nav-links-content">
-                                    <li className="link">
-                                        <a href="/#about">About</a>
-                                    </li>
-                                    <li className="link">
-                                        <a href="/">Work at a Startup</a>
-                                    </li>
-                                    <li className="link">
-                                        <a href="mailto:support@pedxo.com">Email us</a>
-                                    </li>
-                                    <li className="link">
-                                        <a href="/book-demo">Speak to an Expert</a>
-                                    </li>
-                                    <li className="link">
-                                        <a href="/#faq">FAQ's</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div className="third-footer-content">
-                        <div className="heading">
-                            <h4>Services</h4>
-                        </div>
-                        <div className="nav-links">
-                            <nav className="nav-links-holder">
-                                <ul className="nav-links-content">
-                                    <li className="link">
-                                        <a href="/">Hire Talents</a>
-                                    </li>
-                                    <li className="link">
-                                        <a href="/">Find Jobs</a>
-                                    </li>
-                                    <li className="link">
-                                        <a href="/outsource">Outsource Projects</a>
-                                    </li>
-                                    <li className="link">
-                                        <a href="/book-demo">Book a Demo</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                        <div className="third-footer-content">
+                            <div className="heading">
+                                <h4>Services</h4>
+                            </div>
+                            <div className="nav-links">
+                                <nav className="nav-links-holder">
+                                    <ul className="nav-links-content">
+                                        <li className="link">
+                                            <a href="/">Hire Talents</a>
+                                        </li>
+                                        <li className="link">
+                                            <a href="/">Find Jobs</a>
+                                        </li>
+                                        <li className="link">
+                                            <a href="/outsource">Outsource Projects</a>
+                                        </li>
+                                        <li className="link">
+                                            <a href="/book-demo">Book a Demo</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div className="fourth-footer-content">
