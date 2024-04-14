@@ -9,7 +9,7 @@ import { FaChevronDown } from 'react-icons/fa';
 export const Outsource = () => {
     const [selectedOption, setSelectedOption] = useState('Company size');
     const [chooseSocial, setChooseSocial] = useState('Choose any');
-    const [role, setRole] = useState("Choose which teams you'll need e.g(UI/UX, devOps)")
+    const [role, setRole] = useState("Choose which workforce you'll need e.g(UI/UX, devOps)")
     const [option, setOption] = useState(false);
     const [any, setAny] = useState(false);
     const [team, setTeam] = useState(false);
@@ -178,7 +178,7 @@ export const Outsource = () => {
                                                 <label>Which team will you be needing for the project?</label>
                                                 <div className="team-input-holder">
                                                     <div className="team-input"  id="roleh">
-                                                        <div className={role === "Choose which teams you'll need e.g(UI/UX, devOps)" ? "input" : 'option'}>{role}</div>
+                                                        <div className={role === "Choose which workforce you'll need e.g(UI/UX, devOps)" ? "input" : 'option'}>{role}</div>
                                                         <FaChevronDown onClick={() => openTeams()} className={team ? 'active' : "fa"} id="fa"/>
                                                     </div>
                                                     <div className={team ? 'select-box open' : "select-box"}>
