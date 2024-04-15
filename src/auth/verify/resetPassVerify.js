@@ -9,11 +9,11 @@ export const ResetVerification = () => {
     useEffect(() => {
         const verifyRoute = async () => {
             try {
-                const res = await axios.get('https://pedxo.netlify.app/resetver/' + encodedCode);
+                const res = await axios.get(`https://pedxo.netlify.app/resetver/${encodedCode}`);
                 if(res) {
-                    const token = encodedCode
-                    localStorage.setItem('t', token)
-                    window.location.href = 'https://pedxo.netlify.app/reset-password/update'
+                    console.log(res)
+                    localStorage.setItem('t', encodedCode)
+                    window.location.href = 'https://pedxo.netlify.app/reset-password/update';
                 }
             } catch(err) {
                 console.log('err', err)

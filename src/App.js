@@ -23,7 +23,7 @@ function App() {
           <Route path='/reset-password' element={ <ResetPass /> }></Route>
           <Route path='/reset-password/verify' element={ <VerifyCode /> }></Route>
           <Route path='/reset-password/update' element={ <UpdatePass /> }></Route>
-          <Route path='/resetver/:token/' element={ <ResetVerification /> }></Route>
+          <Route path='/resetver' element={ <ResetVerification /> }></Route>
         </Routes>
       </div>
     </div>
