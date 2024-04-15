@@ -24,5 +24,5 @@ export const ResetVerification = () => {
         };
 
         verifyRoute();
-    }, [code]);
+    }, [endCode]);
 }
