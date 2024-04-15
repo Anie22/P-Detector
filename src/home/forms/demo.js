@@ -116,9 +116,9 @@ export const Demo = () => {
                                             <div className='count-field-holder'>
                                                 <label>Employees CountDown</label>
                                                 <div className='count-input-holder'>
-                                                    <div className='count-input'>
+                                                    <div className='count-input'  onClick={() => toggleOption()}>
                                                         <div className={selectedOption === 'Company size' ? 'input' : 'option'}>{selectedOption}</div>
-                                                        <FaChevronDown onClick={() => toggleOption()} className={option ? 'active' : 'fa'} />
+                                                        <FaChevronDown className={option ? 'active' : 'fa'} />
                                                     </div>
                                                     <div className={option ? 'select-box open' : 'select-box'}>
                                                         <ul className='select-list'>
@@ -136,9 +136,9 @@ export const Demo = () => {
                                             <div className='name-field-holder'>
                                                 <label>How did you hear about us?</label>
                                                 <div className='social-input-holder'>
-                                                    <div className='social-input'>
+                                                    <div className='social-input'  onClick={() => chooseOption()}>
                                                         <div className={chooseSocial === 'Choose any' ? 'input' : 'option'}>{chooseSocial}</div>
-                                                        <FaChevronDown onClick={() => chooseOption()} className={any ? 'active' : 'fa'} />
+                                                        <FaChevronDown className={any ? 'active' : 'fa'} />
                                                     </div>
                                                     <div className={any ? 'social-box open' : 'social-box'}>
                                                         <ul className='social-list'>

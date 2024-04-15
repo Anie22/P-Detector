@@ -150,9 +150,9 @@ export const Outsource = () => {
                                             <div className='count-field-holder'>
                                                 <label>Employees CountDown</label>
                                                 <div className='count-input-holder'>
-                                                    <div className='count-input'>
+                                                    <div className='count-input' onClick={() => toggleOption()} >
                                                         <div className={selectedOption === 'Company size' ? 'input' : 'option'}>{selectedOption}</div>
-                                                        <FaChevronDown onClick={() => toggleOption()} className={option ? 'active' : 'fa'} />
+                                                        <FaChevronDown className={option ? 'active' : 'fa'} />
                                                     </div>
                                                     <div className={option ? 'select-box open' : 'select-box'}>
                                                         <ul className='select-list'>
@@ -177,9 +177,9 @@ export const Outsource = () => {
                                             <div className="team-field-holder">
                                                 <label>Which team will you be needing for the project?</label>
                                                 <div className="team-input-holder">
-                                                    <div className="team-input"  id="roleh">
+                                                    <div className="team-input"  id="roleh"  onClick={() => openTeams()}>
                                                         <div className={role === "Choose which workforce you'll need e.g(UI/UX, devOps)" ? "input" : 'option'}>{role}</div>
-                                                        <FaChevronDown onClick={() => openTeams()} className={team ? 'active' : "fa"} id="fa"/>
+                                                        <FaChevronDown className={team ? 'active' : "fa"} id="fa"/>
                                                     </div>
                                                     <div className={team ? 'select-box open' : "select-box"}>
                                                         <ul className= "select-list">
@@ -208,9 +208,9 @@ export const Outsource = () => {
                                             <div className='name-field-holder'>
                                                 <label>How did you hear about us?</label>
                                                 <div className='social-input-holder'>
-                                                    <div className='social-input'>
+                                                    <div className='social-input'  onClick={() => chooseOption()}>
                                                         <div className={chooseSocial === 'Choose any' ? 'input' : 'option'}>{chooseSocial}</div>
-                                                        <FaChevronDown onClick={() => chooseOption()} className={any ? 'active' : 'fa'} />
+                                                        <FaChevronDown className={any ? 'active' : 'fa'} />
                                                     </div>
                                                     <div className={any ? 'social-box open' : 'social-box'}>
                                                         <ul className='social-list'>

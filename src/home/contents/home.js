@@ -168,7 +168,7 @@ export const Home = () => {
         {ques: 'Why choose Pedxo?', lists: [
             {listAns: 'Speed:- Faster execution and design iteration.'},
             {listAns: 'Quality:- A highly testing and tech update.'},
-            {listAns: 'Cost:- The same price for a full time hire employee or agency.'},
+            {listAns: 'Cost:- The same price for a full time hire (employee) or agency.'},
             {listAns: 'Strategies:- We have the strategy in place to make you launch faster and gain traction with a minimal resources.'}
         ]}
     ];
@@ -225,7 +225,7 @@ export const Home = () => {
                                         <h4>Technical partner-as-a-service.</h4>
                                     </div>
                                     <div className='par'>
-                                        <p>Pedxo work as your in-house developers to help build up your MVP eliminating the need for you to hire an external team.</p>
+                                        <p>Pedxo work as your in-house developers to help build up your MVP, eliminating the need for you to hire an external team.</p>
                                     </div>
                                 </div>
                                 <div className='hero-links-hld'>

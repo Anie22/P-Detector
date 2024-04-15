@@ -8,6 +8,7 @@ import { SignUp } from './auth/security/register';
 import { Home } from './home/contents/home';
 import { Demo } from './home/forms/demo';
 import { Outsource } from './home/forms/outsource';
+import { ResetVerification } from './auth/verify/resetPassVerify';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/reset-password' element={ <ResetPass /> }></Route>
           <Route path='/reset-password/verify' element={ <VerifyCode /> }></Route>
           <Route path='/reset-password/update' element={ <UpdatePass /> }></Route>
+          <Route path='/resetver/:token/' element={ <ResetVerification /> }></Route>
         </Routes>
       </div>
     </div>

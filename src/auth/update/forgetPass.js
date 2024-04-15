@@ -39,6 +39,8 @@ export const ResetPass = () => {
             try {
                 setLoader(true);
 
+                localStorage.setItem('mail', JSON.stringify(email));
+
                 const url = 'https://pedxo-backend.onrender.com/auth/forgot-password';
                 const res = await axios.post(url, data);
 
@@ -51,7 +53,7 @@ export const ResetPass = () => {
                         </div>
                     );
 
-                    localStorage.setItem('mail', JSON.stringify(email));
+                    
                     setMessage('success, please wait');
                     window.location.href = '/reset-password/verify'
                 }
