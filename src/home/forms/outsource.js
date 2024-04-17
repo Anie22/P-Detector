@@ -143,7 +143,7 @@ export const Outsource = () => {
                                             </div>
                                             <div className='number-field-holder'>
                                                 <label>Phone Number</label>
-                                                <input type='number' placeholder='Enter phone number with country code' onKeyDown={preventScroll}></input>
+                                                <input type='tel' placeholder='Enter phone number with country code' onKeyDown={preventScroll}></input>
                                             </div>
                                         </div>                                  
                                         <div className='third-input-field-holder'>

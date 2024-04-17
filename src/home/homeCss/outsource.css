@@ -219,7 +219,7 @@
     line-height: 145%;
     text-transform: uppercase;
 }
-.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='number']{
+.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='tel']{
     display: flex;
     height: 56px;
     padding: 16px;
@@ -234,15 +234,15 @@
     color: var(--text);
     outline: none;
 }
-.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='number']::-webkit-inner-spin-button,
-.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='number']::-webkit-outer-spin-button{
+.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='tel']::-webkit-inner-spin-button,
+.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='tel']::-webkit-outer-spin-button{
     -webkit-appearance: none;
     margin: 0;
 }
-.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='number']:focus{
+.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='tel']:focus{
     border: 1px solid var(--focus);
 }
-.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='number']::placeholder{
+.outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .input-holder .second-input-field-holder .number-field-holder input[type='tel']::placeholder{
     color: var(--footerText);
     font-feature-settings: 'cv04' on, 'cv03' on;
     font-size: 14px;
