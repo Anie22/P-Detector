@@ -166,7 +166,7 @@ export const Home = () => {
         ], con: 'Once approved, the team assigned to your project will start working and sending you updates regularly'},
         {ques: 'What is an MVP and why is it so important?', ans: "An MVP stands for Minimum Viable Product. It's the simplest version of a product that can be released to market with just the core features necessary to satisfy early adopters. It's important because it allows teams to validate their idea with real users, gather feedback, and iterate based on that feedback before investing heavily in development."},
         {ques: 'Why choose Pedxo?', lists: [
-            {listAns: 'Speed:- Faster execution and design iteration.'},
+            {listAns: 'Speed:- Faster execution and design iteration process.'},
             {listAns: 'Quality:- A highly testing and tech update.'},
             {listAns: 'Cost:- The same price for a full time hire (employee) or agency.'},
             {listAns: 'Strategies:- We have the strategy in place to make you launch faster and gain traction with a minimal resources.'}

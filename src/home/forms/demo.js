@@ -34,12 +34,6 @@ export const Demo = () => {
         setAny(false)
     };
 
-    const preventScroll = (e) => {
-        if(e.keyCode === 38 || e.keyCode === 40){
-            e.preventDefault()
-        }
-    };
-
     const changeColor = () => {
         setAddFocus(true)
     };
@@ -111,7 +105,7 @@ export const Demo = () => {
                                         <div className='third-input-field-holder'>
                                             <div className='number-field-holder'>
                                                 <label>Phone Number</label>
-                                                <input type='number' placeholder='Enter phone number with country code' onKeyDown={preventScroll}></input>
+                                                <input type='tel' placeholder='Enter phone number with country code'></input>
                                             </div>
                                             <div className='count-field-holder'>
                                                 <label>Employees CountDown</label>
