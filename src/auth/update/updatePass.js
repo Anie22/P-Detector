@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Logo } from '../logo'
 import { FaCheck } from 'react-icons/fa';
-import '../authCss/update.css'
+import { Success } from '../../components/success';
+import { Loader } from "../../components/loader";
+import '../authCss/update.css';
+import axios from "axios";
 
 export const UpdatePass = () => {
     const [password, setPassword] = useState('');
@@ -20,6 +23,10 @@ export const UpdatePass = () => {
         length: false
     });
     const [valBox, setValBox] = useState(false);
+    const [messages, setMessages] = useState(false);
+    const [message, setMessage] = useState(null);
+    const [icon, setIcon] = useState(null);
+    const [loading, setLoading] = useState(false);
  
     const showPass = () => {
         setDisplayPassword(!displayPassword)
@@ -51,24 +58,79 @@ export const UpdatePass = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+
         e.preventDefault();
         const inpErr = {};
 
         setSuccess(false)
 
         if(!password) {
-            inpErr.password = <p>password feild required</p>
+
+            inpErr.password = <p>password feild required</p>;
+
         } else if(!confirmPassword) {
-            inpErr.confirmPassword = <p>confirm password feild required</p>
+
+            inpErr.confirmPassword = <p>confirm password feild required</p>;
+
         } else if(confirmPassword !== password){
-            inpErr.confirmPassword = <p>Password does not match</p>
+
+            inpErr.confirmPassword = <p>Password does not match</p>;
+
         } else if (!valPas.lowerCase || !valPas.upperCase || !valPas.specialCharacters || !valPas.numbers || !valPas.length) {
-            inpErr.password = <p>Incorrect password format </p>
+
+            inpErr.password = <p>Incorrect password format </p>;
+
             setValBox(false);
+
         } else if(password && confirmPassword && confirmPassword === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length){
-            setSuccess(true)
-            setForm(false)
+            const email = localStorage.getItem('mail').replace(/"|"/g, '');
+
+            const newPasswordDetails = {
+                email,
+                password
+            };
+
+
+            const url = 'https://pedxo-backend.onrender.com/auth/reset-password';
+
+            try {
+
+                setLoading(true)
+
+                const res = await axios.post(url, newPasswordDetails);
+
+                if(res) {
+                    setSuccess(true);
+                    setForm(false);
+                    localStorage.removeItem('mail');
+                };
+
+            } catch(err) {
+                
+                setIcon(
+                    <div className="error">
+                        <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                );
+
+                if(err){
+                    if(err.response) {
+                        const {status} = err.response;
+                        if(status === 500 && err.response.data.message === 'Internal server error'){
+                            setMessage('Server timeout');
+                        };
+                    }
+
+                    if(err.message === "Network Error"){
+                        setMessage('Network error, check your network');
+                    }
+                }
+            } finally {
+                setLoading(false)
+            }
         }
 
 
@@ -83,9 +145,8 @@ export const UpdatePass = () => {
             setSuccess(true);
 
             const route = setTimeout(() => {
-                setSuccess(false);
                 window.location.href = '/login'
-            }, 4000);
+            }, 3500);
 
             return () => clearTimeout(route);
         }
@@ -98,7 +159,17 @@ export const UpdatePass = () => {
             }
         };
 
-    }, [password, valPas, success]);
+        if(message) {
+            setMessages(true);
+
+            const rem = setTimeout(() => {
+                setMessages(false)
+            }, 2000);
+
+            return () => clearTimeout(rem);
+        }
+
+    }, [password, valPas, success, message]);
 
     return (
         <div className="rst-pas-hol">
@@ -118,7 +189,7 @@ export const UpdatePass = () => {
                                             <div className="form-inp-1">
                                                 <label>Password</label>
                                                 <div className="in-ico">
-                                                    <input name="password" type={displayPassword ? 'text' : 'password'} placeholder={displayPassword ? 'Enter password' : '*********'} value={password} onChange={(e) => handleUpdate(e)} onFocus={() => setValBox(true)} onBlur={() => setValBox(false)}></input>
+                                                    <input id="password" name="password" type={displayPassword ? 'text' : 'password'} placeholder={displayPassword ? 'Enter password' : '*********'} value={password} onChange={(e) => handleUpdate(e)} onFocus={() => setValBox(true)} onBlur={() => setValBox(false)}></input>
                                                     <div className="icon" onClick={showPass}>
                                                         { displayPassword ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
                                                                                 <path d="M2.5 10.8333C5.5 4.16667 14.5 4.16667 17.5 10.8333" stroke="#667185" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -206,6 +277,8 @@ export const UpdatePass = () => {
                                 </div>
                             </div>
                         }
+                        {loading && <Loader />}
+                        {messages &&  <Success icon={icon} message={message} />}
                     </div>
                 </div>
             </div>

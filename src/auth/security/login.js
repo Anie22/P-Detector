@@ -50,11 +50,12 @@ export const Login = () => {
             };
 
             try {
-                setLoader(true)
+                setLoader(true);
                 const res = await axios.post('https://pedxo-backend.onrender.com/auth/login', userLogins);
                 if(res) {
                     const token = res.data
-                    localStorage.setItem('currentSes', token)
+                    localStorage.setItem('currentSes', token);
+                    localStorage.removeItem('user');
                     setIcon(
                         <div className="success">
                             <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
@@ -68,6 +69,7 @@ export const Login = () => {
                 }
                 
             } catch(err) {
+                setLoader(false);
                 if(err){
                     setIcon(
                         <div className="error">
@@ -89,7 +91,6 @@ export const Login = () => {
                     }
                     
                 }
-                console.log(err)
             }
         }
 
@@ -106,7 +107,7 @@ export const Login = () => {
 
             const load = setTimeout(() => {
                 setLoader(false);
-            }, 7000);
+            }, 4000);
     
             return () => clearTimeout(load);
         };

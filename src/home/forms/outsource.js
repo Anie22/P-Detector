@@ -9,7 +9,7 @@ import { FaChevronDown } from 'react-icons/fa';
 export const Outsource = () => {
     const [selectedOption, setSelectedOption] = useState('Company size');
     const [chooseSocial, setChooseSocial] = useState('Choose any');
-    const [role, setRole] = useState("Choose which workforce you'll need e.g(UI/UX, devOps)")
+    const [role, setRole] = useState("Choose which workforce you'll need e.g(UI/UX, devOps)");
     const [option, setOption] = useState(false);
     const [any, setAny] = useState(false);
     const [team, setTeam] = useState(false);
@@ -52,7 +52,7 @@ export const Outsource = () => {
 
     const preventScroll = (e) => {
         if(e.keyCode === 38 || e.keyCode === 40){
-            e.preventDefault()
+            e.preventDefault();
         }
     };
 

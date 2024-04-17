@@ -12,6 +12,10 @@ export const VerifyCode = () => {
     const [messages, setMessages] = useState(false);
     const [icon, setIcon] = useState(null);
     const [message, setMessage] = useState(null);
+    const [disableMsg, setDisableMsg] = useState(false);
+    const [disableTime, setDisableTime] = useState(40);
+
+    const button = document.getElementById('butn');
 
     const resendLink = async () => {
         const email = localStorage.getItem('mail').replace(/"|"/g, '');
@@ -39,12 +43,16 @@ export const VerifyCode = () => {
                     </div>
                 );
 
-                setMessage('')
+                setMessage('');
+
+                
+                button.disabled = true;
+                setDisableMsg(true)
             };
 
         } catch (err) {
             if(err) {
-                const {status} = err;
+
                 setIcon(
                     <div className="error">
                         <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -53,11 +61,16 @@ export const VerifyCode = () => {
                     </div>
                 );
 
-                if(err.message === "Network Error"){
+                if(err.response) {
+                    const {status} = err.response;
+                    if(status === 500){
+                        setMessage('Server timeout');
+                    };
+                }
+
+                if(err.message === "Network Error") {
                     setMessage('Network error, check your network');
-                } else if(status === 500){
-                    setMessage('Unable to conect with the server');
-                };
+                }
             };
 
         } finally {
@@ -66,6 +79,7 @@ export const VerifyCode = () => {
     };
 
     useEffect(() => {
+        const button = document.getElementById('butn');
         const getEmail = () => {
             const mail = localStorage.getItem('mail');
             const mailIndex = [7, 8, 9, 10, 11, 12]
@@ -82,7 +96,7 @@ export const VerifyCode = () => {
             
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 3900);
+            }, 2000);
     
             return () => clearTimeout(Message);
         } else if(message === '') {
@@ -90,15 +104,30 @@ export const VerifyCode = () => {
             
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 3900);
+            }, 2000);
 
             return () => clearTimeout(Message);
         } else {
             setMessages(false);
         }
 
+        const disableCountTime = setInterval(() => {
+            if(disableTime === 40 || disableTime !== 0) {
+                button.disabled = true;
+                setDisableTime(prevCount => prevCount - 1);
+                setDisableMsg(true);
+            } else {
+                button.enabled = true;
+                setDisableMsg(false);
+                return;
+            }
+        }, 2000);
+
         getEmail();
-    }, [email, loading, message]);
+
+        return () => clearInterval(disableCountTime);
+
+    }, [email, loading, message, disableTime, disableMsg, button]);
 
     return (
         <div className="vry-cd-hol">
@@ -115,8 +144,8 @@ export const VerifyCode = () => {
                                 <div className="form">
                                     <div className="vry-frm-txt-but">
                                         <p>Didn’t receive the email? Check spam or promotion folder or social</p>
-                                        <button className="btn" type="submit" onClick={() => resendLink()}>
-                                            <p>resend email</p>
+                                        <button className="btn" id="butn" type="submit" onClick={() => resendLink()}>
+                                            { disableMsg ? <p>resend in {disableTime}<span className="text-lowercase">s</span></p> : <p>resend email</p> }
                                         </button>
                                     </div>
                                     <div className="form-btn w-100">

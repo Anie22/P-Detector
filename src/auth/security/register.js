@@ -133,6 +133,7 @@ export const SignUp = () => {
                     setMessage('Taking long to load try again');
                 }
             } catch (error) {
+                setLoader(false);
                 if(error) {
                     const {status} = error
                     setIcon(
@@ -188,7 +189,7 @@ export const SignUp = () => {
 
             const load = setTimeout(() => {
                 setLoader(false);
-            }, 7000);
+            }, 5000);
     
             return () => clearTimeout(load);
         };
