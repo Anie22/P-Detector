@@ -42,7 +42,7 @@ export const Footer = () => {
                                             <a href="/#about">About</a>
                                         </li>
                                         <li className="link">
-                                            <a href="/">Work at a Startup</a>
+                                            <a href="/work">Work at a Startup</a>
                                         </li>
                                         <li className="link">
                                             <a href="mailto:support@pedxo.com">Email us</a>
@@ -65,10 +65,10 @@ export const Footer = () => {
                                 <nav className="nav-links-holder">
                                     <ul className="nav-links-content">
                                         <li className="link">
-                                            <a href="/">Hire Talents</a>
+                                            <a href="/hire">Hire Talents</a>
                                         </li>
                                         <li className="link">
-                                            <a href="/">Find Jobs</a>
+                                            <a href="/jobs">Find Jobs</a>
                                         </li>
                                         <li className="link">
                                             <a href="/outsource">Outsource Projects</a>

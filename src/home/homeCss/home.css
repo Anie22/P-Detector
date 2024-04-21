@@ -613,7 +613,7 @@
     -webkit-background-clip: text;
     color: transparent;
 }
-.services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder button{
+.services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a{
     display: flex;
     align-items: center;
     background: var(--button);
@@ -626,14 +626,15 @@
     color: var(--buttonText);
     border-radius: 50px;
     padding: 12px 24px 12px 24px;
+    text-decoration: none;
 }
-.services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder button p{
+.services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a p{
     font-size: 20px;
     font-weight: 600;
     line-height: 120%;
     letter-spacing: -0.32px;
 }
-.services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder button .fa{
+.services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a .fa{
     font-size: 20px;
     font-weight: 600;
     line-height: 120%;
@@ -1177,11 +1178,11 @@
     .services .sub-service-holder .services-holder .services-content-holder .service-content .services-text h4 {
         font-size: 18px;
     }
-    .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder button {
+    .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a {
         width: 100%;
     }
-    .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder button p,
-    .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder button .fa{
+    .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a p,
+    .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a .fa{
         font-size: 17px;
     }
 

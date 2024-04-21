@@ -1,7 +1,7 @@
 import React from "react";
-import './css/success.css';
+import './css/modal.css';
 
-export const Success = ({message, icon}) => {
+export const Modal = ({message, icon}) => {
     return (
         <div className="success-holder">
             <div className="sub-holder">

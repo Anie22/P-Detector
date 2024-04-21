@@ -110,13 +110,13 @@ export const Header = () => {
                                             </li>
                                             <div className={openServices ? "dropdown" : "dropdown hide"}>
                                                 <li className="dropdown-link">
-                                                    <a href="/">Hire Talent</a>
+                                                    <a href="/hire">Hire Talent</a>
                                                 </li>
                                                 <li className="dropdown-link">
                                                     <a href="/outsource">Let's Build</a>
                                                 </li>
                                                 <li className="dropdown-link">
-                                                    <a href="/">Find Job</a>
+                                                    <a href="/jobs">Find Job</a>
                                                 </li>
                                             </div>
                                         </div>

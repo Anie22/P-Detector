@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa';
 import { Logo } from '../logo';
 import { Loader } from '../../components/loader';
-import { Success } from '../../components/success';
+import { Modal } from '../../components/modal';
 
 export const SignUp = () => {
     const [error, setError] = useState({});
@@ -114,18 +114,18 @@ export const SignUp = () => {
                     setIcon(
                         <div className="success">
                             <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
-                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
                         </div>
                     );
                     setMessages(true);
-                    setMessage('Sign Up Successfully');
+                    setMessage('Sign Up Modalfully');
                     window.location.href = '/login';
                 } else {
                     setIcon(
                         <div className="error">
                             <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
                             </svg>
                         </div>
                     );
@@ -135,7 +135,6 @@ export const SignUp = () => {
             } catch (error) {
                 setLoader(false);
                 if(error) {
-                    const {status} = error
                     setIcon(
                         <div className="error">
                             <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +144,8 @@ export const SignUp = () => {
                     );
 
                     if(error.response){
-                        const {status} = error.response
+                        const {status} = error.response;
+
                         if (error.response.data.message === 'email and username already exist' && status === 422) {
                             newError.userName = <p>This user name have already been taken </p>
                             newError.email = <p>Email already taken </p>
@@ -153,19 +153,16 @@ export const SignUp = () => {
                             newError.email = <p>Email already exist</p>
                         } else if (error.response.data.message === 'username already exist' && status === 422) {
                             newError.userName = <p>User already exist</p>
+                        }if(status === 500 && error.response.data.message === 'Internal server error'){
+                            setMessage('Server timeout');
                         };
                     };
     
                     if(error.message === "Network Error"){
                         setMessage('Network error, check your network');
-                    }else if(status === 500) {
-                        setMessage('Internal server error');
                     }
                 }
 
-               
-
-                console.log(error)
             }
         }
 
@@ -177,6 +174,7 @@ export const SignUp = () => {
 
     
     useEffect(() => {
+
         if (document.activeElement === document.getElementById('password')) {
             if (!password || !valPas.lowerCase || !valPas.upperCase || !valPas.specialCharacters || !valPas.numbers || !valPas.length) {
                 setValBox(true);
@@ -184,6 +182,7 @@ export const SignUp = () => {
                 setValBox(false);
             }
         };
+
         if(loader) {
             setLoader(true);
 
@@ -194,7 +193,7 @@ export const SignUp = () => {
             return () => clearTimeout(load);
         };
 
-        if(message === 'Network error, check your network') {
+        if(message === 'Network error, check your network' || message  === 'Server timeout') {
             setMessages(true);        
             
             const Message = setTimeout(() => {
@@ -202,13 +201,20 @@ export const SignUp = () => {
             }, 4900);
     
             return () => clearTimeout(Message);
-        }else if(message) {
+        }else if(message  === 'Sign Up Modalfully' || message  === 'Taking long to load try again') {
             setMessages(true);
+
+            const Message = setTimeout(() => {
+                setMessages(false);
+            }, 4900);
+
+            return () => clearTimeout(Message);
+
         } else {
             setMessages(false)
         };
 
-    }, [password, valPas, loader, message, icon]);
+    }, [password, valPas, loader, message, messages, icon]);
 
     return (
         <div className="signup">
@@ -274,21 +280,13 @@ export const SignUp = () => {
                                                     {error.password}
                                                     <div className={`password-validator-box w-100 ${valBox ? 'show-box' : 'hide-box'}`}>
                                                         <div className='d-flex flex-column inner-validator-box'>
-                                                            <div className={`validator1 ${valPas.upperCase ? 'right' : 'wrong'}`}>
-                                                                <FaCheck className={`fa ${valPas.upperCase ? 'show' : 'hide'}`} />
-                                                                <p>Must contain at least one uppercase A-Z</p>
+                                                            <div className={`validator1 ${valPas.upperCase && valPas.lowerCase  ? 'right' : 'wrong'}`}>
+                                                                <FaCheck className={`fa ${valPas.upperCase && valPas.lowerCase ? 'show' : 'hide'}`} />
+                                                                <p>Must contain one uppercase and lowercase Aa-Zz</p>
                                                             </div>
-                                                            <div className={`validator1 ${valPas.lowerCase ? 'right' : 'wrong'}`}>
-                                                                <FaCheck className={`fa ${valPas.lowerCase ? 'show' : 'hide'}`} />
-                                                                <p>Must contain at least one lowercase a-z</p>
-                                                            </div>
-                                                            <div className={`validator1 ${valPas.specialCharacters ? 'right' : 'wrong'}`}>
-                                                                <FaCheck className={`fa ${valPas.specialCharacters ? 'show' : 'hide'}`} />
-                                                                <p>Must contain at least one sepcial characters @-$</p>
-                                                            </div>
-                                                            <div className={`validator1 ${valPas.numbers ? 'right' : 'wrong'}`}>
-                                                                <FaCheck className={`fa ${valPas.numbers ? 'show' : 'hide'}`} />
-                                                                <p>Must contain at least one numbers 0-9</p>
+                                                            <div className={`validator1 ${valPas.specialCharacters && valPas.numbers  ? 'right' : 'wrong'}`}>
+                                                                <FaCheck className={`fa ${valPas.specialCharacters && valPas.numbers  ? 'show' : 'hide'}`} />
+                                                                <p>Must contain one sepcial characters(@-$) and numbers(0-9)</p>
                                                             </div>
                                                             <div className={`validator1 ${valPas.length ? 'right' : 'wrong'}`}>
                                                                 <FaCheck className={`fa ${valPas.length ? 'show' : 'hide'}`} />
@@ -337,7 +335,7 @@ export const SignUp = () => {
                     </div>
                 </div>
                 {loader && <Loader />}
-                {messages && <Success message={message} icon={icon} />}
+                {messages && <Modal message={message} icon={icon} />}
             </div>
         </div>
     )

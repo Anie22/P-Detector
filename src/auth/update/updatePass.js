@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Logo } from '../logo'
 import { FaCheck } from 'react-icons/fa';
-import { Success } from '../../components/success';
+import { Modal } from '../../components/modal';
 import { Loader } from "../../components/loader";
 import '../authCss/update.css';
 import axios from "axios";
@@ -111,7 +111,7 @@ export const UpdatePass = () => {
                 setIcon(
                     <div className="error">
                         <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
                         </svg>
                     </div>
                 );
@@ -184,7 +184,7 @@ export const UpdatePass = () => {
                                     <h6>Choose a new password to your account</h6>
                                 </div>
                                 <div className="sub-form-holder">
-                                    <form className="form" method="" action="" onSubmit={handleSubmit}>
+                                    <form className="form" method="post" onSubmit={handleSubmit}>
                                         <div className="form-input-holder">
                                             <div className="form-inp-1">
                                                 <label>Password</label>
@@ -207,21 +207,13 @@ export const UpdatePass = () => {
                                                 {err.password}
                                                 <div className={`password-validator-box w-100 ${valBox ? 'show-box' : 'hide-box'}`}>
                                                     <div className='d-flex flex-column inner-validator-box'>
-                                                        <div className={`validator1 ${valPas.upperCase ? 'right' : 'wrong'}`}>
-                                                            <FaCheck className={`fa ${valPas.upperCase ? 'show' : 'hide'}`} />
-                                                            <p>Must contain at least one uppercase A-Z</p>
+                                                        <div className={`validator1 ${valPas.upperCase && valPas.lowerCase  ? 'right' : 'wrong'}`}>
+                                                            <FaCheck className={`fa ${valPas.upperCase && valPas.lowerCase ? 'show' : 'hide'}`} />
+                                                            <p>Must contain one uppercase and lowercase Aa-Zz</p>
                                                         </div>
-                                                        <div className={`validator1 ${valPas.lowerCase ? 'right' : 'wrong'}`}>
-                                                            <FaCheck className={`fa ${valPas.lowerCase ? 'show' : 'hide'}`} />
-                                                            <p>Must contain at least one lowercase a-z</p>
-                                                        </div>
-                                                        <div className={`validator1 ${valPas.specialCharacters ? 'right' : 'wrong'}`}>
-                                                            <FaCheck className={`fa ${valPas.specialCharacters ? 'show' : 'hide'}`} />
-                                                            <p>Must contain at least one sepcial characters @-$</p>
-                                                        </div>
-                                                        <div className={`validator1 ${valPas.numbers ? 'right' : 'wrong'}`}>
-                                                            <FaCheck className={`fa ${valPas.numbers ? 'show' : 'hide'}`} />
-                                                            <p>Must contain at least one numbers 0-9</p>
+                                                        <div className={`validator1 ${valPas.specialCharacters && valPas.numbers  ? 'right' : 'wrong'}`}>
+                                                            <FaCheck className={`fa ${valPas.specialCharacters && valPas.numbers  ? 'show' : 'hide'}`} />
+                                                            <p>Must contain one sepcial characters(@-$) and numbers(0-9)</p>
                                                         </div>
                                                         <div className={`validator1 ${valPas.length ? 'right' : 'wrong'}`}>
                                                             <FaCheck className={`fa ${valPas.length ? 'show' : 'hide'}`} />
@@ -269,7 +261,7 @@ export const UpdatePass = () => {
                             <div className="success-hold">
                                 <div className="success">
                                     <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
-                                        <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
                                 </div>
                                 <div className="success-text">
@@ -278,7 +270,7 @@ export const UpdatePass = () => {
                             </div>
                         }
                         {loading && <Loader />}
-                        {messages &&  <Success icon={icon} message={message} />}
+                        {messages &&  <Modal icon={icon} message={message} />}
                     </div>
                 </div>
             </div>

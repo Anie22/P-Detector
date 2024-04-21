@@ -4,7 +4,7 @@ import '../authCss/codever.css'
 import { Logo } from '../logo';
 import { Loader } from "../../components/loader";
 import axios from "axios";
-import { Success } from "../../components/success";
+import { Modal } from "../../components/modal";
 
 export const VerifyCode = () => {
     const [email, setEmail] = useState(null);
@@ -13,9 +13,10 @@ export const VerifyCode = () => {
     const [icon, setIcon] = useState(null);
     const [message, setMessage] = useState(null);
     const [disableMsg, setDisableMsg] = useState(false);
-    const [disableTime, setDisableTime] = useState(40);
+    const [disableTime, setDisableTime] = useState(60);
 
     const button = document.getElementById('butn');
+
 
     const resendLink = async () => {
         const email = localStorage.getItem('mail').replace(/"|"/g, '');
@@ -38,16 +39,12 @@ export const VerifyCode = () => {
                 setIcon(
                     <div className="success">
                         <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
-                            <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </div>
                 );
 
                 setMessage('');
-
-                
-                button.disabled = true;
-                setDisableMsg(true)
             };
 
         } catch (err) {
@@ -56,7 +53,7 @@ export const VerifyCode = () => {
                 setIcon(
                     <div className="error">
                         <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
                         </svg>
                     </div>
                 );
@@ -100,8 +97,10 @@ export const VerifyCode = () => {
     
             return () => clearTimeout(Message);
         } else if(message === '') {
-            setMessages(true);        
+            setMessages(true);   
             
+            setDisableMsg(true)
+
             const Message = setTimeout(() => {
                 setMessages(false);
             }, 2000);
@@ -111,20 +110,20 @@ export const VerifyCode = () => {
             setMessages(false);
         }
 
+        getEmail();
+
         const disableCountTime = setInterval(() => {
-            if(disableTime === 40 || disableTime !== 0) {
+            if (disableTime === 60 || disableTime !== 0) {
                 button.disabled = true;
                 setDisableTime(prevCount => prevCount - 1);
                 setDisableMsg(true);
-            } else {
-                button.enabled = true;
+            } else if (disableTime === 0) {
+                button.disabled = false; 
                 setDisableMsg(false);
-                return;
+                clearInterval(disableCountTime);
             }
         }, 2000);
-
-        getEmail();
-
+    
         return () => clearInterval(disableCountTime);
 
     }, [email, loading, message, disableTime, disableMsg, button]);
@@ -145,7 +144,7 @@ export const VerifyCode = () => {
                                     <div className="vry-frm-txt-but">
                                         <p>Didn’t receive the email? Check spam or promotion folder or social</p>
                                         <button className="btn" id="butn" type="submit" onClick={() => resendLink()}>
-                                            { disableMsg ? <p>resend in {disableTime}<span className="text-lowercase">s</span></p> : <p>resend email</p> }
+                                            { disableMsg ? <p>resend in <span className="text-lowercase">{disableTime}s</span></p> : <p>resend email</p> }
                                         </button>
                                     </div>
                                     <div className="form-btn w-100">
@@ -161,7 +160,7 @@ export const VerifyCode = () => {
                     </div>
                 </div>
                 {loading && <Loader />}
-                {messages && <Success icon={icon} message={message} />}
+                {messages && <Modal icon={icon} message={message} />}
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import '../authCss/frgPass.css';
 import { Link } from 'react-router-dom';
 import { Logo } from '../logo';
 import { Loader } from '../../components/loader';
-import { Success } from '../../components/success';
+import { Modal } from '../../components/modal';
 import  axios  from 'axios';
 
 export const ResetPass = () => {
@@ -48,13 +48,13 @@ export const ResetPass = () => {
                     setIcon(
                         <div className="success">
                             <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
-                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
                         </div>
                     );
 
                     
-                    setMessage('success, please wait');
+                    setMessage('Modal, please wait');
                     window.location.href = '/reset-password/verify'
                 }
 
@@ -63,7 +63,7 @@ export const ResetPass = () => {
                     setIcon(
                         <div className="error">
                             <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
                             </svg>
                         </div>
                     );
@@ -96,15 +96,15 @@ export const ResetPass = () => {
             
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 4900);
+            }, 2000);
     
             return () => clearTimeout(Message);
-        }else if(message === 'success, please wait') {
+        }else if(message === 'Modal, please wait') {
             setMessages(true);
 
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 3900);
+            }, 2000);
     
             return () => clearTimeout(Message);
         } else {
@@ -152,7 +152,7 @@ export const ResetPass = () => {
                     </div>
                 </div>
                 {loader && <Loader />}
-                {messages && <Success message={message} icon={icon} />}
+                {messages && <Modal message={message} icon={icon} />}
             </div>
         </div>
     )
