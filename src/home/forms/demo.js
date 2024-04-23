@@ -398,7 +398,7 @@ export const Demo = () => {
                                                     <p className='text'>Your demo have been booked successfully <br /> <span>{full_Name}</span></p>
                                                 </div>
                                                 <div className="success-info">
-                                                    <p className='info'>Your meeting is confirmed for <span>{day}</span> by <span>{time}</span> with <span>Pedxo Agency</span>. Make sure to update your calander so as to be available for the meeting. Please kindly note that 30 minutes before the Schedule time our team will contact you to remind you on time</p>
+                                                    <p className='info'>Your meeting is confirmed for <span>{day}</span> by <span>{time}</span> with <span>Pedxo</span>. Make sure to update your calander so as to be available for the meeting. Please note that 30 minutes before the Scheduled time our team will contact you to remind you on time</p>
                                                 </div>
                                             </div>
                                         </div>

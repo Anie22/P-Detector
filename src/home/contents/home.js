@@ -81,17 +81,7 @@ export const Home = () => {
     }
 
     useEffect(() => {
-        const login = () => {
-            let user = localStorage.getItem("currentSes")
-
-            setUser(user)
-
-            if(!user){
-                return;
-            }
-        }
-        
-        login()
+        localStorage.removeItem('currentSes');
 
         const dCount = setInterval(() => {
             
@@ -190,7 +180,6 @@ export const Home = () => {
     return (
         <div className='body'>
             <Header />
-            <p>{user}</p>
             <section className='hero'>
                 <div className='sub-hero-sec'>
                     <div className='inner-hero-sec'>

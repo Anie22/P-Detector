@@ -53,10 +53,6 @@ export const Login = () => {
                 setLoader(true);
                 const res = await axios.post('https://pedxo-backend.onrender.com/auth/login', userLogins);
                 if(res) {
-                    localStorage.removeItem('currentSes');
-                    localStorage.removeItem('disableTime');
-                     
-                    
                     setIcon(
                         <div className="success">
                             <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
@@ -65,7 +61,6 @@ export const Login = () => {
                         </div>
                     );
                     setMessage('Login successfully');
-                    console.log(res)
                     window.location.href = '/';
                 }
                 
