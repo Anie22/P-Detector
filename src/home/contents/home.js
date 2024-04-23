@@ -16,7 +16,6 @@ export const Home = () => {
     const [designCount, setDesignCount] = useState(0);
     const [contractCount, setContractCount] = useState(0);
     const [activeFaq, setActiveFaq] = useState(null);
-    const [user, setUser] = useState()
 
     const selectedFaq = (i) => {
         if(activeFaq === i){
