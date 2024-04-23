@@ -1037,6 +1037,7 @@
         flex-direction: column;
         padding: 52px 16px;
         margin: 0;
+        max-width: 100%;
     }
     .metrix .container .metrix-holder-con{
         flex-direction: column;
@@ -1076,6 +1077,7 @@
     .about-sec .sub-abt-sec {
         padding: 0;
         margin: 0 !important;
+        max-width: 100%;
     }
     .about-sec .sub-abt-sec .row{
         flex-direction: column-reverse;

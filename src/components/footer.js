@@ -88,7 +88,7 @@ export const Footer = () => {
                         <div className="social-icons">                            
                             <a className='icon' href='https://web.facebook.com/people/Pedxo/100090410366859'><FaFacebook /></a>
                             <a className='icon' href='https://www.linkedin.com/company/pedxo'><FaLinkedin /></a>
-                            <a className='icon' href='https://twitter.com/Pedxodotcom'><FaTwitterSquare /></a>
+                            <a className='icon' href='https://x.com/getpedxo?t=gpwfcv7iZBw6myC0bkGJVw&s=09'><FaTwitterSquare /></a>
                         </div>
                     </div>
                 </div>
@@ -108,4 +108,4 @@ export const Footer = () => {
             </div>
         </footer>
     )
-}
+};

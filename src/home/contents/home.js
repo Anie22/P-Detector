@@ -16,6 +16,7 @@ export const Home = () => {
     const [designCount, setDesignCount] = useState(0);
     const [contractCount, setContractCount] = useState(0);
     const [activeFaq, setActiveFaq] = useState(null);
+    const [user, setUser] = useState()
 
     const selectedFaq = (i) => {
         if(activeFaq === i){
@@ -80,6 +81,18 @@ export const Home = () => {
     }
 
     useEffect(() => {
+        const login = () => {
+            let user = localStorage.getItem("currentSes")
+
+            setUser(user)
+
+            if(!user){
+                return;
+            }
+        }
+        
+        login()
+
         const dCount = setInterval(() => {
             
             if(devCount < 2000){
@@ -177,6 +190,7 @@ export const Home = () => {
     return (
         <div className='body'>
             <Header />
+            <p>{user}</p>
             <section className='hero'>
                 <div className='sub-hero-sec'>
                     <div className='inner-hero-sec'>

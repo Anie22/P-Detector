@@ -53,9 +53,10 @@ export const Login = () => {
                 setLoader(true);
                 const res = await axios.post('https://pedxo-backend.onrender.com/auth/login', userLogins);
                 if(res) {
-                    const token = res.data
-                    localStorage.setItem('currentSes', token);
-                    localStorage.removeItem('user');
+                    localStorage.removeItem('currentSes');
+                    localStorage.removeItem('disableTime');
+                     
+                    
                     setIcon(
                         <div className="success">
                             <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
@@ -63,8 +64,8 @@ export const Login = () => {
                             </svg>
                         </div>
                     );
-                    setMessages(true);
-                    setMessage('Login modalfully');
+                    setMessage('Login successfully');
+                    console.log(res)
                     window.location.href = '/';
                 }
                 
@@ -98,12 +99,12 @@ export const Login = () => {
                     
                 }
             }
-        }
+        };
 
         if (Object.keys(newErr).length > 0) {
             setError(newErr);
             return;
-        }
+        };
 
     };
 
@@ -126,23 +127,29 @@ export const Login = () => {
             }, 4900);
     
             return () => clearTimeout(Message);
-        }else if(message) {
+        }else if(message || message === 'Login successfully') {
             setMessages(true);
+
+            const Message = setTimeout(() => {
+                setMessages(false);
+            }, 2500);
+    
+            return () => clearTimeout(Message);
         } else {
-            setMessages(false)
+            setMessages(false);
         };
 
         const Login = () => {
             if(window.innerWidth > 900) {
                 setLoginText (
                     <h4>Log In</h4>
-                )
+                );
             } else if(window.innerWidth < 900) {
                 setLoginText(
                     <h4>Welcome back</h4>
-                )
-            }
-        }
+                );
+            };
+        };
 
         Login();
 
@@ -152,7 +159,7 @@ export const Login = () => {
             window.removeEventListener('resize', Login);
         };
 
-    }, [loader, message, icon, loginText])
+    }, [loader, message, icon, loginText, messages]);
 
 
     return (
@@ -242,4 +249,4 @@ export const Login = () => {
             </div>
         </div>
     )
-}
+};

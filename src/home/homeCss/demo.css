@@ -803,4 +803,13 @@
     .demo .sub-demo .inner-demo .demo-holder .form-holder .inner-form .form .submit-item-holder {
         gap: 25px;
     }
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .success-message .success-hold{
+        width: 100%;
+    }
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .success-message .success-hold .success-text .text{
+        font-size: 18px;
+    }
+    .demo .sub-demo .inner-demo .demo-holder .form-holder .success-message .success-hold .success-info .info{
+        font-size: 14px;
+    } 
 }

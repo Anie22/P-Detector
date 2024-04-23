@@ -1103,4 +1103,10 @@
     .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .inner-form .form .submit-item-holder {
         gap: 25px;
     }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .success-message .success-hold .success-text p {
+        font-size: 18px;
+    }
+    .outsource .sub-outsource-holder .inner-sec .outsource-holder .form-holder .success-message .success-hold .success-link {
+        width: 100%;
+    }
 }
