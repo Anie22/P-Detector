@@ -170,11 +170,6 @@ export const Demo = () => {
             const url = 'https://pedxo-backend.onrender.com/demo';
 
             try {
-
-                button.disabled = true;
-                button2.style.opacity = '50%'
-                setLoading(true);
-
                 const res = await axios.post(url, bookDemoDetails);
 
                 if(res) {
@@ -183,6 +178,10 @@ export const Demo = () => {
                     setForm(false);
                     
                 };
+
+                button.disabled = true;
+                button2.style.opacity = '50%'
+                setLoading(true);
 
             } catch(err) {
 
