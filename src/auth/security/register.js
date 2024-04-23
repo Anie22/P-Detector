@@ -119,7 +119,7 @@ export const SignUp = () => {
                         </div>
                     );
                     setMessages(true);
-                    setMessage('Sign Up Modalfully');
+                    setMessage('Sign Up Successfully');
                     window.location.href = '/login';
                 } else {
                     setIcon(
