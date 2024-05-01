@@ -86,10 +86,10 @@ export const Footer = () => {
                             <h4>Socials</h4>
                         </div>
                         <div className="social-icons">                            
-                            <a className='icon' href='https://web.facebook.com/people/Pedxo/100090410366859'><FaFacebook /></a>
-                            <a className='icon' href='https://www.linkedin.com/company/pedxo'><FaLinkedin /></a>
-                            <a className='icon' href='https://x.com/getpedxo?t=gpwfcv7iZBw6myC0bkGJVw&s=09'><FaTwitterSquare /></a>
-                            <a className='icon' href='https://www.instagram.com/usepedxo'><FaInstagramSquare /></a>
+                            <a className='icon' href='https://web.facebook.com/people/Pedxo/100090410366859' target='_blank'><FaFacebook /></a>
+                            <a className='icon' href='https://www.linkedin.com/company/pedxo' target='_blank'><FaLinkedin /></a>
+                            <a className='icon' href='https://x.com/getpedxo?t=gpwfcv7iZBw6myC0bkGJVw&s=09' target='_blank'><FaTwitterSquare /></a>
+                            <a className='icon' href='https://www.instagram.com/usepedxo' target='_blank'><FaInstagramSquare /></a>
                         </div>
                     </div>
                 </div>
