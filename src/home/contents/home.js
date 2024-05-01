@@ -1,6 +1,6 @@
 import React from 'react';
 import '../homeCss/home.css';
-import aboutImg from '../../Img/aboutImg.png';
+import aboutImg from '../../Img/About.png';
 import { FaArrowRight, FaPlus, FaTimes } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
