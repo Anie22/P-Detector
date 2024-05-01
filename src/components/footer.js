@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaFacebook, FaTwitterSquare } from "react-icons/fa";
+import { FaLinkedin, FaFacebook, FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
 import './css/footer.css'
 
 export const Footer = () => {
@@ -89,6 +89,7 @@ export const Footer = () => {
                             <a className='icon' href='https://web.facebook.com/people/Pedxo/100090410366859'><FaFacebook /></a>
                             <a className='icon' href='https://www.linkedin.com/company/pedxo'><FaLinkedin /></a>
                             <a className='icon' href='https://x.com/getpedxo?t=gpwfcv7iZBw6myC0bkGJVw&s=09'><FaTwitterSquare /></a>
+                            <a className='icon' href='https://www.instagram.com/usepedxo'><FaInstagramSquare /></a>
                         </div>
                     </div>
                 </div>
