@@ -151,7 +151,7 @@ export const Home = () => {
 
     const services = [    
         {title: <h4>“All your <span>technical needs covered </span> under a single monthly subscription.”</h4>, buttonText: "Outsource", buttonFunction: '/outsource'},
-        {title: <h4>“<span>Seamlessly Hire</span>, Onboard, Manage and Pay your employees and contractors all in one platform.”</h4>, buttonText: 'Hire talents', buttonFunction: '/hire'},
+        {title: <h4>“<span>Seamlessly Hire</span>, Onboard, Manage and Pay your employees and contractors all-in-one platform.”</h4>, buttonText: 'Hire talents', buttonFunction: '/hire'},
         {title: <h4>“Directly connecting <span>remote workers</span> with employers offering remote job listings.”</h4>, buttonText: 'Apply for Remote Jobs', buttonFunction: '/jobs'}
     ]
 
