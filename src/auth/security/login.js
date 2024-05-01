@@ -79,7 +79,7 @@ export const Login = () => {
                         const {status} = err.response;
 
                         if(status === 404 && err.response.data.message === 'user not found'){
-                            newErr.email = <p>Invalid email address</p>
+                            newErr.email = <p>User not found</p>
                         }else if(status === 500 && err.response.data.message === 'Internal server error'){
                             setMessage('Server timeout');
                         } else if(err.response.data.message === 'password do not matched'){
@@ -161,7 +161,7 @@ export const Login = () => {
         <div className="Login">
             <div className='sub-login-holder'>
                 <div className='d-flex align-items-start justify-content-center inner-app'>
-                    <div className='d-flex col-12 sub-app'>
+                    <div className='d-inline-flex align-items-start justify-content-center col-12 sub-app'>
                         <Logo />
                         <div className='col-6 d-flex flex-column justify-content-between align-items-center form-holder'>
                             <div className='d-flex align-items-start col-12 gap-2 rounded-2 bg-white sub-form-holder'>
