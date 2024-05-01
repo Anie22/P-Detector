@@ -1,17 +1,9 @@
 .Logo-content-holder{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 600px;
     background: var(--backgroundPrimary);
 }
 .Logo-content-holder .logo-content{
-    width: 100%;
     height: 100%;
     padding: 50px;
-    flex-direction: column;
-    align-items: flex-start;
     flex-shrink: 0;
 }
 .Logo-content-holder .logo-content .logo .link{
@@ -25,14 +17,8 @@
     color: var(--lightBlack);
     text-decoration: none;
 }
-.Logo-content-holder .logo-content .content{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}
 .Logo-content-holder .logo-content .content h2{
-    width: 519.419px;
+    width: 100%;
     color: var(--lightBlack);
     font-size: 40px;
     font-style: normal;
@@ -43,12 +29,23 @@
 .Logo-content-holder .logo-content .content h2 span{
     color: var(--lightAsh);
 }
+@media only screen and (max-width: 1024px) {
+    .Logo-content-holder .logo-content .logo .link a,
+    .Logo-content-holder .logo-content .content h2{
+        font-size: 32px;
+    }
+}
 @media only screen and (max-width: 900px) {
     .Logo-content-holder{
         width: 100%;
     }
     .Logo-content-holder .logo-content .content{
         display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .Logo-content-holder .logo-content{
+        padding: 16px 20px;
     }
 }
 @media only screen and (max-width: 425px) {

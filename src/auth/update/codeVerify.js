@@ -21,6 +21,7 @@ export const VerifyCode = () => {
     const resendLink = async () => {
         const email = localStorage.getItem('mail').replace(/"|"/g, '');
         const type = 'Reset Password';
+        const button = document.getElementById('butn');
 
         try {
             const resetPasswordInfo = {
@@ -35,6 +36,8 @@ export const VerifyCode = () => {
 
             if(resp){
                 setMessages(true);
+                setDisableMsg(true);
+                button.disabled = true;
 
                 setIcon(
                     <div className="success">
@@ -44,7 +47,20 @@ export const VerifyCode = () => {
                     </div>
                 );
 
+
                 setMessage('');
+
+                const disableCountTime = setInterval(() => {
+                    if (disableTime === 60 || disableTime !== 0) {
+                        setDisableTime(prevCount => prevCount - 1);
+                    } else if (disableTime === 0) {
+                        button.disabled = false; 
+                        setDisableMsg(false);
+                        return;
+                    }
+                }, 2000);
+            
+                return () => clearInterval(disableCountTime);
             };
 
         } catch (err) {
@@ -76,7 +92,6 @@ export const VerifyCode = () => {
     };
 
     useEffect(() => {
-        const button = document.getElementById('butn');
         const getEmail = () => {
             const mail = localStorage.getItem('mail');
             const mailIndex = [7, 8, 9, 10, 11, 12]
@@ -93,13 +108,11 @@ export const VerifyCode = () => {
             
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 2000);
+            }, 2500);
     
             return () => clearTimeout(Message);
         } else if(message === '') {
             setMessages(true);   
-            
-            setDisableMsg(true)
 
             const Message = setTimeout(() => {
                 setMessages(false);
@@ -112,21 +125,8 @@ export const VerifyCode = () => {
 
         getEmail();
 
-        const disableCountTime = setInterval(() => {
-            if (disableTime === 60 || disableTime !== 0) {
-                button.disabled = true;
-                setDisableTime(prevCount => prevCount - 1);
-                setDisableMsg(true);
-            } else if (disableTime === 0) {
-                button.disabled = false; 
-                setDisableMsg(false);
-                clearInterval(disableCountTime);
-            }
-        }, 2000);
-    
-        return () => clearInterval(disableCountTime);
 
-    }, [email, loading, message, disableTime, disableMsg, button]);
+    }, [email, loading, message, messages]);
 
     return (
         <div className="vry-cd-hol">

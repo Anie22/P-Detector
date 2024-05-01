@@ -54,7 +54,7 @@ export const ResetPass = () => {
                     );
 
                     
-                    setMessage('Modal, please wait');
+                    setMessage('Successful, please wait');
                     window.location.href = '/reset-password/verify'
                 }
 
@@ -74,6 +74,7 @@ export const ResetPass = () => {
                         err.email = <p>User does not exist</p>
                     }
                 }
+                console.error(error)
 
             } finally {
                 setLoader(false);

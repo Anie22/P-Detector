@@ -35,6 +35,7 @@ function App() {
           <Route path='/reset-password/verify' element={ <VerifyCode /> }></Route>
           <Route path='/reset-password/update' element={ <UpdatePass /> }></Route>
           <Route path='/verify-request-reset-pwd/ver-doc' element={ <ResetVerification /> }></Route>
+          {/* <Route path='/verifying-user-email' element={ <EmailVerification /> }></Route> */}
           <Route path='/verify-account/html' element={ <EmailMsg /> }></Route>
           <Route path='*' element={<Missing />}></Route>
         </Routes>

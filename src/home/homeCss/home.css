@@ -78,7 +78,7 @@
     letter-spacing: -2.24px;
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par{
-    width: 448px;
+    width: 505px;
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par p{
     color: var(--innerBlack);
@@ -379,22 +379,6 @@
 .remote-work{
     background: var(--backgroundSecondary);
 }
-.remote-work .sub-remote-work{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.remote-work .sub-remote-work .inner-remote-work .remote-work-content{
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
-    gap: 40px;
-}
-.remote-work .sub-remote-work .inner-remote-work .remote-work-content .first-content .sub-first-content{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .first-content .sub-first-content .border{
     background: var(--backgroundPrimary);
     height: 10px;
@@ -403,16 +387,9 @@
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .first-content .sub-first-content .title h4{
     color: var(--lightBlack);
-    font-size: 16px;
-    text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 24px;
-}
-.remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-heading h2{
     color: var(--lightBlack);
@@ -441,11 +418,6 @@
     gap: 15px;
     padding: 20px;
 }
-.remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .heading{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .heading .fa{
     fill: var(--icons);
     stroke: var(--icons); 
@@ -457,16 +429,9 @@
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 1px;
-    text-transform: capitalize;
     color: var(--lightBlack) !important;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph{
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
     height: inherit;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-des p{
@@ -477,16 +442,9 @@
     letter-spacing: 1px;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-icon{
-    position: relative;
-    display: flex;
-    align-items: center;
     height: 40px;
-    width: 40px;
     background: var(--iconsHolder);
-    border-radius: 50%;
-    justify-content: center;
     z-index: 2;
-    right: -8em;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-icon .fa{
     font-size: 18px;
@@ -504,35 +462,16 @@
 
 
 .services{
-    position: relative;
     background: var(--backgroundPrimary);
     height: 580px;
-    width: 100%;
-    overflow: hidden;
-}
-.services .sub-service-holder{
-    height: 100%;
-    width: 100%;
-    background: transparent;
 }
 .services .sub-service-holder .svg-design{
-    position: relative;
     right: -150px;
     top: -55px;
     height: 600px;
 }
 .services .sub-service-holder .services-holder{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    top: 0;
-    left: 0;
     z-index: 2;
-}
-.services .sub-service-holder .services-holder .services-content-holder{
-    width: 100%;
-    height: 100%;
 }
 .services .sub-service-holder .services-holder .services-content-holder .slick-slider .slick-arrow.slick-disabled{
     cursor: unset;
@@ -578,19 +517,8 @@
     opacity: 100%;
 }
 .services .sub-service-holder .services-holder .services-content-holder .service-content{
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 52px;
     height: 580px;
-}
-.services .sub-service-holder .services-holder .services-content-holder .service-content .services-text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 80%;
 }
 .services .sub-service-holder .services-holder .services-content-holder .service-content .services-text h4{
     background: linear-gradient(0deg, var(--lightBlack), var(--lightBlack)),
@@ -599,7 +527,6 @@
                 linear-gradient(0deg, var(--black), var(--black));
     -webkit-background-clip: text;
     color: transparent;
-    text-align: center;
     font-weight: 700;
     font-size: 48px;
     line-height: 120%;
@@ -614,19 +541,15 @@
     color: transparent;
 }
 .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a{
-    display: flex;
-    align-items: center;
     background: var(--button);
     height: 50px;
     width: 350px;
-    justify-content: center;
     border: none;
     outline: none;
     gap: 12px;
     color: var(--buttonText);
     border-radius: 50px;
     padding: 12px 24px 12px 24px;
-    text-decoration: none;
 }
 .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a p{
     font-size: 20px;
@@ -650,36 +573,11 @@
 */
 
 .testimonals{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: var(--backgroundSecondary);
-    overflow: hidden;
-}
-.testimonals .tes-hld{
-    width: 100%;
-    margin: 1em 0;
-}
-.testimonals .tes-hld .in-tes .sub-tes{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    gap: 52px;
 }
 .testimonals .tes-hld .in-tes .sub-tes .tes-hd-con{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     align-self: stretch;
     gap: 72px;
-}
-.testimonals .tes-hld .in-tes .sub-tes .tes-hd-con .sub-tes-hld .sub-tes-sec{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
 }
 .testimonals .tes-hld .in-tes .sub-tes .tes-hd-con .sub-tes-hld .sub-tes-sec .sub-tes-bdr{
     height: 10px;
@@ -713,20 +611,10 @@
     background: none;
 }
 .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .sub-tes-con{
-    display: flex;
-    padding: 32px;
-    align-items: flex-start;
-    gap: 10px;
     border-radius: 16px;
     box-shadow: 0px 16px 24px -4px rgba(16, 25, 40, 0.08), 0px 4px 6px -2px rgba(16, 25, 40, 0.03);
     background: var(--white);
     width: 360px !important;
-}
-.testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .sub-tes-con .in-tes-con{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
 }
 .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .sub-tes-con .in-tes-con .tes-con-info{
     width: 312px;
@@ -770,22 +658,7 @@
     background: var(--white);
 }
 .faq .sub-faq-sec .inner-faq-sec{
-    display: inline-flex;
-    align-items: flex-start;
-    flex-direction: column;
-    align-self: stretch;
-}
-.faq .sub-faq-sec .inner-faq-sec .faq-hld{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 72px;
-    width: 100%;
-}
-.faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-heading{
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    max-width: 100%;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-heading .faq-border{
     height: 10px;
@@ -793,19 +666,10 @@
     background: var(--backgroundPrimary);
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-heading .faq-heading-sec h4{
-    font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     line-height: 120%;
     letter-spacing: -0.4px;
     color: var(--lightBlack);
-}
-.faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    width: 100%;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-head h2{
     font-size: 48px;
@@ -818,30 +682,13 @@
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-head h2 span{
     color: var(--span);
 }
-.faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    width: 100%;
-}
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques{
-    display: flex;
     min-height: 75px;
-    padding: 16px 20px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 24px;
     border-radius: 24px;
     background: var(--faq);
     width: 100%;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1163px;
     cursor: pointer;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head h3{
@@ -855,19 +702,12 @@
     letter-spacing: -0.48px;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head .icon-holder{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     width: 40px;
     height: 40px;
     background: var(--lightAsh);
-    border-radius: 50%;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head .icon-holder .faPlus{
-    position: absolute;
     color: var(--backgroundSecondary);
-    font-size: 20px !important;
     top: 10px;
     left: 10px;
     stroke-width: 3px;
@@ -875,15 +715,12 @@
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-body{
     display: none;
-    width: 1163px;
+    width: 100%;
     transition: all 0.5s linear;
     opacity: 0;
     max-height: 0px;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-body .des{
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 145%;
     -webkit-text-stroke-width: 0.1px;
     color: var(--faqText);

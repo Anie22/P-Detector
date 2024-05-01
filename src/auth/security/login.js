@@ -160,13 +160,13 @@ export const Login = () => {
     return (
         <div className="Login">
             <div className='sub-login-holder'>
-                <div className='inner-app'>
-                    <div className='sub-app'>
+                <div className='d-flex align-items-start justify-content-center inner-app'>
+                    <div className='d-flex col-12 sub-app'>
                         <Logo />
-                        <div className='form-holder'>
-                            <div className='sub-form-holder'>
-                                <div className='inner-form-holder'>
-                                    <div className='heading'>
+                        <div className='col-6 d-flex flex-column justify-content-between align-items-center form-holder'>
+                            <div className='d-flex align-items-start col-12 gap-2 rounded-2 bg-white sub-form-holder'>
+                                <div className='d-flex align-items-center flex-column inner-form-holder'>
+                                    <div className='d-flex flex-column justify-content-center align-items-start align-self-stretch gap-3 heading'>
                                         <div className='first-text'>
                                             {loginText}
                                         </div>
@@ -174,11 +174,11 @@ export const Login = () => {
                                             <h6>Enter your credentials to access your account</h6>
                                         </div>
                                     </div>
-                                    <form method='post' autoComplete='off' onSubmit={handleSubmit} className='main-form'>
-                                        <div className='user-input-holder'>
-                                            <div className='email'>
+                                    <form method='post' autoComplete='off' onSubmit={handleSubmit} className='d-flex flex-column align-items-start align-self-stretch gap-4 main-form'>
+                                        <div className='d-flex flex-column align-items-start align-self-stretch user-input-holder'>
+                                            <div className='d-flex flex-column align-items-start align-self-stretch gap-2 email'>
                                                 <label>Email</label>
-                                                <div className='in-ico'>
+                                                <div className='position-relative col-12 in-ico'>
                                                     <input name='email' value={email} onChange={(e) => handleInput(e)} type='email' placeholder='Enter your email'></input>
                                                     <div className='fa-holder'>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
@@ -188,9 +188,9 @@ export const Login = () => {
                                                 </div>
                                                 {error.email}
                                             </div>
-                                            <div className='pass'>
+                                            <div className='d-flex flex-column align-items-start align-self-stretch gap-2 pass'>
                                                 <label>Password</label>
-                                                <div className='in-ico'>
+                                                <div className='position-relative col-12 in-ico'>
                                                     <input name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleInput(e)} placeholder={showPassword ? 'Enter your password' : '********'}></input>
                                                     <div className='fa-holder'  onClick={togglePass}>
                                                     {showPassword ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
@@ -209,9 +209,9 @@ export const Login = () => {
                                                 {error.password}
                                             </div>
                                         </div>
-                                        <div className='text-hol'>
-                                            <div className='remem-text'>
-                                                <div className={check ? 'remem click' : 'remem'} onClick={toggleCheck}>
+                                        <div className='d-flex justify-content-between align-items-center align-self-stretch text-hol'>
+                                            <div className='d-flex align-items-center gap-2 remem-text'>
+                                                <div className={check ? 'd-flex justify-content-center align-items-center align-self-stretch remem click' : 'd-flex justify-content-center align-items-center align-self-stretch remem'} onClick={toggleCheck}>
                                                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" className={check ? 'fa show' : 'fa'} xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
                                                     </svg>
@@ -222,14 +222,14 @@ export const Login = () => {
                                                 <Link to='/reset-password'>Forgotten password</Link>
                                             </div>
                                         </div>
-                                        <div className='button-holder'>
+                                        <div className='d-flex flex-column justify-content-center align-items-center align-self-stretch button-holder'>
                                             <button type='submit'>
                                                 <p className='text'>Login</p>
                                             </button>
                                         </div>
                                     </form>
                                     <div className='bottom'>
-                                        <div className='bottom-text'>
+                                        <div className='d-flex justify-content-center align-items-center gap-2 bottom-text'>
                                             <p>Are you new here</p>
                                             <a href='/register'>Create account</a>
                                         </div>

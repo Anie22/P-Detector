@@ -179,7 +179,7 @@ export const Home = () => {
     return (
         <div className='body'>
             <Header />
-            <section className='hero'>
+            <section className='position-relative hero'>
                 <div className='sub-hero-sec'>
                     <div className='inner-hero-sec'>
                         <div className='svg-holder'>
@@ -224,7 +224,7 @@ export const Home = () => {
                             <div className='hero-text-con'>
                                 <div className='hero-text-hld'>
                                     <div className='heading'>
-                                        <h4>Technical partner-as-a-service.</h4>
+                                        <h4>Technical <br /> partner-as-a-service.</h4>
                                     </div>
                                     <div className='par'>
                                         <p>Pedxo work as your in-house developers to help build up your MVP, eliminating the need for you to hire an external team.</p>
@@ -320,33 +320,33 @@ export const Home = () => {
                 </div>
             </section>
             <section className='remote-work p-5'>
-                <div className='sub-remote-work my-4'>
+                <div className='d-flex align-items-center justify-content-center my-4 sub-remote-work'>
                     <div className='inner-remote-work container'>
-                        <div className='remote-work-content w-100'>
+                        <div className='d-flex flex-column align-items-start gap-4 col-12 remote-work-content'>
                             <div className='first-content'>
-                                <div className='sub-first-content'>
+                                <div className='d-flex align-items-center gap-2 sub-first-content'>
                                     <div className='border'></div>
-                                    <div className='title'>
-                                        <h4>Remote work simplified.</h4>
+                                    <div className='text-uppercase title'>
+                                        <h4 className='fs-6'>Remote work simplified.</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div className='second-content'>
+                            <div className='d-flex flex-column gap-4 second-content'>
                                 <div className='second-content-heading'>
                                     <h2>The nature of work is changing rapidly. Businesses need to act <span>fast, creatively and more flexibly.</span></h2>
                                 </div>
                                 <div className='second-content-items'>
                                     {remoteInfos.map((remoteInfo) => (
                                         <div className='sub-content'>
-                                            <div className='heading'>
+                                            <div className='d-flex align-items-center gap-2 heading'>
                                                 {remoteInfo.icons}
-                                                <h5>{remoteInfo.title}<br/> <span>{remoteInfo.subTitle}</span></h5>
+                                                <h5 className='text-capitalize'>{remoteInfo.title}<br/> <span>{remoteInfo.subTitle}</span></h5>
                                             </div>
-                                            <div className='paragraph'>
+                                            <div className='positive-relative d-flex flex-column align-items-center justify-content-between gap-4 paragraph'>
                                                 <div className='par-des'>
                                                     <p>{remoteInfo.des}</p>
                                                 </div>
-                                                <a href={remoteInfo.link} className='par-icon text-decoration-none'>
+                                                <a href={remoteInfo.link} className='positive-relative d-flex align-items-center justify-content-center text-decoration-none col-12 rounded-2 par-icon'>
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className='fa'>
                                                         <path d="M21.1863 9.28003L27.1862 15.28L27.9062 16L27.1862 16.72L21.1863 22.72L19.7803 21.28L24.0633 17H3.99925V15H24.0623L19.7803 10.72L21.1883 9.28003H21.1863Z"/>
                                                     </svg>
@@ -360,21 +360,21 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='p-5 services w-100' id='services'>
-                <div className='sub-service-holder'>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 500" fill="none" className='svg-design'>
+            <section className='position-relative overflow-hidden p-5 w-100 services' id='services'>
+                <div className='sub-service-holder bg-transparent'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 500" fill="none" className='position-relative svg-design'>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M837.008 122.85C794.743 133.036 761.249 153.249 714.781 203.656C679.537 241.887 676.755 285.46 672.199 356.819L672.065 358.923C667.635 428.252 660.222 517.324 582.762 595.846C498.371 681.393 405.813 692.729 332.123 701.754C321.478 703.057 311.226 704.313 301.45 705.737C261.445 711.564 227.218 719.602 194.599 738.583C162.476 757.276 128.026 788.926 92.6082 848L0 788.902C43.3253 716.64 90.3106 670.29 141.102 640.733C191.399 611.465 241.567 601.004 286.226 594.498C298.578 592.699 310.409 591.155 321.796 589.668C395.115 580.097 449.997 572.932 506.443 515.713C552.674 468.848 559.139 418.351 563.408 351.534C563.664 347.531 563.908 343.429 564.157 339.237C567.86 276.886 572.741 194.721 635.876 126.234C692.341 64.9836 743.588 29.9974 812.238 13.4533C873.653 -1.34719 947.31 -0.547472 1043.68 0.498852C1046.76 0.532329 1049.87 0.566057 1053 0.599537L1051.87 112.936C945.211 111.795 884.542 111.395 837.008 122.85Z" fill="#E7BB3F"/>
                     </svg>
-                    <div className='services-holder'>
+                    <div className='position-absolute overflow-hidden start-0 top-0 col-12 services-holder'>
                         <div className='services-content-holder'>
                             <Slider {...serviceSlide}>
                                 {services.map((service) => (
-                                    <div className='service-content'>
-                                        <div className='services-text'>
+                                    <div className='d-flex flex-column align-items-center justify-content-center service-content'>
+                                        <div className='d-flex align-items-center justify-content-center text-center col-10 text-center services-text'>
                                             {service.title}
                                         </div>
                                         <div className='service-button-holder'>
-                                            <a href={service.buttonFunction}>
+                                            <a href={service.buttonFunction} className='d-flex align-items-center justify-content-center text-decoration-none'>
                                                 <p>{service.buttonText}</p>
                                                 <FaArrowRight className='fa' />
                                             </a>
@@ -386,13 +386,13 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='testimonals p-5'>
-                <div className='tes-hld'>
+            <section className='d-flex align-items-center justify-content-center overflow-hidden p-5 testimonals'>
+                <div className='tes-hld col-12 my-3 mx-0'>
                     <div className='in-tes'>
-                        <div className='sub-tes'>
-                            <div className='tes-hd-con container'>
+                        <div className='d-flex align-items-start justify-content-center flex-column col-12 gap-5 sub-tes'>
+                            <div className='d-flex align-items-start flex-column tes-hd-con container'>
                                 <div className='sub-tes-hld'>
-                                    <div className='sub-tes-sec'>
+                                    <div className='d-flex align-items-center col-12 gap-2 sub-tes-sec'>
                                         <div className='sub-tes-bdr'></div>
                                         <div className='seb-tes-txt'>
                                             <h4>Testimonals</h4>
@@ -406,8 +406,8 @@ export const Home = () => {
                             <div className='tes-cont-bdy'>
                                 <Slider {...testimonal}>
                                     {testimonals.map((testimonal) => (
-                                        <div className='sub-tes-con'>
-                                            <div className='in-tes-con'>
+                                        <div className='d-flex align-items-start p-4 gap-2 sub-tes-con'>
+                                            <div className='d-flex align-items-start flex-column gap-5 in-tes-con'>
                                                 <div className='tes-con-info'>
                                                     <p>{testimonal.info}</p>
                                                 </div>
@@ -426,30 +426,30 @@ export const Home = () => {
             </section>
             <section className='faq p-5' id='faq'>
                 <div className='sub-faq-sec my-5'>
-                    <div className='inner-faq-sec container'>
-                        <div className='faq-hld'>
-                            <div className='faq-heading'>
+                    <div className='inner-faq-sec d-flex align-items-start flex-column container'>
+                        <div className='faq-hld d-flex align-items-start flex-column gap-5 col-12'>
+                            <div className='faq-heading d-flex align-items-center gap-2'>
                                 <div className='faq-border'></div>
                                 <div className='faq-heading-sec'>
-                                    <h4>FAQ's</h4>
+                                    <h4 className='fs-6'>FAQ's</h4>
                                 </div>
                             </div>
-                            <div className='faq-ques-hld w-100'>
+                            <div className='faq-ques-hld d-flex align-items-start flex-column gap-4 col-lg-12'>
                                 <div className='faq-ques-head'>
                                     <h2>We've <span>answered</span> your questions</h2>
                                 </div>
-                                <div className='faq-ques-sec'>
-                                    <div className='sub-faq-ques'>
+                                <div className='faq-ques-sec col-lg-12'>
+                                    <div className='sub-faq-ques d-flex align-items-start flex-column gap-2 col-12'>
                                         {faqs.map((faq, i) => (
-                                            <div className='in-faq-ques' key={i}>
-                                                <div className='faq-ques-head'>
+                                            <div className='in-faq-ques d-flex align-items-start justify-content-center flex-column gap-3 py-3 px-4' key={i}>
+                                                <div className='faq-ques-head d-flex justify-content-between align-items-center pe-auto col-12'>
                                                     <h3>{faq.ques}</h3>
-                                                    <div className='icon-holder' onClick={() => selectedFaq(i)}>
-                                                        {activeFaq === i ? <FaTimes className='faPlus' /> : <FaPlus className='faPlus' />}
+                                                    <div className='icon-holder d-flex align-items-center justify-content-center position-relative rounded-circle' onClick={() => selectedFaq(i)}>
+                                                        {activeFaq === i ? <FaTimes className='faPlus position-absolute fs-5' /> : <FaPlus className='faPlus position-absolute fs-5' />}
                                                     </div>
                                                 </div>
                                                 <div className={activeFaq === i ? 'faq-ques-body open' : 'faq-ques-body'}>
-                                                    <div className='des'>
+                                                    <div className='des fw-normal fs-6'>
                                                         <p>{faq.ans}</p>
                                                         {faq.lists && (
                                                             <ol className='des-list'>

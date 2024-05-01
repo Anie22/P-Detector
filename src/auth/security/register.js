@@ -219,41 +219,41 @@ export const SignUp = () => {
     return (
         <div className="signup">
             <div className='signup-inner-app'>
-                <div className='inner-app'>
-                    <div className='sub-app'>
+                <div className='d-flex justify-content-center align-items-start inner-app'>
+                    <div className='d-flex col-12 bg-white sub-app'>
                         <Logo />
-                        <div className='form-section'>
-                            <div className='form-holder'>
-                                <div className='inner-form-holder'>
-                                    <div className='form-title'>
-                                        <div className='title-des'>
+                        <div className='d-flex flex-column col-6 form-section'>
+                            <div className='d-flex align-items-start gap-2 col-12 bg-white form-holder'>
+                                <div className='d-flex flex-column align-items-center gap-4 align-self-stretch col-12 inner-form-holder'>
+                                    <div className='d-flex flex-column align-items-start justify-content-center align-self-stretch form-title'>
+                                        <div className='d-flex flex-column align-items-center gap-3 align-self-stretch title-des'>
                                             <h4>Register</h4>
                                             <span className='login-text'>Already have an account? <Link to='/login'>Login</Link></span>
                                         </div>
                                     </div>
-                                    <form method='post' autoComplete='off' onSubmit={handleSubmit} className='form-input-holder'>
-                                        <div className='inputs'>
-                                            <div className='name-holder d-flex w-100'>
-                                                <div className='fname'>
+                                    <form method='post' autoComplete='off' onSubmit={handleSubmit} className='d-flex flex-column align-items-start gap-4 align-self-stretch form-input-holder'>
+                                        <div className='d-flex flex-column align-items-start gap-4 align-self-stretch inputs'>
+                                            <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 name-holder'>
+                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch fname'>
                                                     <label>First name</label>
                                                     <input name='firstName' type='text' placeholder='enter your first name' value={firstName} onChange={(e) => handleValue(e)}></input>
                                                     {error.firstName}
                                                 </div>
-                                                <div className='lname'>
+                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch lname'>
                                                     <label>Last name</label>
                                                     <input name='lastName' type='text' placeholder='enter your last name' value={lastName} onChange={(e) => handleValue(e)}></input>
                                                     {error.lastName}
                                                 </div>
                                             </div>
-                                            <div className='user-email-holder d-flex w-100'>
-                                                <div className='uname'>
+                                            <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 user-email-holder'>
+                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch uname'>
                                                     <label>User name</label>
                                                     <input name='userName' type='text' placeholder='enter your user name' value={userName} onChange={(e) => handleValue(e)}></input>
                                                     {error.userName}
                                                 </div>
-                                                <div className='email'>
+                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch email'>
                                                     <label>Email</label>
-                                                    <div className='in-ico'>
+                                                    <div className='position-relative col-12 in-ico'>
                                                         <input name='email' type='email' placeholder='enter your email' value={email} onChange={(e) => handleValue(e)}></input>
                                                         <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 20 20" className='fa'>
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8323 17.5C17.6732 17.5 19.1656 16.0076 19.1656 14.1667V6.68557C19.1659 6.67283 19.1659 6.66005 19.1656 6.64725V5.83333C19.1656 3.99238 17.6732 2.5 15.8323 2.5H4.16559C2.32464 2.5 0.832253 3.99238 0.832253 5.83333V6.64726C0.831957 6.66005 0.831958 6.67282 0.832253 6.68556V14.1667C0.832253 16.0076 2.32464 17.5 4.16559 17.5H15.8323ZM2.49892 14.1667C2.49892 15.0871 3.24511 15.8333 4.16559 15.8333H15.8323C16.7527 15.8333 17.4989 15.0871 17.4989 14.1667V7.89753L11.2369 10.4023C10.4422 10.7202 9.55565 10.7202 8.76095 10.4023L2.49892 7.89753V14.1667ZM10.6179 8.85488L17.4989 6.10247V5.83333C17.4989 4.91286 16.7527 4.16667 15.8323 4.16667H4.16559C3.24511 4.16667 2.49892 4.91286 2.49892 5.83333V6.10247L9.37993 8.85488C9.77729 9.01382 10.2206 9.01382 10.6179 8.85488Z"/>
@@ -262,10 +262,10 @@ export const SignUp = () => {
                                                     {error.email}
                                                 </div>
                                             </div>
-                                            <div className='password-confirm-holder d-flex w-100'>
-                                                <div className='pass password-holder'>
+                                            <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 password-confirm-holder'>
+                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch pass password-holder'>
                                                     <label>Password</label>
-                                                    <div className='in-ico'>
+                                                    <div className='position-relative col-12 in-ico'>
                                                         <input id='password' name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleValue(e)} placeholder={showPassword ? 'Enter your password' : '********'} onFocus={() => setValBox(true)} onBlur={() => setValBox(false)}></input>
                                                         <span onClick={togglePass} className='fa-holder'>
                                                             {showPassword ?  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
@@ -278,26 +278,26 @@ export const SignUp = () => {
                                                         </span>
                                                     </div>
                                                     {error.password}
-                                                    <div className={`password-validator-box w-100 ${valBox ? 'show-box' : 'hide-box'}`}>
-                                                        <div className='d-flex flex-column inner-validator-box'>
-                                                            <div className={`validator1 ${valPas.upperCase && valPas.lowerCase  ? 'right' : 'wrong'}`}>
+                                                    <div className={`p-1 col-12 password-validator-box ${valBox ? 'show-box' : 'hide-box'}`}>
+                                                        <div className='d-flex flex-column align-items-start gap-2 inner-validator-box'>
+                                                            <div className={`d-flex align-items-center gap-1 validator1 ${valPas.upperCase && valPas.lowerCase  ? 'right' : 'wrong'}`}>
                                                                 <FaCheck className={`fa ${valPas.upperCase && valPas.lowerCase ? 'show' : 'hide'}`} />
                                                                 <p>Must contain one uppercase and lowercase Aa-Zz</p>
                                                             </div>
-                                                            <div className={`validator1 ${valPas.specialCharacters && valPas.numbers  ? 'right' : 'wrong'}`}>
+                                                            <div className={`d-flex align-items-center gap-1 validator1 ${valPas.specialCharacters && valPas.numbers  ? 'right' : 'wrong'}`}>
                                                                 <FaCheck className={`fa ${valPas.specialCharacters && valPas.numbers  ? 'show' : 'hide'}`} />
                                                                 <p>Must contain one sepcial characters(@-$) and numbers(0-9)</p>
                                                             </div>
-                                                            <div className={`validator1 ${valPas.length ? 'right' : 'wrong'}`}>
+                                                            <div className={`d-flex align-items-center gap-1 validator1 ${valPas.length ? 'right' : 'wrong'}`}>
                                                                 <FaCheck className={`fa ${valPas.length ? 'show' : 'hide'}`} />
                                                                 <p>Must be at least a minimum of 8 characters long</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className='pass'>
+                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch pass'>
                                                     <label>Confirm Password</label>
-                                                    <div className='in-ico'>
+                                                    <div className='position-relative col-12 in-ico'>
                                                         <input name='confirmPassword' type={showConfirmPass ? 'text' : 'password'} value={confirmPassword} onChange={(e) => handleValue(e)} placeholder={showConfirmPass ? 'Enter your password' : '********'}></input>
                                                         <span onClick={toggleComPass} className='fa-holder'>
                                                             {showConfirmPass ?  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
@@ -313,17 +313,17 @@ export const SignUp = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='button-holder'>
-                                            <div className='newsl'>
-                                                <div className={check ? 'checkbox click' : 'checkbox'} onClick={checked}>
+                                        <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 button-holder'>
+                                            <div className='d-flex align-items-center gap-2 align-self-stretch newsl'>
+                                                <div className={check ? 'd-flex align-items-center justify-content-center align-self-stretch checkbox click' : 'd-flex align-items-center justify-content-center align-self-stretch checkbox'} onClick={checked}>
                                                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" className={check ? 'fa show' : 'fa'} xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
                                                     </svg>
                                                 </div>
                                                 <p>Yes, I want to receive newsletters from Pedxo</p>
                                             </div>
-                                            <div className='button'>
-                                                <button type='submit'>
+                                            <div className='d-flex flex-column align-items-center justify-content-center align-self-stretch gap-2 col-12 rounded-2 py-3 px-4 button'>
+                                                <button className='d-flex align-items-center justify-content-center bg-transparent gap-2 col-12' type='submit'>
                                                     <p className='text'>Create account</p>
                                                 </button>
                                             </div>
