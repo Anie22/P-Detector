@@ -15,9 +15,6 @@ export const VerifyCode = () => {
     const [disableMsg, setDisableMsg] = useState(false);
     const [disableTime, setDisableTime] = useState(60);
 
-    const button = document.getElementById('butn');
-
-
     const resendLink = async () => {
         const email = localStorage.getItem('mail').replace(/"|"/g, '');
         const type = 'Reset Password';

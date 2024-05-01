@@ -5,19 +5,9 @@
 */
 
 .hero{
-    position: relative;
-    width: 100%;
     height: 787px;
     flex-shrink: 0;
     background: var(--backgroundPrimary);
-    overflow: hidden;
-}
-.hero .sub-hero-sec{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
 }
 .hero .sub-hero-sec .inner-hero-sec .svg-holder .left-svg{
     position: relative;
@@ -44,29 +34,8 @@
     z-index: 1;
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
     flex-shrink: 0;
-    top: 0;
-    left: 0;
     z-index: 4;
-}
-.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con{
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-}
-.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 576px;
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .heading h4{
     color: var(--lightBlack);
@@ -88,20 +57,10 @@
     font-weight: 500;
     line-height: 145%;
 }
-.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld{
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link{
-    display: flex;
     width: 260px;
     height: 60px;
     padding: 12px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
     border-radius: 50px;
     background: var(--button);
 }
@@ -393,14 +352,21 @@
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-heading h2{
     color: var(--lightBlack);
-    font-size: 40px;
+    font-size: 47px;
     font-style: normal;
     font-weight: 500;
-    line-height: 120%;
+    line-height: 125%;
     letter-spacing: -0.64px;
+}
+.remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-heading h2 .to{
+    color: var(--black);
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-heading h2 span{
     color: var(--lightAsh);
+}
+.remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-heading p{
+    color: var(--innerblack);
+    line-height: 150%;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items{
     display: flex;
@@ -412,7 +378,7 @@
     display: flex;
     flex-direction: column;
     background: var(--white);
-    height: 350px;
+    height: 370px;
     width: 370px;
     border-radius: 15px;
     gap: 15px;
@@ -426,18 +392,26 @@
     width: 40px;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .heading h5{
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: -0.9px;
+    line-height: 145%;
     color: var(--lightBlack) !important;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph{
     height: inherit;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-des p{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 23px;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+.remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-des .des-list ul li{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 150%;
     color: var(--text);
     letter-spacing: 1px;
 }
