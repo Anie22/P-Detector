@@ -4,6 +4,7 @@
 .Login .sub-login-holder .inner-app .sub-app{
     background: var(--white); 
     height: 100vh;
+    overflow: hidden;
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder{
     padding: 71px;
