@@ -40,7 +40,7 @@
         width: 100%;
     }
     .Logo-content-holder .logo-content .content{
-        display: none;
+        display: none !important;
     }
 }
 @media only screen and (max-width: 768px) {
