@@ -158,10 +158,10 @@ export const Login = () => {
 
 
     return (
-        <div className="Login">
+        <div className="overflow-hidden Login">
             <div className='sub-login-holder'>
                 <div className='d-flex align-items-start justify-content-center inner-app'>
-                    <div className='d-inline-flex align-items-start justify-content-center col-12 sub-app'>
+                    <div className='d-inline-flex col-12 sub-app'>
                         <Logo />
                         <div className='col-6 d-flex flex-column justify-content-between align-items-center form-holder'>
                             <div className='d-flex align-items-start col-12 gap-2 rounded-2 bg-white sub-form-holder'>

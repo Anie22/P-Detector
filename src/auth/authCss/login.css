@@ -257,15 +257,13 @@
     text-decoration: none;
 }
 @media only screen and (max-width: 1024px) {
-    .Login{
-        overflow: hidden;
-    }
     .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder {
         gap: 22px;
     }
 }
 @media only screen and (max-width: 900px) {
-    .Login{
+    .Login,
+    .Login .sub-login-holder .inner-app .sub-app{
         overflow: auto;
     }
     .Login .sub-login-holder .inner-app{
