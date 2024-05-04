@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaFacebook, FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin, FaFacebookSquare, FaTwitterSquare, FaInstagramSquare } from "react-icons/fa";
 import './css/footer.css'
 
 export const Footer = () => {
@@ -86,10 +86,10 @@ export const Footer = () => {
                             <h4>Socials</h4>
                         </div>
                         <div className="social-icons">                            
-                            <a className='icon' href='https://web.facebook.com/people/Pedxo/100090410366859' target='_blank'><FaFacebook /></a>
-                            <a className='icon' href='https://www.linkedin.com/company/pedxo' target='_blank'><FaLinkedin /></a>
-                            <a className='icon' href='https://x.com/getpedxo?t=gpwfcv7iZBw6myC0bkGJVw&s=09' target='_blank'><FaTwitterSquare /></a>
-                            <a className='icon' href='https://www.instagram.com/usepedxo' target='_blank'><FaInstagramSquare /></a>
+                            <a className='icon' href='https://web.facebook.com/people/Pedxo/100090410366859' target='_blank' rel="noreferrer"><FaFacebookSquare /></a>
+                            <a className='icon' href='https://www.instagram.com/usepedxo' target='_blank' rel="noreferrer"><FaInstagramSquare /></a>
+                            <a className='icon' href='https://www.linkedin.com/company/pedxo' target='_blank' rel="noreferrer"><FaLinkedin /></a>
+                            <a className='icon' href='https://x.com/getpedxo?t=gpwfcv7iZBw6myC0bkGJVw&s=09' target='_blank' rel="noreferrer"><FaTwitterSquare /></a>
                         </div>
                     </div>
                 </div>

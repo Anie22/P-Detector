@@ -1,37 +1,22 @@
 .header--holder{
-    z-index: 100;
+    z-index: 999;
     height: 80px;
     width: 100%;
 }
 .header--holder .inner-header{
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
     align-self: stretch;
-    gap: 15px;
     height: inherit;
-    width: 100%;
 }
 .header--holder .inner-header .main-header{
     align-self: stretch;
     height: inherit;
-    width: 100%;
 }
 .header--holder .inner-header .main-header .header-content{
-    display: inline-flex;
-    padding: 15px 112px;
-    align-items: flex-end;
-    justify-content: space-between;
     height: inherit;
-    width: 100%;
 }
 .header--holder .inner-header .main-header .header-content .logo{
-    display: flex;
     width: 95px;
     height: 49.745px;
-    flex-direction: column;
-    justify-content: center;
 }
 .header--holder .inner-header .main-header .header-content .logo .logo-name .link{
     color: var(--innerblack);
@@ -43,16 +28,7 @@
     letter-spacing: -0.64px;
     text-decoration: none;
 }
-.header--holder .inner-header .main-header .header-content .nav-holder{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
 .header--holder .inner-header .main-header .header-content .nav-holder .toggle-bar{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: left;
     gap: 3px;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .toggle-bar .bar{
@@ -66,12 +42,7 @@
 .header--holder .inner-header .main-header .header-content .nav-holder .toggle-bar .bar-3{
     width: 20px;
 }
-.header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content{
-    display: flex;
-    align-items: center;
-}
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .inner-logo{
-    align-items: center;
     height: 40px;
     padding: 10px 16px;
 }
@@ -85,27 +56,16 @@
     letter-spacing: -0.4px;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content{
-    display: flex;
-    padding: 12px 32px;
-    justify-content: center;
-    align-items: center;
     gap: 24px;
     align-self: stretch;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 24px;
     align-self: stretch;
     list-style: none;
 }
-.header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder .nav-content-link {
-    text-decoration: none;
-}
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder .nav-content-link .list{
-    color: var(--lightBlack);
-    text-align: center;
+    color: var(--black2);
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -116,19 +76,12 @@
     color: var(--faq);
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
     gap: 8px;
-    position: relative;
     z-index: 1;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .first-link{
-    display: flex;
-    align-items: center;
     gap: 8px;
-    color: var(--lightBlack);
-    text-align: center;
+    color: var(--black2);
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -136,7 +89,7 @@
     letter-spacing: -0.4px;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .first-link p{
-    color: var(--lightBlack);
+    color: var(--black2);
     text-align: center;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .first-link:hover,
@@ -144,17 +97,12 @@
     color: var(--faq);
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .first-link .fa{
-    position: relative;
     cursor: pointer;
     z-index: 2;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .dropdown{
-    position: absolute;
-    display: flex;
     width: 165px;
     padding: 8px;
-    flex-direction: column;
-    align-items: flex-start;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), 
                 linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), 
                 linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #2B2F38;
@@ -163,13 +111,8 @@
     right: 0;
     border-radius: 4px;
 }
-.header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .dropdown.hide{
-    display: none;
-}
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .dropdown .dropdown-link{
-    display: flex;
     padding: 4px 8px;
-    align-items: flex-start;
     gap: 8px;
     align-self: stretch;
 }
@@ -186,21 +129,12 @@
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .dropdown .dropdown-link a:hover{
     color: var(--backgroundPrimary);
 }
-.header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content .second-con-link{
-    display: flex;
     padding: 12px 24px;
-    justify-content: center;
-    align-items: center;
     gap: 8px;
-    text-decoration: none;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content .second-con-link .login-link p{
-    color: var(--lightBlack);
+    color: var(--black2);
     text-align: center;
     font-size: 20px;
     font-style: normal;
@@ -209,14 +143,10 @@
     letter-spacing: -0.4px;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content .button-link{
-    display: flex;
     padding: 12px 24px;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     border-radius: 50px;
     background: var(--button);
-    text-decoration: none;
 }
 .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content .button-link .book p{
     color: var(--buttonText);
@@ -236,9 +166,6 @@
 .header--holder .inner-header .header--scroll .header-content .logo .logo-name .link{
     color: var(--backgroundSecondary);
 }
-.header--holder .inner-header .header--scroll .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content{
-    background: none;
-}
 .header--holder .inner-header .header--scroll .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .first-link,
 .header--holder .inner-header .header--scroll .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .first-link p,
 .header--holder .inner-header .header--scroll .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder .nav-content-link .list{
@@ -256,19 +183,12 @@
 .header--holder .inner-header .header--scroll .header-content .nav-holder .toggle-bar .bar {
     background: var(--backgroundSecondary);
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 992px) {
     .header--holder{
         height: 60px;
     }
     .header--holder .inner-header{
         background: var(--backgroundPrimary);
-    }
-    .header--holder .inner-header .main-header .header-content{
-        align-items: center;
-        padding: 15px;
-    }
-    .header--holder .inner-header .main-header .header-content .nav-holder{
-        flex-direction: column;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold,
     .header--holder .inner-header .header--scroll .header-content .nav-holder .nav-content-hold  {
@@ -287,20 +207,14 @@
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold  .nav-content{
         height: 100%;
-        width: 100%;
-        flex-direction: column;
         gap: 2px;
         z-index: 999;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content,
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder{
-        flex-direction: column;
-        padding: 0px;
         gap: 12px;
         border-radius: 0px;
         background: transparent;
-        align-items: flex-start;
-        width: 100%;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold.navb{
         display: none;
@@ -312,6 +226,7 @@
         margin: 0;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder .nav-content-link .list{
+        color: var(--backgroundSecondary);
         font-size: 20px;
         font-weight: 500;
         line-height: 120%;
@@ -330,7 +245,7 @@
         gap: 0px;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .first-link{
-        justify-content: space-between;
+        color: var(--backgroundSecondary);
         font-size: 20px;
         font-weight: 500;
         line-height: 120%;
@@ -343,7 +258,7 @@
         text-align: center;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .nav-sub-content-link .dropdown{
-        position: relative;
+        position: relative !important;
         width: 100%;
         background: var(--innerblack);
         top: 0;
@@ -376,10 +291,8 @@
         color: var(--backgroundSecondary);
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content {
-        flex-direction: column-reverse;
         width: 100%;
         padding: 8px 16px;
-        gap: 15px;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content .button-link{
         border-radius: 10px;

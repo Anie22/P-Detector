@@ -115,10 +115,10 @@ export const ResetPass = () => {
     }, [loader, message, icon])
 
     return (
-        <div className="frg-pass-hol">
-            <div className="sub-frg-pass-hol">
+        <div className="d-flex align-items-start justify-content-center frg-pass-hol">
+            <div className="d-inline-flex align-items-start justify-content-center bg-white col-12 sub-frg-pass-hol">
                 <Logo />
-                <div className="in-frg-pass-hol">
+                <div className="col-6 d-flex flex-column justify-content-between align-items-center bg-white in-frg-pass-hol">
                     <div className='in-sub-frg-pass-hol'>
                         <div className='frg-hol'>
                             <div className='frg-pass-hol-text'>

@@ -2,7 +2,6 @@
     height: 100vh;
 }
 .Login .sub-login-holder .inner-app .sub-app{
-    background: var(--white); 
     height: 100vh;
     overflow: hidden;
 }
@@ -10,10 +9,6 @@
     padding: 71px;
     background: var(--white);
     height: fit-content;
-}
-.Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder{
-    gap: 32px;
-    flex: 1 0 0;
 }
 
 
@@ -277,9 +272,6 @@
     }
     .Login .sub-login-holder .inner-app .sub-app .form-holder{
         padding: 32px 16px;
-        width: 100%;
-    }
-    .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder{
         width: 100%;
     }
 }

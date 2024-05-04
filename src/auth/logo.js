@@ -3,7 +3,7 @@ import '../auth/authCss/logo.css'
 
 export const Logo = () => {
     return (
-        <div className='d-flex flex-column align-items-center justify-content-center col-lg-6 Logo-content-holder'>
+        <div className='d-flex flex-column align-items-center justify-content-center col-lg-6 h-100 Logo-content-holder'>
             <div className='d-flex justify-content-between flex-column align-items-start col-12 logo-content'>
                 <div className='logo'>
                     <h3 className="link">

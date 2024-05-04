@@ -219,8 +219,8 @@ export const SignUp = () => {
     return (
         <div className="signup">
             <div className='signup-inner-app'>
-                <div className='d-flex justify-content-center align-items-start inner-app'>
-                    <div className='d-flex col-12 bg-white sub-app'>
+                <div className='d-flex justify-content-center inner-app'>
+                    <div className='d-inline-flex align-items-start col-12 bg-white sub-app'>
                         <Logo />
                         <div className='d-flex flex-column col-6 form-section'>
                             <div className='d-flex align-items-start gap-2 col-12 bg-white form-holder'>

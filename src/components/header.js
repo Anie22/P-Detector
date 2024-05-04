@@ -36,21 +36,21 @@ export const Header = () => {
         };
 
         const addMenu = () => {
-            if(window.innerWidth > 900) {
+            if(window.innerWidth > 992) {
                 setMenu(null);
                 setMobileLogo(null);
                 setHomeLink(null);
                 return
             } else {
                 setMenu(
-                    <div className='toggle-bar' onClick={() => showNav()}>
+                    <div className='d-flex align-items-start flex-column justify-content-left toggle-bar' onClick={() => showNav()}>
                         <div className='bar'></div>
                         <div className='bar bar-2'></div>
                         <div className='bar bar-3'></div>
                     </div>
                 );
                 setMobileLogo(
-                    <div className="d-flex w-100 justify-content-between inner-logo">
+                    <div className="d-flex align-items-center col-12 justify-content-between inner-logo">
                         <div className="lgo">
                             <h4>Pedxo</h4>
                         </div>
@@ -62,7 +62,7 @@ export const Header = () => {
                     </div>
                 );
                 setHomeLink(
-                    <a href="/" className="nav-content-link">
+                    <a href="/" className="text-decoration-none nav-content-link">
                         <li className="list">Home</li>
                     </a>
                 )
@@ -83,59 +83,59 @@ export const Header = () => {
 
     return (
         <div className="position-fixed header--holder">
-            <div className="inner-header">
-                <header className={scroll ? "main-header header--scroll" : 'main-header'}>
-                    <div className="header-content">
-                        <div className="logo">
+            <div className="position-relative d-flex align-items-start flex-column w-100 gap-3 inner-header">
+                <header className={scroll ? "main-header header--scroll w-100" : 'main-header w-100'}>
+                    <div className="d-inline-flex py-lg-3 px-lg-5 p-3 align-items-center justify-content-between w-100 header-content">
+                        <div className="d-flex flex-column justify-content-center logo">
                             <h4 className='logo-name'>
                                 <a className='link' href="/">Pedxo</a>
                             </h4>
                         </div>
-                        <nav className="nav-holder">
+                        <nav className="d-flex flex-column flex-lg-row align-items-center gap-4 nav-holder">
                             {menu}
                             <div className={nav ? "nav-content-hold" : 'nav-content-hold navb'}>
-                                <ul className="nav nav-content">
+                                <ul className="d-flex align-items-center flex-column flex-lg-row col-12 nav nav-content">
                                     {mobileLogo}
-                                    <div className="nav-first-content">
-                                        <div className="links-holder">
+                                    <div className="d-inline-flex align-items-start align-items-lg-center justify-content-center flex-column flex-lg-row p-0 px-lg-4 nav-first-content">
+                                        <div className="d-flex align-items-start align-items-lg-center justify-content-center flex-column flex-lg-row p-0 links-holder">
                                             {homeLink}
-                                            <a href="/#about" className="nav-content-link">
+                                            <a href="/#about" className="text-decoration-none nav-content-link">
                                                 <li className="list">About</li>
                                             </a>
                                         </div>
-                                        <div className="nav-sub-content-link">
-                                            <li className="first-link" onClick={toggleServices}>
+                                        <div className="position-relative d-flex align-items-start flex-column nav-sub-content-link">
+                                            <li className="d-flex align-items-center text-center justify-content-between first-link" onClick={toggleServices}>
                                                 <p>Services</p>
-                                                <FaChevronDown className="fa" />
+                                                <FaChevronDown className="position-relative fa" />
                                             </li>
-                                            <div className={openServices ? "dropdown" : "dropdown hide"}>
-                                                <li className="dropdown-link">
+                                            <div className={openServices ? "position-absolute d-flex flex-column align-items-start dropdown" : "position-relative d-none dropdown"}>
+                                                <li className="d-flex align-items-start dropdown-link">
                                                     <a href="/hire">Hire Talent</a>
                                                 </li>
-                                                <li className="dropdown-link">
+                                                <li className="d-flex align-items-start dropdown-link">
                                                     <a href="/outsource">Let's Build</a>
                                                 </li>
-                                                <li className="dropdown-link">
+                                                <li className="d-flex align-items-start dropdown-link">
                                                     <a href="/jobs">Find Job</a>
                                                 </li>
                                             </div>
                                         </div>
-                                        <div className="links-holder">
-                                            <a href="/#faq" className="nav-content-link">
+                                        <div className="d-flex align-items-center justify-content-center flex-column flex-lg-row links-holder">
+                                            <a href="/#faq" className="text-decoration-none nav-content-link">
                                                 <li className="list">FAQ's</li>
                                             </a>
-                                            <a href="mailto:support@pedxo.com" className="nav-content-link">
+                                            <a href="mailto:support@pedxo.com" className="text-decoration-none nav-content-link">
                                                 <li className="list">Contact Us</li>
                                             </a>
                                         </div>
                                     </div>
-                                    <div className="nav-second-content">
-                                        <a href="/login" className="second-con-link">
+                                    <div className="d-flex flex-column-reverse flex-lg-row align-items-center gap-3 nav-second-content">
+                                        <a href="/login" className="d-flex justify-content-center align-items-center text-decoration-none second-con-link">
                                             <li className="login-link">
                                                 <p>Login</p>
                                             </li>
                                         </a>
-                                        <a href="/book-demo" className="button-link">
+                                        <a href="/book-demo" className="d-flex align-items-center justify-content-center text-decoration-none button-link">
                                             <li className="book">
                                                 <p>Book demo</p>
                                             </li>

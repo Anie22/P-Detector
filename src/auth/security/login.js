@@ -79,7 +79,7 @@ export const Login = () => {
                         const {status} = err.response;
 
                         if(status === 404 && err.response.data.message === 'user not found'){
-                            newErr.email = <p>User not found</p>
+                            newErr.email = <p>User doesn't exist</p>
                         }else if(status === 500 && err.response.data.message === 'Internal server error'){
                             setMessage('Server timeout');
                         } else if(err.response.data.message === 'password do not matched'){
@@ -161,11 +161,11 @@ export const Login = () => {
         <div className="overflow-hidden Login">
             <div className='sub-login-holder'>
                 <div className='d-flex align-items-start justify-content-center inner-app'>
-                    <div className='d-inline-flex col-12 sub-app'>
+                    <div className='d-inline-flex align-items-start col-12 bg-white sub-app'>
                         <Logo />
                         <div className='col-6 d-flex flex-column justify-content-between align-items-center form-holder'>
                             <div className='d-flex align-items-start col-12 gap-2 rounded-2 bg-white sub-form-holder'>
-                                <div className='d-flex align-items-center flex-column inner-form-holder'>
+                                <div className='d-flex align-items-center flex-column gap-4 col-12 inner-form-holder'>
                                     <div className='d-flex flex-column justify-content-center align-items-start align-self-stretch gap-3 heading'>
                                         <div className='first-text'>
                                             {loginText}

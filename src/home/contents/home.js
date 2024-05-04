@@ -230,18 +230,18 @@ export const Home = () => {
                                     <div className='heading'>
                                         <h4>Technical <br /> partner-as-a-service.</h4>
                                     </div>
-                                    <div className='par'>
+                                    <div className='col-12 col-lg-7 par'>
                                         <p>Pedxo work as your in-house developers to help build up your MVP, eliminating the need for you to hire an external team.</p>
                                     </div>
                                 </div>
-                                <div className='d-flex align-items-center gap-4 hero-links-hld'>
-                                    <div className='first-link'>
+                                <div className='d-flex align-items-center justify-content-center gap-4 flex-lg-row flex-column col-12 p-lg-0 py-1 px-2 hero-links-hld'>
+                                    <div className='col-12 col-lg-4 first-link'>
                                         <Link to={'/outsource'} className='d-flex align-items-center justify-content-center gap-2 text-decoration-none link'>
                                             <p className='text'>Outsource Project</p>
                                             <FaArrowRight className='fa' />
                                         </Link>
                                     </div>
-                                    <div className='second-link'>
+                                    <div className='d-flex align-items-center justify-content-center gap-2 second-link'>
                                         <Link to={'/book-demo'} className='link'>Book a demo</Link>
                                     </div>
                                 </div>
@@ -250,11 +250,11 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='metrix w-100'>
-                <div className='container'>
-                    <div className='metrix-holder-con'>
-                        <div className='metrix-dev'>
-                            <div className='metrix-dev-count'>
+            <section className='metrix col-12'>
+                <div className='d-flex align-items-center justify-content-center col-12 flex-lg-row flex-column mx-lg-5 m-0 container'>
+                    <div className='d-flex flex-lg-row flex-column align-items-center justify-content-center col-12 metrix-holder-con'>
+                        <div className='d-flex flex-column gap-lg-2 gap-0 justify-content-center justify-content-lg-between metrix-dev'>
+                            <div className='d-flex align-items-center gap-1 justify-content-center justify-content-lg-left metrix-dev-count'>
                                 <h2>{devCount}</h2>
                                 <FaPlus />
                             </div>
@@ -262,8 +262,8 @@ export const Home = () => {
                                 <p>Developers <br/> join every month</p>
                             </div>
                         </div>
-                        <div className='metrix-design'>
-                            <div className='metrix-design-count'>
+                        <div className='d-flex flex-column gap-lg-2 gap-0 justify-content-center justify-content-lg-between metrix-design'>
+                            <div className='d-flex align-items-center gap-1 justify-content-center justify-content-lg-left metrix-design-count'>
                                 <h2>{designCount}</h2>
                                 <FaPlus />
                             </div>
@@ -271,8 +271,8 @@ export const Home = () => {
                                 <p>Designers <br/> join every month</p>
                             </div>
                         </div>
-                        <div className='metrix-contract'>
-                            <div className='metrix-contract-count'>
+                        <div className='d-flex flex-column gap-lg-2 gap-0 justify-content-center justify-content-lg-between metrix-contract'>
+                            <div className='d-flex align-items-center gap-1 justify-content-center justify-content-lg-left metrix-contract-count'>
                                 <h2>{contractCount}</h2>
                                 <FaPlus />
                             </div>
@@ -283,32 +283,32 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className="about-sec p-5 w-100" id='about'>
-                <div className="sub-abt-sec container my-4">
-                    <div className="row items-center">
-                        <div className="abt-txt-sec col-4 col-lg-6">
-                            <div className="abt-in d-flex gap-2">
+            <section className="about-sec p-5 w-100 bg-white" id='about'>
+                <div className="container my-lg-4 m-0 col-12 sub-abt-sec">
+                    <div className="row align-items-center">
+                        <div className="d-flex flex-column justify-content-left gap-4 col-4 col-lg-6 abt-txt-sec">
+                            <div className="d-flex align-items-center gap-2 col-12 abt-in">
                                 <div className="abt-in-bdr"></div>
                                 <div className="abt-in-title">
                                     <h4>About us</h4>
                                 </div>
                             </div>
-                            <div className='abt-info-sec'>
+                            <div className='d-flex flex-column justify-content-left gap-3 abt-info-sec'>
                                 <div className='abt-info-title'>
                                     <h2>Your startup’s <span>technical department </span> on subscription.</h2>
                                 </div>
                                 <div className='abt-info-par'>
                                     <p>Outsource the technology of your startup to us, let's help you to launch and continuously iterate your software.</p>
                                 </div>
-                                <div className='abt-info-btn-hld d-flex justify-content-between mb-3 gap-3'>
+                                <div className='d-flex mb-3 gap-3 abt-info-btn-hld'>
                                     <div className='book'>
-                                        <button onClick={() => bookDemo()}>
+                                        <button className='d-flex align-items-center justify-content-center gap-2' onClick={() => bookDemo()}>
                                            <p>Book demo</p> 
                                            <FaArrowRight className='fa' />
                                         </button>
                                     </div>
                                     <div className='read'>
-                                        <a className='read-link' href='https://nairametrics.com/2023/10/16/the-mvp-important-aspects-to-consider-in-your-start-ups-online-business-process' target='_blank' rel='noreferrer'>
+                                        <a className='d-flex align-items-center justify-content-center read-link' href='https://nairametrics.com/2023/10/16/the-mvp-important-aspects-to-consider-in-your-start-ups-online-business-process' target='_blank' rel='noreferrer'>
                                             <p>Read about us on Nairametrics</p>
                                         </a>
                                     </div>
@@ -337,10 +337,10 @@ export const Home = () => {
                             </div>
                             <div className='d-flex flex-column gap-5 second-content'>
                                 <div className='d-flex flex-column gap-3 second-content-heading'>
-                                    <div className='col-12 col-lg-7'>
+                                    <div className='col-12 col-xl-7 col-lg-9'>
                                         <h2>Bring your <span>idea</span> <span className='to'>to market quickly</span> <span>with minimal resources</span></h2>
                                     </div>
-                                    <div className='col-12 col-lg-8'>
+                                    <div className='col-12 col-xl-8 col-lg-9'>
                                         <p className='fs-6 fw-normal'>You don't need to hire a CTO, product manager and data scientist at the early stage of your startup. We cover all of that for you as long as possible under a single subscription billed monthly.</p>
                                     </div>
                                 </div>
@@ -442,7 +442,7 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='faq p-5' id='faq'>
+            <section className='col-12 faq p-5' id='faq'>
                 <div className='sub-faq-sec my-5'>
                     <div className='inner-faq-sec d-flex align-items-start flex-column container'>
                         <div className='faq-hld d-flex align-items-start flex-column gap-5 col-12'>
@@ -452,14 +452,14 @@ export const Home = () => {
                                     <h4 className='fs-6'>FAQ's</h4>
                                 </div>
                             </div>
-                            <div className='faq-ques-hld d-flex align-items-start flex-column gap-4 col-lg-12'>
+                            <div className='faq-ques-hld d-flex align-items-start flex-column gap-4 col-12'>
                                 <div className='faq-ques-head'>
                                     <h2>We've <span>answered</span> your questions</h2>
                                 </div>
-                                <div className='faq-ques-sec col-lg-12'>
-                                    <div className='sub-faq-ques d-flex align-items-start flex-column gap-2 col-12'>
+                                <div className='faq-ques-sec col-12'>
+                                    <div className='sub-faq-ques d-flex align-items-start flex-column gap-3 gap-lg-4 col-12'>
                                         {faqs.map((faq, i) => (
-                                            <div className='in-faq-ques d-flex align-items-start justify-content-center flex-column gap-3 py-3 px-4' key={i}>
+                                            <div className='in-faq-ques d-flex align-items-start justify-content-center flex-column gap-3 py-3 px-4 col-12' key={i}>
                                                 <div className='faq-ques-head d-flex justify-content-between align-items-center pe-auto col-12'>
                                                     <h3>{faq.ques}</h3>
                                                     <div className='icon-holder d-flex align-items-center justify-content-center position-relative rounded-circle' onClick={() => selectedFaq(i)}>
@@ -488,11 +488,11 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='buld w-100'>
-                <div className='buld-sec'>
-                    <div className='buld-sec-hld'>
+            <section className='position-relative overflow-hidden w-100 buld'>
+                <div className='d-inline-flex flex-column align-items-start gap-2 col-12 h-100 buld-sec'>
+                    <div className='d-flex align-items-center justify-content-center col-12 h-100 buld-sec-hld'>
                         <div className='in-buld-sec'>
-                            <div className='buld-des-hld'>
+                            <div className='position-relative d-flex flex-column align-items-end justify-content-between p-2 buld-des-hld'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1007" height="352" viewBox="0 0 1007 352" fill="none">
                                     <path d="M1152 459C971.837 263.957 767.043 385.741 581.954 263.958C440.453 170.854 550.199 56.6881 432.405 -26.2502C314.651 -109.16 238.519 -108.224 0.999985 -106.576" stroke="url(#paint0_linear_101_625)" strokeWidth="121"/>
                                     <defs>
@@ -503,10 +503,14 @@ export const Home = () => {
                                     </defs>
                                 </svg>
                             </div>
-                            <div className='buld-sec-text'>
-                                <h4>Let's create great things together.</h4>
-                                <button className='link-button' onClick={bookDemo}>
+                            <div className='position-absolute d-flex flex-column align-items-center justify-content-center gap-4 start-0 top-0 col-12 h-100 buld-sec-text'>
+                                <div className='d-flex flex-column align-items-center text-center gap-2'>
+                                    <h4>Building the next big thing?</h4>
+                                    <p>Start by validating your idea with an MVP first.</p>
+                                </div>
+                                <button className='d-flex align-items-center justify-content-center gap-2 link-button' onClick={bookDemo}>
                                     <p>Get Started</p>
+                                    <FaArrowRight className='fa' />
                                 </button>
                             </div>
                         </div>

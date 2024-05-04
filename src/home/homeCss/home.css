@@ -38,16 +38,19 @@
     z-index: 4;
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .heading h4{
-    color: var(--lightBlack);
+    background: linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%), #2B2F38;
+    -webkit-background-clip: text;
+    color: transparent;
     text-align: center;
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
     letter-spacing: -2.24px;
-}
-.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par{
-    width: 505px;
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par p{
     color: var(--innerBlack);
@@ -84,13 +87,9 @@
     transform: rotateZ(-35deg);
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-link{
-    display: flex;
     width: 200px;
     height: 60px;
     padding: 12px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     border-radius: 50px;
     border: 2px solid var(--lightBlack);
 }
@@ -113,34 +112,17 @@
 */
 
 .metrix{
-    background: linear-gradient(0deg, var(--lightBlack), var(--lightBlack)),
-                linear-gradient(0deg, var(--black), var(--black)),
-                linear-gradient(0deg, var(--black), var(--black)),
-                linear-gradient(0deg, var(--black), var(--black));
+    background: linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%), #2B2F38;
     padding: 40px 15px 40px 15px;
 }
-.metrix .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
 .metrix .container .metrix-holder-con{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 170px;
-    width: 100%;
-}
-.metrix .container .metrix-holder-con .metrix-dev{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count{
-    display: flex;
-    align-items: center;
-    gap: 5px;
     color: var(--backgroundSecondary);
     font-size: 25px;
     font-weight: 700;
@@ -157,15 +139,7 @@
     font-weight: 500;
     line-height: 24px;
 }
-.metrix .container .metrix-holder-con .metrix-design{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 .metrix .container .metrix-holder-con .metrix-design .metrix-design-count{
-    display: flex;
-    align-items: center;
-    gap: 5px;
     color: var(--backgroundSecondary);
     font-size: 25px;
     font-weight: 700;
@@ -182,15 +156,7 @@
     font-weight: 500;
     line-height: 24px;
 }
-.metrix .container .metrix-holder-con .metrix-contract{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-count{
-    display: flex;
-    align-items: center;
-    gap: 5px;
     color: var(--backgroundSecondary);
     font-size: 25px;
     font-weight: 700;
@@ -215,24 +181,9 @@
     *
 */
 
-.about-sec{
-    background: var(--white);
-}
-.about-sec .sub-abt-sec{
-    width: 100%;
-}
-.about-sec .sub-abt-sec .row .abt-txt-sec{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    justify-content: left;
-}
+
 .about-sec .sub-abt-sec .row{
     gap: 185px;
-}
-.about-sec .sub-abt-sec .row .abt-txt-sec .abt-in{
-    width: 100%;
-    align-items: center;
 }
 .about-sec .sub-abt-sec .row .abt-txt-sec .abt-in .abt-in-bdr{
     background: var(--backgroundPrimary);
@@ -240,23 +191,18 @@
     height: 10px;
 }
 .about-sec .sub-abt-sec .row .abt-txt-sec .abt-in .abt-in-title h4{
-    background: linear-gradient(0deg, var(--lightBlack), var(--lightBlack)),
-                linear-gradient(0deg, var(--black), var(--black)),
-                linear-gradient(0deg, var(--black), var(--black)),
-                linear-gradient(0deg, var(--black), var(--black));
+    background: linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%), #2B2F38;
     -webkit-background-clip: text;
     color: transparent;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
-    line-height: 24px;
+    line-height: 145%;
     text-transform: uppercase;
-}
-.about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: left;
 }
 .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-title h2{
     font-size: 40px;
@@ -270,16 +216,13 @@
     color: var(--lightAsh);
 }
 .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-par p{
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 145%; 
     color: var(--text);
 }
 .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-btn-hld .book button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: var(--button);
     border: none;
     outline: none;
@@ -292,16 +235,12 @@
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.32px;
-    gap: 10px;
     padding: 12px 13px 12px 13px;
 }
 .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-btn-hld .book button .fa{
     transform: rotateZ(-35deg);
 }
 .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-btn-hld .read .read-link{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 1px solid var(--text);
     background: var(--white);
     outline: none;
@@ -337,6 +276,9 @@
 
 .remote-work{
     background: var(--backgroundSecondary);
+}
+.remote-work .sub-remote-work .inner-remote-work.container {
+    max-width: 100% !important;
 }
 .remote-work .sub-remote-work .inner-remote-work .remote-work-content .first-content .sub-first-content .border{
     background: var(--backgroundPrimary);
@@ -657,10 +599,9 @@
     color: var(--span);
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques{
-    min-height: 75px;
-    border-radius: 24px;
+    min-height: 94px;
+    border-radius: 10px;
     background: var(--faq);
-    width: 100%;
 }
 .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head{
     cursor: pointer;
@@ -715,53 +656,20 @@
 
 
 .buld{
-    position: relative;
     background: var(--faq);
     height: 352px;
-    overflow: hidden;
 }
 .buld .buld-sec{
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(0deg, var(--lightBlack), var(--lightBlack)),
-                linear-gradient(0deg, var(--black), var(--black)),
-                linear-gradient(0deg, var(--black), var(--black)),
-                linear-gradient(0deg, var(--black), var(--black));
-}
-.buld .buld-sec .buld-sec-hld{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+    background: linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%),
+                linear-gradient(0deg, var(--black) 0, var(--black) 100%), #2B2F38;
 }
 .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-des-hld{
-    position: relative;
-    display: flex;
-    padding: 10px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
     flex-shrink: 0;
     width: fit-content;
     left: 200px;
-}
-.buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
 }
 .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text h4{
     color: var(--faq);
@@ -771,14 +679,16 @@
     line-height: 100%;
     letter-spacing: -2.24px;
 }
+.buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text p{
+    color: var(--faq);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 145%;
+}
 .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text .link-button{
-    display: flex;
     width: 224px;
     height: 50px;
     padding: 12px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     border-radius: 50px;
     background: var(--button);
     border: none;
@@ -793,15 +703,119 @@
     border-radius: 50px;
     color: var(--buttonText);
 }
-@media only screen and (max-width: 900px) {
+.buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text .link-button .fa{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: var(--buttonText);
+    transform: rotateZ(-35deg);
+}
+@media only screen and (min-width: 1400px){
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .sub-tes-con {
+        width: 380px !important;
+    }
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .sub-tes-con .in-tes-con {
+        gap: 2em !important;
+    }
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .sub-tes-con .in-tes-con .tes-con-info {
+        width: 315px;
+    }
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .slick-slider .slick-list .slick-track .slick-slide{
+        margin: 0 1em !important;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .remote-work.p-5 {
+        padding: 2em !important;
+    }
+    .remote-work .sub-remote-work .inner-remote-work.container {
+        margin: 0 2.5em !important;
+    }
+    
+    .services .sub-service-holder .services-holder .services-content-holder .service-content .services-text h4 {
+        font-size: 40px;
+    }
+
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .slick-slider .slick-list .slick-track .slick-slide{
+        margin: 0 2em;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .about-sec .sub-abt-sec .row {
+        gap: 88px;
+    }
+    .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-title h2 {
+        font-size: 33px;
+    }
+    .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-par p {
+        font-size: 14px;
+    }
+    .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-btn-hld {
+        margin: 0 !important;
+    }
+    .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-btn-hld .book button {
+        font-size: 16px;
+    }
+    .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-btn-hld .read .read-link {
+        width: 260px;
+        font-size: 16px;
+    }
+    .about-sec .sub-abt-sec .row .abt-img-hld {
+        height: 340px;
+        width: 375px;
+    }
+
+    .remote-work.p-5 {
+        padding: 2em !important;
+    }
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-heading p {
+        font-size: 14px !important;
+    }
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content {
+        height: 365px;
+        width: 288px;
+    }
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .heading h5 {
+        font-size: 19px;
+    }
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-des p {
+        font-size: 13px;
+    }
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-des .des-list ul li {
+        font-size: 12px;
+    }
+
+    .services .sub-service-holder .services-holder .services-content-holder .service-content .services-text h4 {
+        font-size: 40px;
+    }
+    
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .slick-slider .slick-list .slick-track .slick-slide{
+        margin: 0 2.5em;
+    }
+    
+}
+@media only screen and (min-width: 1258px){
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .slick-slider .slick-list .slick-track .slick-slide{
+        margin: 0 1.5em;
+    }
+}
+@media only screen and (max-width: 1150px){
+    .services .sub-service-holder .svg-design {
+        right: 120px;
+    }
+    .testimonals .tes-hld .in-tes .sub-tes .tes-cont-bdy .slick-slider .slick-list .slick-track .slick-slide{
+        margin: 0 3.5em;
+    }
+}
+@media only screen and (max-width: 992px) {
     .hero{
         height: 640px;
     }
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld{
         width: 90%;
-    }
-    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par{
-        width: 100%;
     }
     .hero .sub-hero-sec .inner-hero-sec .svg-holder .left-svg {
         left: -240px;
@@ -821,14 +835,6 @@
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par p{
         font-size: 14px;
     }
-    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld{
-        flex-direction: column;
-        width: 100%;
-        padding: 8px 12px;
-    }
-    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link{
-        width: 100%;
-    }
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link,
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-link{
         width: 100%;
@@ -845,29 +851,17 @@
         padding: 0;
     }
     .metrix .container{
-        flex-direction: column;
         padding: 52px 16px;
-        margin: 0;
         max-width: 100%;
     }
     .metrix .container .metrix-holder-con{
-        flex-direction: column;
         gap: 32px;
-    }
-    .metrix .container .metrix-holder-con .metrix-dev,
-    .metrix .container .metrix-holder-con .metrix-design,
-    .metrix .container .metrix-holder-con .metrix-contract {
-        justify-content: center;
-        gap: 0px;
-        width: 100%;
     }
     .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count,
     .metrix .container .metrix-holder-con .metrix-design .metrix-design-count,
     .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-count {
         text-align: center;
-        justify-content: center;
         font-size: 20px;
-        width: 100%;
     }
     .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count h2,
     .metrix .container .metrix-holder-con .metrix-design .metrix-design-count h2,
@@ -887,7 +881,6 @@
     }
     .about-sec .sub-abt-sec {
         padding: 0;
-        margin: 0 !important;
         max-width: 100%;
     }
     .about-sec .sub-abt-sec .row{
@@ -914,6 +907,9 @@
         width: 100%;
         padding: 0;
         margin: 0;
+    }
+    .about-sec .sub-abt-sec .row .abt-img-hld .img-sec {
+        width: auto;
     }
     .about-sec .sub-abt-sec .row .abt-txt-sec .abt-info-sec .abt-info-btn-hld {
         flex-direction: column;
@@ -945,12 +941,14 @@
     }
     .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items {
         flex-direction: column;
-        width: 100%;
     }
     .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .heading h5 {
         font-size: 19px;
     }
-    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-des p {
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph .par-des {
+        align-items: flex-start !important;
+    }
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-heading p {
         font-size: 14px;
     }
     .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content {
@@ -966,15 +964,15 @@
         height: 380px;
         padding: 14px !important;
     }
+    
+    .services .sub-service-holder .svg-design {
+        right: -150px;
+        top: -195px;
+        width: 600px;
+    }
     .services .sub-service-holder .services-holder .services-content-holder .service-content {
         gap: 25px;
         height: 390px;
-    }
-    .services .sub-service-holder .svg-design {
-        left: -155px;
-        top: -190px;
-        height: 564px;
-        width: 600px;
     }
     .services .sub-service-holder .services-holder .services-content-holder .slick-slider .slick-prev {
         left: 8px;
@@ -989,7 +987,7 @@
         top: 172px;
     }
     .services .sub-service-holder .services-holder .services-content-holder .service-content .services-text h4 {
-        font-size: 18px;
+        font-size: 28px;
     }
     .services .sub-service-holder .services-holder .services-content-holder .service-content .service-button-holder a {
         width: 100%;
@@ -1036,9 +1034,6 @@
     }
 
 
-    .faq {
-        width: 100%;
-    }
     .faq.p-5 {
         padding: 32px 16px !important;
     }
@@ -1047,32 +1042,97 @@
         padding: 0;
         max-width: 100%;
     }
-    .faq .sub-faq-sec .inner-faq-sec .faq-hld{
-        gap: 32px;
-    }
     .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-heading .faq-heading-sec h4{
         font-size: 14px;
     }
     .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-head h2{
         font-size: 20px;
     }
-    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec {
-        width: 100%;
-    }
     .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques {
-        width: 100%;
+        min-height: 68px;
     }
-    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head {
-        width: 100%;
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head h3 {
+        font-size: 18px;
+    }
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-body .des {
+        font-size: 17px !important;
+    }
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head .icon-holder {
+        width: 26px;
+        height: 26px;
+    }
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head .icon-holder .faPlus{
+        font-size: 12px !important;
+        top: 7px;
+        left: 7px;
+    }
+
+
+    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-des-hld {
+        width: 582px;
+        height: 377px;
+        left: 233px;
+        bottom: -5px;
+    }
+    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text {
+        padding: 8px;
+    }
+    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text h4{
+        text-align: center;
+        font-size: 31px;
+        line-height: 120%;
+        letter-spacing: -0.4px;
+    }
+    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text p {
+        font-size: 14px;
+    }
+    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text .link-button p{
+        font-size: 16px;
+        letter-spacing: -0.32px;
+    }
+}
+@media only screen and (max-width: 425px){
+    .services .sub-service-holder .svg-design {
+        left: -155px;
+        top: -190px;
+        height: 564px;
+        width: 600px;
+    }
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head h3 {
+        font-size: 16px;
+    }
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-body .des {
+        font-size: 15px !important;
+    }
+}
+@media only screen and (max-width: 375px){
+    .services .sub-service-holder .services-holder .services-content-holder .slick-slider .slick-prev {
+        top: 92px;
+    }
+    .services .sub-service-holder .services-holder .services-content-holder .slick-slider .slick-next {
+        top: 92px;
+    }
+    .services .sub-service-holder .services-holder .services-content-holder .service-content .services-text h4 {
+        font-size: 20px;
+    }
+
+    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text h4{
+        font-size: 27px;
+    }
+
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head h3 {
+        font-size: 14px;
+    }
+    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-body .des {
+        font-size: 14px !important;
+    }
+}
+@media only screen and (max-width: 320px){
+    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text h4{
+        font-size: 23px;
     }
     .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head h3 {
         font-size: 13px;
-    }
-    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-body {
-        width: 100%;
-    }
-    .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-body .des {
-        font-size: 14px;
     }
     .faq .sub-faq-sec .inner-faq-sec .faq-hld .faq-ques-hld .faq-ques-sec .sub-faq-ques .in-faq-ques .faq-ques-head .icon-holder {
         width: 20px;
@@ -1082,26 +1142,5 @@
         font-size: 10px !important;
         top: 5px;
         left: 5px;
-    }
-
-
-    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-des-hld {
-        width: 582px;
-        height: 377px;
-        left: 233px;
-        bottom: 30px;
-    }
-    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text {
-        padding: 8px;
-    }
-    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text h4{
-        text-align: center;
-        font-size: 20px;
-        line-height: 120%;
-        letter-spacing: -0.4px;
-    }
-    .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text .link-button p{
-        font-size: 16px;
-        letter-spacing: -0.32px;
     }
 }

@@ -3,8 +3,8 @@ import './css/maintainance.css';
 
 export const Maintainance = () => {
     return (
-        <div className="text-center fs-4 d-flex justify-content-center py-4 w-100 maintainance-holder">
-            <div className='d-flex justify-content-center flex-column gap-5 px-3 sub-holder py-2 col-12'>
+        <div className="text-center fs-4 d-flex justify-content-center py-4 col-12 overflow-hidden maintainance-holder">
+            <div className='d-flex justify-content-center flex-column gap-5 px-3 overflow-hidden sub-holder py-2 col-12'>
                 <div className='col-8 col-lg-3 col-sm-4'>
                     <img className='img-fluid' src={MaintainanceIMG} alt='It is undergoing updates'></img>
                 </div>
