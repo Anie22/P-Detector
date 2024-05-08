@@ -260,6 +260,8 @@ export const Demo = () => {
 
         window.addEventListener('resize', showFooter);
 
+        document.title = 'Get more task done';
+
         return () => {
             window.removeEventListener('resize', showFooter);
         };

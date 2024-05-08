@@ -39,13 +39,16 @@
     .Logo-content-holder{
         width: 100%;
     }
+    .Logo-content-holder .logo-content{
+        padding: 4px 20px;
+    }
     .Logo-content-holder .logo-content .content{
         display: none !important;
     }
 }
 @media only screen and (max-width: 768px) {
     .Logo-content-holder .logo-content{
-        padding: 16px 20px;
+        padding: 4px 20px;
     }
 }
 @media only screen and (max-width: 425px) {

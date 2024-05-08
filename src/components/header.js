@@ -105,7 +105,7 @@ export const Header = () => {
                                         </div>
                                         <div className="position-relative d-flex align-items-start flex-column nav-sub-content-link">
                                             <li className="d-flex align-items-center text-center justify-content-between first-link" onClick={toggleServices}>
-                                                <p>Services</p>
+                                                <p>Solutions</p>
                                                 <FaChevronDown className="position-relative fa" />
                                             </li>
                                             <div className={openServices ? "position-absolute d-flex flex-column align-items-start dropdown" : "position-relative d-none dropdown"}>
@@ -113,10 +113,10 @@ export const Header = () => {
                                                     <a href="/hire">Hire Talent</a>
                                                 </li>
                                                 <li className="d-flex align-items-start dropdown-link">
-                                                    <a href="/outsource">Let's Build</a>
+                                                    <a href="/outsource">MVP Builder</a>
                                                 </li>
                                                 <li className="d-flex align-items-start dropdown-link">
-                                                    <a href="/jobs">Find Job</a>
+                                                    <a href="/jobs">Find remote jobs</a>
                                                 </li>
                                             </div>
                                         </div>

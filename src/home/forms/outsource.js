@@ -1,8 +1,8 @@
 import React from "react";
-import { Header } from '../../components/header';
-import { Footer } from '../../components/footer';
 import { useState, useEffect } from "react";
 import '../homeCss/outsource.css';
+import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 import { Loader } from "../../components/loader";
@@ -115,8 +115,6 @@ export const Outsource = () => {
             }
         } 
     };
-
-    window.addEventListener('resize', done);
 
     const cancel = () => {
         const ori = "Choose which workforce you'll need e.g(UI/UX, devOps)"
@@ -234,9 +232,6 @@ export const Outsource = () => {
 
         } else if (full_Name && job_title && phoneNumber && employee.textContent !== 'Company size' && email && need_teams.textContent !== "Choose which workforce you'll need e.g(UI/UX, devOps)" && know.textContent !== "Choose any" && project_description) {
 
-            const button = document.getElementById('button');
-            const button2 = document.getElementById('btn');
-
             const outsourceDetails = {
                 full_Name,
                 job_title,
@@ -248,11 +243,14 @@ export const Outsource = () => {
                 project_description
             };
 
+            const button = document.getElementById('button');
+            const button2 = document.getElementById('btn');
+
 
             try {
+                setLoading(true);
                 button.disabled = true;
                 button2.style.opacity = '50%';
-                setLoading(true);
 
                 const url = 'https://pedxo-backend.onrender.com/outsource';
                 const res = await axios.post(url, outsourceDetails);
@@ -291,7 +289,7 @@ export const Outsource = () => {
                 }
 
             } finally {
-                setLoading(false)
+                setLoading(false);
             }
 
         }
@@ -301,7 +299,9 @@ export const Outsource = () => {
             setError(err);
             return;
         }
-    }
+    };
+
+    window.addEventListener('resize', done);
 
     useEffect(() => {
         if(message) {
@@ -312,7 +312,7 @@ export const Outsource = () => {
             }, 2000);
 
             return () => clearTimeout(rem);
-        }
+        };
 
         const showFooter = () => {
             if(window.innerWidth > 900) {
@@ -326,11 +326,13 @@ export const Outsource = () => {
 
         window.addEventListener('resize', showFooter);
 
+        document.title = 'Low-cost MVP builder'
+
         return () => {
             window.removeEventListener('resize', showFooter);
         };
 
-    }, [message])
+    }, [message, messages]);
 
 
 

@@ -64,7 +64,7 @@
     width: 260px;
     height: 60px;
     padding: 12px 24px;
-    border-radius: 50px;
+    border-radius: 50px !important;
     background: var(--button);
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link .text{
@@ -90,7 +90,7 @@
     width: 200px;
     height: 60px;
     padding: 12px 24px;
-    border-radius: 50px;
+    border-radius: 50px !important;
     border: 2px solid var(--lightBlack);
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-link .link{
@@ -117,10 +117,10 @@
                 linear-gradient(0deg, var(--black) 0, var(--black) 100%),
                 linear-gradient(0deg, var(--black) 0, var(--black) 100%),
                 linear-gradient(0deg, var(--black) 0, var(--black) 100%), #2B2F38;
-    padding: 40px 15px 40px 15px;
+    padding: 40px 0px 40px 0px;
 }
 .metrix .container .metrix-holder-con{
-    gap: 170px;
+    gap: 170px !important;
 }
 .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count{
     color: var(--backgroundSecondary);
@@ -829,17 +829,11 @@
         top: -384px;
     }
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .heading h4{
-        font-size: 28px;
+        font-size: 40px;
         letter-spacing: -0.56px;
     }
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par p{
-        font-size: 14px;
-    }
-    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link,
-    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-link{
-        width: 100%;
-        height: 50px;
-        border-radius: 10px;
+        font-size: 15px;
     }
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-link .link,
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link .fa,
@@ -855,12 +849,13 @@
         max-width: 100%;
     }
     .metrix .container .metrix-holder-con{
-        gap: 32px;
+        gap: 102px !important;
+        flex-direction: row !important;
     }
     .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count,
     .metrix .container .metrix-holder-con .metrix-design .metrix-design-count,
     .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-count {
-        text-align: center;
+        text-align: left !important;
         font-size: 20px;
     }
     .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count h2,
@@ -884,12 +879,11 @@
         max-width: 100%;
     }
     .about-sec .sub-abt-sec .row{
-        flex-direction: column-reverse;
         margin: 0;
         gap: 76px;
     }
     .about-sec .sub-abt-sec .row .abt-txt-sec {
-        width: 100%;
+        width: 50% !important;
         padding: 0;
         margin: 0;
     }
@@ -903,8 +897,8 @@
         font-size: 14px;
     }
     .about-sec .sub-abt-sec .row .abt-img-hld {
-        height: 300px;
-        width: 100%;
+        height: 350px;
+        width: 40% !important;
         padding: 0;
         margin: 0;
     }
@@ -1089,6 +1083,63 @@
     .buld .buld-sec .buld-sec-hld .in-buld-sec .buld-sec-text .link-button p{
         font-size: 16px;
         letter-spacing: -0.32px;
+    }
+}
+@media only screen and (min-width: 871px){
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld{
+        flex-direction: row !important;
+    }
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link,
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-lin{
+        width: fit-content;
+    }
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link,
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-link{
+        width: fit-content;
+        height: 50px;
+    }
+
+    .about-sec .sub-abt-sec .row {
+        flex-direction: row !important;
+    }
+
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph {
+        align-items: flex-start !important;
+    }
+}
+@media only screen and (max-width: 870px){
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link,
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .second-link{
+        width: 100%;
+        height: 50px;
+        border-radius: 10px !important;
+    }
+
+    .metrix .container .metrix-holder-con{
+        gap: 32px !important;
+        flex-direction: column !important;
+    }
+    .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count,
+    .metrix .container .metrix-holder-con .metrix-design .metrix-design-count,
+    .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-count {
+        text-align: center !important;
+    }
+
+    .about-sec .sub-abt-sec .row{
+        flex-direction: column-reverse !important;
+        margin: 0;
+        gap: 76px;
+    }
+    .about-sec .sub-abt-sec .row .abt-txt-sec {
+        width: 100% !important;
+    }
+    .about-sec .sub-abt-sec .row .abt-img-hld {
+        height: 300px;
+        width: 100% !important;
+    }
+
+    .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph {
+        align-items: flex-start !important;
     }
 }
 @media only screen and (max-width: 425px){
