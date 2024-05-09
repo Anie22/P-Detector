@@ -378,7 +378,7 @@ export const Outsource = () => {
                                                             <label>Employees CountDown</label>
                                                             <div className='count-input-holder'>
                                                                 <div className='count-input' onClick={() => toggleOption()} >
-                                                                    <div id="employee" className={employeeCount === 'Company size' ? 'input' : 'option'}>{employeeCount}</div>
+                                                                    <div id="employee" className={employeeCount === 'Company size' ? 'option' : 'input'}>{employeeCount}</div>
                                                                     <FaChevronDown className={option ? 'active' : 'fa'} />
                                                                 </div>
                                                                 {hideEmploy && <p>{error.employeeCount}</p>}
