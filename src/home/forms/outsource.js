@@ -89,7 +89,7 @@ export const Outsource = () => {
             setTeam(false);
             setHideNeed(false);
 
-            need_teams.style.color = 'var(--text)'
+            need_teams.style.color = 'hsl(218, 13%, 33%)'
             need_teams.style.fontSize = '16px'
 
             if(window.innerWidth > 900) {
@@ -113,7 +113,7 @@ export const Outsource = () => {
                     ico.style.fontSize = '16px';
                 }
             }
-        } 
+        };
     };
 
     const cancel = () => {
@@ -124,7 +124,7 @@ export const Outsource = () => {
         setNeeded_Team(ori);
         setTeam(false);
         setCheck([]);
-        need_teams.style.color = 'var(--footerText)';
+        need_teams.style.color = 'hsl(218, 15%, 65%)';
         need_teams.style.fontSize = '14px';
         height.style.height = '56px';
         height.style.padding = '20px 16px';
@@ -304,12 +304,12 @@ export const Outsource = () => {
     window.addEventListener('resize', done);
 
     useEffect(() => {
-        if(message) {
+        if(message === 'Network error, check your network') {
             setMessages(true);
 
             const rem = setTimeout(() => {
-                setMessages(false)
-            }, 2000);
+                setMessages(false);
+            }, 3000);
 
             return () => clearTimeout(rem);
         };

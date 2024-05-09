@@ -135,7 +135,7 @@ export const Header = () => {
                                                 <p>Login</p>
                                             </li>
                                         </a>
-                                        <a href="/book-demo" className="d-flex align-items-center justify-content-center text-decoration-none button-link">
+                                        <a href="/request-a-demo" className="d-flex align-items-center justify-content-center text-decoration-none button-link">
                                             <li className="book">
                                                 <p>Book demo</p>
                                             </li>
