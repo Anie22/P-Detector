@@ -172,7 +172,7 @@ export const Demo = () => {
                 button2.style.opacity = '50%'
                 setLoading(true);
 
-                const url = 'https://pedxo-backend.onrender.com/demo';
+                const url = 'https://pedxo-backend-p7se.onrender.com/demo';
                 const res = await axios.post(url, bookDemoDetails);
 
                 if(res) {

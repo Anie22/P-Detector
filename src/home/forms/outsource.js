@@ -256,7 +256,7 @@ export const Outsource = () => {
                 button.disabled = true;
                 button2.style.opacity = '50%';
 
-                const url = 'https://pedxo-backend.onrender.com/outsource';
+                const url = 'https://pedxo-backend-p7se.onrender.com/outsource';
                 const res = await axios.post(url, outsourceDetails);
 
                 if(res) {

@@ -51,7 +51,7 @@ export const Login = () => {
 
             try {
                 setLoader(true);
-                const res = await axios.post('https://pedxo-backend.onrender.com/auth/login', userLogins);
+                const res = await axios.post('https://pedxo-backend-p7se.onrender.com/auth/login', userLogins);
                 if(res) {
                     setIcon(
                         <div className="success">

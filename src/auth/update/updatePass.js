@@ -92,7 +92,7 @@ export const UpdatePass = () => {
             };
 
 
-            const url = 'https://pedxo-backend.onrender.com/auth/reset-password';
+            const url = 'https://pedxo-backend-p7se.onrender.com/auth/reset-password';
 
             try {
 

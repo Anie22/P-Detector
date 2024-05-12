@@ -23,7 +23,7 @@ export const ResetVerification = () => {
 
         const verifyRoute = async () => {
             try {
-                const url = 'https://pedxo-backend.onrender.com/auth/verify-reset-password-otp';
+                const url = 'https://pedxo-backend-p7se.onrender.com/auth/verify-reset-password-otp';
 
                 const res = await axios.post(url, data);
 

@@ -28,7 +28,7 @@ export const VerifyCode = () => {
 
             setLoading(true);
 
-            const url = 'https://pedxo-backend.onrender.com/auth/request-otp';
+            const url = 'https://pedxo-backend-p7se.onrender.com/auth/request-otp';
             const resp = await axios.post(url, resetPasswordInfo);
 
             if(resp){

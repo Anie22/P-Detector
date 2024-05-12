@@ -109,7 +109,7 @@ export const SignUp = () => {
             
             try {
                 setLoader(true);
-                const response = await axios.post('https://pedxo-backend.onrender.com/auth', userData);
+                const response = await axios.post('https://pedxo-backend-p7se.onrender.com/auth', userData);
                 if (response) {
                     setIcon(
                         <div className="success">

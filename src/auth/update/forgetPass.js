@@ -41,7 +41,7 @@ export const ResetPass = () => {
 
                 localStorage.setItem('mail', JSON.stringify(email));
 
-                const url = 'https://pedxo-backend.onrender.com/auth/forgot-password';
+                const url = 'https://pedxo-backend-p7se.onrender.com/auth/forgot-password';
                 const res = await axios.post(url, data);
 
                 if(res) {
