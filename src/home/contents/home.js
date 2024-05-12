@@ -173,7 +173,7 @@ export const Home = () => {
 
         }, 10);
 
-        document.title = 'Tech-outsourcing HR and MVP development company';
+        document.title = 'Tech-outsourcing, HR and MVP development company';
 
         return () => {
             clearInterval(dCount);

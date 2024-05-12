@@ -13,30 +13,30 @@ export const Outsource = () => {
     const [full_Name, setFull_Name] = useState('');
     const [job_title, setJob_Title] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [email, setEmail] = useState('')
     const [employeeCount, setEmployeeCount] = useState('Company size');
-    const [needed_team, setNeeded_Team] = useState(["Choose which workforce you'll need e.g(UI/UX, devOps)"]);
+    const [email, setEmail] = useState('');
+    const [needed_team, setNeeded_Team] = useState(['Choose which workforce you will need e.g(UI/UX, devOps)']);
     const [knowUs, setKnowUs] = useState('Choose any');
     const [project_description, setProject_Description] = useState('')
+    const employeeNumbers = ['1 - 30', '31 - 100', '101 - 400', '401 - 1000+'];
+    const roles = ['UI/UX', 'Devops', 'Mobile Engineer', 'Frontend Engineer', 'Backend Engineer', 'Full-stack Engineering', 'Data Scientist'];
+    const Socials = ['Blog', 'Facebook', 'Google', 'Instagram', 'Referral', 'Twitter', 'Webinar', 'Linkedin', 'Others'];
     const [option, setOption] = useState(false);
     const [any, setAny] = useState(false);
     const [team, setTeam] = useState(false);
-    const [check, setCheck] = useState([]);
-    const employeeNumbers = ['1 - 30', '31 - 100', '101-400', '401-1000+'];
-    const roles = ["UI/UX", "Devops", "Mobile Engineer", "Frontend Engineer", "Backend Engineer", "Full-stack Engineering", "Data Scientist"];
-    const Socials = ['Blog', 'Facebook', 'Google', 'Instagram', 'Referral', 'Twitter', 'Webinar', 'Linkedin', 'Others'];
     const [addFocus, setAddFocus] = useState(false);
-    const [footer, setFooter] = useState(null);
-    const [error, setError] = useState({});
     const [hideEmploy, setHideEmploy] = useState(false);
     const [hideNeed, setHideNeed] = useState(false);
     const [hideknow, setHideKnow] = useState(false);
     const [success, setSuccess] = useState(false);
     const [loading, setLoading] = useState(false);
     const [messages, setMessages] = useState(false);
-    const [icon, setIcon] = useState(null);
-    const [message, setMessage] = useState(null);
     const [form, setForm] = useState(true);
+    const [message, setMessage] = useState(null);
+    const [footer, setFooter] = useState(null);
+    const [icon, setIcon] = useState(null);
+    const [check, setCheck] = useState([]);
+    const [error, setError] = useState({});
 
     const toggleOption = () => {
         setOption(!option)
@@ -79,7 +79,6 @@ export const Outsource = () => {
     };
 
     const done = () => {
-        const need_teams = document.getElementById('teams');
         const height = document.getElementById('roleh');
         const ico = document.getElementById('fa');
         setHideNeed(false);
@@ -89,57 +88,41 @@ export const Outsource = () => {
             setTeam(false);
             setHideNeed(false);
 
-            need_teams.style.color = 'hsl(218, 13%, 33%)'
-            need_teams.style.fontSize = '16px'
-
-            if(window.innerWidth > 900) {
+            if(window.innerWidth > 900 || window.innerWidth < 900) {
                 if(check.length > 4){
                     height.style.height = 'fit-content';
                     height.style.padding = '7px 10px';
-                    ico.style.fontSize = '19px';
+                    ico.style.fontSize = '20px';
                 } else {
                     height.style.height = '56px';
                     height.style.padding = '20px 16px';
                     ico.style.fontSize = '16px';
                 } 
-            } else {
-                if(check.length > 4 || check.length === 4){
-                    height.style.height = 'fit-content';
-                    height.style.padding = '7px 10px';
-                    ico.style.fontSize = '25px';
-                } else {
-                    height.style.height = '56px';
-                    height.style.padding = '20px 16px';
-                    ico.style.fontSize = '16px';
-                }
-            }
+            };
         };
     };
 
     const cancel = () => {
-        const ori = "Choose which workforce you'll need e.g(UI/UX, devOps)"
-        const need_teams = document.getElementById('teams');
+        const ori = ['Choose which workforce you will need e.g(UI/UX, devOps)']
         const height = document.getElementById('roleh');
         const ico = document.getElementById('fa');
         setNeeded_Team(ori);
         setTeam(false);
         setCheck([]);
-        need_teams.style.color = 'hsl(218, 15%, 65%)';
-        need_teams.style.fontSize = '14px';
         height.style.height = '56px';
         height.style.padding = '20px 16px';
         ico.style.fontSize = '16px';
     };
 
-    const handleInput = (e) => {
+    const handleChange = (e) => {
         const {name, value} = e.target;
 
         setError({ ...error, [name]: undefined});
-        setFull_Name(name === "full_Name" ? value: full_Name);
-        setJob_Title(name === "job_title" ? value: job_title);
-        setPhoneNumber(name === "phoneNumber" ? value: phoneNumber);
-        setEmail( name === "email" ? value: email);
-        setProject_Description(name === "project_description" ? value: project_description);
+        setFull_Name(name === 'full_Name' ? value: full_Name);
+        setJob_Title(name === 'job_title' ? value: job_title);
+        setPhoneNumber(name === 'phoneNumber' ? value: phoneNumber);
+        setEmail( name === 'email' ? value: email);
+        setProject_Description(name === 'project_description' ? value: project_description);
     }
     
     const handleSubmit = async (e) => {
@@ -212,7 +195,7 @@ export const Outsource = () => {
 
             err.email = <p>No space allowed</p>
 
-        } else if(need_teams.textContent === "Choose which workforce you'll need e.g(UI/UX, devOps)") {
+        } else if(need_teams.textContent === 'Choose which workforce you will need e.g(UI/UX, devOps)') {
 
             setHideNeed(true);
             err.needed_team = 'input required'
@@ -230,7 +213,7 @@ export const Outsource = () => {
 
             err.project_description  = <p>Use of symbols are not allowed except @(form emphasis and importance)</p>
 
-        } else if (full_Name && job_title && phoneNumber && employee.textContent !== 'Company size' && email && need_teams.textContent !== "Choose which workforce you'll need e.g(UI/UX, devOps)" && know.textContent !== "Choose any" && project_description) {
+        } else if (full_Name && job_title && phoneNumber && employee.textContent !== 'Company size' && email && need_teams.textContent !== 'Choose which workforce you will need e.g(UI/UX, devOps)' && know.textContent !== "Choose any" && project_description) {
 
             const outsourceDetails = {
                 full_Name,
@@ -332,7 +315,7 @@ export const Outsource = () => {
             window.removeEventListener('resize', showFooter);
         };
 
-    }, [message, messages]);
+    }, [message]);
 
 
 
@@ -357,19 +340,19 @@ export const Outsource = () => {
                                                     <div className='first-input-field-holder'>
                                                         <div className='name-field-holder'>
                                                             <label>Full Name</label>
-                                                            <input name="full_Name" value={full_Name} type='text' placeholder='Enter your full name' onChange={(e) => handleInput(e)}></input>
+                                                            <input name="full_Name" value={full_Name} type='text' placeholder='Enter your full name' onChange={(e) => handleChange(e)}></input>
                                                             {error.full_Name}
                                                         </div>
                                                     </div>  
                                                     <div className='second-input-field-holder'>
                                                         <div className='job-field-holder'>
                                                             <label>Job Title</label>
-                                                            <input name="job_title" value={job_title} type='text' placeholder='Enter job title, e.g CEO' onChange={(e) => handleInput(e)}></input>
+                                                            <input name="job_title" value={job_title} type='text' placeholder='Enter job title, e.g CEO' onChange={(e) => handleChange(e)}></input>
                                                             {error.job_title}
                                                         </div>
                                                         <div className='number-field-holder'>
                                                             <label>Phone Number</label>
-                                                            <input name="phoneNumber" value={phoneNumber} type='tel' placeholder='Enter phone number with country code' onChange={(e) => handleInput(e)}></input>
+                                                            <input name="phoneNumber" value={phoneNumber} type='tel' placeholder='Enter phone number with country code' onChange={(e) => handleChange(e)}></input>
                                                             {error.phoneNumber}
                                                         </div>
                                                     </div>                                  
@@ -378,7 +361,7 @@ export const Outsource = () => {
                                                             <label>Employees CountDown</label>
                                                             <div className='count-input-holder'>
                                                                 <div className='count-input' onClick={() => toggleOption()} >
-                                                                    <div id="employee" className={employeeCount === 'Company size' ? 'option' : 'input'}>{employeeCount}</div>
+                                                                    <div id="employee" className={employeeCount === 'Company size' ? 'input' : 'option'}>{employeeCount}</div>
                                                                     <FaChevronDown className={option ? 'active' : 'fa'} />
                                                                 </div>
                                                                 {hideEmploy && <p>{error.employeeCount}</p>}
@@ -396,7 +379,7 @@ export const Outsource = () => {
                                                         <div className='email-field-holder'>
                                                             <label>Email</label>
                                                             <div className="ico">
-                                                                <input name="email" value={email} type='email' placeholder='Enter work email' onFocus={changeColor} onBlur={removeColor} onChange={(e) => handleInput(e)}></input>
+                                                                <input name="email" value={email} type='email' placeholder='Enter work email' onFocus={changeColor} onBlur={removeColor} onChange={(e) => handleChange(e)}></input>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className={addFocus ? 'mail focus' : 'mail'}>
                                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8323 17.5C17.6732 17.5 19.1656 16.0076 19.1656 14.1667V6.68557C19.1659 6.67283 19.1659 6.66005 19.1656 6.64725V5.83333C19.1656 3.99238 17.6732 2.5 15.8323 2.5H4.16559C2.32464 2.5 0.832253 3.99238 0.832253 5.83333V6.64726C0.831957 6.66005 0.831958 6.67282 0.832253 6.68556V14.1667C0.832253 16.0076 2.32464 17.5 4.16559 17.5H15.8323ZM2.49892 14.1667C2.49892 15.0871 3.24511 15.8333 4.16559 15.8333H15.8323C16.7527 15.8333 17.4989 15.0871 17.4989 14.1667V7.89753L11.2369 10.4023C10.4422 10.7202 9.55565 10.7202 8.76095 10.4023L2.49892 7.89753V14.1667ZM10.6179 8.85488L17.4989 6.10247V5.83333C17.4989 4.91286 16.7527 4.16667 15.8323 4.16667H4.16559C3.24511 4.16667 2.49892 4.91286 2.49892 5.83333V6.10247L9.37993 8.85488C9.77729 9.01382 10.2206 9.01382 10.6179 8.85488Z"/>
                                                                 </svg>
@@ -409,7 +392,7 @@ export const Outsource = () => {
                                                             <label>Which team will you be needing for the project?</label>
                                                             <div className="team-input-holder">
                                                                 <div className="team-input"  id="roleh"  onClick={() => openTeams()}>
-                                                                    <div id="teams" className={needed_team === "Choose which workforce you'll need e.g(UI/UX, devOps)" ? "option" : "input"}>{needed_team}</div>
+                                                                    <div id="teams" className={needed_team.includes('Choose which workforce you will need e.g(UI/UX, devOps)') ? 'input' : 'option'}>{needed_team.join(', ')}</div>
                                                                     <FaChevronDown className={team ? 'active' : "fa"} id="fa"/>
                                                                 </div>
                                                                 {hideNeed && <p>{error.needed_team}</p>}
@@ -460,7 +443,7 @@ export const Outsource = () => {
                                                     <div className="fifth-input-field-holder">
                                                         <div className="des-field-holder">
                                                             <label>Describe your project</label>
-                                                            <textarea name="project_description" value={project_description} cols={30} rows={50} placeholder="Describe here" onChange={(e) => handleInput(e)}></textarea>
+                                                            <textarea name="project_description" value={project_description} cols={30} rows={50} placeholder="Describe here" onChange={(e) => handleChange(e)}></textarea>
                                                             {error.project_description}
                                                         </div>
                                                     </div>
