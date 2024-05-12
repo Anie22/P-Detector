@@ -79,16 +79,17 @@ export const Outsource = () => {
     };
 
     const done = () => {
-        const height = document.getElementById('roleh');
-        const ico = document.getElementById('fa');
         setHideNeed(false);
         if(check) {
             const addComa = check.join(', ');
             setNeeded_Team(addComa.split(', '));
             setTeam(false);
             setHideNeed(false);
-
+            
             const size = () => {
+                const height = document.getElementById('roleh');
+                const ico = document.getElementById('fa');
+                
                 if(window.innerWidth > 900) {
                     if(check.length > 4){
                         height.style.height = 'fit-content';
@@ -100,7 +101,7 @@ export const Outsource = () => {
                         ico.style.fontSize = '16px';
                     } 
                 } else {
-                    if(check.length > 4){
+                    if(check.length > 4 || check.length === 4){
                         height.style.height = 'fit-content';
                         height.style.padding = '7px 10px';
                         ico.style.fontSize = '25px';
@@ -110,7 +111,9 @@ export const Outsource = () => {
                         ico.style.fontSize = '16px';
                     } 
                 }
-            } 
+            };
+
+            size ();
 
             window.addEventListener('resize', size);
 
