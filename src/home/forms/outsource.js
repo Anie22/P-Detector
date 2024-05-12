@@ -88,17 +88,35 @@ export const Outsource = () => {
             setTeam(false);
             setHideNeed(false);
 
-            if(window.innerWidth > 900 || window.innerWidth < 900) {
-                if(check.length > 4){
-                    height.style.height = 'fit-content';
-                    height.style.padding = '7px 10px';
-                    ico.style.fontSize = '20px';
+            const size = () => {
+                if(window.innerWidth > 900) {
+                    if(check.length > 4){
+                        height.style.height = 'fit-content';
+                        height.style.padding = '7px 10px';
+                        ico.style.fontSize = '19px';
+                    } else {
+                        height.style.height = '56px';
+                        height.style.padding = '20px 16px';
+                        ico.style.fontSize = '16px';
+                    } 
                 } else {
-                    height.style.height = '56px';
-                    height.style.padding = '20px 16px';
-                    ico.style.fontSize = '16px';
-                } 
-            };
+                    if(check.length > 4){
+                        height.style.height = 'fit-content';
+                        height.style.padding = '7px 10px';
+                        ico.style.fontSize = '25px';
+                    } else {
+                        height.style.height = '56px';
+                        height.style.padding = '20px 16px';
+                        ico.style.fontSize = '16px';
+                    } 
+                }
+            } 
+
+            window.addEventListener('resize', size);
+
+            return () => {
+                window.removeEventListener('resize', size)
+            }
         };
     };
 
@@ -283,8 +301,6 @@ export const Outsource = () => {
             return;
         }
     };
-
-    window.addEventListener('resize', done);
 
     useEffect(() => {
         if(message === 'Network error, check your network') {
