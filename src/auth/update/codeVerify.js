@@ -74,7 +74,7 @@ export const VerifyCode = () => {
                 if(err.response) {
                     const {status} = err.response;
                     if(status === 500){
-                        setMessage('Server timeout');
+                        setMessage("Couldn't connect, timeout");
                     };
                 }
 
@@ -89,6 +89,29 @@ export const VerifyCode = () => {
     };
 
     useEffect(() => {
+
+        if(message === 'Network error, check your network' || message === "Couldn't connect, timeout" || message === 400 || message === 404) {
+            setMessages(true);        
+            
+            const Mes = setTimeout(() => {
+                setMessages(false);
+            }, 2000);
+
+            return () => clearTimeout(Mes);
+
+        } else if(message === '') {
+            setMessages(true);   
+
+            const Mes = setTimeout(() => {
+                setMessages(false);
+            }, 2000)
+
+            return () => clearTimeout(Mes);
+
+        } else {
+            setMessages(false);
+        }
+
         const getEmail = () => {
             const mail = localStorage.getItem('mail');
             const mailIndex = [7, 8, 9, 10, 11, 12]
@@ -96,68 +119,47 @@ export const VerifyCode = () => {
             setEmail(email);
         };
 
-        if(loading) {
-            setLoading(true);
-        };
-
-        if(message === 'Network error, check your network' || message === 500 || message === 400 || message === 404) {
-            setMessages(true);        
-            
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 2500);
-    
-            return () => clearTimeout(Message);
-        } else if(message === '') {
-            setMessages(true);   
-
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 2000);
-
-            return () => clearTimeout(Message);
-        } else {
-            setMessages(false);
-        }
-
         getEmail();
 
-
-    }, [email, loading, message, messages]);
+    }, [email, loading, message]);
 
     return (
-        <div className="vry-cd-hol">
-            <div className="in-vry-cd-hol">
-                <Logo />
-                <div className="sub-vry-cd-hol">
-                    <div className="sub-vry-cd-cmp-hol">
-                        <div className="sub">
-                            <div className="sub-vry-cd-cmp-hol-head">
-                                <h4>Check your email</h4>
-                                <h6>We have sent an email with password reset information to <span>{email}</span></h6>
-                            </div>
-                            <div className="sub-vry-cd-cmp-hol-frm-hol">
-                                <div className="form">
-                                    <div className="vry-frm-txt-but">
-                                        <p>Didn’t receive the email? Check spam or promotion folder or social</p>
-                                        <button className="btn" id="butn" type="submit" onClick={() => resendLink()}>
-                                            { disableMsg ? <p>resend in <span className="text-lowercase">{disableTime}s</span></p> : <p>resend email</p> }
-                                        </button>
+        <div className="overflow-hidden ver">
+            <div className="sub-ver">
+                <div className="d-inline-flex align-items-start justify-content-center col-12 vry-cd-hol">
+                    <div className="d-flex justify-content-center bg-white col-12 in-vry-cd-hol">
+                        <Logo />
+                        <div className="d-flex flex-column align-items-center justify-content-between col-6 sub-vry-cd-hol">
+                            <div className="d-flex align-items-start col-12 sub-vry-cd-cmp-hol">
+                                <div className="d-flex flex-column align-items-start gap-4 sub">
+                                    <div className="d-flex flex-column align-items-center align-self-stretch gap-3 col-12 sub-vry-cd-cmp-hol-head">
+                                        <h4>Check your email</h4>
+                                        <h6>We have sent an email with password reset information to <br /> <span>{email}</span></h6>
                                     </div>
-                                    <div className="form-btn w-100">
-                                        <a href="/login" className="link">
-                                            <button className="btn w-100" type="button">
-                                                <p>Back to login</p>
-                                            </button>
-                                        </a>
+                                    <div className="col-12 sub-vry-cd-cmp-hol-frm-hol">
+                                        <div className="d-flex flex-column align-items-center align-self-stretch gap-4 form">
+                                            <div className="d-flex flex-column align-items-center align-self-stretch gap-3 vry-frm-txt-but">
+                                                <p>Didn’t receive the email? Check spam or promotion folder or social</p>
+                                                <button className="d-flex flex-column align-items-center align-self-stretch justify-content-center btn" id="butn" type="submit" onClick={() => resendLink()}>
+                                                    { disableMsg ? <p>resend in <span className="text-lowercase">{disableTime}s</span></p> : <p>resend email</p> }
+                                                </button>
+                                            </div>
+                                            <div className="col-12 form-btn">
+                                                <a href="/login" className="link">
+                                                    <button className="d-flex flex-column align-items-center align-self-stretch justify-content-center col-12 btn" type="button">
+                                                        <p>Back to login</p>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {loading && <Loader />}
+                        {messages && <Modal icon={icon} message={message} />}
                     </div>
                 </div>
-                {loading && <Loader />}
-                {messages && <Modal icon={icon} message={message} />}
             </div>
         </div>
     )

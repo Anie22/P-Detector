@@ -1,26 +1,12 @@
 .loader{
-    position: fixed;
-    top: 0;
-    right: 0;
     height: 100%;
-    width: 100%;
     background: hsla(0, 0%, 0%, 0.472);
     z-index: 200;
 }
 .loader .loder-holder{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    align-self: stretch;
     height: 100%;
-    width: 100%;
 }
 .loader .loder-holder .loader-con{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     height: 200px;
     width: 200px;
 }

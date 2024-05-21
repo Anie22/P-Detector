@@ -39,9 +39,16 @@ export const Login = () => {
         e.preventDefault();
         const newErr = {};
 
+        const space = /\s/g;
+        const symbol = /[!#$%^&*]/;
+
         if(!email) {
             newErr.email = <p>Email required</p>
-        } else if(!password) {
+        } else if(space.test(email)) {
+            newErr.email = <p>space not allowed</p>
+        } else if(symbol.test(email)) {
+            newErr.email = <p>wrong email format</p>
+        }  else if(!password) {
             newErr.password = <p>Password required</p>
         } else {
             const userLogins = {
@@ -81,7 +88,7 @@ export const Login = () => {
                         if(status === 404 && err.response.data.message === 'user not found'){
                             newErr.email = <p>User doesn't exist</p>
                         }else if(status === 500 && err.response.data.message === 'Internal server error'){
-                            setMessage('Server timeout');
+                            setMessage("Couldn't connect, timeout");
                         } else if(err.response.data.message === 'password do not matched'){
                             newErr.password = <p>Wrong password</p>
                         }
@@ -114,7 +121,7 @@ export const Login = () => {
             return () => clearTimeout(load);
         };
 
-        if(message === 'Network error, check your network') {
+        if(message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
             setMessages(true);        
             
             const Message = setTimeout(() => {
@@ -154,7 +161,7 @@ export const Login = () => {
             window.removeEventListener('resize', Login);
         };
 
-    }, [loader, message, icon, loginText, messages]);
+    }, [loader, message, icon, loginText]);
 
 
     return (

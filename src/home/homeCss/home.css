@@ -862,13 +862,13 @@
     .metrix .container .metrix-holder-con .metrix-design .metrix-design-count h2,
     .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-count h2 {
         font-size: 40px;
-        text-align: center;
+        text-align: left;
     }
     .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-des p,
     .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-des p,
     .metrix .container .metrix-holder-con .metrix-design .metrix-design-des p {
         font-size: 16px;
-        text-align: center;
+        text-align: left;
     }
 
     .about-sec.p-5 {
@@ -960,8 +960,8 @@
     }
     
     .services .sub-service-holder .svg-design {
-        right: -150px;
-        top: -195px;
+        right: -344px;
+        top: -207px;
         width: 600px;
     }
     .services .sub-service-holder .services-holder .services-content-holder .service-content {
@@ -1085,6 +1085,26 @@
         letter-spacing: -0.32px;
     }
 }
+@media only screen and (max-width: 908px) {
+    .services .sub-service-holder .svg-design {
+        right: -260px;
+        top: -210px;
+        width: 600px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-count h2,
+    .metrix .container .metrix-holder-con .metrix-design .metrix-design-count h2,
+    .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-count h2 {
+        text-align: center;
+    }
+    
+    .metrix .container .metrix-holder-con .metrix-dev .metrix-dev-des p,
+    .metrix .container .metrix-holder-con .metrix-contract .metrix-contract-des p,
+    .metrix .container .metrix-holder-con .metrix-design .metrix-design-des p {
+        text-align: center;
+    }
+}
 @media only screen and (min-width: 871px){
     .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld{
         flex-direction: row !important;
@@ -1140,6 +1160,13 @@
 
     .remote-work .sub-remote-work .inner-remote-work .remote-work-content .second-content .second-content-items .sub-content .paragraph {
         align-items: flex-start !important;
+    }
+}
+@media only screen and (max-width: 798px){
+    .services .sub-service-holder .svg-design {
+        right: -150px;
+        top: -195px;
+        width: 600px;
     }
 }
 @media only screen and (max-width: 425px){

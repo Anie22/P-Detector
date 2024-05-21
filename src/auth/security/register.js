@@ -73,18 +73,47 @@ export const SignUp = () => {
         e.preventDefault();
         const newError = {};
 
+        const numberRegex = /\d/;
+        const symbols = /[!@#$%^&*]/;
+        const space = /\s/g;
+        const symbol = /[!#$%^&*]/;
+
         if(!firstName) {
             newError.firstName = <p>First name required</p>
+            
+        } else if(space.test(firstName)) {
+            newError.firstName = <p>space are not allowed</p>
+            
+        } else if(numberRegex.test(firstName) || symbols.test(firstName)) {
+            newError.firstName = <p>worng format for first name</p>
             
         } else if(!lastName) {
             newError.lastName = <p>Last name required</p>
 
+        } else if(space.test(lastName)) {
+            newError.lastName = <p>space are not allowed</p>
+            
+        } else if(numberRegex.test(lastName) || symbols.test(lastName)) {
+            newError.lastName = <p>worng format for last name</p>
+            
         } else if(!userName) {
             newError.userName = <p>User name required </p>
 
+        } else if(space.test(userName)) {
+            newError.userName = <p>space are not allowed</p>
+            
+        } else if(numberRegex.test(userName) || symbols.test(userName)) {
+            newError.userName = <p>worng format for user name</p>
+            
         } else if(!email) {
             newError.email = <p>email required </p>
 
+        } else if(space.test(email)) {
+            newError.email = <p>space are not allowed</p>
+            
+        } else if(symbol.test(email)) {
+            newError.email = <p>wrong email format</p>
+            
         } else if(!password && password !== validatePassword) {
             newError.password = <p>password required </p>
 
@@ -154,7 +183,7 @@ export const SignUp = () => {
                         } else if (error.response.data.message === 'username already exist' && status === 422) {
                             newError.userName = <p>User already exist</p>
                         }if(status === 500 && error.response.data.message === 'Internal server error'){
-                            setMessage('Server timeout');
+                            setMessage("Couldn't connect, timeout");
                         };
                     };
     
@@ -193,7 +222,7 @@ export const SignUp = () => {
             return () => clearTimeout(load);
         };
 
-        if(message === 'Network error, check your network' || message  === 'Server timeout') {
+        if(message === 'Network error, check your network' || message  === "Couldn't connect, timeout") {
             setMessages(true);        
             
             const Message = setTimeout(() => {
@@ -214,7 +243,7 @@ export const SignUp = () => {
             setMessages(false)
         };
 
-    }, [password, valPas, loader, message, messages, icon]);
+    }, [password, valPas, loader, message, icon]);
 
     return (
         <div className="signup">

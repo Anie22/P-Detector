@@ -1,46 +1,20 @@
-.vry-cd-hol{
-    display: inline-flex;
-    height: 100%;
-    justify-content: center;
-    align-items: flex-start;
-}
-.vry-cd-hol .in-vry-cd-hol{
-    display: flex;
+.ver {
     height: 100vh;
-    justify-content: center;
-    background: var(--white);
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
-    display: flex;
-    width: 749px;
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol{
+    height: 100vh;
+}
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
     padding: 100px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol{
-    display: flex;
-    width: 538px;
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol{
     padding: 32px 28px;
-    align-items: flex-start;
     gap: 8px;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub{
     flex: 1 0 0;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    align-self: stretch;
-    width: 100%;
-}
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head h4{
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head h4{
     align-self: stretch;
     color: var(--label);
     font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
@@ -50,7 +24,7 @@
     line-height: 120%;
     letter-spacing: -0.56px;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head h6{
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head h6{
     align-self: stretch;
     color: var(--lightAsh);
     font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
@@ -59,25 +33,11 @@
     font-weight: 400;
     line-height: 145%;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head h6 span{
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-head h6 span{
     align-self: stretch;
     color: var(--text);
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form{ 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    align-self: stretch;
-}
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .vry-frm-txt-but{ 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    align-self: stretch;
-}
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .vry-frm-txt-but p{
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .vry-frm-txt-but p{
     align-self: stretch;
     color: var(--sub);
     font-size: 14px;
@@ -85,19 +45,14 @@
     font-weight: 400;
     line-height: normal
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .vry-frm-txt-but .btn{ 
-    display: flex;
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .vry-frm-txt-but .btn{ 
     padding: 16px 24px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
-    align-self: stretch;
     border: none;
     border-radius: 8px;
     background: var(--backgroundPrimary);
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .vry-frm-txt-but .btn p{ 
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .vry-frm-txt-but .btn p{ 
     align-self: stretch;
     color: var(--lightBlack);
     text-align: center;
@@ -108,23 +63,18 @@
     line-height: 145%;
     text-transform: capitalize;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .form-btn .link{ 
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .form-btn .link{ 
     text-decoration: none;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .form-btn .link .btn{ 
-    display: flex;
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .form-btn .link .btn{ 
     padding: 16px 24px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
-    align-self: stretch;
     border: none;
     border-radius: 8px;
     background: var(--back);
     text-decoration: none;
 }
-.vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .form-btn .link .btn p{ 
+.ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol .sub .sub-vry-cd-cmp-hol-frm-hol .form .form-btn .link .btn p{ 
     align-self: stretch;
     color: var(--lightBlack);
     text-align: center;
@@ -139,22 +89,22 @@
     .vry-cd-hol{
         display: block;
     }
-    .vry-cd-hol .in-vry-cd-hol{
+    .ver .sub-ver .vry-cd-hol .in-vry-cd-hol{
         flex-direction: column;
-        justify-content: unset;
+        justify-content: unset !important;
         height: 100svh;
     }
-    .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
+    .ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
         padding: 32px 16px;
         width: 100%;
     }
-    .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol {
+    .ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol {
         width: 100%;
         padding: 0;
     }
 }
 @media only screen and (max-width: 425px) {
-    .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
+    .ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
         height: 480px;
     }
 }

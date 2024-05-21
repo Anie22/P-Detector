@@ -96,8 +96,8 @@ export const Header = () => {
                             <div className={nav ? "nav-content-hold" : 'nav-content-hold navb'}>
                                 <ul className="d-flex align-items-center flex-column flex-lg-row col-12 nav nav-content">
                                     {mobileLogo}
-                                    <div className="d-inline-flex align-items-start align-items-lg-center justify-content-center flex-column flex-lg-row p-0 px-lg-4 nav-first-content">
-                                        <div className="d-flex align-items-start align-items-lg-center justify-content-center flex-column flex-lg-row p-0 links-holder">
+                                    <div className="d-inline-flex align-items-start align-items-lg-center justify-content-center flex-column flex-xl-row p-0 nav-first-content">
+                                        <div className="d-flex align-items-start align-items-lg-center justify-content-center flex-column flex-xl-row p-0 links-holder">
                                             {homeLink}
                                             <a href="/#about" className="text-decoration-none nav-content-link">
                                                 <li className="list">About</li>
@@ -120,7 +120,7 @@ export const Header = () => {
                                                 </li>
                                             </div>
                                         </div>
-                                        <div className="d-flex align-items-center justify-content-center flex-column flex-lg-row links-holder">
+                                        <div className="d-flex align-items-center justify-content-center flex-column flex-xl-row links-holder">
                                             <a href="/#faq" className="text-decoration-none nav-content-link">
                                                 <li className="list">FAQ's</li>
                                             </a>
@@ -129,7 +129,7 @@ export const Header = () => {
                                             </a>
                                         </div>
                                     </div>
-                                    <div className="d-flex flex-column-reverse flex-lg-row align-items-center gap-3 nav-second-content">
+                                    <div className="d-flex flex-column-reverse flex-xl-row align-items-center gap-3 nav-second-content">
                                         <a href="/login" className="d-flex justify-content-center align-items-center text-decoration-none second-con-link">
                                             <li className="login-link">
                                                 <p>Login</p>

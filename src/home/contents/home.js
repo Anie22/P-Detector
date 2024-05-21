@@ -68,7 +68,8 @@ export const Home = () => {
         autoplay: true,
         arrows: false,
         cssEase: 'linear',
-        autoplaySpeed: 7000,
+        autoplaySpeed: 4000,
+        swipe: false,
         responsive: [
             {
                 breakpoint: 480,
@@ -81,7 +82,7 @@ export const Home = () => {
     };
 
     const remoteInfos = [
-        {title: 'Hire', subTitle: 'employees', des: 'Join the fleet of companies that are benefiting from remote work arrangements by allowing their employees to live and work from any corner of the world while saving a lot of cash.', link: '/hire', icons: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" className='fa'>
+        {title: 'Hire', subTitle: 'remote employees', des: 'Join the fleet of companies that are benefiting from remote work arrangements by allowing their employees to live and work from any corner of the world while saving a lot of cash.', link: '/hire', icons: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" className='fa'>
             <path d="M22.8201 23.1805C20.8973 23.1805 19.0176 22.6103 17.4188 21.542C15.82 20.4738 14.5738 18.9553 13.838 17.1788C13.1021 15.4023 12.9096 13.4475 13.2847 11.5616C13.6599 9.67567 14.5858 7.94334 15.9455 6.58366C17.3052 5.22398 19.0375 4.29803 20.9234 3.9229C22.8094 3.54776 24.7642 3.7403 26.5407 4.47615C28.3172 5.212 29.8356 6.45812 30.9039 8.05693C31.9722 9.65574 32.5424 11.5354 32.5424 13.4583C32.5424 16.0368 31.5181 18.5097 29.6948 20.333C27.8715 22.1562 25.3986 23.1805 22.8201 23.1805ZM22.8201 6.62498C21.4467 6.62498 20.104 7.03226 18.962 7.79533C17.82 8.55839 16.9299 9.64297 16.4043 10.9119C15.8787 12.1808 15.7412 13.5771 16.0091 14.9242C16.2771 16.2713 16.9385 17.5087 17.9097 18.4799C18.8809 19.4511 20.1183 20.1125 21.4653 20.3804C22.8124 20.6484 24.2087 20.5109 25.4777 19.9853C26.7466 19.4596 27.8312 18.5696 28.5942 17.4275C29.3573 16.2855 29.7646 14.9429 29.7646 13.5694C29.7646 12.6575 29.585 11.7544 29.236 10.9119C28.887 10.0694 28.3755 9.30381 27.7306 8.65896C27.0858 8.01411 26.3202 7.50258 25.4777 7.15359C24.6351 6.8046 23.7321 6.62498 22.8201 6.62498ZM30.5563 24.8611C23.0402 23.1698 15.1771 23.9844 8.16736 27.1805C7.20333 27.641 6.38995 28.3659 5.82195 29.2708C5.25394 30.1757 4.95469 31.2233 4.95903 32.2916V40.5555C4.95903 40.7379 4.99496 40.9185 5.06475 41.087C5.13455 41.2555 5.23686 41.4087 5.36583 41.5376C5.4948 41.6666 5.64791 41.7689 5.81642 41.8387C5.98492 41.9085 6.16553 41.9444 6.34792 41.9444C6.53031 41.9444 6.71092 41.9085 6.87942 41.8387C7.04793 41.7689 7.20104 41.6666 7.33001 41.5376C7.45898 41.4087 7.56129 41.2555 7.63109 41.087C7.70088 40.9185 7.73681 40.7379 7.73681 40.5555V32.2916C7.72472 31.751 7.87072 31.2185 8.15692 30.7596C8.44311 30.3007 8.85704 29.9353 9.34792 29.7083C13.5705 27.7586 18.1692 26.7583 22.8201 26.7778C25.4261 26.7744 28.0232 27.0822 30.5563 27.6944V24.8611ZM30.7507 38.0694H39.2785V40.0139H30.7507V38.0694Z"/>
             <path d="M46.0699 29.8195H38.8893V32.5972H44.681V44.2222H25.0004V32.5972H33.7504V33.1806C33.7504 33.5489 33.8968 33.9022 34.1572 34.1627C34.4177 34.4231 34.771 34.5695 35.1393 34.5695C35.5077 34.5695 35.8609 34.4231 36.1214 34.1627C36.3819 33.9022 36.5282 33.5489 36.5282 33.1806V27.7778C36.5282 27.4094 36.3819 27.0562 36.1214 26.7957C35.8609 26.5352 35.5077 26.3889 35.1393 26.3889C34.771 26.3889 34.4177 26.5352 34.1572 26.7957C33.8968 27.0562 33.7504 27.4094 33.7504 27.7778V29.8195H23.6115C23.2432 29.8195 22.8899 29.9658 22.6295 30.2263C22.369 30.4867 22.2227 30.84 22.2227 31.2084V45.6111C22.2227 45.9795 22.369 46.3328 22.6295 46.5932C22.8899 46.8537 23.2432 47 23.6115 47H46.0699C46.4382 47 46.7915 46.8537 47.052 46.5932C47.3124 46.3328 47.4588 45.9795 47.4588 45.6111V31.2084C47.4588 30.84 47.3124 30.4867 47.052 30.2263C46.7915 29.9658 46.4382 29.8195 46.0699 29.8195Z"/>
         </svg>},
@@ -234,7 +235,7 @@ export const Home = () => {
                                         <h4>Technical <br /> partner-as-a-service.</h4>
                                     </div>
                                     <div className='col-12 col-lg-7 par'>
-                                        <p>Pedxo work as your in house developers to help build up your MVP, eliminating the need for you to hire an external team.</p>
+                                        <p>Pedxo work as your in house developers to help build up your MVP, eliminating the need for you to hire an external engineering team.</p>
                                     </div>
                                 </div>
                                 <div className='d-flex align-items-center justify-content-center gap-4 flex-lg-row flex-column col-12 p-lg-0 py-1 px-2 hero-links-hld'>
@@ -463,9 +464,9 @@ export const Home = () => {
                                     <div className='sub-faq-ques d-flex align-items-start flex-column gap-3 gap-lg-4 col-12'>
                                         {faqs.map((faq, i) => (
                                             <div className='in-faq-ques d-flex align-items-start justify-content-center flex-column gap-3 py-3 px-4 col-12' key={i}>
-                                                <div className='faq-ques-head d-flex justify-content-between align-items-center pe-auto col-12'>
+                                                <div className='faq-ques-head d-flex justify-content-between align-items-center pe-auto col-12' onClick={() => selectedFaq(i)}>
                                                     <h3>{faq.ques}</h3>
-                                                    <div className='icon-holder d-flex align-items-center justify-content-center position-relative rounded-circle' onClick={() => selectedFaq(i)}>
+                                                    <div className='icon-holder d-flex align-items-center justify-content-center position-relative rounded-circle'>
                                                         {activeFaq === i ? <FaTimes className='faPlus position-absolute fs-5' /> : <FaPlus className='faPlus position-absolute fs-5' />}
                                                     </div>
                                                 </div>

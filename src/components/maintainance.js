@@ -9,7 +9,7 @@ export const Maintainance = () => {
                     <img className='img-fluid' src={MaintainanceIMG} alt='It is undergoing updates'></img>
                 </div>
                 <div className='col-12 text col-sm-7'>
-                    <p>We are undergoing maintainance on this page. <br /> It will be restored back once the update is over.</p>
+                    <p>We are currently undergoing maintainance on this page. <br /> It will be restored back once the update is over.</p>
                 </div>
                 <a href='/' className='link d-flex justify-content-center'>
                     <p>Back to Homepage</p>

@@ -183,6 +183,17 @@
 .header--holder .inner-header .header--scroll .header-content .nav-holder .toggle-bar .bar {
     background: var(--backgroundSecondary);
 }
+@media only screen and (min-width: 993px) {
+    .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content,
+    .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder,
+    .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-second-content{
+        flex-direction: row !important;
+    }
+    .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content{
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+}
 @media only screen and (max-width: 992px) {
     .header--holder{
         height: 60px;
@@ -209,6 +220,9 @@
         height: 100%;
         gap: 2px;
         z-index: 999;
+    }
+    .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content{
+        width: 100%;
     }
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content,
     .header--holder .inner-header .main-header .header-content .nav-holder .nav-content-hold .nav-content .nav-first-content .links-holder{
