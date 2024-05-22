@@ -1,5 +1,5 @@
 import '../homeCss/demo.css'
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useState } from 'react';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
@@ -64,7 +64,7 @@ export const Demo = () => {
         setAddFocus(false)
     };
 
-    const handleChange = (e) => {
+    const handleChange = useCallback((e) => {
         const {name, value} = e.target;
 
         setError({...error, [name]: undefined});
@@ -75,7 +75,8 @@ export const Demo = () => {
         setPhoneNumber(name === 'phoneNumber' ? value: phoneNumber);
         setPick_Date(name === 'pick_date' ? value: pick_date);
         setOther(name === 'other' ? value: other);
-    }
+        
+    }, [company_name, email, error, full_Name, job_title, other, phoneNumber, pick_date])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -217,7 +218,9 @@ export const Demo = () => {
                 if(err){
                     if(err.response) {
                         const {status} = err.response;
-                        if(status === 500 && err.response.data.message === 'Internal server error'){
+                        if (err.response.data.message === 'phoneNumber must be a valid phone number'){
+                            setMessage("Invalid phone number, check it again");
+                        } else if(status === 500 && err.response.data.message === 'Internal server error'){
                             setMessage("Couldn't connect, timeout");
                         };
                     }
@@ -242,7 +245,7 @@ export const Demo = () => {
     }
 
     useEffect(() => {
-        if(message || message === "Couldn't connect, timeout") {
+        if(message || message === "Couldn't connect, timeout" || message === "Invalid phone number, check it again") {
             setMessages(true);
 
             const rem = setTimeout(() => {
@@ -287,7 +290,7 @@ export const Demo = () => {
             window.removeEventListener('resize', showFooter);
         };
 
-    }, [message, knowUs, other])
+    }, [message, knowUs, error, other, handleChange])
 
     return (
         <div className='col-12 demo'>

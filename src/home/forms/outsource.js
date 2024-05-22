@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import '../homeCss/outsource.css';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
@@ -137,7 +137,7 @@ export const Outsource = () => {
         ico.style.fontSize = '16px';
     };
 
-    const handleChange = (e) => {
+    const handleChange = useCallback((e) => {
         const {name, value} = e.target;
 
         setError({ ...error, [name]: undefined});
@@ -147,7 +147,8 @@ export const Outsource = () => {
         setEmail( name === 'email' ? value: email);
         setProject_Description(name === 'project_description' ? value: project_description);
         setOther(name === 'other' ? value: other);
-    }
+
+    }, [full_Name, email, job_title, other, phoneNumber, project_description, error,])
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -295,7 +296,9 @@ export const Outsource = () => {
                 if(err){
                     if(err.response) {
                         const {status} = err.response;
-                        if(status === 500 && err.response.data.message === 'Internal server error'){
+                        if (err.response.data.message === 'phoneNumber must be a valid phone number'){
+                            setMessage("Invalid phone number, check it again");
+                        } else if(status === 500 && err.response.data.message === 'Internal server error'){
                             setMessage("Couldn't connect, timeout");
                         };
                     }
@@ -320,7 +323,7 @@ export const Outsource = () => {
     };
 
     useEffect(() => {
-        if(message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
+        if(message === 'Network error, check your network' || message === "Couldn't connect, timeout" || message === "Invalid phone number, check it again") {
             setMessages(true);
 
             const rem = setTimeout(() => {
@@ -365,7 +368,7 @@ export const Outsource = () => {
             window.removeEventListener('resize', showFooter);
         };
 
-    }, [message, error, knowUs, other]);
+    }, [message, error, knowUs, other, handleChange]);
 
 
 
