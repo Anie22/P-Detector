@@ -115,10 +115,10 @@ export const ResetPass = () => {
         <div className='overflow-hidden forget'>
             <div className='sub-forget-holder'>
                 <div className="d-flex align-items-start justify-content-center frg-pass-hol">
-                    <div className="d-inline-flex align-items-start justify-content-center bg-white col-12 sub-frg-pass-hol">
+                    <div className="d-inline-flex align-items-start bg-white col-12 sub-frg-pass-hol">
                         <Logo />
                         <div className="col-6 d-flex flex-column justify-content-between align-items-center bg-white in-frg-pass-hol">
-                            <div className='d-flex align-items-start col-6 in-sub-frg-pass-hol'>
+                            <div className='d-flex align-items-start col-12 in-sub-frg-pass-hol'>
                                 <div className='d-flex flex-column align-items-center gap-4 frg-hol'>
                                     <div className='d-flex flex-column align-items-center align-self-stretch gap-3 frg-pass-hol-text'>
                                         <h2>Forgot password</h2>
