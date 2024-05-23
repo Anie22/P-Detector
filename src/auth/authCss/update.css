@@ -5,7 +5,7 @@
     height: 100vh;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
-    padding: 50px;
+    padding: 65px;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
     padding: 30px 24px;
@@ -257,7 +257,14 @@
     font-weight: 600;
     line-height: normal;
 }
-
+@media only screen and (max-width: 992px) {
+    .reset{
+        height: 100svh;
+    }
+    .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol{
+        height: 100svh;
+    }
+}
 @media only screen and (max-width: 900px) {
     .rst-pas-hol{
         display: block;

@@ -48,7 +48,7 @@ export const Footer = () => {
                                             <a href="mailto:support@pedxo.com">Email us</a>
                                         </li>
                                         <li className="link">
-                                            <a href="/book-demo">Speak to an Expert</a>
+                                            <a href="/request-a-demo">Speak to an Expert</a>
                                         </li>
                                         <li className="link">
                                             <a href="/#faq">FAQ's</a>
@@ -74,7 +74,7 @@ export const Footer = () => {
                                             <a href="/outsource">Outsource Projects</a>
                                         </li>
                                         <li className="link">
-                                            <a href="/book-demo">Book a Demo</a>
+                                            <a href="/request-a-demo">Book a Demo</a>
                                         </li>
                                     </ul>
                                 </nav>

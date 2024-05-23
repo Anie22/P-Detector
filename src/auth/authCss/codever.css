@@ -5,7 +5,7 @@
     height: 100vh;
 }
 .ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol{
-    padding: 100px;
+    padding: 65px;
 }
 .ver .sub-ver .vry-cd-hol .in-vry-cd-hol .sub-vry-cd-hol .sub-vry-cd-cmp-hol{
     padding: 32px 28px;
@@ -84,6 +84,14 @@
     font-weight: 600;
     line-height: 145%;
     text-transform: capitalize;
+}
+@media only screen and (max-width: 992px) {
+    .ver{
+        height: 100svh;
+    }
+    .ver .sub-ver .vry-cd-hol .in-vry-cd-hol{
+        height: 100svh;
+    }
 }
 @media only screen and (max-width: 900px) {
     .vry-cd-hol{

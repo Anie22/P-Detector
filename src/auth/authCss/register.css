@@ -1,8 +1,11 @@
 .signup{
     height: 100vh;
 }
+.signup .signup-inner-app .inner-app .sub-app{
+    height: 100vh;
+}
 .signup .signup-inner-app .inner-app .sub-app .form-section{
-    padding: 71px;
+    padding: 65px;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title{
     height: 71px;
@@ -383,7 +386,14 @@
     line-height: 145%;
     text-transform: capitalize;
 }
-
+@media only screen and (max-width: 992px) {
+    .signup{
+        height: 100svh;
+    }
+    .signup .signup-inner-app .inner-app .sub-app{
+        height: 100svh;
+    }
+}
 @media only screen and (max-width: 1024px) {
     .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .inputs .password-confirm-holder .password-holder .password-validator-box .inner-validator-box .validator1 p{
         font-size: 11px;

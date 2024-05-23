@@ -146,7 +146,7 @@ export const UpdatePass = () => {
 
             const route = setTimeout(() => {
                 window.location.href = '/login'
-            }, 3500);
+            }, 3000);
 
             return () => clearTimeout(route);
         }
@@ -164,7 +164,7 @@ export const UpdatePass = () => {
 
             const rem = setTimeout(() => {
                 setMessages(false)
-            }, 2000);
+            }, 3000);
 
             return () => clearTimeout(rem);
         }

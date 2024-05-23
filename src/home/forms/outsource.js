@@ -328,7 +328,7 @@ export const Outsource = () => {
 
             const rem = setTimeout(() => {
                 setMessages(false);
-            }, 2000);
+            }, 3000);
 
             return () => clearTimeout(rem);
         };

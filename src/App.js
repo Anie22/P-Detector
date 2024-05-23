@@ -15,6 +15,7 @@ import { Job } from './home/contents/jobs';
 import { Work } from './home/forms/work';
 import { Hire } from './home/forms/hire';
 import { EmailMsg } from './auth/security/emailVerification';
+import { EmailVerification } from './auth/verify/emailVerify';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           <Route path='/reset-password/verify' element={ <VerifyCode /> }></Route>
           <Route path='/reset-password/update' element={ <UpdatePass /> }></Route>
           <Route path='/verify-request-reset-pwd/ver-doc' element={ <ResetVerification /> }></Route>
-          {/* <Route path='/verifying-user-email' element={ <EmailVerification /> }></Route> */}
+          <Route path='/verifying-user-email' element={ <EmailVerification /> }></Route>
           <Route path='/verify-account/html' element={ <EmailMsg /> }></Route>
           <Route path='*' element={<Missing />}></Route>
         </Routes>

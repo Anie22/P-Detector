@@ -90,26 +90,15 @@ export const VerifyCode = () => {
 
     useEffect(() => {
 
-        if(message === 'Network error, check your network' || message === "Couldn't connect, timeout" || message === 400 || message === 404) {
+        if(message === '' || message === 'Network error, check your network' || message === "Couldn't connect, timeout" || message === 400 || message === 404) {
             setMessages(true);        
             
             const Mes = setTimeout(() => {
                 setMessages(false);
-            }, 2000);
+            }, 3000);
 
             return () => clearTimeout(Mes);
 
-        } else if(message === '') {
-            setMessages(true);   
-
-            const Mes = setTimeout(() => {
-                setMessages(false);
-            }, 2000)
-
-            return () => clearTimeout(Mes);
-
-        } else {
-            setMessages(false);
         }
 
         const getEmail = () => {

@@ -99,24 +99,14 @@ export const ResetPass = () => {
             setLoader(true);
         };
 
-        if(message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
+        if(message === 'Successful, please wait' || message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
             setMessages(true);        
             
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 2000);
+            }, 3000);
     
             return () => clearTimeout(Message);
-        }else if(message === 'Modal, please wait') {
-            setMessages(true);
-
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 2000);
-    
-            return () => clearTimeout(Message);
-        } else {
-            setMessages(false);
         }
 
     }, [loader, message, icon])

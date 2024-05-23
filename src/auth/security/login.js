@@ -94,6 +94,7 @@ export const Login = () => {
                         }
                     }
                     
+                    console.error(err)
 
                     if(err.message === "Network Error"){
                         setMessage('Network error, check your network');
@@ -121,47 +122,34 @@ export const Login = () => {
             return () => clearTimeout(load);
         };
 
-        if(message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
+        if(message || message === 'Network error, check your network' || message === "Couldn't connect, timeout" || message === 'Login successfully') {
             setMessages(true);        
             
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 4900);
+            }, 3000);
     
             return () => clearTimeout(Message);
-        }else if(message || message === 'Login successfully') {
-            setMessages(true);
+        }
 
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 2500);
-    
-            return () => clearTimeout(Message);
-        } else {
-            setMessages(false);
+        const handleResize = () => {
+            if (window.innerWidth > 900) {
+                setLoginText(<h4>Log In</h4>);
+            } else {
+                setLoginText(<h4>Welcome back</h4>);
+            }
         };
 
-        const Login = () => {
-            if(window.innerWidth > 900) {
-                setLoginText (
-                    <h4>Log In</h4>
-                );
-            } else if(window.innerWidth < 900) {
-                setLoginText(
-                    <h4>Welcome back</h4>
-                );
-            };
-        };
+        handleResize();
 
-        Login();
+        window.addEventListener('resize', handleResize);
 
-        window.addEventListener('resize', Login);
 
         return () => {
-            window.removeEventListener('resize', Login);
+            window.removeEventListener('resize', handleResize);
         };
 
-    }, [loader, message, icon, loginText]);
+    }, [loader, message, icon]);
 
 
     return (

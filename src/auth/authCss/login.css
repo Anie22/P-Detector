@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder{
-    padding: 71px;
+    padding: 65px;
     background: var(--white);
     height: fit-content;
 }
@@ -255,6 +255,14 @@
 @media only screen and (max-width: 1024px) {
     .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder {
         gap: 22px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .Login{
+        height: 100svh;
+    }
+    .Login .sub-login-holder .inner-app .sub-app{
+        height: 100svh;
     }
 }
 @media only screen and (max-width: 900px) {

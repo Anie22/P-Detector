@@ -222,26 +222,15 @@ export const SignUp = () => {
             return () => clearTimeout(load);
         };
 
-        if(message === 'Network error, check your network' || message  === "Couldn't connect, timeout") {
+        if(message  === 'Sign Up Successfully' || message === 'Network error, check your network' || message  === "Couldn't connect, timeout" || message  === 'Taking long to load try again') {
             setMessages(true);        
             
             const Message = setTimeout(() => {
                 setMessages(false);
-            }, 4900);
+            }, 3000);
     
             return () => clearTimeout(Message);
-        }else if(message  === 'Sign Up Modalfully' || message  === 'Taking long to load try again') {
-            setMessages(true);
-
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 4900);
-
-            return () => clearTimeout(Message);
-
-        } else {
-            setMessages(false)
-        };
+        }
 
     }, [password, valPas, loader, message, icon]);
 
