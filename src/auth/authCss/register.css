@@ -2,7 +2,7 @@
     height: 100vh;
 }
 .signup .signup-inner-app .inner-app .sub-app{
-    height: 100vh;
+    height: inherit;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section{
     padding: 65px;
@@ -391,7 +391,7 @@
         height: 100svh;
     }
     .signup .signup-inner-app .inner-app .sub-app{
-        height: 100svh;
+        height: inherit;
     }
 }
 @media only screen and (max-width: 1024px) {

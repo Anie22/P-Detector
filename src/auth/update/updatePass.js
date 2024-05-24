@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Logo } from '../logo'
 import { FaCheck } from 'react-icons/fa';
@@ -8,6 +8,8 @@ import '../authCss/update.css';
 import axios from "axios";
 
 export const UpdatePass = () => {
+    const passwordRef = useRef(null);
+    const confirmRef = useRef(null);
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [displayPassword, setDisplayPassword] = useState(false);
@@ -69,17 +71,33 @@ export const UpdatePass = () => {
 
             inpErr.password = <p>password feild required</p>;
 
+            if(passwordRef.current){
+                passwordRef.current.focus()
+            }
+
         } else if(!confirmPassword) {
 
             inpErr.confirmPassword = <p>confirm password feild required</p>;
+
+            if(confirmRef.current){
+                confirmRef.current.focus()
+            }
 
         } else if(confirmPassword !== password){
 
             inpErr.confirmPassword = <p>Password does not match</p>;
 
+            if(confirmRef.current){
+                confirmRef.current.focus()
+            }
+
         } else if (!valPas.lowerCase || !valPas.upperCase || !valPas.specialCharacters || !valPas.numbers || !valPas.length) {
 
             inpErr.password = <p>Incorrect password format </p>;
+
+            if(passwordRef.current){
+                passwordRef.current.focus()
+            }
 
             setValBox(false);
 
@@ -169,6 +187,8 @@ export const UpdatePass = () => {
             return () => clearTimeout(rem);
         }
 
+        document.title = 'Pedxo - Update_Password'
+
     }, [password, valPas, success, message]);
 
     return (
@@ -192,7 +212,7 @@ export const UpdatePass = () => {
                                                         <label>Password</label>
                                                         <div className="position-relative col-12 in-ico">
                                                             <input id="password" name="password" type={displayPassword ? 'text' : 'password'} placeholder={displayPassword ? 'Enter password' : '*********'} value={password} onChange={(e) => handleUpdate(e)} onFocus={() => setValBox(true)} onBlur={() => setValBox(false)}></input>
-                                                            <div className="icon" onClick={showPass}>
+                                                            <div className="icon" onClick={showPass} ref={passwordRef}>
                                                                 { displayPassword ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
                                                                                         <path d="M2.5 10.8333C5.5 4.16667 14.5 4.16667 17.5 10.8333" stroke="#667185" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                                                         <path d="M10 14.1667C9.6717 14.1667 9.34661 14.102 9.04329 13.9764C8.73998 13.8507 8.46438 13.6666 8.23223 13.4344C8.00009 13.2023 7.81594 12.9267 7.6903 12.6234C7.56466 12.3201 7.5 11.995 7.5 11.6667C7.5 11.3384 7.56466 11.0133 7.6903 10.71C7.81594 10.4066 8.00009 10.131 8.23223 9.8989C8.46438 9.66675 8.73998 9.4826 9.04329 9.35697C9.34661 9.23133 9.6717 9.16666 10 9.16666C10.663 9.16666 11.2989 9.43006 11.7678 9.8989C12.2366 10.3677 12.5 11.0036 12.5 11.6667C12.5 12.3297 12.2366 12.9656 11.7678 13.4344C11.2989 13.9033 10.663 14.1667 10 14.1667Z" stroke="#667185" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -227,7 +247,7 @@ export const UpdatePass = () => {
                                                     <div className="d-flex flex-column align-items-start align-self-stretch gap-1 form-inp-2">
                                                         <label>Confirm Password</label>
                                                         <div className="position-relative col-12 in-ico">
-                                                            <input name="confirmPassword" type={open ? 'text' : 'password'} placeholder={open ? 'Confirm password' : '*********'} value={confirmPassword} onChange={(e) => handleUpdate(e)}></input>
+                                                            <input name="confirmPassword" type={open ? 'text' : 'password'} placeholder={open ? 'Confirm password' : '*********'} value={confirmPassword} onChange={(e) => handleUpdate(e)} ref={confirmRef}></input>
                                                             <div className="icon" onClick={openPass}>
                                                                 { open ?   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
                                                                                 <path d="M2.5 10.8333C5.5 4.16667 14.5 4.16667 17.5 10.8333" stroke="#667185" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

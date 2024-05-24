@@ -90,7 +90,7 @@ export const VerifyCode = () => {
 
     useEffect(() => {
 
-        if(message === '' || message === 'Network error, check your network' || message === "Couldn't connect, timeout" || message === 400 || message === 404) {
+        if(message === '' || message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
             setMessages(true);        
             
             const Mes = setTimeout(() => {
@@ -109,6 +109,8 @@ export const VerifyCode = () => {
         };
 
         getEmail();
+
+        document.title = 'Pedxo - Resend_Password'
 
     }, [email, loading, message]);
 

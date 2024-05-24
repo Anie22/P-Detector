@@ -57,6 +57,8 @@ export const ResetVerification = () => {
 
         };
 
+        document.title = 'Pedxo'
+
         verifyRoute();
     }, [code]);
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import '../homeCss/outsource.css';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
@@ -10,6 +10,15 @@ import { Modal } from "../../components/modal";
 import axios from "axios";
 
 export const Outsource = () => {
+    const full_NameRef = useRef(null);
+    const job_titleRef = useRef(null);
+    const phoneNumberRef = useRef(null);
+    const employRef = useRef(null);
+    const emailRef = useRef(null);
+    const teamRef = useRef(null);
+    const knowRef = useRef(null);
+    const otherRef = useRef(null);
+    const projectRef = useRef(null);
     const [full_Name, setFull_Name] = useState('');
     const [job_title, setJob_Title] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -19,9 +28,6 @@ export const Outsource = () => {
     const [knowUs, setKnowUs] = useState('Choose any');
     const [other, setOther] = useState('');
     const [project_description, setProject_Description] = useState('');
-    const employeeNumbers = ['1 - 30', '31 - 100', '101 - 400', '401 - 1000+'];
-    const roles = ['UI/UX', 'Devops', 'Mobile Engineer', 'Frontend Engineer', 'Backend Engineer', 'Full-stack Engineering', 'Data Scientist'];
-    const Socials = ['Blog', 'Facebook', 'Google', 'Instagram', 'Referral', 'Twitter', 'Webinar', 'Linkedin', 'Others'];
     const [option, setOption] = useState(false);
     const [any, setAny] = useState(false);
     const [team, setTeam] = useState(false);
@@ -39,6 +45,9 @@ export const Outsource = () => {
     const [showOther, setShowOther] = useState(null);
     const [check, setCheck] = useState([]);
     const [error, setError] = useState({});
+    const employeeNumbers = ['1 - 30', '31 - 100', '101 - 400', '401 - 1000+'];
+    const roles = ['UI/UX', 'Devops', 'Mobile Engineer', 'Frontend Engineer', 'Backend Engineer', 'Full-stack Engineering', 'Data Scientist'];
+    const Socials = ['Blog', 'Facebook', 'Google', 'Instagram', 'Referral', 'Twitter', 'Webinar', 'Linkedin', 'Others'];
 
     const toggleOption = () => {
         setOption(!option)
@@ -171,84 +180,166 @@ export const Outsource = () => {
 
             err.full_Name = <p>Input required</p>
 
+            if(full_NameRef.current){
+                full_NameRef.current.focus()
+            }
+
         } else if(numberRegex.test(full_Name) || symbols.test(full_Name)) {
 
             err.full_Name = <p>Incorrect name, check your spellings</p>
+
+            if(full_NameRef.current){
+                full_NameRef.current.focus()
+            }
 
         } else if(full_Name.startsWith(' ')) {
         
             err.full_Name = <p>No space allowed</p>
 
+            if(full_NameRef.current){
+                full_NameRef.current.focus()
+            }
+
         } else if (words.length < 2 || words.length === 1) {
 
             err.full_Name = <p> Enter your full name </p>
+
+            if(full_NameRef.current){
+                full_NameRef.current.focus()
+            }
 
         } else if(!job_title) {
 
             err.job_title = <p>Input required</p>
 
+            if(job_titleRef.current){
+                job_titleRef.current.focus()
+            }
+
         } else if(numberRegex.test(job_title) || symbols.test(job_title)) {
 
             err.job_title = <p>Wrong position</p>
+            
+            if(job_titleRef.current){
+                job_titleRef.current.focus()
+            }
+
 
         } else if(space.test(job_title)){
             
             err.job_title = <p>No space allowed</p>
 
+            if(job_titleRef.current){
+                job_titleRef.current.focus()
+            }
+
+
         } else if(!phoneNumber) {
 
             err.phoneNumber = <p>Input required</p>
+
+            if(phoneNumberRef.current){
+                phoneNumberRef.current.focus()
+            }
 
         } else if(!phoneNumber.startsWith('+')) {
 
             err.phoneNumber = <p>Phone number must start with '+' and country code</p>
 
+            if(phoneNumberRef.current){
+                phoneNumberRef.current.focus()
+            }
+
         } else if(!numberRegex.test(phoneNumber) || alphaBig.test(phoneNumber) || alphaSmall.test(phoneNumber)) {
 
             err.phoneNumber = <p>wrong phone number format</p>
+
+            if(phoneNumberRef.current){
+                phoneNumberRef.current.focus()
+            }
 
         } else if(employee.textContent === 'Company size'){
            
             setHideEmploy(true);
             err.employeeCount = 'input required'
 
+            if(employRef.current){
+                employRef.current.focus()
+            }
+
         } else if(!email) {
             
             err.email = <p>Input required</p>
+
+            if(emailRef.current){
+                emailRef.current.focus()
+            }
 
         } else if(!emil.test(email)){
 
             err.email = <p>Incorrect email must include @</p>
 
+            if(emailRef.current){
+                emailRef.current.focus()
+            }
+
         } else if(symbol.test(email)) {
 
             err.email = <p>Wrong email format</p>
 
+            if(emailRef.current){
+                emailRef.current.focus()
+            }
+
         } else if(space.test(email)) {
 
             err.email = <p>No space allowed</p>
+
+            if(emailRef.current){
+                emailRef.current.focus()
+            }
 
         } else if(need_teams.textContent === 'Choose which workforce you will need e.g(UI/UX, devOps)') {
 
             setHideNeed(true);
             err.needed_team = 'input required'
 
+            if(teamRef.current){
+                teamRef.current.focus()
+            }
+
         } else if(know.textContent === "Choose any") {
 
             setHideKnow(true);
             err.knowUs = 'input required'
 
+            if(knowRef.current){
+                knowRef.current.focus()
+            }
+
         } else if(know.textContent === 'Others' && !other) {
         
             err.other = <p>input required</p>
+
+            if(otherRef.current){
+                otherRef.current.focus()
+            }
 
         }  else if(!project_description) {
         
             err.project_description = <p>input required</p>
 
+            if(projectRef.current){
+                projectRef.current.focus()
+            }
+
         } else if(symbol.test(project_description)) {
 
             err.project_description  = <p>Use of symbols are not allowed except @(form emphasis and importance)</p>
+
+            if(projectRef.current){
+                projectRef.current.focus()
+            }
 
         } else {
             const outsourceDetails = {
@@ -338,8 +429,8 @@ export const Outsource = () => {
             setShowOther(
                 <div className="d-flex align-items-start align-self-stretch gap-5 col-12 other-field">
                     <div className='other-content d-flex flex-column gap-1 col-12'>
-                        <label className='d-flex align-items-center gap-1 text-uppercase align-self-stretch'>How did you hear about us (others)? <span className="text-danger fs-5">*</span></label>
-                        <input className="p-3 col-12 rounded-2 text-capitalize" name="other" value={other} type='text' placeholder='How did you hear about us' onChange={(e) => handleChange(e)}></input>
+                        <label className='d-flex align-items-center gap-1 text-uppercase align-self-stretch'>Enter how you heared about us</label>
+                        <input className="p-3 col-12 rounded-2 text-capitalize" name="other" value={other} type='text' placeholder='How did you hear about us?' onChange={(e) => handleChange(e)} ref={otherRef}></input>
                         {error.other}
                     </div>
                 </div>
@@ -393,19 +484,19 @@ export const Outsource = () => {
                                                     <div className='d-flex align-items-start align-self-stretch first-input-field-holder'>
                                                         <div className='d-flex flex-column align-items-start align-self-stretch col-12 name-field-holder'>
                                                             <label>Full Name</label>
-                                                            <input className="col-12" name="full_Name" value={full_Name} type='text' placeholder='Enter your full name' onChange={(e) => handleChange(e)}></input>
+                                                            <input className="col-12" name="full_Name" value={full_Name} type='text' placeholder='Enter your full name' onChange={(e) => handleChange(e)} ref={full_NameRef}></input>
                                                             {error.full_Name}
                                                         </div>
                                                     </div>  
                                                     <div className='d-flex align-items-center align-self-stretch second-input-field-holder'>
                                                         <div className='d-flex flex-column align-items-start w-100 job-field-holder'>
                                                             <label>Job Title</label>
-                                                            <input className="col-12" name="job_title" value={job_title} type='text' placeholder='Enter job title, e.g CEO' onChange={(e) => handleChange(e)}></input>
+                                                            <input className="col-12" name="job_title" value={job_title} type='text' placeholder='Enter job title, e.g CEO' onChange={(e) => handleChange(e)} ref={job_titleRef}></input>
                                                             {error.job_title}
                                                         </div>
                                                         <div className='d-flex flex-column align-items-start w-100 number-field-holder'>
                                                             <label>Phone Number</label>
-                                                            <input className="d-flex align-items-center align-self-stretch col-12 p-3" name="phoneNumber" value={phoneNumber} type='tel' placeholder='Enter phone number with country code' onChange={(e) => handleChange(e)}></input>
+                                                            <input className="d-flex align-items-center align-self-stretch col-12 p-3" name="phoneNumber" value={phoneNumber} type='tel' placeholder='Enter phone number with country code' onChange={(e) => handleChange(e)} ref={phoneNumberRef}></input>
                                                             {error.phoneNumber}
                                                         </div>
                                                     </div>                                  
@@ -413,7 +504,7 @@ export const Outsource = () => {
                                                         <div className='d-flex flex-column align-items-start w-100 count-field-holder'>
                                                             <label>Employees CountDown</label>
                                                             <div className='d-flex flex-column align-items-start justify-content-center align-self-stretch count-input-holder'>
-                                                                <div className='d-flex align-items-center justify-content-between align-self-stretch col-12 count-input' onClick={() => toggleOption()} >
+                                                                <div className='d-flex align-items-center justify-content-between align-self-stretch col-12 count-input' onClick={() => toggleOption()} ref={employRef} >
                                                                     <div id="employee" className={employeeCount === 'Company size' ? 'input' : 'option'}>{employeeCount}</div>
                                                                     <FaChevronDown className={option ? 'active' : 'fa'} />
                                                                 </div>
@@ -432,7 +523,7 @@ export const Outsource = () => {
                                                         <div className='position-relative w-100 email-field-holder'>
                                                             <label>Email</label>
                                                             <div className="position-relative col-12 ico">
-                                                                <input className="w-100" name="email" value={email} type='email' placeholder='Enter work email' onFocus={changeColor} onBlur={removeColor} onChange={(e) => handleChange(e)}></input>
+                                                                <input className="w-100" name="email" value={email} type='email' placeholder='Enter work email' onFocus={changeColor} onBlur={removeColor} onChange={(e) => handleChange(e)} ref={emailRef}></input>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className={addFocus ? 'position-absolute mail focus' : 'position-absolute mail'}>
                                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8323 17.5C17.6732 17.5 19.1656 16.0076 19.1656 14.1667V6.68557C19.1659 6.67283 19.1659 6.66005 19.1656 6.64725V5.83333C19.1656 3.99238 17.6732 2.5 15.8323 2.5H4.16559C2.32464 2.5 0.832253 3.99238 0.832253 5.83333V6.64726C0.831957 6.66005 0.831958 6.67282 0.832253 6.68556V14.1667C0.832253 16.0076 2.32464 17.5 4.16559 17.5H15.8323ZM2.49892 14.1667C2.49892 15.0871 3.24511 15.8333 4.16559 15.8333H15.8323C16.7527 15.8333 17.4989 15.0871 17.4989 14.1667V7.89753L11.2369 10.4023C10.4422 10.7202 9.55565 10.7202 8.76095 10.4023L2.49892 7.89753V14.1667ZM10.6179 8.85488L17.4989 6.10247V5.83333C17.4989 4.91286 16.7527 4.16667 15.8323 4.16667H4.16559C3.24511 4.16667 2.49892 4.91286 2.49892 5.83333V6.10247L9.37993 8.85488C9.77729 9.01382 10.2206 9.01382 10.6179 8.85488Z"/>
                                                                 </svg>
@@ -440,11 +531,11 @@ export const Outsource = () => {
                                                             {error.email}
                                                         </div>
                                                     </div>
-                                                    <div className='d-flex align-items-xl-start align-items-center align-self-stretch fourth-input-field-holder'>
+                                                    <div className='d-flex align-items-start align-self-stretch justify-content-center fourth-input-field-holder'>
                                                         <div className="d-flex flex-column align-items-start team-field-holder">
                                                             <label>Which team will you be needing for the project?</label>
                                                             <div className="d-flex flex-column align-items-start justify-content-center align-self-stretch team-input-holder">
-                                                                <div className="d-flex align-items-center justify-content-between align-self-stretch team-input"  id="roleh"  onClick={() => openTeams()}>
+                                                                <div className="d-flex align-items-center justify-content-between align-self-stretch team-input"  id="roleh"  onClick={() => openTeams()} ref={teamRef}>
                                                                     <div id="teams" className={needed_team.includes('Choose which workforce you will need e.g(UI/UX, devOps)') ? 'input' : 'option'}>{needed_team.join(', ')}</div>
                                                                     <FaChevronDown className={team ? 'active' : "fa"} id="fa"/>
                                                                 </div>
@@ -476,7 +567,7 @@ export const Outsource = () => {
                                                         <div className='d-flex flex-column align-items-start name-field-holder'>
                                                             <label>How did you hear about us?</label>
                                                             <div className='d-flex flex-column align-items-start justify-content-center align-self-stretch social-input-holder'>
-                                                                <div className='d-flex align-items-center justify-content-between align-self-stretch social-input'  onClick={() => chooseOption()}>
+                                                                <div className='d-flex align-items-center justify-content-between align-self-stretch social-input'  onClick={() => chooseOption()} ref={knowRef}>
                                                                     <div id="knowHow" className={knowUs === 'Choose any' ? 'input' : 'option'}>{knowUs}</div>
                                                                     <FaChevronDown className={any ? 'active' : 'fa'} />
                                                                 </div>
@@ -497,7 +588,7 @@ export const Outsource = () => {
                                                     <div className="d-flex flex-column align-items-start align-self-stretch fifth-input-field-holder">
                                                         <div className="d-flex flex-column align-items-start align-self-stretch col-12 des-field-holder">
                                                             <label>Describe your project</label>
-                                                            <textarea name="project_description" value={project_description} cols={30} rows={50} placeholder="Describe what you're trying to outsource here" onChange={(e) => handleChange(e)}></textarea>
+                                                            <textarea name="project_description" value={project_description} cols={30} rows={50} placeholder="Describe what you're trying to outsource here" onChange={(e) => handleChange(e)} ref={projectRef}></textarea>
                                                             {error.project_description}
                                                         </div>
                                                     </div>
@@ -513,7 +604,7 @@ export const Outsource = () => {
                                                             </button>
                                                         </div>
                                                         <div className='d-flex align-items-center justify-content-center align-self-stretch submit-link'>
-                                                            <p className='d-flex align-items-center pa'>Contractor or employee</p>
+                                                            <p className='d-flex align-items-center pa'>Contractor or employee?</p>
                                                             <Link to='/register' className='d-flex align-items-center link'>Sign up</Link>
                                                         </div>
                                                     </div>
