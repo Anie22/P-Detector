@@ -303,8 +303,12 @@ export const Demo = () => {
                 if(err){
                     if(err.response) {
                         const {status} = err.response;
-                        if (err.response.data.message === 'phoneNumber must be a valid phone number'){
-                            setMessage("Invalid phone number, check it again");
+                        if (status === 400 && err.response.data.message[0] === "phoneNumber must be a valid phone number"){
+                            errMsg.phoneNumber = <p>Invalid phone number, check your phone number and try again</p>
+
+                            if(phoneNumberRef.current){
+                                phoneNumberRef.current.focus()
+                            }
                         } else if(status === 500 && err.response.data.message === 'Internal server error'){
                             setMessage("Couldn't connect, timeout");
                         };
@@ -330,7 +334,7 @@ export const Demo = () => {
     }
 
     useEffect(() => {
-        if(message || message === "Couldn't connect, timeout" || message === "Invalid phone number, check it again") {
+        if(message || message === "Couldn't connect, timeout") {
             setMessages(true);
 
             const rem = setTimeout(() => {

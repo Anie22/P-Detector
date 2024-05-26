@@ -387,8 +387,12 @@ export const Outsource = () => {
                 if(err){
                     if(err.response) {
                         const {status} = err.response;
-                        if (err.response.data.message === 'phoneNumber must be a valid phone number'){
-                            setMessage("Invalid phone number, check it again");
+                        if (status === 400 && err.response.data.message[0] === "phoneNumber must be a valid phone number"){
+                            err.phoneNumber = <p>Invalid phone number, check your phone number and try again</p>
+
+                            if(phoneNumberRef.current){
+                                phoneNumberRef.current.focus()
+                            }
                         } else if(status === 500 && err.response.data.message === 'Internal server error'){
                             setMessage("Couldn't connect, timeout");
                         };
