@@ -33,8 +33,6 @@ export const VerifyCode = () => {
 
             if(resp){
                 setMessages(true);
-                setDisableMsg(true);
-                button.disabled = true;
 
                 setIcon(
                     <div className="success">
@@ -48,15 +46,20 @@ export const VerifyCode = () => {
                 setMessage('');
 
                 const disableCountTime = setInterval(() => {
-                    if (disableTime === 60 || disableTime !== 0) {
-                        setDisableTime(prevCount => prevCount - 1);
-                    } else if (disableTime === 0) {
-                        button.disabled = false; 
-                        setDisableMsg(false);
-                        return;
-                    }
-                }, 2000);
-            
+                    setDisableTime(prevCount => {
+                        if (prevCount > 1) {
+                            setDisableMsg(true);
+                            button.disabled = true;
+                            return prevCount - 1;
+                        } else {
+                            button.disabled = false;
+                            setDisableMsg(false);
+                            clearInterval(disableCountTime); 
+                            return 0;
+                        }
+                    });
+                }, 2500);
+                
                 return () => clearInterval(disableCountTime);
             };
 
