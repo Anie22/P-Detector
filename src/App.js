@@ -5,12 +5,10 @@ import { VerifyCode } from './auth/update/codeVerify';
 import { UpdatePass } from './auth/update/updatePass';
 import { SignUp } from './auth/security/register';
 import { Home } from './home/contents/home';
-import { ResetVerification } from './auth/verify/resetPassVerify';
 import { Maintainance } from './components/maintainance';
 import { Missing } from './components/missing';
 import { Job } from './home/contents/jobs';
 import { EmailMsg } from './auth/security/emailVerification';
-import { EmailVerification } from './auth/verify/emailVerify';
 
 function App() {
   return (
@@ -26,8 +24,6 @@ function App() {
           <Route path='/reset-password' element={ <ResetPass /> }></Route>
           <Route path='/reset-password/verify' element={ <VerifyCode /> }></Route>
           <Route path='/reset-password/update' element={ <UpdatePass /> }></Route>
-          <Route path='/verify-request-reset-pwd/ver-doc' element={ <ResetVerification /> }></Route>
-          <Route path='/verifying-user-email' element={ <EmailVerification /> }></Route>
           <Route path='/verify-account/html' element={ <EmailMsg /> }></Route>
           <Route path='*' element={<Missing />}></Route>
         </Routes>
