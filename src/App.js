@@ -6,14 +6,10 @@ import { VerifyCode } from './auth/update/codeVerify';
 import { UpdatePass } from './auth/update/updatePass';
 import { SignUp } from './auth/security/register';
 import { Home } from './home/contents/home';
-import { Demo } from './home/forms/demo';
-import { Outsource } from './home/forms/outsource';
 import { ResetVerification } from './auth/verify/resetPassVerify';
 import { Maintainance } from './components/maintainance';
 import { Missing } from './components/missing';
 import { Job } from './home/contents/jobs';
-import { Work } from './home/forms/work';
-import { Hire } from './home/forms/hire';
 import { EmailMsg } from './auth/security/emailVerification';
 import { EmailVerification } from './auth/verify/emailVerify';
 
@@ -22,15 +18,11 @@ function App() {
     <div className="App">
       <div>
         <Routes>
-          <Route path='/' element={ <Home /> }></Route>
-          <Route path='/request-a-demo' element={ <Demo /> }></Route>
-          <Route path='/outsource' element={ <Outsource /> }></Route>
+          <Route path='/home' element={ <Home /> }></Route>
           <Route element={<Maintainance />}>
             <Route path='/jobs' element={ <Job /> }></Route>
-            <Route path='/work' element={ <Work /> }></Route>
-            <Route path='/hire' element={ <Hire /> }></Route>
           </Route>
-          <Route path='/login' element={ <Login /> }></Route>
+          <Route path='/' element={ <Login /> }></Route>
           <Route path='/register' element={ <SignUp /> }></Route>
           <Route path='/reset-password' element={ <ResetPass /> }></Route>
           <Route path='/reset-password/verify' element={ <VerifyCode /> }></Route>

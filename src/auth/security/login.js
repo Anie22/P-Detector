@@ -2,10 +2,13 @@ import '../authCss/login.css';
 import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Logo } from '../logo';
-import { Loader } from '../../components/loader';
-import { Modal } from '../../components/modal';
-import axios from 'axios';
+// import { Logo } from '../logo';
+// import { Loader } from '../../components/loader';
+// import { Modal } from '../../components/modal';
+// import axios from '../../api/axios';
+// import { jwtDecode } from "jwt-decode";
+
+// const LOGIN_URL = '/auth/login';
 
 export const Login = () => {
     const emailRef = useRef(null);
@@ -15,10 +18,6 @@ export const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState({});
     const [check, setCheck] = useState(false);
-    const [loader, setLoader] = useState(false);
-    const [message, setMessage] = useState('');
-    const [messages, setMessages] = useState(false);
-    const [icon, setIcon] = useState(null);
     const [loginText, setLoginText] = useState(null);
 
     const togglePass = () => {
@@ -69,57 +68,7 @@ export const Login = () => {
                 passwordRef.current.focus()
             }
         } else {
-            const userLogins = {
-                email,
-                password
-            };
-
-            try {
-                setLoader(true);
-                const res = await axios.post('https://pedxo-backend-p7se.onrender.com/auth/login', userLogins);
-                if(res) {
-                    setIcon(
-                        <div className="success">
-                            <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
-                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </div>
-                    );
-                    setMessage('Login successfully');
-                    window.location.href = '/';
-                }
-                
-            } catch(err) {
-                setLoader(false);
-                if(err){
-                    setIcon(
-                        <div className="error">
-                            <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
-                            </svg>
-                        </div>
-                    );
-
-                    if(err.response) {
-                        const {status} = err.response;
-
-                        if(status === 404 && err.response.data.message === 'user not found'){
-                            newErr.email = <p>User doesn't exist</p>
-                        }else if(status === 500 && err.response.data.message === 'Internal server error'){
-                            setMessage("Couldn't connect, timeout");
-                        } else if(err.response.data.message === 'password do not matched'){
-                            newErr.password = <p>Wrong password</p>
-                        }
-                    }
-                    
-                    console.error(err)
-
-                    if(err.message === "Network Error"){
-                        setMessage('Network error, check your network');
-                    }
-                    
-                }
-            }
+            return;
         };
 
         if (Object.keys(newErr).length > 0) {
@@ -130,25 +79,6 @@ export const Login = () => {
     };
 
     useEffect(() => {
-        if(loader) {
-            setLoader(true);
-
-            const load = setTimeout(() => {
-                setLoader(false);
-            }, 4000);
-    
-            return () => clearTimeout(load);
-        };
-
-        if(message || message === 'Network error, check your network' || message === "Couldn't connect, timeout" || message === 'Login successfully') {
-            setMessages(true);        
-            
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 3000);
-    
-            return () => clearTimeout(Message);
-        }
 
         const handleResize = () => {
             if (window.innerWidth > 900) {
@@ -160,7 +90,7 @@ export const Login = () => {
 
         handleResize();
 
-        document.title = 'Pedxo - Login'
+        document.title = 'P-detector - Login'
 
         window.addEventListener('resize', handleResize);
 
@@ -169,18 +99,20 @@ export const Login = () => {
             window.removeEventListener('resize', handleResize);
         };
 
-    }, [loader, message, icon]);
+    }, []);
 
 
     return (
         <div className="overflow-hidden Login">
             <div className='sub-login-holder'>
                 <div className='d-flex align-items-start justify-content-center inner-app'>
-                    <div className='d-inline-flex align-items-start col-12 bg-white sub-app'>
-                        <Logo />
-                        <div className='col-6 d-flex flex-column justify-content-between align-items-center form-holder'>
-                            <div className='d-flex align-items-start col-12 gap-2 rounded-2 bg-white sub-form-holder'>
+                    <div className='d-inline-flex align-items-start col-12 sub-app'>
+                        <div className='col-12 d-flex justify-content-center align-items-center bg-dark form-holder'>
+                            <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
                                 <div className='d-flex align-items-center flex-column gap-4 col-12 inner-form-holder'>
+                                    <div>
+                                        <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
+                                    </div>
                                     <div className='d-flex flex-column justify-content-center align-items-start align-self-stretch gap-3 heading'>
                                         <div className='first-text'>
                                             {loginText}
@@ -238,7 +170,7 @@ export const Login = () => {
                                             </div>
                                         </div>
                                         <div className='d-flex flex-column justify-content-center align-items-center align-self-stretch button-holder'>
-                                            <button type='submit'>
+                                            <button type='submit' id='btn'>
                                                 <p className='text'>Login</p>
                                             </button>
                                         </div>
@@ -254,8 +186,6 @@ export const Login = () => {
                         </div>
                     </div>
                 </div>
-                {loader && <Loader />}
-                {messages && <Modal message={message} icon={icon} />}
             </div>
         </div>
     )

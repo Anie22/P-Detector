@@ -1,3 +1,5 @@
+import React from "react"
+
 export const EmailMsg = () => {
     return (
         <div className="text-center pt-5 text-capitalize h2">

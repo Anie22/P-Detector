@@ -21,12 +21,15 @@
 */
 
 
+.Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder{
+    background: hsla(0, 0%, 0%, 0.397);
+}
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .heading{
     height: 71px;
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .heading .first-text h4{
     align-self: stretch;
-    color: var(--label);
+    color: var(--white);
     font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
     font-size: 32px;
     font-style: normal;
@@ -36,7 +39,7 @@
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .heading .second-text h6{
     align-self: stretch;
-    color: var(--lightAsh);
+    color: var(--white);
     font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
     font-size: 16px;
     font-style: normal;
@@ -62,7 +65,7 @@
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .main-form .user-input-holder .email label{
     align-self: stretch;
-    color: var(--label);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -112,7 +115,7 @@
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .main-form .user-input-holder .pass label{
     align-self: stretch;
-    color: var(--label);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -192,7 +195,7 @@
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .main-form .text-hol .remem-text h4{
     align-self: stretch;
-    color: var(--label);
+    color: var(--footerText);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
