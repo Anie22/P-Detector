@@ -1,11 +1,9 @@
 import '../authCss/register.css';
 import React, { useEffect, useRef, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa';
-import { Logo } from '../logo';
-import { Loader } from '../../components/loader';
-import { Modal } from '../../components/modal';
+import { AutoYear} from '../../components/date';
 
 export const SignUp = () => {
     const firstNameRef = useRef(null);
@@ -22,7 +20,6 @@ export const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPass, setShowConfirmPass] = useState(false);
-    const [check, setCheck] = useState(false);
     const [valPas, setValPas] = useState({
         lowerCase: false,
         upperCase: false,
@@ -31,10 +28,6 @@ export const SignUp = () => {
         length: false
     });
     const [valBox, setValBox] = useState(false);
-    const [loader, setLoader] = useState(false);
-    const [message, setMessage] = useState('');
-    const [messages, setMessages] = useState(false);
-    const [icon, setIcon] = useState(null);
     const [error, setError] = useState({});
 
     const togglePass = () => {
@@ -44,10 +37,6 @@ export const SignUp = () => {
     const toggleComPass = () => {
         setShowConfirmPass(!showConfirmPass);
     };
-
-    const checked = () => {
-        setCheck(!check)
-    }
 
     const validatePassword = (value) => {
         setValPas({
@@ -199,72 +188,7 @@ export const SignUp = () => {
             }
 
         } else if (firstName && lastName && userName && email && password && confirmPassword === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length) {
-
-            const userData = {
-                firstName,
-                lastName,
-                userName,
-                email,
-                password
-            };
-            
-            try {
-                setLoader(true);
-                const response = await axios.post('https://pedxo-backend-p7se.onrender.com/auth', userData);
-                if (response) {
-                    setIcon(
-                        <div className="success">
-                            <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
-                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </div>
-                    );
-                    setMessages(true);
-                    setMessage('Sign Up Successfully');
-                    window.location.href = '/login';
-                } else {
-                    setIcon(
-                        <div className="error">
-                            <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
-                            </svg>
-                        </div>
-                    );
-                    setMessages(true);
-                    setMessage('Taking long to load try again');
-                }
-            } catch (error) {
-                setLoader(false);
-                if(error) {
-                    setIcon(
-                        <div className="error">
-                            <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>
-                        </div>
-                    );
-
-                    if(error.response){
-                        const {status} = error.response;
-
-                        if (error.response.data.message === 'email and username already exist' && status === 422) {
-                            newError.userName = <p>This user name have already been taken </p>
-                            newError.email = <p>Email already taken </p>
-                        } else if (error.response.data.message === 'email already exist' && status === 422) {
-                            newError.email = <p>Email already exist</p>
-                        } else if (error.response.data.message === 'username already exist' && status === 422) {
-                            newError.userName = <p>User already exist</p>
-                        }if(status === 500 && error.response.data.message === 'Internal server error'){
-                            setMessage("Couldn't connect, timeout");
-                        };
-                    };
-    
-                    if(error.message === "Network Error"){
-                        setMessage('Network error, check your network');
-                    }
-                }
-
-            }
+            return
         }
 
         if (Object.keys(newError).length > 0) {
@@ -284,66 +208,48 @@ export const SignUp = () => {
             }
         };
 
-        if(loader) {
-            setLoader(true);
+        document.title = 'P-Detector - Register'
 
-            const load = setTimeout(() => {
-                setLoader(false);
-            }, 5000);
-    
-            return () => clearTimeout(load);
-        };
-
-        if(message  === 'Sign Up Successfully' || message === 'Network error, check your network' || message  === "Couldn't connect, timeout" || message  === 'Taking long to load try again') {
-            setMessages(true);        
-            
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 3000);
-    
-            return () => clearTimeout(Message);
-        }
-
-        document.title = 'Pedxo - Register'
-
-    }, [password, valPas, loader, message, icon]);
+    }, [password, valPas]);
 
     return (
         <div className="signup">
             <div className='signup-inner-app'>
                 <div className='d-flex justify-content-center inner-app'>
-                    <div className='d-inline-flex align-items-start col-12 bg-white sub-app'>
-                        <Logo />
-                        <div className='d-flex flex-column col-6 form-section'>
-                            <div className='d-flex align-items-start gap-2 col-12 bg-white form-holder'>
-                                <div className='d-flex flex-column align-items-center gap-4 align-self-stretch col-12 inner-form-holder'>
+                    <div className='d-inline-flex align-items-start col-12 bg-dark sub-app'>
+                        <div className='d-flex align-items-center justify-content-center flex-column gap-4 col-12 form-section'>
+                            <div className='d-flex align-items-start gap-2 rounded-2 shadow col-lg-6 col-12 p-3 form-holder'>
+                                <div className='d-flex flex-column align-items-center gap-3 align-self-stretch col-12 inner-form-holder'>
+                                    <div>
+                                        <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
+                                    </div>
                                     <div className='d-flex flex-column align-items-start justify-content-center align-self-stretch form-title'>
                                         <div className='d-flex flex-column align-items-center gap-3 align-self-stretch title-des'>
                                             <h4>Register</h4>
-                                            <span className='login-text'>Already have an account? <Link to='/login'>Login</Link></span>
+                                            <span className='login-text'>Already have an account? <Link to='/'>Login</Link></span>
                                         </div>
                                     </div>
-                                    <form method='post' autoComplete='off' onSubmit={handleSubmit} className='d-flex flex-column align-items-start gap-4 align-self-stretch form-input-holder'>
+                                    <form method='post' autoComplete='off' onSubmit={handleSubmit} className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 form-input-holder'>
                                         <div className='d-flex flex-column align-items-start gap-4 align-self-stretch inputs'>
-                                            <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 name-holder'>
-                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch fname'>
+                                            <div className='d-flex flex-column flex-lg-row align-items-start justify-content-lg-between gap-4 align-self-stretch col-12 name-holder'>
+                                                <div className='d-flex flex-column align-items-start gap-2 col-lg-5 col-12 align-self-stretch fname'>
                                                     <label>First name</label>
                                                     <input name='firstName' type='text' placeholder='enter your first name' value={firstName} onChange={(e) => handleValue(e)} ref={firstNameRef}></input>
                                                     {error.firstName}
                                                 </div>
-                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch lname'>
+                                                <div className='d-flex flex-column align-items-start gap-2 col-lg-6 col-12 align-self-stretch lname'>
                                                     <label>Last name</label>
                                                     <input name='lastName' type='text' placeholder='enter your last name' value={lastName} onChange={(e) => handleValue(e)} ref={lastNameRef}></input>
                                                     {error.lastName}
                                                 </div>
                                             </div>
-                                            <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 user-email-holder'>
-                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch uname'>
+                                            <div className='d-flex flex-column flex-lg-row align-items-start justify-content-lg-between gap-4 align-self-stretch col-12 user-email-holder'>
+                                                <div className='d-flex flex-column align-items-start gap-2 col-lg-5 col-12 align-self-stretch uname'>
                                                     <label>User name</label>
                                                     <input name='userName' type='text' placeholder='enter your user name' value={userName} onChange={(e) => handleValue(e)} userNameRef></input>
                                                     {error.userName}
                                                 </div>
-                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch email'>
+                                                <div className='d-flex flex-column align-items-start gap-2 col-lg-6 col-12 align-self-stretch email'>
                                                     <label>Email</label>
                                                     <div className='position-relative col-12 in-ico'>
                                                         <input name='email' type='email' placeholder='enter your email' value={email} onChange={(e) => handleValue(e)} ref={emailRef}></input>
@@ -354,8 +260,8 @@ export const SignUp = () => {
                                                     {error.email}
                                                 </div>
                                             </div>
-                                            <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 password-confirm-holder'>
-                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch pass password-holder'>
+                                            <div className='d-flex flex-column flex-lg-row align-items-start justify-content-lg-between gap-4 align-self-stretch col-12 password-confirm-holder'>
+                                                <div className='d-flex flex-column align-items-start gap-2 col-lg-5 col-12 align-self-stretch pass password-holder'>
                                                     <label>Password</label>
                                                     <div className='position-relative col-12 in-ico'>
                                                         <input id='password' name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleValue(e)} placeholder={showPassword ? 'Enter your password' : '********'} onFocus={() => setValBox(true)} onBlur={() => setValBox(false)} ref={passwordRef}></input>
@@ -387,7 +293,7 @@ export const SignUp = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className='d-flex flex-column align-items-start gap-2 align-self-stretch pass'>
+                                                <div className='d-flex flex-column align-items-start gap-2 col-lg-6 col-12 align-self-stretch pass'>
                                                     <label>Confirm Password</label>
                                                     <div className='position-relative col-12 in-ico'>
                                                         <input name='confirmPassword' type={showConfirmPass ? 'text' : 'password'} value={confirmPassword} onChange={(e) => handleValue(e)} placeholder={showConfirmPass ? 'Enter your password' : '********'} ref={confirmRef}></input>
@@ -406,14 +312,6 @@ export const SignUp = () => {
                                             </div>
                                         </div>
                                         <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 button-holder'>
-                                            <div className='d-flex align-items-center gap-2 align-self-stretch newsl'>
-                                                <div className={check ? 'd-flex align-items-center justify-content-center align-self-stretch checkbox click' : 'd-flex align-items-center justify-content-center align-self-stretch checkbox'} onClick={checked}>
-                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" className={check ? 'fa show' : 'fa'} xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-                                                    </svg>
-                                                </div>
-                                                <p>Yes, I want to receive newsletters from Pedxo</p>
-                                            </div>
                                             <div className='d-flex flex-column align-items-center justify-content-center align-self-stretch gap-2 col-12 rounded-2 py-3 px-4 button'>
                                                 <button className='d-flex align-items-center justify-content-center bg-transparent gap-2 col-12' type='submit'>
                                                     <p className='text'>Create account</p>
@@ -423,11 +321,10 @@ export const SignUp = () => {
                                     </form>
                                 </div>
                             </div>
+                            <AutoYear />
                         </div>
                     </div>
                 </div>
-                {loader && <Loader />}
-                {messages && <Modal message={message} icon={icon} />}
             </div>
         </div>
     )

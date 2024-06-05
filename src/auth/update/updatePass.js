@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
-import { Logo } from '../logo'
 import { FaCheck } from 'react-icons/fa';
-import { Modal } from '../../components/modal';
-import { Loader } from "../../components/loader";
 import '../authCss/update.css';
-import axios from "axios";
+import { AutoYear} from '../../components/date';
+// import axios from "axios";
 
 export const UpdatePass = () => {
     const passwordRef = useRef(null);
@@ -25,10 +23,6 @@ export const UpdatePass = () => {
         length: false
     });
     const [valBox, setValBox] = useState(false);
-    const [messages, setMessages] = useState(false);
-    const [message, setMessage] = useState(null);
-    const [icon, setIcon] = useState(null);
-    const [loading, setLoading] = useState(false);
  
     const showPass = () => {
         setDisplayPassword(!displayPassword)
@@ -102,53 +96,8 @@ export const UpdatePass = () => {
             setValBox(false);
 
         } else if(password && confirmPassword && confirmPassword === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length){
-            const email = localStorage.getItem('mail').replace(/"|"/g, '');
-
-            const newPasswordDetails = {
-                email,
-                password
-            };
-
-
-            const url = 'https://pedxo-backend-p7se.onrender.com/auth/reset-password';
-
-            try {
-
-                setLoading(true)
-
-                const res = await axios.post(url, newPasswordDetails);
-
-                if(res) {
-                    setSuccess(true);
-                    setForm(false);
-                    localStorage.removeItem('email');
-                };
-
-            } catch(err) {
-                
-                setIcon(
-                    <div className="error">
-                        <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
-                        </svg>
-                    </div>
-                );
-
-                if(err){
-                    if(err.response) {
-                        const {status} = err.response;
-                        if(status === 500 && err.response.data.message === 'Internal server error'){
-                            setMessage("Couldn't connect, timeout");
-                        };
-                    }
-
-                    if(err.message === "Network Error"){
-                        setMessage('Network error, check your network');
-                    }
-                }
-            } finally {
-                setLoading(false)
-            }
+           setForm(false)
+            return
         }
 
 
@@ -163,7 +112,7 @@ export const UpdatePass = () => {
             setSuccess(true);
 
             const route = setTimeout(() => {
-                window.location.href = '/login'
+                window.location.href = '/'
             }, 3000);
 
             return () => clearTimeout(route);
@@ -177,30 +126,22 @@ export const UpdatePass = () => {
             }
         };
 
-        if(message || message === "Couldn't connect, timeout") {
-            setMessages(true);
+        document.title = 'P-Detector - Update_Password'
 
-            const rem = setTimeout(() => {
-                setMessages(false)
-            }, 3000);
-
-            return () => clearTimeout(rem);
-        }
-
-        document.title = 'Pedxo - Update_Password'
-
-    }, [password, valPas, success, message]);
+    }, [password, valPas, success]);
 
     return (
-        <div className="overflow-hidden reset">
+        <div className="reset">
             <div className="sub-reset-holder">
                 <div className="d-flex align-items-start justify-content-center rst-pas-hol">
                     <div className="d-flex col-12 bg-white in-rst-pas-hol">
-                        <Logo />
-                        <div className="d-flex flex-column align-items-center justify-content-center col-6 sub-rst-pas-hol">
-                            <div className="d-flex align-items-start col-12 bg-white sub-rst-pas-cmp-hol">
+                        <div className="d-flex flex-column align-items-center justify-content-center col-12 gap-4 bg-dark sub-rst-pas-hol">
+                            <div className="d-flex align-items-start col-6 rounded-2 p-3 sub-rst-pas-cmp-hol">
                                 {form && 
                                     <div className="d-flex flex-column align-items-start in-sub-rst-pas-cmp-hol">
+                                        <div className='col-12'>
+                                            <h2 className='m-0 fs-6 p-0 text-capitalize text-center text-white'>P-detector</h2>
+                                        </div>
                                         <div className="d-flex flex-column align-items-start align-self-stretch gap-3 heading">
                                             <h4>Reset Password</h4>
                                             <h6>Choose a new password to your account</h6>
@@ -271,7 +212,7 @@ export const UpdatePass = () => {
                                                     </button>
                                                 </div>
                                                 <div className="d-flex flex-column align-items-center justify-content-center align-self-stretch col-12 link-holder">
-                                                    <a href="/login" className="d-flex align-items-center justify-content-center col-12 link">
+                                                    <a href="/" className="d-flex align-items-center justify-content-center col-12 link">
                                                         <p className="text">Back to login</p>
                                                     </a>
                                                 </div>
@@ -291,9 +232,8 @@ export const UpdatePass = () => {
                                         </div>
                                     </div>
                                 }
-                                {loading && <Loader />}
-                                {messages &&  <Modal icon={icon} message={message} />}
                             </div>
+                            <AutoYear />
                         </div>
                     </div>
                 </div>

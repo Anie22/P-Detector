@@ -2,6 +2,7 @@ import '../authCss/login.css';
 import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { AutoYear} from '../../components/date';
 // import { Logo } from '../logo';
 // import { Loader } from '../../components/loader';
 // import { Modal } from '../../components/modal';
@@ -107,7 +108,7 @@ export const Login = () => {
             <div className='sub-login-holder'>
                 <div className='d-flex align-items-start justify-content-center inner-app'>
                     <div className='d-inline-flex align-items-start col-12 sub-app'>
-                        <div className='col-12 d-flex justify-content-center align-items-center bg-dark form-holder'>
+                        <div className='col-12 d-flex justify-content-center align-items-center flex-column gap-3 bg-dark form-holder'>
                             <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
                                 <div className='d-flex align-items-center flex-column gap-4 col-12 inner-form-holder'>
                                     <div>
@@ -177,12 +178,13 @@ export const Login = () => {
                                     </form>
                                     <div className='bottom'>
                                         <div className='d-flex justify-content-center align-items-center gap-2 bottom-text'>
-                                            <p>Are you new here</p>
+                                            <p>Are you new here?</p>
                                             <a href='/register'>Create account</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <AutoYear />
                         </div>
                     </div>
                 </div>

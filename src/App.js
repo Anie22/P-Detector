@@ -1,4 +1,3 @@
-import './App.css';
 import { Route, Routes} from 'react-router-dom';
 import { Login } from './auth/security/login';
 import { ResetPass } from './auth/update/forgetPass';
@@ -18,7 +17,7 @@ function App() {
     <div className="App">
       <div>
         <Routes>
-          <Route path='/home' element={ <Home /> }></Route>
+          <Route path='/homekk' element={ <Home /> }></Route>
           <Route element={<Maintainance />}>
             <Route path='/jobs' element={ <Job /> }></Route>
           </Route>

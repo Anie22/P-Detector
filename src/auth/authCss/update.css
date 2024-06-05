@@ -1,22 +1,23 @@
 .reset {
     height: 100vh;
+    overflow: hidden;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol{
     height: 100vh;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
-    padding: 65px;
+    padding: 60px;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
-    padding: 30px 24px;
     gap: 8px;
+    background: hsla(0, 0%, 0%, 0.397);
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol{
     gap: 22px;
     flex: 1 0 0;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .heading h4{
-    color: var(--label);
+    color: var(--white);
     font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
     font-size: 28px;
     font-style: normal;
@@ -25,7 +26,7 @@
     letter-spacing: -0.56px;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .heading h6{
-    color: var(--lightAsh);
+    color: var(--footerText);
     font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
     font-size: 16px;
     font-style: normal;
@@ -34,7 +35,7 @@
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .sub-form-holder .form .form-input-holder .form-inp-1 label{
     align-self: stretch;
-    color: var(--label);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -132,7 +133,7 @@
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .sub-form-holder .form .form-input-holder .form-inp-2 label{
     align-self: stretch;
-    color: var(--label);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -213,7 +214,7 @@
     padding: 16px 24px;
     gap: 10px;
     border-radius: 8px;
-    background: var(--back);
+    border: 1px solid var(--back);
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .sub-form-holder .form .link-holder .link{
     gap: 8px;
@@ -222,7 +223,7 @@
     text-decoration: none;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .sub-form-holder .form .link-holder .link .text{
-    color: var(--text);
+    color: var(--white);
     text-align: center;
     font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
     font-size: 16px;
@@ -250,7 +251,7 @@
     width: 540px;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .success-hold .success-text p{
-    color: var(--lightAsh);
+    color: var(--white);
     text-align: center;
     font-size: 20px;
     font-style: normal;
@@ -260,6 +261,7 @@
 @media only screen and (max-width: 992px) {
     .reset{
         height: 100svh;
+        overflow: auto;
     }
     .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol{
         height: 100svh;
@@ -284,9 +286,6 @@
     }
 }
 @media only screen and (max-width: 425px) {
-    .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
-        height: 482px;
-    }
     .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .success-hold .success .fa{
         height: 80px;
         width: 80px;

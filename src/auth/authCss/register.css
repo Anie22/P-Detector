@@ -2,10 +2,14 @@
     height: 100vh;
 }
 .signup .signup-inner-app .inner-app .sub-app{
-    height: inherit;
+    height: 100vh;
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section{
-    padding: 65px;
+    padding: 50px;
+    height: 100%;
+}
+.signup .signup-inner-app .inner-app .sub-app .form-section .form-holder {
+    background: hsla(0, 0%, 0%, 0.397);
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title{
     height: 71px;
@@ -17,7 +21,7 @@
     font-weight: 700;
     line-height: 120%; 
     letter-spacing: -0.64px;
-    color: var(--label);
+    color: var(--white);
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title .title-des .login-text{
     align-self: stretch;
@@ -45,7 +49,7 @@
 
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .inputs .name-holder .fname label{
     align-self: stretch;
-    color: var(--lightBlack);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -86,7 +90,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .inputs .name-holder .lname label{
     align-self: stretch;
-    color: var(--lightBlack);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -138,7 +142,7 @@
 
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .inputs .user-email-holder .uname label{
     align-self: stretch;
-    color: var(--lightBlack);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -179,7 +183,7 @@
 }
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .inputs .user-email-holder .email label{
     align-self: stretch;
-    color: var(--lightBlack);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -242,7 +246,7 @@
 
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .inputs .password-confirm-holder .pass label{
     align-self: stretch;
-    color: var(--lightBlack);
+    color: var(--white);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -339,34 +343,6 @@
 */
 
 
-.signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl .checkbox{
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    border: 1px solid var(--inputBorder);
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-.signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl .checkbox .fa{
-    display: none;
-    height: 12px;
-    width: 12px;
-    color: var(--white);
-}
-.signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl .checkbox .fa.show{
-    display: block;
-}
-.signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl .checkbox.click{
-    border: none;
-    background: var(--backgroundPrimary);
-}
-.signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl p{
-    color: var(--text);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 145%;
-}
 .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .button{
     background: var(--backgroundPrimary);
 }
@@ -403,13 +379,15 @@
     }
 }
 @media only screen and (max-width: 900px) {
+    .signup .signup-inner-app .inner-app .sub-app .form-section{
+        height: fit-content;
+    }
     .signup .signup-inner-app .inner-app{
         display: block;
     }
     .signup .signup-inner-app .inner-app .sub-app{
         flex-direction: column;
         justify-content: unset;
-        height: 100svh;
     }
     .signup .signup-inner-app .inner-app .sub-app .form-section{
         padding: 32px 16px;
@@ -426,14 +404,5 @@
     }
     .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-title .title-des .login-text{
         font-size: 14px;
-    }
-}
-@media only screen and (max-width: 320px) {
-    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl .checkbox{
-        width: 20px;
-        height: 20px;
-    }
-    .signup .signup-inner-app .inner-app .sub-app .form-section .form-holder .inner-form-holder .form-input-holder .button-holder .newsl p{
-        font-size: 11px;
     }
 }

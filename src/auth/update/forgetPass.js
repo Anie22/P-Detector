@@ -2,19 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import '../authCss/frgPass.css';
 import { Link } from 'react-router-dom';
-import { Logo } from '../logo';
-import { Loader } from '../../components/loader';
-import { Modal } from '../../components/modal';
-import  axios  from 'axios';
+import { AutoYear} from '../../components/date';
+// import  axios  from 'axios';
 
 export const ResetPass = () => {
     const emailRef = useRef(null);
     const [email, setEmail] = useState('');
-    const [loader, setLoader] = useState(false);
     const [error, setError] = useState({});
-    const [message, setMessage] = useState('');
-    const [messages, setMessages] = useState(false);
-    const [icon, setIcon] = useState(null)
 
     const handleEml = (e) => {
         const {name, value} = e.target
@@ -67,59 +61,7 @@ export const ResetPass = () => {
         }
         
         if(email) {
-            const data = {
-                email
-            };
-            try {
-                setLoader(true);
-
-                const url = 'https://pedxo-backend-p7se.onrender.com/auth/forgot-password';
-                const res = await axios.post(url, data);
-
-                if(res) {
-                    setIcon(
-                        <div className="success">
-                            <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
-                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </div>
-                    );
-
-                    
-                    localStorage.setItem('mail', JSON.stringify(email));
-                    setMessage('Successful, please wait');
-                    window.location.href = '/reset-password/verify'
-                }
-
-            } catch (error) {
-                if(error) {
-                    setIcon(
-                        <div className="error">
-                            <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"></path>
-                            </svg>
-                        </div>
-                    );
-
-                    if(error.response){
-                        const {status} = error.response;
-                        if(status === 500 && error.response.data.message === 'Internal server error'){
-                            setMessage("Couldn't connect, timeout");
-                        } else if(error.response.data.message === 'user is not found'){
-                            err.email = <p>User does not exist</p>
-                        }
-                    };
-    
-
-                    if(error.message === "Network Error"){
-                        setMessage('Network error, check your network');
-                    }
-                }
-                console.error(error)
-
-            } finally {
-                setLoader(false);
-            }
+            return
         };
 
         if (Object.keys(err).length > 0) {
@@ -129,33 +71,22 @@ export const ResetPass = () => {
     }
 
     useEffect(() => {
-        if(loader) {
-            setLoader(true);
-        };
 
-        if(message === 'Successful, please wait' || message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
-            setMessages(true);        
-            
-            const Message = setTimeout(() => {
-                setMessages(false);
-            }, 3000);
-    
-            return () => clearTimeout(Message);
-        }
+        document.title = 'P-Detector - Reset_Password'
 
-        document.title = 'Pedxo - Reset_Password'
-
-    }, [loader, message, icon])
+    }, [])
 
     return (
-        <div className='overflow-hidden forget'>
+        <div className='forget'>
             <div className='sub-forget-holder'>
                 <div className="d-flex align-items-start justify-content-center frg-pass-hol">
                     <div className="d-inline-flex align-items-start bg-white col-12 sub-frg-pass-hol">
-                        <Logo />
-                        <div className="col-6 d-flex flex-column justify-content-between align-items-center bg-white in-frg-pass-hol">
-                            <div className='d-flex align-items-start col-12 in-sub-frg-pass-hol'>
+                        <div className="col-12 d-flex align-items-center justify-content-center flex-column gap-3 bg-dark in-frg-pass-hol">
+                            <div className='d-flex align-items-start col-lg-6 col-12 p-3 rounded-2 in-sub-frg-pass-hol'>
                                 <div className='d-flex flex-column align-items-center gap-4 frg-hol'>
+                                    <div>
+                                        <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
+                                    </div>
                                     <div className='d-flex flex-column align-items-center align-self-stretch gap-3 frg-pass-hol-text'>
                                         <h2>Forgot password</h2>
                                         <p>Enter the email you used to create your account so we can send you instructions on how to reset your password.</p>
@@ -175,7 +106,7 @@ export const ResetPass = () => {
                                                 {error.email}
                                             </div>
                                             <div className='d-flex flex-column-reverse text-center align-slef-stretch gap-4 col-12 frg-pass-hol-form-hol-btn'>
-                                                <Link to={'/login'} className='d-flex flex-column align-items-center align-self-stretch justify-content-center link-hol'>
+                                                <Link to={'/'} className='d-flex flex-column align-items-center align-self-stretch justify-content-center shadow link-hol'>
                                                     <p>Cancel</p>
                                                 </Link>
                                                 <div className='d-flex flex-column align-items-center align-self-stretch justify-content-center button'>
@@ -186,9 +117,8 @@ export const ResetPass = () => {
                                     </div>
                                 </div>
                             </div>
+                            <AutoYear />
                         </div>
-                        {loader && <Loader />}
-                        {messages && <Modal message={message} icon={icon} />}
                     </div>
                 </div>
             </div>
