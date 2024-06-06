@@ -104,7 +104,7 @@ export const Login = () => {
 
 
     return (
-        <div className="overflow-hidden bg-dark Login">
+        <div className="Login">
             <div className='sub-login-holder'>
                 <div className='d-flex align-items-start justify-content-center inner-app'>
                     <div className='d-inline-flex align-items-start col-12 sub-app'>
