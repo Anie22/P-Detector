@@ -265,6 +265,9 @@
     .Login .sub-login-holder .inner-app .sub-app{
         height: 100svh;
     }
+    .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder{
+        height: 100%;
+    }
 }
 @media only screen and (max-width: 900px) {
     .Login .sub-login-holder .inner-app{
