@@ -7,6 +7,7 @@
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
     padding: 60px;
+    height: 100%;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
     gap: 8px;
@@ -264,7 +265,7 @@
         overflow: auto;
     }
     .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol{
-        height: 100svh;
+        height: inherit;
     }
 }
 @media only screen and (max-width: 900px) {
@@ -274,7 +275,7 @@
     .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol{
         flex-direction: column;
         justify-content: unset;
-        height: 100svh;
+        height: 100%;
     }
     .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
         padding: 32px 16px;

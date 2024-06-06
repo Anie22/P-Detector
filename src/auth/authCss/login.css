@@ -271,6 +271,7 @@
     .Login,
     .Login .sub-login-holder .inner-app .sub-app{
         overflow: auto;
+        height: 100svh;
     }
     .Login .sub-login-holder .inner-app{
         display: block;
