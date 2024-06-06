@@ -3,7 +3,7 @@
     overflow: hidden !important;
 }
 .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol{
-    height: 100vh;
+    height: inherit;
 }
 .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol{
     padding: 65px;
@@ -123,7 +123,7 @@
         overflow: auto !important;
     }
     .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol{
-        height: 100svh;
+        height: 100%;
     }
 }
 @media only screen and (max-width: 900px) {
@@ -133,7 +133,6 @@
     .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol{
         flex-direction: column;
         justify-content: unset !important;
-        height: 100svh;
     }
     .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol {
         padding: 32px 16px;

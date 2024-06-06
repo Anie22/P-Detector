@@ -7,7 +7,7 @@
 .Login .sub-login-holder .inner-app .sub-app .form-holder{
     padding: 65px;
     background: var(--white);
-    height: 100%;
+    height: fit-content;
 }
 
 
@@ -271,7 +271,6 @@
     .Login,
     .Login .sub-login-holder .inner-app .sub-app{
         overflow: auto;
-        height: 100svh;
     }
     .Login .sub-login-holder .inner-app{
         display: block;
@@ -279,12 +278,11 @@
     .Login .sub-login-holder .inner-app .sub-app{
         flex-direction: column;
         justify-content: unset;
-        height: 100svh;
+        height: 100%;
     }
     .Login .sub-login-holder .inner-app .sub-app .form-holder{
         padding: 32px 16px;
         width: 100%;
-        height: auto;
     }
 }
 @media only screen and (max-width: 425px) {
