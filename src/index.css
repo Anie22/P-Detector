@@ -50,6 +50,9 @@ body{
   body{
     height: 100svh;
   }
+  html{
+    height: 100svh;
+  }
 }
 
 html{

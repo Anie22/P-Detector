@@ -269,11 +269,11 @@
 @media only screen and (max-width: 900px) {
     .Login .sub-login-holder .inner-app{
         display: block;
+        height: 100svh;
     }
     .Login .sub-login-holder .inner-app .sub-app{
         flex-direction: column;
         justify-content: unset;
-        height: 100svh;
     }
     .Login .sub-login-holder .inner-app .sub-app .form-holder{
         padding: 32px 16px;
