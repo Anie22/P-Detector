@@ -270,7 +270,6 @@
 @media only screen and (max-width: 900px) {
     .Login,
     .Login .sub-login-holder .inner-app .sub-app{
-        overflow: auto;
         height: 100svh;
     }
     .Login .sub-login-holder .inner-app{
