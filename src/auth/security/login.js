@@ -107,7 +107,7 @@ export const Login = () => {
         <div className="Login">
             <div className='sub-login-holder'>
                 <div className='d-flex align-items-start justify-content-center inner-app'>
-                    <div className='d-inline-flex align-items-start col-12 sub-app'>
+                    <div className='d-inline-flex flex-column align-items-start col-12 sub-app'>
                         <div className='col-12 d-flex justify-content-center align-items-center flex-column gap-3 bg-dark form-holder'>
                             <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
                                 <div className='d-flex align-items-center flex-column gap-4 col-12 inner-form-holder'>
