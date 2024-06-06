@@ -22,7 +22,7 @@
 
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder{
     background: hsla(0, 0%, 0%, 0.397);
-    height: 100%;
+    height: 100svh;
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .heading{
     height: 71px;
