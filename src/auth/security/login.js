@@ -109,7 +109,7 @@ export const Login = () => {
                 <div className='d-flex align-items-start justify-content-center inner-app'>
                     <div className='d-inline-flex flex-column align-items-start col-12 sub-app'>
                         <div className='col-12 d-flex justify-content-center align-items-center flex-column gap-3 bg-dark form-holder'>
-                            <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
+                            {/* <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
                                 <div className='d-flex align-items-center flex-column gap-4 col-12 inner-form-holder'>
                                     <div>
                                         <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
@@ -183,7 +183,7 @@ export const Login = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             <AutoYear />
                         </div>
                     </div>
