@@ -6,16 +6,11 @@
     height: 100vh;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol{
-    padding: 60px;
     height: 100%;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol{
     gap: 8px;
     background: hsla(0, 0%, 0%, 0.397);
-}
-.reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol{
-    gap: 22px;
-    flex: 1 0 0;
 }
 .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol .sub-rst-pas-hol .sub-rst-pas-cmp-hol .in-sub-rst-pas-cmp-hol .heading h4{
     color: var(--white);
@@ -265,7 +260,7 @@
         overflow: auto;
     }
     .reset .sub-reset-holder .rst-pas-hol .in-rst-pas-hol{
-        height: inherit;
+        height: 100svh;
     }
 }
 @media only screen and (max-width: 900px) {

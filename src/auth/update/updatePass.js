@@ -212,7 +212,7 @@ export const UpdatePass = () => {
                                                     </button>
                                                 </div>
                                                 <div className="d-flex flex-column align-items-center justify-content-center align-self-stretch col-12 link-holder">
-                                                    <a href="/" className="d-flex align-items-center justify-content-center col-12 link">
+                                                    <a href="/login" className="d-flex align-items-center justify-content-center col-12 link">
                                                         <p className="text">Back to login</p>
                                                     </a>
                                                 </div>

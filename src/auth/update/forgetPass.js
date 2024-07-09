@@ -106,7 +106,7 @@ export const ResetPass = () => {
                                                 {error.email}
                                             </div>
                                             <div className='d-flex flex-column-reverse text-center align-slef-stretch gap-4 col-12 frg-pass-hol-form-hol-btn'>
-                                                <Link to={'/'} className='d-flex flex-column align-items-center align-self-stretch justify-content-center shadow link-hol'>
+                                                <Link to={'/login'} className='d-flex flex-column align-items-center align-self-stretch justify-content-center shadow link-hol'>
                                                     <p>Cancel</p>
                                                 </Link>
                                                 <div className='d-flex flex-column align-items-center align-self-stretch justify-content-center button'>

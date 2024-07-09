@@ -2,10 +2,9 @@
     height: 100vh;
 }
 .Login .sub-login-holder .inner-app .sub-app{
-    height: 100%;
+    height: 100vh;
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder{
-    padding: 65px;
     height: 100%;
 }
 
@@ -21,9 +20,6 @@
 
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder{
     background: hsla(0, 0%, 0%, 0.397);
-}
-.Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .heading{
-    height: 71px;
 }
 .Login .sub-login-holder .inner-app .sub-app .form-holder .sub-form-holder .inner-form-holder .heading .first-text h4{
     align-self: stretch;

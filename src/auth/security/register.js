@@ -226,7 +226,7 @@ export const SignUp = () => {
                                     <div className='d-flex flex-column align-items-start justify-content-center align-self-stretch form-title'>
                                         <div className='d-flex flex-column align-items-center gap-3 align-self-stretch title-des'>
                                             <h4>Register</h4>
-                                            <span className='login-text'>Already have an account? <Link to='/'>Login</Link></span>
+                                            <span className='login-text'>Already have an account? <Link to='/login'>Login</Link></span>
                                         </div>
                                     </div>
                                     <form method='post' autoComplete='off' onSubmit={handleSubmit} className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 form-input-holder'>
