@@ -60,9 +60,9 @@ export const Home = () => {
 
 
     return (
-        <div className='body'>
+        <div className='overflow-hidden body'>
             <section className='position-relative bg-dark overflow-hidden col-12 hero'>
-                <div className='d-flex align-items-center overflow-hidden col-12 h-100 sub-hero-sec'>
+                <div className='d-flex align-items-center overflow-hidden col-12 sub-hero-sec'>
                     <div className='inner-hero-sec'>
                         <div className='position-absolute d-flex align-items-center justify-content-center top-0 start-0 col-12 h-100 hero-text-holder'>
                             <div className='d-inline-flex flex-column align-items-center gap-4 hero-text-con col-12'>
