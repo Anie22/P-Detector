@@ -81,6 +81,7 @@ export const Login = () => {
                     localStorage.setItem('token', response.data.access_token)
                     const data = jwtDecode(response.data.access_token)
                     console.log(data)
+                    window.location.href = '/jobs'
                 }
             } catch (err) {
                 console.error(err)

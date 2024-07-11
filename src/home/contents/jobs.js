@@ -1,6 +1,6 @@
 export const Job = () => {
     return (
-        <div>
+        <div className="bg-primary">
             <p></p>
         </div>
     )
