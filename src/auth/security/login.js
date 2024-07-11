@@ -6,10 +6,10 @@ import { AutoYear} from '../../components/date';
 // import { Logo } from '../logo';
 // import { Loader } from '../../components/loader';
 // import { Modal } from '../../components/modal';
-// import axios from '../../api/axios';
-// import { jwtDecode } from "jwt-decode";
+import axios from '../../api/axios';
+import { jwtDecode } from "jwt-decode";
 
-// const LOGIN_URL = '/auth/login';
+const LOGIN_URL = '/auth/login/';
 
 export const Login = () => {
     const emailRef = useRef(null);
@@ -69,7 +69,22 @@ export const Login = () => {
                 passwordRef.current.focus()
             }
         } else {
-            return;
+            const data = {
+                email,
+                password
+            }
+
+            try{
+                const response = await axios.post(LOGIN_URL, data)
+                if(response){
+                    console.log(response)
+                    localStorage.setItem('token', response.data.access_token)
+                    const data = jwtDecode(response.data.access_token)
+                    console.log(data)
+                }
+            } catch (err) {
+                console.error(err)
+            }
         };
 
         if (Object.keys(newErr).length > 0) {
@@ -104,12 +119,12 @@ export const Login = () => {
 
 
     return (
-        <div className="Login">
+        <div className="overflow-hidden Login bg-dark">
             <div className='sub-login-holder'>
-                <div className='d-flex align-items-start justify-content-center inner-app'>
+                <div className='d-flex align-items-start justify-content-center flex-column inner-app'>
                     <div className='d-inline-flex flex-column align-items-start col-12 sub-app'>
-                        <div className='col-12 d-flex justify-content-center align-items-center flex-column gap-3 bg-dark form-holder'>
-                            {/* <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
+                        <div className='col-12 d-flex justify-content-center align-items-center flex-column gap-4 form-holder'>
+                            <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
                                 <div className='d-flex align-items-center flex-column gap-4 col-12 inner-form-holder'>
                                     <div>
                                         <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
@@ -150,7 +165,7 @@ export const Login = () => {
                                                                                 <path d="M14.7406 7.61491C15.8911 8.73288 16.6643 9.97087 16.995 10.5537C16.8805 10.8124 16.6916 11.2019 16.4194 11.6523C16.1813 12.0462 16.3077 12.5585 16.7016 12.7965C17.0955 13.0346 17.6078 12.9082 17.8458 12.5143C18.1842 11.9544 18.4138 11.4718 18.5488 11.1603C18.7422 10.7143 18.7141 10.2121 18.4786 9.7915C18.1285 9.16625 17.2577 7.74193 15.9192 6.43629L14.7406 7.61491Z"/>
                                                                                 <path d="M9.99849 6.66667C10.3013 6.66667 10.5966 6.69898 10.8811 6.76034L9.16628 8.47519C8.45503 8.7262 7.89136 9.28987 7.64035 10.0011L5.9255 11.716C5.86414 11.4315 5.83183 11.1362 5.83183 10.8333C5.83183 8.53215 7.69731 6.66667 9.99849 6.66667Z"/>
                                                                                 <path d="M9.99849 13.3333C9.7061 13.3333 9.42543 13.2831 9.16463 13.1909L7.91376 14.4418C8.52693 14.7968 9.23898 15 9.99849 15C12.2997 15 14.1652 13.1345 14.1652 10.8333C14.1652 10.0738 13.9619 9.36177 13.6069 8.74859L12.3561 9.99947C12.4483 10.2603 12.4985 10.5409 12.4985 10.8333C12.4985 12.214 11.3792 13.3333 9.99849 13.3333Z"/>
-                                                                            </svg>    
+                                                                            </svg>
                                                         }
                                                     </div>
                                                 </div>
@@ -183,7 +198,7 @@ export const Login = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div> */}
+                            </div>
                             <AutoYear />
                         </div>
                     </div>
