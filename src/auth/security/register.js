@@ -7,7 +7,7 @@ import { AutoYear} from '../../components/date';
 import { Loader } from '../../components/loader';
 import { Modal } from '../../components/modal';
 
-const REGISTER_URL = 'auth'
+const REGISTER_URL = '/auth'
 
 export const SignUp = () => {
     const firstNameRef = useRef(null);
@@ -87,14 +87,14 @@ export const SignUp = () => {
             if(firstNameRef.current){
                 firstNameRef.current.focus()
             }
-            
+
         } else if(space.test(firstName)) {
             newError.firstName = <p>space are not allowed</p>
 
             if(firstNameRef.current){
                 firstNameRef.current.focus()
             }
-            
+
         } else if(numberRegex.test(firstName) || symbols.test(firstName)) {
             newError.firstName = <p>worng format for first name</p>
 
@@ -136,14 +136,14 @@ export const SignUp = () => {
             if(userNameRef.current){
                 userNameRef.current.focus()
             }
-            
+
         } else if(numberRegex.test(userName) || symbols.test(userName)) {
             newError.userName = <p>worng format for user name</p>
 
             if(userNameRef.current){
                 userNameRef.current.focus()
             }
-            
+
         } else if(!email) {
             newError.email = <p>email required </p>
 
@@ -157,14 +157,14 @@ export const SignUp = () => {
             if(emailRef.current){
                 emailRef.current.focus()
             }
-            
+
         } else if(symbol.test(email)) {
             newError.email = <p>wrong email format</p>
 
             if(emailRef.current){
                 emailRef.current.focus()
             }
-            
+
         } else if(!password && password !== validatePassword) {
             newError.password = <p>password required </p>
 
@@ -201,8 +201,7 @@ export const SignUp = () => {
                 lastName,
                 userName,
                 email,
-                password,
-                confirmPassword
+                password
             }
 
             try{
@@ -252,7 +251,7 @@ export const SignUp = () => {
             return () => clearTimeout(handleRedirect)
         }
 
-        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password" || message === "Network Error"){
+        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password" || message === "Network Error" || message === ''){
             setShowModel(true)
 
             const handleReset = setTimeout(() => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'https://p-detector-backend-api.onrender.com/';
+const BASE_URL = 'https://p-detector-backend-api.onrender.com';
 
 export default axios.create({
     baseURL: BASE_URL
