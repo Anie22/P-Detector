@@ -145,13 +145,11 @@ export const Login = () => {
     return (
         <div className="Login bg-dark">
             <div className='sub-login-holder'>
-                <div className='d-flex align-items-center justify-content-center gap-5 flex-column inner-app'>
-                    <div className='col-12 d-flex justify-content-center align-items-center flex-column form-holder'>
+                <div className='d-flex align-items-center justify-content-center gap-1 flex-column inner-app'>
+                    <div className='col-12 d-flex justify-content-center align-items-center flex-column p-2 form-holder'>
                         <div className='d-flex align-items-start col-lg-6 col-12 gap-2 rounded-2 shadow p-3 sub-form-holder'>
                             <div className='d-flex align-items-center flex-column gap-3 col-12 inner-form-holder'>
-                                <div>
-                                    <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
-                                </div>
+                                <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
                                 <div className='d-flex flex-column justify-content-center align-items-start align-self-stretch gap-2 heading'>
                                     <div className='first-text'>
                                         {loginText}
@@ -177,7 +175,7 @@ export const Login = () => {
                                         <div className='d-flex flex-column align-items-start align-self-stretch gap-2 pass'>
                                             <label>Password</label>
                                             <div className='position-relative col-12 in-ico'>
-                                                <input name='password' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => handleInput(e)} placeholder={showPassword ? 'Enter your password' : '********'} ref={passwordRef}></input>
+                                                <input name='password' type={showPassword ? 'text' :  'password'} value={password} onChange={(e) => handleInput(e)} placeholder={showPassword ? 'Enter your password' : '********'} ref={passwordRef}></input>
                                                 <div className='fa-holder'  onClick={togglePass}>
                                                 {showPassword ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
                                                                     <path d="M2.5 10.8333C5.5 4.16667 14.5 4.16667 17.5 10.8333" stroke="#667185" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
