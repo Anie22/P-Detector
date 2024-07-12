@@ -116,7 +116,7 @@ export const Login = () => {
             const handleRedirect = setTimeout(() => {
                 setShowModel(false)
                 window.location.href = '/jobs'
-            }, 1500)
+            }, 2500)
 
             return () => clearTimeout(handleRedirect)
         }
