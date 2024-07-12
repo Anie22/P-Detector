@@ -10,7 +10,7 @@
 }
 .hero .sub-hero-sec{
     background: hsla(0, 0%, 0%, 0.8);
-    height: 100vh;
+    height: 100%;
 }
 .hero .sub-hero-sec .inner-hero-sec .hero-text-holder{
     flex-shrink: 0;

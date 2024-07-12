@@ -3,7 +3,7 @@
     overflow: hidden;
 }
 .Login .sub-login-holder .inner-app{
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -247,16 +247,8 @@
     line-height: 145%;
     text-decoration: none;
 }
-/* @media only screen and (max-width: 1024px) {
-    .Login .sub-login-holder .inner-app .form-holder .sub-form-holder .inner-form-holder {
-        gap: 22px;
-    }
-} */
 @media only screen and (max-width: 992px) {
     .Login{
-        height: 100svh;
-    }
-    .Login .sub-login-holder .inner-app{
         height: 100svh;
     }
     .Login .sub-login-holder .inner-app .form-holder .sub-form-holder{
@@ -266,7 +258,6 @@
 @media only screen and (max-width: 900px) {
     .Login .sub-login-holder .inner-app{
         display: block;
-        height: 100svh;
     }
     .Login .sub-login-holder .inner-app{
         flex-direction: column;

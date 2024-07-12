@@ -96,6 +96,17 @@ export const Login = () => {
                     console.log(data)
                 }
             } catch (err) {
+                const {status} = err.response
+
+                setShowModel(true)
+
+                if(status === 403 && err.response.data.detail === 'User email is not verified'){
+                    setMessage("User email is not verified")
+                } else if(status === 403 && err.response.data.detail === 'User does not exist'){
+                    setMessage("User does not exist")
+                } else if(status === 403 && err.response.data.detail === 'wrong password'){
+                    setMessage("wrong password")
+                }
                 console.error(err)
             } finally {
                 setShowloder(false)
@@ -116,6 +127,16 @@ export const Login = () => {
             const handleRedirect = setTimeout(() => {
                 setShowModel(false)
                 window.location.href = '/jobs'
+            }, 2500)
+
+            return () => clearTimeout(handleRedirect)
+        }
+
+        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password"){
+            setShowModel(true)
+
+            const handleRedirect = setTimeout(() => {
+                setShowModel(false)
             }, 2500)
 
             return () => clearTimeout(handleRedirect)
