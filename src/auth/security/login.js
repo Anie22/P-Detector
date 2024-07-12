@@ -7,7 +7,7 @@ import { Loader } from '../../components/loader';
 import { Modal } from '../../components/modal';
 import axios from '../../api/axios';
 
-const LOGIN_URL = 'auth/login';
+const LOGIN_URL = 'auth/login/';
 
 export const Login = () => {
     const emailRef = useRef(null);
