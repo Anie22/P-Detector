@@ -201,7 +201,8 @@ export const SignUp = () => {
                 lastName,
                 userName,
                 email,
-                password
+                password,
+                confirmPassword
             }
 
             try{
