@@ -6,9 +6,8 @@ import { AutoYear} from '../../components/date';
 import { Loader } from '../../components/loader';
 import { Modal } from '../../components/modal';
 import axios from '../../api/axios';
-import { jwtDecode } from "jwt-decode";
 
-const LOGIN_URL = '/auth/login/';
+const LOGIN_URL = 'auth/login';
 
 export const Login = () => {
     const emailRef = useRef(null);
@@ -90,22 +89,25 @@ export const Login = () => {
                             </svg>
                         </div>
                     )
-                    console.log(response)
                     localStorage.setItem('token', response.data.access_token)
-                    const data = jwtDecode(response.data.access_token)
-                    console.log(data)
                 }
-            } catch (err) {
-                const {status} = err.response
+            } catch(err) {
+                if(err.response){
+                    const { status } = err.response
 
-                setShowModel(true)
+                    setShowModel(true)
 
-                if(status === 403 && err.response.data.detail === 'User email is not verified'){
-                    setMessage("User email is not verified")
-                } else if(status === 403 && err.response.data.detail === 'User does not exist'){
-                    setMessage("User does not exist")
-                } else if(status === 403 && err.response.data.detail === 'wrong password'){
-                    setMessage("wrong password")
+                    if(status === 403 && err.response.data.detail === 'User email is not verified'){
+                        setMessage("User email is not verified")
+                    } else if(status === 403 && err.response.data.detail === 'User does not exist'){
+                        setMessage("User does not exist")
+                    } else if(status === 403 && err.response.data.detail === 'wrong password'){
+                        setMessage("wrong password")
+                    }
+
+                    if(err.response.message === "Network Error"){
+                        setMessage("Network Error")
+                    }
                 }
                 console.error(err)
             } finally {
@@ -127,19 +129,19 @@ export const Login = () => {
             const handleRedirect = setTimeout(() => {
                 setShowModel(false)
                 window.location.href = '/jobs'
-            }, 2700)
+            }, 3000)
 
             return () => clearTimeout(handleRedirect)
         }
 
-        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password"){
+        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password" || message === "Network Error"){
             setShowModel(true)
 
-            const handleRedirect = setTimeout(() => {
+            const handleReset = setTimeout(() => {
                 setShowModel(false)
-            }, 2500)
+            }, 3000)
 
-            return () => clearTimeout(handleRedirect)
+            return () => clearTimeout(handleReset)
         }
         const handleResize = () => {
             if (window.innerWidth > 900) {

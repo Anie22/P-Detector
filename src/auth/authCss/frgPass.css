@@ -3,10 +3,10 @@
     overflow: hidden !important;
 }
 .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol{
-    height: 100vh;
+    height: 100%;
 }
 .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol{
-    height: 100%;
+    height: 100vh;
 }
 .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol{
     background: hsla(0, 0%, 0%, 0.397);
@@ -144,7 +144,7 @@
 }
 @media only screen and (max-width: 425px) {
     .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol {
-        height: auto;
+        height: 100svh;
     }
     .forget .sub-forget-holder .frg-pass-hol .sub-frg-pass-hol .in-frg-pass-hol .in-sub-frg-pass-hol .frg-hol .frg-pass-hol-text h2{
         font-size: 24px;

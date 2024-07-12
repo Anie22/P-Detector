@@ -1,9 +1,13 @@
 import '../authCss/register.css';
 import React, { useEffect, useRef, useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa';
 import { AutoYear} from '../../components/date';
+import { Loader } from '../../components/loader';
+import { Modal } from '../../components/modal';
+
+const REGISTER_URL = 'auth'
 
 export const SignUp = () => {
     const firstNameRef = useRef(null);
@@ -29,6 +33,10 @@ export const SignUp = () => {
     });
     const [valBox, setValBox] = useState(false);
     const [error, setError] = useState({});
+    const [showloder, setShowloder] = useState(false);
+    const [showmodel, setShowModel] = useState(false);
+    const [message, setMessage] = useState(null);
+    const [icon, setIcon] = useState(null);
 
     const togglePass = () => {
         setShowPassword(!showPassword);
@@ -93,7 +101,7 @@ export const SignUp = () => {
             if(firstNameRef.current){
                 firstNameRef.current.focus()
             }
-            
+
         } else if(!lastName) {
             newError.lastName = <p>Last name required</p>
 
@@ -107,14 +115,14 @@ export const SignUp = () => {
             if(lastNameRef.current){
                 lastNameRef.current.focus()
             }
-            
+
         } else if(numberRegex.test(lastName) || symbols.test(lastName)) {
             newError.lastName = <p>worng format for last name</p>
 
             if(lastNameRef.current){
                 lastNameRef.current.focus()
             }
-            
+
         } else if(!userName) {
             newError.userName = <p>User name required </p>
 
@@ -188,7 +196,42 @@ export const SignUp = () => {
             }
 
         } else if (firstName && lastName && userName && email && password && confirmPassword === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length) {
-            return
+            const data = {
+                firstName,
+                lastName,
+                userName,
+                email,
+                password,
+                confirmPassword
+            }
+
+            try{
+                const response = await axios.post(REGISTER_URL, data)
+                if(response){
+                    setShowModel(true)
+                    setMessage('Email sent')
+                    setIcon(
+                        <div className="success">
+                            <svg xmlns="http://www.w3.org/2000/svg" className='fa' viewBox="0 0 100 101" fill="none">
+                                <path d="M37.5 50.5L45.8333 58.8333L62.5 42.1667M87.5 50.5C87.5 71.2107 70.7107 88 50 88C29.2893 88 12.5 71.2107 12.5 50.5C12.5 29.7893 29.2893 13 50 13C70.7107 13 87.5 29.7893 87.5 50.5Z" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </div>
+                    )
+                }
+            } catch(err) {
+                if(err.response){
+                    // const { status } = err.response
+
+                    setShowModel(true)
+
+                    if(err.response.message === "Network Error"){
+                        setMessage("Network Error")
+                    }
+                }
+                console.error(err)
+            } finally {
+                setShowloder(false)
+            }
         }
 
         if (Object.keys(newError).length > 0) {
@@ -197,8 +240,27 @@ export const SignUp = () => {
         }
     };
 
-    
+
     useEffect(() => {
+        if(message === 'Email sent'){
+            setShowModel(true)
+
+            const handleRedirect = setTimeout(() => {
+                setShowModel(false)
+            }, 3000)
+
+            return () => clearTimeout(handleRedirect)
+        }
+
+        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password" || message === "Network Error"){
+            setShowModel(true)
+
+            const handleReset = setTimeout(() => {
+                setShowModel(false)
+            }, 3000)
+
+            return () => clearTimeout(handleReset)
+        }
 
         if (document.activeElement === document.getElementById('password')) {
             if (!password || !valPas.lowerCase || !valPas.upperCase || !valPas.specialCharacters || !valPas.numbers || !valPas.length) {
@@ -210,7 +272,7 @@ export const SignUp = () => {
 
         document.title = 'P-Detector - Register'
 
-    }, [password, valPas]);
+    }, [password, valPas, message]);
 
     return (
         <div className="signup">
@@ -313,9 +375,9 @@ export const SignUp = () => {
                                         </div>
                                         <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 button-holder'>
                                             <div className='d-flex flex-column align-items-center justify-content-center align-self-stretch gap-2 col-12 rounded-2 py-3 px-4 button'>
-                                                <button className='d-flex align-items-center justify-content-center bg-transparent gap-2 col-12' type='submit'>
+                                                {showloder ? <Loader /> : <button className='d-flex align-items-center justify-content-center bg-transparent gap-2 col-12' type='submit'>
                                                     <p className='text'>Create account</p>
-                                                </button>
+                                                </button>}
                                             </div>
                                         </div>
                                     </form>
@@ -326,6 +388,7 @@ export const SignUp = () => {
                     </div>
                 </div>
             </div>
+            {showmodel && <Modal message={message} icon={icon} />}
         </div>
     )
 }
