@@ -414,8 +414,8 @@ export const SignUp = () => {
                                             </div>
                                         </div>
                                         <div className='d-flex flex-column align-items-start gap-4 align-self-stretch col-12 button-holder'>
-                                            <div className='d-flex flex-column align-items-center justify-content-center align-self-stretch gap-2 col-12 rounded-2 py-3 px-4 button'>
-                                                {showloder ? <Loader /> : <button className='d-flex align-items-center justify-content-center bg-transparent gap-2 col-12' type='submit'>
+                                            <div className='d-flex flex-column align-items-center justify-content-center align-self-stretch gap-2 col-12 rounded-2 button'>
+                                                {showloder ? <Loader /> : <button className='d-flex align-items-center justify-content-center bg-transparent gap-2 py-3 px-4 col-12' type='submit'>
                                                     <p className='text'>Create account</p>
                                                 </button>}
                                             </div>

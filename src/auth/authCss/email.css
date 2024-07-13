@@ -96,13 +96,13 @@
     text-transform: capitalize;
 }
 .emailVer .sub-emailVer-holder .emv-pass-hol .sub-emv-pass-hol .in-emv-pass-hol .in-sub-emv-pass-hol .emv-hol .emv-pass-hol-form-hol .main-form .emv-pass-hol-form-hol-btn .button{
-    padding: 16px 24px;
     gap: 10px;
     border-radius: 8px;
     background: var(--backgroundPrimary);
     cursor: pointer;
 }
 .emailVer .sub-emailVer-holder .emv-pass-hol .sub-emv-pass-hol .in-emv-pass-hol .in-sub-emv-pass-hol .emv-hol .emv-pass-hol-form-hol .main-form .emv-pass-hol-form-hol-btn .button button{
+    padding: 16px 24px;
     flex: 1 0 0;
     color: var(--lightBlack);
     text-align: center;

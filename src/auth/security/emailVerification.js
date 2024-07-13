@@ -264,14 +264,6 @@ export const EmailMsg = () => {
                     codeRef4.current.focus()
                 }
             }
-
-            if(code4.length > maxLength){
-                setCode4(num4.slice(0, maxLength))
-            } else if(code4.length === 1){
-                if(codeRef4.current){
-                    codeRef5.current.focus()
-                }
-            }
         }
 
         checkLength()
@@ -336,7 +328,7 @@ export const EmailMsg = () => {
                                                     <p>Cancel</p>
                                                 </Link>
                                                 <div className='d-flex flex-column align-items-center align-self-stretch justify-content-center text-capitalize button'>
-                                                    <button type='submit' ref={buttonRef}>Verify email address</button>
+                                                    {showloder ? <Loader /> :  <button type='submit' ref={buttonRef}>Verify email address</button>}
                                                 </div>
                                             </div>
                                         </form>
@@ -345,7 +337,6 @@ export const EmailMsg = () => {
                             </div>
                             <AutoYear />
                         </div>
-                        {loader && <Loader />}
                         {messages && <Modal message={message} icon={icon} />}
                     </div>
                 </div>
