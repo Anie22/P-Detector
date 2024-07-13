@@ -24,7 +24,7 @@ export const EmailMsg = () => {
     const [code3, setCode3] = useState('');
     const [code4, setCode4] = useState('');
     const [email, setEmail] = useState('')
-    const [loader, setLoader] = useState(false);
+    const [showloder, setShowloder] = useState(false)
     const [error, setError] = useState({});
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState(false);
