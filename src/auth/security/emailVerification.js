@@ -16,7 +16,6 @@ export const EmailMsg = () => {
     const codeRef2 = useRef(null);
     const codeRef3 = useRef(null);
     const codeRef4 = useRef(null);
-    const codeRef5 = useRef(null);
     const buttonRef = useRef(null);
     const [cod, setCod] = useState('');
     const [code1, setCode1] = useState('');
@@ -48,13 +47,13 @@ export const EmailMsg = () => {
     const resendCode = async () => {
         const resBtn = document.getElementById('resnd')
         const email = localStorage.getItem('usermail').replace(/"|"/g, '')
-        const type = 'Email Verification'
+        const verification_type = 'Email Verification'
 
         try {
 
             const resendingInfo = {
                 email,
-                type
+                verification_type
             };
 
             setShowloder(true)
@@ -263,6 +262,12 @@ export const EmailMsg = () => {
                 if(codeRef3.current){
                     codeRef4.current.focus()
                 }
+            }
+
+            if(code4.length > maxLength){
+                setCode4(num4.slice(0, maxLength))
+            } else if(code4.length === 1){
+                return
             }
         }
 
