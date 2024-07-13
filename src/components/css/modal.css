@@ -48,14 +48,15 @@
     align-items: center;
     gap: 10px;
     border-radius: 50%;
-    height: 100px;
-    width: 101px;
-    background: rgba(168, 52, 52, 0.05);
+    height: 48px;
+    width: 49px;
+    background: rgb(239, 22, 22)
 }
 .success-holder .sub-holder .error .fa{
-    height: 100px;
-    width: 101px;
-    stroke: var(--danger);
+    height: 48px;
+    width: 49px;
+    stroke: var(--white);
+    stroke-width: 12px;
 }
 .success-holder .sub-holder .success-text-holder{
     width: fit-content;

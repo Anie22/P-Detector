@@ -104,11 +104,11 @@ export const Login = () => {
 
                     setShowModel(true)
 
-                    if(status === 403 && err.response.data.message === 'User email is not verified'){
+                    if(status === 403 && err.response.data.detail === 'User email is not verified'){
                         setMessage("User email is not verified")
-                    } else if(status === 403 && err.response.data.message === 'User does not exist'){
+                    } else if(status === 403 && err.response.data.detail === 'User does not exist'){
                         setMessage("User does not exist")
-                    } else if(status === 403 && err.response.data.message === 'wrong password'){
+                    } else if(status === 403 && err.response.data.detail === 'wrong password'){
                         setMessage("wrong password")
                     }
 

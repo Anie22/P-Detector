@@ -207,6 +207,7 @@ export const SignUp = () => {
 
             try{
                 const response = await axios.post(REGISTER_URL, data)
+                localStorage.setItem('usermail', email)
                 if(response){
                     setShowModel(true)
                     setMessage('Email sent')
@@ -227,12 +228,14 @@ export const SignUp = () => {
                             </svg>
                         </div>
                     );
-                    // const { status } = err.response
+                    const { status } = err.response
 
                     setShowModel(true)
 
                     if(err.response.message === "Network Error"){
                         setMessage("Network Error")
+                    } else if(status === 404){
+                        setMessage('Server Error')
                     }
                 }
                 console.error(err)
@@ -259,7 +262,7 @@ export const SignUp = () => {
             return () => clearTimeout(handleRedirect)
         }
 
-        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password" || message === "Network Error" || message === ''){
+        if(message === 'User email is not verified' || message === 'User does not exist' || message === "wrong password" || message === "Network Error" || message === 'Server Error'){
             setShowModel(true)
 
             const handleReset = setTimeout(() => {
