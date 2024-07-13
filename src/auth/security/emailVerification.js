@@ -210,7 +210,7 @@ export const EmailMsg = () => {
             return () => clearTimeout(Message);
         }
 
-        if(message === '' || message === 'Network error' || message === "Couldn't connect, timeout") {
+        if(message === 'Email sent' || message === 'Network error' || message === "Couldn't connect, timeout") {
             setMessages(true);        
             
             const Message = setTimeout(() => {
