@@ -57,7 +57,7 @@ export const EmailMsg = () => {
                 type
             };
 
-            setLoader(true);
+            setShowloder(true)
 
             const res = await axios.post(RESEND_CODE_URL, resendingInfo);
 
@@ -116,7 +116,7 @@ export const EmailMsg = () => {
             console.error(err)
 
         } finally {
-            setLoader(false);
+            setShowloder(false)
         }
     }
 
@@ -141,7 +141,7 @@ export const EmailMsg = () => {
                     code
                 };
 
-                setLoader(true);
+                setShowloder(true)
 
                 const res = await axios.post(VERIFY_ACCOUNT_URL, data);
 
@@ -175,8 +175,8 @@ export const EmailMsg = () => {
                         const {status} = error.response;
                         if(status === 500 && error.response.data.message === 'Internal server error'){
                             setMessage("Couldn't connect, timeout");
-                        } else if(error.response.data.message === "Your code has either expire or is Invalid"){
-                            err.cod = <p className='text-left'>{error.response.data.message}</p>
+                        } else if(error.response.data.non_field_errors[0] === "Invalid code or already use"){
+                            err.cod = <p className='text-left'>{error.response.data.non_field_errors[0]}</p>
                         }
                     };
     
@@ -189,7 +189,7 @@ export const EmailMsg = () => {
                 console.error(error)
 
             } finally {
-                setLoader(false);
+                setShowloder(false)
             }
         };
 
@@ -223,7 +223,7 @@ export const EmailMsg = () => {
 
         document.title = 'Pedxo - Verrify_account'
 
-    }, [loader, message, icon])
+    }, [message])
 
     useEffect(() => {
         function checkLength () {
