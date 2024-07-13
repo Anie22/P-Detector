@@ -92,7 +92,7 @@ export const Login = () => {
                     localStorage.setItem('token', response.data.access_token)
                 }
             } catch(err) {
-                if(err.response){
+                if(err){
                     setIcon(
                         <div className="error">
                             <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -100,22 +100,24 @@ export const Login = () => {
                             </svg>
                         </div>
                     );
-                    const { status } = err.response
-
-                    setShowModel(true)
-
-                    if(status === 403 && err.response.data.detail === 'User email is not verified'){
-                        setMessage("User email is not verified")
-                    } else if(status === 403 && err.response.data.detail === 'User does not exist'){
-                        setMessage("User does not exist")
-                    } else if(status === 403 && err.response.data.detail === 'wrong password'){
-                        setMessage("wrong password")
+                    
+                    if(err.response){
+                        const { status } = err.response
+    
+                        if(status === 403 && err.response.data.detail === 'User email is not verified'){
+                            setMessage("User email is not verified")
+                        } else if(status === 403 && err.response.data.detail === 'User does not exist'){
+                            setMessage("User does not exist")
+                        } else if(status === 403 && err.response.data.detail === 'wrong password'){
+                            setMessage("wrong password")
+                        }
                     }
 
-                    if(err.response.message === "Network Error"){
+                    if(err.message === "Network Error"){
                         setMessage("Network Error")
                     }
                 }
+
                 console.error(err)
             } finally {
                 setShowloder(false)

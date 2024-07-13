@@ -1,6 +1,6 @@
 import '../authCss/register.css';
 import React, { useEffect, useRef, useState } from 'react';
-import axios from 'axios';
+import axios from '../../api/axios';
 import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa';
 import { AutoYear} from '../../components/date';
@@ -21,7 +21,7 @@ export const SignUp = () => {
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [password2, setPassword2] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPass, setShowConfirmPass] = useState(false);
     const [valPas, setValPas] = useState({
@@ -65,7 +65,7 @@ export const SignUp = () => {
         setUserName(name === 'userName' ? value: userName);
         setEmail(name === 'email' ? value: email);
         setPassword(name === 'password' ? value: password);
-        setConfirmPassword(name === 'confirmPassword' ? value: confirmPassword);
+        setPassword2(name === 'password2' ? value: password2);
 
         if (name === 'password') {
             validatePassword(value)
@@ -180,32 +180,33 @@ export const SignUp = () => {
                 passwordRef.current.focus()
             }
 
-        } else if(!confirmPassword) {
-            newError.confirmPassword = <p>password required </p>
+        } else if(!password2) {
+            newError.password2 = <p>password required </p>
 
             if(confirmRef.current){
                 confirmRef.current.focus()
             }
 
-        } else if(password && confirmPassword !== password) {
+        } else if(password && password2 !== password) {
 
-            newError.confirmPassword = <p>password does not match</p>
+            newError.password2 = <p>password does not match</p>
 
             if(confirmRef.current){
                 confirmRef.current.focus()
             }
 
-        } else if (firstName && lastName && userName && email && password && confirmPassword === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length) {
+        } else if (firstName && lastName && userName && email && password && password2 === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length) {
             const data = {
                 firstName,
                 lastName,
                 userName,
                 email,
                 password,
-                confirmPassword
+                password2
             }
 
             try{
+                setShowloder(true)
                 const response = await axios.post(REGISTER_URL, data)
                 localStorage.setItem('usermail', email)
                 if(response){
@@ -220,7 +221,7 @@ export const SignUp = () => {
                     )
                 }
             } catch(err) {
-                if(err.response){
+                if(err){
                     setIcon(
                         <div className="error">
                             <svg className="fa" fill="none" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -228,16 +229,44 @@ export const SignUp = () => {
                             </svg>
                         </div>
                     );
-                    const { status } = err.response
 
-                    setShowModel(true)
+                    if(err.response){
+                        const { status } = err.response
+    
+                        if(status === 400 && err.response.data.email[0] === "user with this email already exists." && status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
+                            newError.email = <p>User with this email already exist </p>
+    
+                            if(emailRef.current){
+                                emailRef.current.focus()
+                            }
+    
+                            newError.userName = <p>User name already exist </p>
+    
+                            if(userNameRef.current){
+                                userNameRef.current.focus()
+                            }
+                        } else if(status === 400 && err.response.data.email[0] === "user with this email already exists."){
+                            newError.email = <p>User with this email already exist </p>
+    
+                            if(emailRef.current){
+                                emailRef.current.focus()
+                            }
+                        } else if(status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
+                            newError.userName = <p>User name already exist </p>
+    
+                            if(userNameRef.current){
+                                userNameRef.current.focus()
+                            }
+                        } else if(status === 404){
+                            setMessage('Server Error')
+                        }
+                    }
 
-                    if(err.response.message === "Network Error"){
+                    if(err.message === "Network Error"){
                         setMessage("Network Error")
-                    } else if(status === 404){
-                        setMessage('Server Error')
                     }
                 }
+
                 console.error(err)
             } finally {
                 setShowloder(false)
@@ -257,6 +286,7 @@ export const SignUp = () => {
 
             const handleRedirect = setTimeout(() => {
                 setShowModel(false)
+                window.location.href = '/verify-account'
             }, 3000)
 
             return () => clearTimeout(handleRedirect)
@@ -368,7 +398,7 @@ export const SignUp = () => {
                                                 <div className='d-flex flex-column align-items-start gap-2 col-lg-6 col-12 align-self-stretch pass'>
                                                     <label>Confirm Password</label>
                                                     <div className='position-relative col-12 in-ico'>
-                                                        <input name='confirmPassword' type={showConfirmPass ? 'text' : 'password'} value={confirmPassword} onChange={(e) => handleValue(e)} placeholder={showConfirmPass ? 'Enter your password' : '********'} ref={confirmRef}></input>
+                                                        <input name='password2' type={showConfirmPass ? 'text' : 'password'} value={password2} onChange={(e) => handleValue(e)} placeholder={showConfirmPass ? 'Enter your password' : '********'} ref={confirmRef}></input>
                                                         <span onClick={toggleComPass} className='fa-holder'>
                                                             {showConfirmPass ?  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className='fa'>
                                                                                 <path d="M2.5 10.8333C5.5 4.16667 14.5 4.16667 17.5 10.8333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -379,7 +409,7 @@ export const SignUp = () => {
                                                             }
                                                         </span>
                                                     </div>
-                                                    {error.confirmPassword}
+                                                    {error.password2}
                                                 </div>
                                             </div>
                                         </div>

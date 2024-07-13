@@ -47,7 +47,7 @@ export const EmailMsg = () => {
 
     const resendCode = async () => {
         const resBtn = document.getElementById('resnd')
-        const email = localStorage.getItem('usermmail').replace(/"|"/g, '')
+        const email = localStorage.getItem('usermail').replace(/"|"/g, '')
         const type = 'Email Verification'
 
         try {
@@ -109,7 +109,7 @@ export const EmailMsg = () => {
                 }
 
                 if(err.message === "Network Error") {
-                    setMessage('Network error, check your network');
+                    setMessage('Network error');
                 }
             };
 
@@ -132,7 +132,7 @@ export const EmailMsg = () => {
             }
 
         } else {
-            const email = localStorage.getItem('userEmail').replace(/"|"/g, '');
+            const email = localStorage.getItem('usermail').replace(/"|"/g, '');
             const code = cod + code1 + code2 + code3 + code4;
 
             try {
@@ -157,8 +157,8 @@ export const EmailMsg = () => {
                     );
 
                     
-                    localStorage.removeItem('userEmail');
-                    setMessage('Verification successful');
+                    localStorage.removeItem('usermail');
+                    setMessage('Signup successful');
                 }
 
             } catch (error) {
@@ -182,7 +182,7 @@ export const EmailMsg = () => {
     
 
                     if(error.message === "Network Error"){
-                        setMessage('Network error, check your network');
+                        setMessage('Network error');
                     }
                 }
 
@@ -200,7 +200,7 @@ export const EmailMsg = () => {
     }
 
     useEffect(() => {
-        if(message === 'Verification successful') {
+        if(message === 'Signup successful') {
             setMessages(true);        
             
             const Message = setTimeout(() => {
@@ -211,7 +211,7 @@ export const EmailMsg = () => {
             return () => clearTimeout(Message);
         }
 
-        if(message === '' || message === 'Network error, check your network' || message === "Couldn't connect, timeout") {
+        if(message === '' || message === 'Network error' || message === "Couldn't connect, timeout") {
             setMessages(true);        
             
             const Message = setTimeout(() => {
@@ -283,9 +283,11 @@ export const EmailMsg = () => {
         const getEmail = () => {
             const mail = localStorage.getItem('usermail');
             const mailData = [3, 4, 6, 7, 8, 9, 10, 11, 12]
-            const emal = mail.replace(/,/g, (letters, i) => mailData.includes(i) ? '*' : letters)
-            setEmail(emal)
+            const email = mail.replace(/,/g, (letters, i) => mailData.includes(i) ? '*' : letters)
+            setEmail(email)
         }
+
+        getEmail();
 
         const pageProtected = localStorage.getItem('usermail');
 
@@ -295,8 +297,6 @@ export const EmailMsg = () => {
             return
         }
 
-        getEmail();
-
         return;
     }, [email])
 
@@ -305,7 +305,7 @@ export const EmailMsg = () => {
             <div className='sub-emailVer-holder'>
                 <div className="d-flex align-items-start justify-content-center emv-pass-hol">
                     <div className="d-inline-flex align-items-start col-12 sub-emv-pass-hol">
-                        <div className="col-12 d-flex flex-column justify-content-center align-items-center in-emv-pass-hol">
+                        <div className="col-12 d-flex flex-column justify-content-center align-items-center gap-2 in-emv-pass-hol">
                             <div className='d-flex align-items-start gap-2 col-lg-6 col-12 rounded-2 shadow p-3 in-sub-emv-pass-hol'>
                                 <div className='d-flex flex-column align-items-center gap-4 emv-hol'>
                                     <h2 className='m-0 fs-6 p-0 text-capitalize text-white'>P-detector</h2>
@@ -342,8 +342,8 @@ export const EmailMsg = () => {
                                         </form>
                                     </div>
                                 </div>
-                                <AutoYear />
                             </div>
+                            <AutoYear />
                         </div>
                         {loader && <Loader />}
                         {messages && <Modal message={message} icon={icon} />}
