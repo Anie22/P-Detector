@@ -233,7 +233,7 @@ export const SignUp = () => {
                     if(err.response){
                         const { status } = err.response
     
-                        if(status === 400 && err.response.data.email[0] === "user with this email already exists." && status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
+                        if(status === 400 && err.response.data.email && status === 400 && err.response.data.userName){
                             newError.email = <p>User with this email already exist </p>
     
                             if(emailRef.current){
