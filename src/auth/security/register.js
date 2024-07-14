@@ -233,7 +233,7 @@ export const SignUp = () => {
                     if(err.response){
                         const { status } = err.response
     
-                        if(status === 400 && err.response.data?.email[0] === "user with this email already exists." && status === 400 && err.response.data?.userName[0] === "user with this User Name already exists."){
+                        if(status === 400 && err.response.data.email[0] === "user with this email already exists." && status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
                             newError.email = <p>User with this email already exist </p>
     
                             if(emailRef.current){
@@ -245,14 +245,14 @@ export const SignUp = () => {
                             if(userNameRef.current){
                                 userNameRef.current.focus()
                             }
-                        } else if(status === 400 && err.response.data.email === ["user with this email already exists."]){
-                            newError.email = <p>User with this email already exist </p>
+                        } else if(status === 400 && err.response.data.email){
+                            newError.email = <p>User with this email already exist {err.response.data.email}</p>
     
                             if(emailRef.current){
                                 emailRef.current.focus()
                             }
-                        } else if(status === 400 && err.response.data?.userName?[0] === "user with this User Name already exists."){
-                            newError.userName = <p>User name already exist </p>
+                        } else if(status === 400 && err.response.data.userName){
+                            newError.userName = <p>User name already exist {err.response.data.userName}</p>
     
                             if(userNameRef.current){
                                 userNameRef.current.focus()
@@ -260,8 +260,6 @@ export const SignUp = () => {
                         } else if(status === 404){
                             setMessage('Server Error')
                         }
-
-                        console.error(err)
                     }
 
                     if(err.message === "Network Error"){
