@@ -233,7 +233,7 @@ export const SignUp = () => {
                     if(err.response){
                         const { status } = err.response
     
-                        if(status === 400 && err.response.data.email === "user with this email already exists." && status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
+                        if(status === 400 && err.response.data.email[0] === "user with this email already exists." && status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
                             newError.email = <p>User with this email already exist </p>
     
                             if(emailRef.current){
@@ -246,13 +246,13 @@ export const SignUp = () => {
                                 userNameRef.current.focus()
                             }
                         } else if(status === 400 && err.response.data.email){
-                            newError.email = <p>User with this email already exist {err.response.data.email}</p>
+                            newError.email = <p>User with this email already exist</p>
     
                             if(emailRef.current){
                                 emailRef.current.focus()
                             }
                         } else if(status === 400 && err.response.data.userName){
-                            newError.userName = <p>User name already exist {err.response.data.userName}</p>
+                            newError.userName = <p>User name already exist</p>
     
                             if(userNameRef.current){
                                 userNameRef.current.focus()
