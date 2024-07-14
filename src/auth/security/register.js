@@ -245,13 +245,13 @@ export const SignUp = () => {
                             if(userNameRef.current){
                                 userNameRef.current.focus()
                             }
-                        } else if(status === 400 && err.response.data?.email?.[0] === "user with this email already exists."){
+                        } else if(status === 400 && err.response.data.email === ["user with this email already exists."]){
                             newError.email = <p>User with this email already exist </p>
     
                             if(emailRef.current){
                                 emailRef.current.focus()
                             }
-                        } else if(status === 400 && err.response.data?.userName?.[0] === "user with this User Name already exists."){
+                        } else if(status === 400 && err.response.data?.userName?[0] === "user with this User Name already exists."){
                             newError.userName = <p>User name already exist </p>
     
                             if(userNameRef.current){
