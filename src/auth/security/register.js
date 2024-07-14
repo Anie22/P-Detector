@@ -260,6 +260,8 @@ export const SignUp = () => {
                         } else if(status === 404){
                             setMessage('Server Error')
                         }
+
+                        console.error(err)
                     }
 
                     if(err.message === "Network Error"){
