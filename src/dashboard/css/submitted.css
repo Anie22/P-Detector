@@ -1,0 +1,12 @@
+.submit .inner-sub{
+    height: 100%;
+}
+
+.sub-submit{
+    font-size: 11px;
+    color: var(--footerText);
+}
+
+.re-sub{
+    color: var(--backgroundPrimary);
+}

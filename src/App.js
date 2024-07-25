@@ -4,11 +4,12 @@ import { ResetPass } from './auth/update/forgetPass';
 import { VerifyCode } from './auth/update/codeVerify';
 import { UpdatePass } from './auth/update/updatePass';
 import { SignUp } from './auth/security/register';
-import { Home } from './home/contents/home';
+import { Home } from './home/home';
 import { Maintainance } from './components/maintainance';
 import { Missing } from './components/missing';
-import { Job } from './home/contents/jobs';
+import { UserDashboard } from './dashboard/students/userDashboard';
 import { EmailMsg } from './auth/security/emailVerification';
+import { LecturerDashboard } from './dashboard/lecturer/lecturerDashboard';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={ <Home /> }></Route>
+          <Route path='/student_dashboard' element={ <UserDashboard /> }></Route>
+          <Route path='/lecturer_dashboard' element={<LecturerDashboard />}></Route>
           <Route element={<Maintainance />}>
-            <Route path='/jobs' element={ <Job /> }></Route>
           </Route>
           <Route path='/login' element={ <Login /> }></Route>
           <Route path='/register' element={ <SignUp /> }></Route>
