@@ -1,5 +1,5 @@
 import React from 'react';
-import '../homeCss/home.css';
+import './home.css';
 import { FaArrowRight} from 'react-icons/fa';
 import { useEffect, useMemo, useState} from 'react';
 // import Slider from 'react-slick';

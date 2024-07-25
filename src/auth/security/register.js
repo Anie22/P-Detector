@@ -6,6 +6,7 @@ import { FaCheck } from 'react-icons/fa';
 import { AutoYear} from '../../components/date';
 import { Loader } from '../../components/loader';
 import { Modal } from '../../components/modal';
+import { FaChevronDown } from 'react-icons/fa';
 
 const REGISTER_URL = '/auth'
 
@@ -16,6 +17,7 @@ export const SignUp = () => {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
     const confirmRef = useRef(null);
+    const accountRef = useRef(null);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [userName, setUserName] = useState('');
@@ -24,6 +26,8 @@ export const SignUp = () => {
     const [password2, setPassword2] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPass, setShowConfirmPass] = useState(false);
+    const [hideSize, setHideSize] = useState(false);
+    const [option, setOption] = useState(false);
     const [valPas, setValPas] = useState({
         lowerCase: false,
         upperCase: false,
@@ -37,6 +41,8 @@ export const SignUp = () => {
     const [showmodel, setShowModel] = useState(false);
     const [message, setMessage] = useState(null);
     const [icon, setIcon] = useState(null);
+    const [userType, setUserType] = useState('Account type');
+    const userTypes = ['Student', 'Lecturer'];
 
     const togglePass = () => {
         setShowPassword(!showPassword);
@@ -44,6 +50,16 @@ export const SignUp = () => {
 
     const toggleComPass = () => {
         setShowConfirmPass(!showConfirmPass);
+    };
+
+    const toggleOption = () => {
+        setOption(!option)
+    };
+
+    const selected = (e) => {
+        setUserType(e)
+        setOption(false)
+        setHideSize(false)
     };
 
     const validatePassword = (value) => {
@@ -75,6 +91,7 @@ export const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newError = {};
+        const accountType = document.getElementById('user')
 
         const numberRegex = /\d/;
         const symbols = /[!@#$%^&*]/;
@@ -165,6 +182,14 @@ export const SignUp = () => {
                 emailRef.current.focus()
             }
 
+        } else if(accountType.textContent === 'Account type') {
+            setHideSize(true)
+            newError.userType = <p>Account type required</p>
+
+            if(accountRef.current){
+                accountRef.current.focus()
+            }
+
         } else if(!password && password !== validatePassword) {
             newError.password = <p>password required </p>
 
@@ -195,12 +220,13 @@ export const SignUp = () => {
                 confirmRef.current.focus()
             }
 
-        } else if (firstName && lastName && userName && email && password && password2 === password && valPas.lowerCase && valPas.upperCase && valPas.specialCharacters && valPas.numbers && valPas.length) {
+        } else {
             const data = {
                 firstName,
                 lastName,
                 userName,
                 email,
+                userType,
                 password,
                 password2
             }
@@ -220,7 +246,7 @@ export const SignUp = () => {
                         </div>
                     )
                 }
-            } catch(err) {
+            }catch(err) {
                 if(err){
                     setIcon(
                         <div className="error">
@@ -233,7 +259,7 @@ export const SignUp = () => {
                     if(err.response){
                         const { status } = err.response
     
-                        if(status === 400 && err.response.data.email[0] === "user with this email already exists." && status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
+                        if(status === 400 && err.response.data.email && status === 400 && err.response.data.userName){
                             newError.email = <p>User with this email already exist </p>
     
                             if(emailRef.current){
@@ -245,14 +271,14 @@ export const SignUp = () => {
                             if(userNameRef.current){
                                 userNameRef.current.focus()
                             }
-                        } else if(status === 400 && err.response.data.email[0] === "user with this email already exists."){
-                            newError.email = <p>User with this email already exist </p>
+                        } else if(status === 400 && err.response.data.email){
+                            newError.email = <p>User with this email already exist</p>
     
                             if(emailRef.current){
                                 emailRef.current.focus()
                             }
-                        } else if(status === 400 && err.response.data.userName[0] === "user with this User Name already exists."){
-                            newError.userName = <p>User name already exist </p>
+                        } else if(status === 400 && err.response.data.userName){
+                            newError.userName = <p>User name already exist</p>
     
                             if(userNameRef.current){
                                 userNameRef.current.focus()
@@ -268,7 +294,7 @@ export const SignUp = () => {
                 }
 
                 console.error(err)
-            } finally {
+            }  finally {
                 setShowloder(false)
             }
         }
@@ -360,6 +386,25 @@ export const SignUp = () => {
                                                         </svg>
                                                     </div>
                                                     {error.email}
+                                                </div>
+                                            </div>
+                                            <div className='d-flex flex-column align-items-start gap-2 align-self-stretch col-12 user-holder'>
+                                                <label>Type of user</label>
+                                                <div className='d-flex flex-column align-items-start justify-content-center align-self-stretch col-12 count-input-holder'>
+                                                    <div className='d-flex align-items-center justify-content-between align-self-stretch count-input'  onClick={() => toggleOption()} >
+                                                        <div id='user' className={userType === 'Account type' ? 'input' : 'option'}>{userType}</div>
+                                                        <FaChevronDown className={option ? 'active' : 'fa'} />
+                                                    </div>
+                                                    {hideSize && <p>{error.userType}</p>}
+                                                    <div className={option ? 'd-flex flex-column align-items-start justify-content-left col-12 select-box open' : 'd-flex flex-column align-items-start justify-content-left col-12 select-box'}>
+                                                        <ul className='d-flex flex-column align-items-start justify-content-left align-self-stretch col-12 p-0 select-list'>
+                                                            {userTypes.map((usertype) => (
+                                                                <li className='d-flex align-items-start justify-content-left align-self-stretch list' onClick={() => selected(usertype.replace(/\s/g, ''))}>
+                                                                    <p>{usertype}</p>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className='d-flex flex-column flex-lg-row align-items-start justify-content-lg-between gap-4 align-self-stretch col-12 password-confirm-holder'>
