@@ -8,11 +8,11 @@ export const Update = ({setHideUpdate}) => {
 
     return (
         <div className="position-absolute top-0 bottom-0 end-0 col-12" style={{zIndex: '900', height: '100vh', background: 'hsla(255, 40%, 2%, 0.774)'}}>
-            <div className="d-flex align-items-center h-100 justify-content-center flex-column gap-2">
+            <div className="d-flex align-items-center h-100 justify-content-center flex-column gap-2 p-2 p-lg-0">
                 <div className="text-white text-uppercase">
                     <span>update for assignment 1</span>
                 </div>
-                <div className="d-flex align-items-center flex-column rounded-3 border col-7 p-2" style={{height: 'fit-content', background: '#010101'}}>
+                <div className="d-flex align-items-center flex-column rounded-3 border col-lg-7 col-12 p-2" style={{height: 'fit-content', background: '#010101'}}>
                     <div className="col-12 text-end text-white text-uppercase" style={{fontSize: '12px'}}>
                         <p style={{cursor: 'pointer'}} onClick={() => hideUpdate()}>cancle</p>
                     </div>
