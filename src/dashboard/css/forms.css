@@ -1,0 +1,52 @@
+.form-holder{
+    z-Index: 900;
+    height: 100vh;
+    background: hsla(255, 40%, 2%, 0.774);
+}
+.inner-form-holder{
+    height: fit-content;
+    background: var(--black);
+}
+.close{
+    font-size: 12px;
+    cursor: pointer;
+}
+label{
+    font-size: 14px;
+    font-weight: 500;
+}
+input{
+    height: 50px;
+    font-size: 16px;
+    color: var(--text);
+    outline: none;
+}
+input[type='file']{
+    height: 200px;
+}
+input::placeholder{
+    color: var(--footerText);
+    font-feature-settings: 'cv04' on, 'cv03' on;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+    text-transform: capitalize;
+}
+textarea{
+    resize: none;
+    height: 200px;
+}
+.form-submit-btn{
+    border: none;
+    outline: none;
+    background: var(--backgroundPrimary);
+    height: 50px;
+    color: var(--text);
+    font-weight: 500;
+}
+@media only screen and (max-width: 900px) {
+    .form-holder{
+        height: 100%;
+    }
+}

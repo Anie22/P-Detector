@@ -6,6 +6,7 @@ import { AutoYear} from '../../components/date';
 import { Loader } from '../../components/loader';
 import { Modal } from '../../components/modal';
 import axios from '../../api/axios';
+import { useAuth } from '../../hooks/auth';
 
 const LOGIN_URL = '/auth/login/';
 
@@ -22,6 +23,7 @@ export const Login = () => {
     const [showmodel, setShowModel] = useState(false)
     const [message, setMessage] = useState(null)
     const [icon, setIcon] = useState(null)
+    const { setData } = useAuth()
 
     const togglePass = () => {
         setShowPassword(!showPassword);
@@ -90,6 +92,8 @@ export const Login = () => {
                         </div>
                     )
                     localStorage.setItem('token', response.data.access_token)
+                    const accessToken = localStorage.getItem('token')
+                    setData({accessToken})
                 }
             } catch(err) {
                 if(err){
@@ -100,7 +104,7 @@ export const Login = () => {
                             </svg>
                         </div>
                     );
-                    
+
                     if(err.response){
                         const { status } = err.response
     

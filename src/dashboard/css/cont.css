@@ -1,16 +1,9 @@
 .content{
     height: fit-content;
 }
-
 .btn{
     width: fit-content;
 }
-@media only screen and (max-width: 600px) {
-    .btn{
-        width: 100%;
-    }
-}
-
 .upload-btn{
     border: none;
     outline: none;
@@ -20,25 +13,16 @@
     height: 50px;
     width: 150px;
 }
-@media only screen and (max-width: 600px) {
-    .upload-btn{
-        width: 100%;
-    }
-}
-
 .sub-content{
     color: var(--footerText);
 }
-
 .cont{
     height: 100%;
 }
-
 .sub-indication{
     font-size: 12px;
     color: var(--footerText);
 }
-
 .del{
     width: 45px;
     height: 40px;
@@ -50,31 +34,14 @@
     cursor: pointer;
     border-radius: 0px 0px 0px 10px;
 }
-@media only screen and (max-width: 600px) {
-    .del{
-        width: 50px;
-    }
-
-    .propos{
-        margin-right: -22px;
-    }
-}
-
 .sub-des-text{
     width: 100%;
     font-size: 14px;
 }
-@media only screen and (max-width: 600px) {
-    .sub-des-text{
-        font-size: 12px;
-    }
-}
-
 .dealine{
     color: var(--footerText);
     font-size: 12px;
 }
-
 .update-btn{
     border: none;
     outline: none;
@@ -85,6 +52,21 @@
     font-weight: 500;
 }
 @media only screen and (max-width: 600px) {
+    .btn{
+        width: 100%;
+    }
+    .upload-btn{
+        width: 100%;
+    }
+    .del{
+        width: 50px;
+    }
+    .propos{
+        margin-right: -22px;
+    }
+    .sub-des-text{
+        font-size: 12px;
+    }
     .update-btn-holder{
         width: 100%;
     }
