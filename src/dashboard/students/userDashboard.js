@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import '../css/dashboard.css'
 import { Header } from "../../components/header"
 import { Content } from "./content"
 import { Submitted } from "./submitted"
@@ -25,7 +26,7 @@ export const UserDashboard = () => {
     }, [])
 
     return (
-        <div className="d-flex justify-content-between align-items-center position-relative">
+        <div className="d-flex justify-content-between align-items-center position-relative bg-dark col-12 dashboard">
             <Header navLinks={navLinks} select={select} setSelect={setSelect} />
             <RenderComp index={select} />
         </div>

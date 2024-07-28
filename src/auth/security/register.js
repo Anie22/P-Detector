@@ -41,8 +41,8 @@ export const SignUp = () => {
     const [showmodel, setShowModel] = useState(false);
     const [message, setMessage] = useState(null);
     const [icon, setIcon] = useState(null);
-    const [userType, setUserType] = useState('Account type');
-    const userTypes = ['Student', 'Lecturer'];
+    const [account_type, setAccount_type] = useState('Account type');
+    const account_types = ['Student', 'Lecturer'];
 
     const togglePass = () => {
         setShowPassword(!showPassword);
@@ -57,7 +57,7 @@ export const SignUp = () => {
     };
 
     const selected = (e) => {
-        setUserType(e)
+        setAccount_type(e)
         setOption(false)
         setHideSize(false)
     };
@@ -184,7 +184,7 @@ export const SignUp = () => {
 
         } else if(accountType.textContent === 'Account type') {
             setHideSize(true)
-            newError.userType = <p>Account type required</p>
+            newError.account_type = <p>Account type required</p>
 
             if(accountRef.current){
                 accountRef.current.focus()
@@ -226,7 +226,7 @@ export const SignUp = () => {
                 lastName,
                 userName,
                 email,
-                userType,
+                account_type,
                 password,
                 password2
             }
@@ -392,15 +392,15 @@ export const SignUp = () => {
                                                 <label>Type of user</label>
                                                 <div className='d-flex flex-column align-items-start justify-content-center align-self-stretch col-12 count-input-holder'>
                                                     <div className='d-flex align-items-center justify-content-between align-self-stretch count-input'  onClick={() => toggleOption()} >
-                                                        <div id='user' className={userType === 'Account type' ? 'input' : 'option'}>{userType}</div>
+                                                        <div id='user' className={account_type === 'Account type' ? 'input' : 'option'}>{account_type}</div>
                                                         <FaChevronDown className={option ? 'active' : 'fa'} />
                                                     </div>
-                                                    {hideSize && <p>{error.userType}</p>}
+                                                    {hideSize && <p>{error.account_type}</p>}
                                                     <div className={option ? 'd-flex flex-column align-items-start justify-content-left col-12 select-box open' : 'd-flex flex-column align-items-start justify-content-left col-12 select-box'}>
                                                         <ul className='d-flex flex-column align-items-start justify-content-left align-self-stretch col-12 p-0 select-list'>
-                                                            {userTypes.map((usertype) => (
-                                                                <li className='d-flex align-items-start justify-content-left align-self-stretch list' onClick={() => selected(usertype.replace(/\s/g, ''))}>
-                                                                    <p>{usertype}</p>
+                                                            {account_types.map((account_type) => (
+                                                                <li className='d-flex align-items-start justify-content-left align-self-stretch list' onClick={() => selected(account_type.replace(/\s/g, ''))}>
+                                                                    <p>{account_type}</p>
                                                                 </li>
                                                             ))}
                                                         </ul>

@@ -37,15 +37,15 @@ export const Content = () => {
                     </div>
                     <div className="overflow-hidden d-flex flex-column rounded-3 col-12 gap-lg-2 gap-3 border p-3">
                         <div className="d-flex flex-column col-12 gap-lg-2 gap-3">
-                            <div className="d-flex align-items-center justify-content-between w-100 propos gap-4">
-                                <div className="col-7">
-                                    <h4 className="text-white text-uppercase fs-5">Project proposal</h4>
+                            <div className="d-flex align-items-center justify-content-between w-100">
+                                <div className="col-5">
+                                    <h4 className="text-white text-uppercase fs-lg-5 fs-6">Project proposal</h4>
                                 </div>
-                                <div className="position-relative d-flex align-items-center gap-1 sub-indication col-7">
+                                <div className="position-relative d-flex align-items-center gap-1 sub-indication">
                                     <div>
                                         <FaUser />
                                     </div>
-                                    <div className="d-flex align-items-center gap-1">
+                                    <div className="d-flex align-items-center gap-1 propos">
                                         <span>0</span>
                                         <span>Submission</span>
                                     </div>
