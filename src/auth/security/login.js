@@ -185,7 +185,7 @@ export const Login = () => {
             window.removeEventListener('resize', handleResize);
         };
 
-    }, [message, role, navigate]);
+    }, [message, role, navigate, data]);
 
 
     return (
