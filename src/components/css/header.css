@@ -1,0 +1,120 @@
+.header--holder{
+    height: 100vh;
+    z-index: 999;
+    transition: all 1s linear;
+}
+.header--holder .inner-header{
+    box-shadow: 0.5px 0.5px 0px #fcfc, -1px -1px 0px #fcfcfc;
+    background-color: #010101;
+    height: 100%;
+}
+.header--holder .inner-header .main-header .header-logo .logo .image-holder{
+    height: 90px;
+    width: 90px;
+}
+.header--holder .inner-header .main-header .header-logo .logo .text p{
+    color: #fcfcfc;
+}
+.header--holder .inner-header .main-header .header-logo .logo .text p span{
+    color: var(--footerText);
+}
+.header--holder .inner-header .main-header .header-content .content ul{
+    cursor: pointer;
+}
+.header--holder .inner-header .main-header .header-content .content ul .active{
+    padding: 9px;
+    border: 1px solid #ffffff;
+    width: 200px;
+}
+.header--holder .inner-header .main-header .header-content .logo{
+    width: 95px;
+    height: 49.745px;
+}
+.header--holder .inner-header .main-header .header-content .logo .logo-name .link{
+    color: var(--innerblack);
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    text-decoration: none;
+}
+.header--holder .inner-header .autoDate{
+    height: 70px;
+    margin: 40px -10px 0 -10px;
+}
+.header--holder .inner-header .main-header .header-logo .toggle-bar{
+    gap: 3px;
+}
+.header--holder .inner-header .main-header .header-logo .toggle-bar .bar{
+    height: 3px;
+    width: 25px;
+    background: var(--white);
+}
+.header--holder .inner-header .main-header .header-logo .toggle-bar .bar-2{
+    width: 15px;
+}
+.header--holder .inner-header .main-header .header-logo .toggle-bar .bar-3{
+    width: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .header--holder{
+        height: 100svh;
+        animation: addHeight 1s linear;
+    }
+    @keyframes addHeight {
+        0%{
+            height: 0svh;
+        } 50% {
+            height: 50svh;
+        } 100% {
+            height: 100svh;
+        }
+    }
+    .header--holder2{
+        height: fit-content;
+        transition: all 1s linear;
+        animation: removeHeight 1s linear;
+    }
+    @keyframes removeHeight {
+        0%{
+            height: 100svh;
+        } 50% {
+            height: 50svh;
+        } 100% {
+            height: fit-content;
+        }
+    }
+    .header--holder .inner-header .main-header .header-logo .logo .image-holder{
+        height: 45px;
+        width: 45px;
+    }
+    .header--holder .inner-header .main-header .header-content{
+        display: none;
+        margin: 10px 0px 0px 0px;
+        opacity: 0;
+        max-height: 0px;
+        transition: all 1s ease-out;
+    }
+    .header--holder .inner-header .main-header .open{
+        display: block;
+        opacity: 1;
+        max-height: 1000px;
+        transition: all 1s ease-in;
+        animation: showNav 2s ease-in;
+    }
+    @keyframes showNav {
+        0% {
+            opacity: 0;
+            max-height: 0px;
+        } 50% {
+            opacity: 0;
+            max-height: 500px;
+        } 100% {
+            opacity: 1;
+            max-height: 1000px;
+        }
+    }
+}

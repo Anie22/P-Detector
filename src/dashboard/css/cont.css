@@ -1,0 +1,79 @@
+.content{
+    height: fit-content;
+}
+.btn{
+    width: fit-content;
+}
+.upload-btn{
+    border: none;
+    outline: none;
+    background: var(--backgroundPrimary);
+    color: var(--text);
+    font-weight: 500;
+    height: 50px;
+    width: 150px;
+}
+.sub-content{
+    color: var(--footerText);
+}
+.cont{
+    height: 100%;
+}
+.sub-indication{
+    font-size: 12px;
+    color: var(--footerText);
+}
+.del{
+    width: 45px;
+    height: 40px;
+    color: var(--white);
+    font-size: 14px;
+    background: var(--danger);
+    right: -22px;
+    top: -24px;
+    cursor: pointer;
+    border-radius: 0px 0px 0px 10px;
+}
+.sub-des-text{
+    width: 100%;
+    font-size: 14px;
+}
+.dealine{
+    color: var(--footerText);
+    font-size: 12px;
+}
+.update-btn{
+    border: none;
+    outline: none;
+    background: var(--backgroundPrimary);
+    width: 150px;
+    height: 50px;
+    color: var(--text);
+    font-weight: 500;
+}
+@media only screen and (max-width: 900px) {
+    .sub-content-holder{
+        margin-top: 2em;
+    }
+    .btn{
+        width: 100%;
+    }
+    .upload-btn{
+        width: 100%;
+    }
+    .del{
+        width: 50px;
+    }
+    .propos{
+        margin-right: -22px;
+    }
+    .sub-des-text{
+        font-size: 12px;
+    }
+    .update-btn-holder{
+        width: 100%;
+    }
+    .update-btn{
+        width: 100%;
+    }
+}

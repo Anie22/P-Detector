@@ -1,0 +1,110 @@
+/*
+    *
+        Hero Section
+    *
+*/
+
+.hero{
+    height: 100vh;
+    flex-shrink: 0;
+}
+.hero .sub-hero-sec{
+    background: hsla(0, 0%, 0%, 0.8);
+    height: 100%;
+}
+.hero .sub-hero-sec .inner-hero-sec .hero-text-holder{
+    flex-shrink: 0;
+    z-index: 4;
+}
+.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .heading h4{
+    background: linear-gradient(0deg, var(--white) 0, var(--white) 100%),
+                linear-gradient(0deg, var(--white) 0, var(--white) 100%),
+                linear-gradient(0deg, var(--white) 0, var(--white) 100%),
+                linear-gradient(0deg, var(--white) 0, var(--white) 100%),
+                linear-gradient(0deg, var(--white) 0, var(--white) 100%), #ffffff;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -2.24px;
+    padding: 4px 0;
+}
+.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .heading h4 .blink{
+    color: #ffffff;
+    animation: blin 0.5s linear infinite;
+}
+
+@keyframes blin {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par p{
+    color: var(--footerText);
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 145%;
+}
+.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link{
+    height: 60px;
+    padding: 12px 24px;
+    border-radius: 15px !important;
+    background: var(--backgroundPrimary);
+    width: 300px;
+}
+.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link .text{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: var(--text);
+}
+.hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link .fa{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: var(--text);
+    transform: rotateZ(-35deg);
+}
+@media only screen and (max-width: 992px) {
+    .hero,
+    .hero .sub-hero-sec{
+        height: 100svh;
+    }
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld{
+        width: 100%;
+        padding: 0 15px;
+    }
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .heading h4{
+        font-size: 38px;
+        letter-spacing: -0.56px;
+    }
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-text-hld .par p{
+        font-size: 15px;
+    }
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link{
+        height: 50px;
+        border-radius: 12px !important;
+        width: 200px;
+    }
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link .text,
+    .hero .sub-hero-sec .inner-hero-sec .hero-text-holder .hero-text-con .hero-links-hld .first-link .link .fa{
+        font-size: 16px;
+    }
+}

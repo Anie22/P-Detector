@@ -1,0 +1,36 @@
+.setting{
+    height: 100vh;
+}
+.setting .inner-setting{
+    height: 100%;
+    width: 100%;
+}
+.setting .inner-setting .sub-setting{
+    transform: perspective(1126px) rotateY(-309deg);
+}
+.setting .inner-setting .sub-setting span{
+    font-size: 7em;
+    font-weight: 700;
+    text-shadow: -1px -1px 1px #919191, 
+    -2px -2px 1px #919191, 
+    -3px -3px 1px #919191, 
+    -4px -4px 1px #919191, 
+    -5px -5px 1px #919191, 
+    -6px -6px 1px #919191, 
+    -7px -7px 1px #919191, 
+    -8px -8px 1px #919191, 
+    -9px -9px 1px #919191, 
+    -10px -10px 1px #919191, 
+    -1px -18px 6px rgb(16, 16, 16, 0.4), 
+    -1px -22px 10px rgb(16, 16, 16, 0.2), 
+    -1px -25px 35px rgba(16, 16, 16, 0.2), 
+    -1px -30px 60px rgb(16, 16, 16, 0.4); 
+    color: #f5f5f5; 
+    transition: 0.9s all; 
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 900px) {
+    .setting .inner-setting .sub-setting span{
+        font-size: 5em;
+    }
+}
