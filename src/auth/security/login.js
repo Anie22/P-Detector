@@ -97,7 +97,6 @@ export const Login = () => {
                     localStorage.setItem('role', response.data.roles)
                     const roles = localStorage.getItem('role')
                     setData({ roles })
-                    setRole(data.roles)
                 }
             } catch(err) {
                 if(err){
@@ -141,6 +140,7 @@ export const Login = () => {
 
         if(message === 'Login successfully'){
             setShowModel(true)
+            setRole(data.roles)
 
             const handleRedirect = setTimeout(() => {
                 setShowModel(false)
